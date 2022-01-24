@@ -1,0 +1,2 @@
+hqplanner
+-DCATKIN_DEVEL_PREFIX=/home/zx414/HQPlanner_ws/devel -DCMAKE_INSTALL_PREFIX=/home/zx414/HQPlanner_ws/install -G Unix Makefiles

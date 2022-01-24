@@ -1,0 +1,8 @@
+prefix=/home/zx414/HQPlanner_ws/install
+
+Name: hqplanner
+Description: Description of hqplanner
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lhqplanner
+Requires: roscpp std_msgs geometry_msgs message_runtime
