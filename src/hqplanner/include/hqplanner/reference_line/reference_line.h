@@ -14,15 +14,6 @@
 #include "hqplanner/math/line_segment2d.h"
 #include "hqplanner/math/vec2d.h"
 namespace hqplanner {
-// using hqplanner::forproto::AnchorPoint;
-
-// using hqplanner::forproto::ReferencePoint;
-// using hqplanner::forproto::SLBoundary;
-// using hqplanner::forproto::SLPoint;
-// using hqplanner::math::Box2d;
-// using hqplanner::math::CubicSpline;
-// using hqplanner::math::LineSegment2d;
-// using hqplanner::math::Vec2d;
 
 class ReferenceLine {
  public:

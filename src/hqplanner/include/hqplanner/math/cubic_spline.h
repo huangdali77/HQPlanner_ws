@@ -9,15 +9,14 @@
 
 namespace hqplanner {
 namespace math {
-using namespace Eigen;
 
 class CubicSpline {
  public:
   CubicSpline() = default;
   explicit CubicSpline(std::vector<double>& x, std::vector<double>& y);
   void CalculateSplineCoefs();
-  MatrixXd CalculateAMtrix(const std::vector<double>& h);
-  MatrixXd CalculateBMtrix(const std::vector<double>& h);
+  Eigen::MatrixXd CalculateAMtrix(const std::vector<double>& h);
+  Eigen::MatrixXd CalculateBMtrix(const std::vector<double>& h);
   double GetSplinePointValue(double t) const;
   double GetSplinePointFirstDerivativeValue(double t) const;
   double GetSplinePointSecondDerivativeValue(double t) const;

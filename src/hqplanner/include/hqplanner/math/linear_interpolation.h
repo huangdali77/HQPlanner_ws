@@ -14,10 +14,6 @@
 namespace hqplanner {
 namespace math {
 
-// using hqplanner::forproto::PathPoint;
-// using hqplanner::forproto::SLPoint;
-// using hqplanner::forproto::TrajectoryPoint;
-
 /**
  * @brief Linear interpolation between two points of type T.
  * @param x0 The coordinate of the first point.
