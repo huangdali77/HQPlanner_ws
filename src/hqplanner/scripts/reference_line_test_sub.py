@@ -11,7 +11,10 @@ def reflineCallback(msg):
     for point in msg.path:
         x.append(point.x)
         y.append(point.y)
-    return x,y
+        plt.plot(x,y)
+        plt.axis('equal')
+        # plt.show()
+
 
 # def ref_line_sub():
 #     x,y=rospy.Subscriber("/ref_line_points", ref_line_test, reflineCallback)

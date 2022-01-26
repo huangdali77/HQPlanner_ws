@@ -1280,10 +1280,26 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
   /opt/ros/melodic/include/ros/param.h \
   /opt/ros/melodic/include/ros/topic.h \
   /opt/ros/melodic/include/ros/node_handle.h \
+  /opt/ros/melodic/include/visualization_msgs/Marker.h \
+  /opt/ros/melodic/include/std_msgs/Header.h \
+  /opt/ros/melodic/include/geometry_msgs/Pose.h \
+  /opt/ros/melodic/include/geometry_msgs/Quaternion.h \
+  /opt/ros/melodic/include/geometry_msgs/Vector3.h \
+  /opt/ros/melodic/include/std_msgs/ColorRGBA.h \
   /home/zx414/HQPlanner_ws/devel/include/hqplanner/ref_line_test.h
 
 
 /home/zx414/HQPlanner_ws/devel/include/hqplanner/ref_line_test.h:
+
+/opt/ros/melodic/include/std_msgs/ColorRGBA.h:
+
+/opt/ros/melodic/include/geometry_msgs/Vector3.h:
+
+/opt/ros/melodic/include/geometry_msgs/Quaternion.h:
+
+/opt/ros/melodic/include/std_msgs/Header.h:
+
+/opt/ros/melodic/include/visualization_msgs/Marker.h:
 
 /opt/ros/melodic/include/ros/param.h:
 
@@ -2470,6 +2486,8 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/eigen3/Eigen/src/Core/DenseBase.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/opt/ros/melodic/include/geometry_msgs/Pose.h:
 
 /usr/include/boost/mpl/aux_/arity.hpp:
 

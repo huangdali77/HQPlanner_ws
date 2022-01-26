@@ -7,6 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/zx414/HQPlanner_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/zx414/HQPlanner_ws/build'
-export PYTHONPATH="/home/zx414/HQPlanner_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
