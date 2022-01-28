@@ -340,6 +340,20 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+hqplanner/CMakeFiles/ros_test.dir/rule:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hqplanner/CMakeFiles/ros_test.dir/rule
+.PHONY : hqplanner/CMakeFiles/ros_test.dir/rule
+
+# Convenience name for target.
+ros_test: hqplanner/CMakeFiles/ros_test.dir/rule
+.PHONY : ros_test
+
+# fast build rule for target.
+ros_test/fast:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/ros_test.dir/build.make hqplanner/CMakeFiles/ros_test.dir/build
+.PHONY : ros_test/fast
+
+# Convenience name for target.
 hqplanner/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hqplanner/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : hqplanner/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
@@ -981,6 +995,30 @@ src/reference_line_test.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/ref_line_pub.dir/build.make hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.s
 .PHONY : src/reference_line_test.cpp.s
 
+src/ros_test.o: src/ros_test.cpp.o
+.PHONY : src/ros_test.o
+
+# target to build an object file
+src/ros_test.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/ros_test.dir/build.make hqplanner/CMakeFiles/ros_test.dir/src/ros_test.cpp.o
+.PHONY : src/ros_test.cpp.o
+
+src/ros_test.i: src/ros_test.cpp.i
+.PHONY : src/ros_test.i
+
+# target to preprocess a source file
+src/ros_test.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/ros_test.dir/build.make hqplanner/CMakeFiles/ros_test.dir/src/ros_test.cpp.i
+.PHONY : src/ros_test.cpp.i
+
+src/ros_test.s: src/ros_test.cpp.s
+.PHONY : src/ros_test.s
+
+# target to generate assembly for a file
+src/ros_test.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/ros_test.dir/build.make hqplanner/CMakeFiles/ros_test.dir/src/ros_test.cpp.s
+.PHONY : src/ros_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1033,6 +1071,7 @@ help:
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... hqplanner"
 	@echo "... ref_line_pub"
+	@echo "... ros_test"
 	@echo "... src/math/aabox2d.o"
 	@echo "... src/math/aabox2d.i"
 	@echo "... src/math/aabox2d.s"
@@ -1066,6 +1105,9 @@ help:
 	@echo "... src/reference_line_test.o"
 	@echo "... src/reference_line_test.i"
 	@echo "... src/reference_line_test.s"
+	@echo "... src/ros_test.o"
+	@echo "... src/ros_test.i"
+	@echo "... src/ros_test.s"
 .PHONY : help
 
 

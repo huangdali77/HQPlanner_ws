@@ -51,6 +51,7 @@
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/std_msgs_generate_messages_cpp.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/test.dir
+/home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/ros_test.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/std_msgs_generate_messages_eus.dir

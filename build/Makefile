@@ -445,6 +445,19 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named ros_test
+
+# Build rule for target.
+ros_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ros_test
+.PHONY : ros_test
+
+# fast build rule for target.
+ros_test/fast:
+	$(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/ros_test.dir/build.make hqplanner/CMakeFiles/ros_test.dir/build
+.PHONY : ros_test/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -856,6 +869,7 @@ help:
 	@echo "... gtest_main"
 	@echo "... hqplanner"
 	@echo "... ref_line_pub"
+	@echo "... ros_test"
 .PHONY : help
 
 

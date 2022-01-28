@@ -176,6 +176,11 @@ add_executable(ref_line_pub src/reference_line_test.cpp)
 add_dependencies(ref_line_pub hqplanner ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
 #target_link_libraries(ref_line_pub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} ${catkin_LIBRARIES})
 target_link_libraries(ref_line_pub hqplanner ${catkin_LIBRARIES})
+
+
+add_executable(ros_test src/ros_test.cpp)
+target_link_libraries(ros_test ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
