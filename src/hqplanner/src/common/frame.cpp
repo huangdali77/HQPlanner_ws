@@ -17,7 +17,8 @@ using hqplanner::math::LineSegment2d;
 using hqplanner::math::Vec2d;
 
 constexpr double kMathEpsilon = 1e-8;
-Frame::Frame(uint32_t sequence_num, const TrajectoryPoint &planning_start_point,
+Frame::Frame(std::uint32_t sequence_num,
+             const TrajectoryPoint &planning_start_point,
              const double start_time, const VehicleState &vehicle_state,
              ReferenceLineProvider *reference_line_provider)
     : sequence_num_(sequence_num),

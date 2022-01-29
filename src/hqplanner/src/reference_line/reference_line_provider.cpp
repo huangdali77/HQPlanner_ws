@@ -35,4 +35,5 @@ double ReferenceLineProvider::LookForwardDistance(const VehicleState& state) {
   return ConfigParam::FLAGS_look_forward_short_distance;
 }
 
+void ReferenceLineProvider::Stop() { is_stop_ = true; }
 }  // namespace hqplanner

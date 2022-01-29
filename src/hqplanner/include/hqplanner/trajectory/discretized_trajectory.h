@@ -41,9 +41,9 @@ class DiscretizedTrajectory : public Trajectory {
   hqplanner::forproto::TrajectoryPoint Evaluate(
       const double relative_time) const override;
 
-  virtual uint32_t QueryNearestPoint(const double relative_time) const;
+  virtual std::uint32_t QueryNearestPoint(const double relative_time) const;
 
-  virtual uint32_t QueryNearestPoint(
+  virtual std::uint32_t QueryNearestPoint(
       const hqplanner::math::Vec2d& position) const;
 
   virtual void AppendTrajectoryPoint(
@@ -61,7 +61,7 @@ class DiscretizedTrajectory : public Trajectory {
   const hqplanner::forproto::TrajectoryPoint& TrajectoryPointAt(
       const std::uint32_t index) const;
 
-  uint32_t NumOfPoints() const;
+  std::uint32_t NumOfPoints() const;
 
   const std::vector<hqplanner::forproto::TrajectoryPoint>& trajectory_points()
       const;

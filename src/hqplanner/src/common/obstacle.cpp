@@ -76,7 +76,7 @@ std::unique_ptr<Obstacle> Obstacle::CreateStaticVirtualObstacles(
   // create a "virtual" perception_obstacle
   PerceptionObstacle perception_obstacle;
   // simulator needs a valid integer
-  int32_t negative_id = std::hash<std::string>{}(id);
+  std::int32_t negative_id = std::hash<std::string>{}(id);
   // set the first bit to 1 so negative_id became negative number
   negative_id |= (0x1 << 31);
   perception_obstacle.id = negative_id;

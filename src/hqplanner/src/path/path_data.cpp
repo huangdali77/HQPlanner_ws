@@ -95,9 +95,9 @@ bool PathData::GetPathPointWithRefS(const double ref_s,
     return false;
   }
 
-  uint32_t index = 0;
+  std::uint32_t index = 0;
   const double kDistanceEpsilon = 1e-3;
-  for (uint32_t i = 0; i + 1 < frenet_path_.points().size(); ++i) {
+  for (std::uint32_t i = 0; i + 1 < frenet_path_.points().size(); ++i) {
     if (fabs(ref_s - frenet_path_.points().at(i).s) < kDistanceEpsilon) {
       *path_point = discretized_path_.path_points().at(i);
       return true;

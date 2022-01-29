@@ -17,12 +17,15 @@ class ReferenceLineProvider {
   }
 
   bool GetReferenceLines(std::list<ReferenceLine>* reference_lines);
-  static double LookForwardDistance(const VehicleState& state);
+  static double LookForwardDistance(const forproto::VehicleState& state);
+  void Stop();
 
  private:
   std::list<ReferenceLine> reference_lines_;
   // Subscribe subscribe_info_;
   std::vector<std::vector<hqplanner::forproto::AnchorPoint>> anchor_points_;
+  bool is_stop_ = false;
+  bool is_initialized_ = false;
 };
 
 }  // namespace hqplanner

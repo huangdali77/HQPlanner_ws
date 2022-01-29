@@ -34,7 +34,7 @@ class Frame {
  public:
   Frame() = default;
   explicit Frame(
-      uint32_t sequence_num,
+      std::uint32_t sequence_num,
       const hqplanner::forproto::TrajectoryPoint &planning_start_point,
       const double start_time,
       const hqplanner::forproto::VehicleState &vehicle_state,
@@ -43,7 +43,7 @@ class Frame {
   const hqplanner::forproto::TrajectoryPoint &PlanningStartPoint() const;
   bool Init();
 
-  uint32_t SequenceNum() const;
+  std::uint32_t SequenceNum() const;
 
   // std::string DebugString() const;
 
@@ -114,7 +114,7 @@ class Frame {
 
  private:
   // Subscribe subscribe_info_;
-  uint32_t sequence_num_;
+  std::uint32_t sequence_num_;
   hqplanner::forproto::TrajectoryPoint planning_start_point_;
   double start_time_;
   hqplanner::forproto::VehicleState vehicle_state_;
