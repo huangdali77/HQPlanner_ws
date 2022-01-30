@@ -1,7 +1,7 @@
 #ifndef HQPLANNING_MAIN_PLANNING_H_
 #define HQPLANNING_MAIN_PLANNING_H_
 
-#include <ros/ros.h>
+// #include <ros/ros.h>
 
 #include <memory>
 #include <string>
@@ -27,6 +27,7 @@
 // #include "modules/planning/common/trajectory/publishable_trajectory.h"
 // #include "modules/planning/planner/planner.h"
 #include "hqplanner/reference_line/reference_line_provider.h"
+#include "hqplanner/trajectory/publishable_trajectory.h"
 
 namespace hqplanner {
 
@@ -130,13 +131,14 @@ class Planning {
 
   //   std::unique_ptr<Planner> planner_;
 
-  std::unique_ptr<PublishableTrajectory> last_publishable_trajectory_;
+  std::unique_ptr<hqplanner::trajectory::PublishableTrajectory>
+      last_publishable_trajectory_;
 
   forproto::VehicleState last_vehicle_state_abs_pos_;
 
   std::unique_ptr<ReferenceLineProvider> reference_line_provider_;
 
-  ros::Timer timer_;
+  // ros::Timer timer_;
 
   //   routing::RoutingResponse last_routing_;
 };

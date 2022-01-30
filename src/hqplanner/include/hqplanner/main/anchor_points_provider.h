@@ -8,7 +8,7 @@ namespace hqplanner {
 
 class AnchorPointsProvider {
  public:
-  AnchorPointsProvider() = default;
+  //   AnchorPointsProvider() = default;
   explicit AnchorPointsProvider(
       std::vector<std::vector<hqplanner::forproto::AnchorPoint>> anchor_points);
   std::vector<std::vector<forproto::AnchorPoint>> GetAnchorPoints() const;

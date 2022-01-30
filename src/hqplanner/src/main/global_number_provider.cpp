@@ -1,5 +1,6 @@
 #include "hqplanner/main/global_number_provider.h"
 namespace hqplanner {
+GlobalNumberProvider::GlobalNumberProvider() {}
 std::uint32_t GlobalNumberProvider::GetSequenceNum() {
   ++sequence_num_;
   return sequence_num_;

@@ -7,23 +7,23 @@ namespace hqplanner {
 namespace forproto {
 struct PathPoint {
   // coordinates
-  double x;
-  double y;
-  double z;
+  double x = 0.0;
+  double y = 0.0;
+  double z = 0.0;
 
   // direction on the x-y plane
-  double theta;
+  double theta = 0.0;
   // curvature on the x-y planning
-  double kappa;
+  double kappa = 0.0;
   // accumulated distance from beginning of the path
-  double s;
+  double s = 0.0;
 
   // derivative of kappa w.r.t s.
-  double dkappa;
+  double dkappa = 0.0;
   // derivative of derivative of kappa w.r.t s.
-  double ddkappa;
+  double ddkappa = 0.0;
   // The lane ID where the path point is on
-  std::string lane_id;
+  std::string lane_id = "";
 };
 
 struct TrajectoryPoint {

@@ -42,6 +42,7 @@ struct ADCTrajectoryPoint {
 };
 
 struct ADCTrajectory {
+  double header_time = 0.0;
   double total_path_length;  // in meters
   double total_path_time;    // in seconds
 

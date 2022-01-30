@@ -11,6 +11,7 @@ ReferenceLineProvider::ReferenceLineProvider(
     ReferenceLine ref(anchor_points);
     AddReferenceLine(ref);
   }
+  is_initialized_ = true;
 }
 
 bool ReferenceLineProvider::GetReferenceLines(
@@ -36,4 +37,11 @@ double ReferenceLineProvider::LookForwardDistance(const VehicleState& state) {
 }
 
 void ReferenceLineProvider::Stop() { is_stop_ = true; }
+bool ReferenceLineProvider::Start() {
+  if (!is_initialized_) {
+    return false;
+  }
+
+  return true;
+}
 }  // namespace hqplanner

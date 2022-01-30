@@ -2,42 +2,18 @@
 
 namespace hqplanner {
 namespace trajectory {
+using hqplanner::forproto::ADCTrajectory;
 using hqplanner::forproto::TrajectoryPoint;
-
-inline std::uint32_t DiscretizedTrajectory::NumOfPoints() const {
-  return trajectory_points_.size();
-}
-
-inline const std::vector<TrajectoryPoint>&
-DiscretizedTrajectory::trajectory_points() const {
-  return trajectory_points_;
-}
-
-inline std::vector<TrajectoryPoint>&
-DiscretizedTrajectory::trajectory_points() {
-  return trajectory_points_;
-}
-
-inline void DiscretizedTrajectory::SetTrajectoryPoints(
-    const std::vector<TrajectoryPoint>& trajectory_points) {
-  trajectory_points_ = trajectory_points;
-}
-
-inline void DiscretizedTrajectory::Clear() { trajectory_points_.clear(); }
-
-// ======================================================
-
 DiscretizedTrajectory::DiscretizedTrajectory(
     const std::vector<TrajectoryPoint>& trajectory_points) {
   assert(!trajectory_points.empty());
   trajectory_points_ = trajectory_points;
 }
 
-// DiscretizedTrajectory::DiscretizedTrajectory(const ADCTrajectory& trajectory)
-// {
-//   trajectory_points_.assign(trajectory.trajectory_point().begin(),
-//                             trajectory.trajectory_point().end());
-// }
+DiscretizedTrajectory::DiscretizedTrajectory(const ADCTrajectory& trajectory) {
+  trajectory_points_.assign(trajectory.trajectory_point.begin(),
+                            trajectory.trajectory_point.end());
+}
 
 TrajectoryPoint DiscretizedTrajectory::Evaluate(
     const double relative_time) const {

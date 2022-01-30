@@ -2,6 +2,8 @@
 
 namespace hqplanner {
 using hqplanner::forproto::AnchorPoint;
+
+AnchorPointsProvider::AnchorPointsProvider() {}
 AnchorPointsProvider::AnchorPointsProvider(
     std::vector<std::vector<hqplanner::forproto::AnchorPoint>> anchor_points)
     : anchor_points_(anchor_points) {}

@@ -49,8 +49,15 @@ struct ConfigParam {
   static const double FLAGS_yield_distance;
   // min yield distance for pedestrians/bicycles
   static const double FLAGS_yield_distance_pedestrian_bycicle;
-
+  // 重点障碍物的id
   static const std::string FLAGS_destination_obstacle_id;
+  // 规划频率
+  static const int FLAGS_planning_loop_rate;
+  // 是否使用ComputeStitchingTrajectory()函数;
+  static const bool FLAGS_enable_trajectory_stitcher;
+  // 如果adc与规划的路径偏离过大就得重新规划
+  static const double FLAGS_replan_lateral_distance_threshold;
+  static const double FLAGS_replan_longitudinal_distance_threshold;
 };
 
 const double ConfigParam::FLAGS_st_max_s = 40.0;
@@ -89,6 +96,11 @@ const double ConfigParam::FLAGS_follow_min_distance = 3.0;
 const double ConfigParam::FLAGS_yield_distance = 3.0;
 const double ConfigParam::FLAGS_yield_distance_pedestrian_bycicle = 5.0;
 const std::string ConfigParam::FLAGS_destination_obstacle_id = "DEST";
+const int ConfigParam::FLAGS_planning_loop_rate = 10;
+const bool ConfigParam::FLAGS_enable_trajectory_stitcher = true;
+
+const double ConfigParam::FLAGS_replan_lateral_distance_threshold = 5.0;
+const double ConfigParam::FLAGS_replan_longitudinal_distance_threshold = 5.0;
 }  // namespace forproto
 }  // namespace hqplanner
 

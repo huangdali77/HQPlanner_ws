@@ -19,6 +19,7 @@ class ReferenceLineProvider {
   bool GetReferenceLines(std::list<ReferenceLine>* reference_lines);
   static double LookForwardDistance(const forproto::VehicleState& state);
   void Stop();
+  bool Start();
 
  private:
   std::list<ReferenceLine> reference_lines_;

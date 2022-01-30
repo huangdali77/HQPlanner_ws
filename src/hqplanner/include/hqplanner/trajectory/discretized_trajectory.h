@@ -6,10 +6,11 @@
 #include <utility>
 #include <vector>
 
+#include "hqplanner/for_proto/adc_trajectory.h"
+#include "hqplanner/for_proto/pnc_point.h"
 #include "hqplanner/math/linear_interpolation.h"
 #include "hqplanner/math/vec2d.h"
 #include "hqplanner/trajectory/trajectory.h"
-
 namespace hqplanner {
 namespace trajectory {
 
@@ -20,7 +21,8 @@ class DiscretizedTrajectory : public Trajectory {
   /**
    * Create a DiscretizedTrajectory based on protobuf message
    */
-  //   explicit DiscretizedTrajectory(const ADCTrajectory& trajectory);
+  explicit DiscretizedTrajectory(
+      const hqplanner::forproto::ADCTrajectory& trajectory);
 
   explicit DiscretizedTrajectory(
       const std::vector<hqplanner::forproto::TrajectoryPoint>&
@@ -73,6 +75,27 @@ class DiscretizedTrajectory : public Trajectory {
   std::vector<hqplanner::forproto::TrajectoryPoint> trajectory_points_;
 };
 
+inline std::uint32_t DiscretizedTrajectory::NumOfPoints() const {
+  return trajectory_points_.size();
+}
+
+inline const std::vector<hqplanner::forproto::TrajectoryPoint>&
+DiscretizedTrajectory::trajectory_points() const {
+  return trajectory_points_;
+}
+
+inline std::vector<hqplanner::forproto::TrajectoryPoint>&
+DiscretizedTrajectory::trajectory_points() {
+  return trajectory_points_;
+}
+
+inline void DiscretizedTrajectory::SetTrajectoryPoints(
+    const std::vector<hqplanner::forproto::TrajectoryPoint>&
+        trajectory_points) {
+  trajectory_points_ = trajectory_points;
+}
+
+inline void DiscretizedTrajectory::Clear() { trajectory_points_.clear(); }
 }  // namespace trajectory
 }  // namespace hqplanner
 
