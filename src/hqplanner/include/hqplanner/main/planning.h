@@ -27,6 +27,7 @@
 // #include "modules/planning/common/trajectory/publishable_trajectory.h"
 // #include "modules/planning/planner/planner.h"
 #include "hqplanner/reference_line/reference_line_provider.h"
+#include "hqplanner/tasks/em/planner.h"
 #include "hqplanner/trajectory/publishable_trajectory.h"
 
 namespace hqplanner {
@@ -129,7 +130,7 @@ class Planning {
 
   std::unique_ptr<Frame> frame_;
 
-  //   std::unique_ptr<Planner> planner_;
+  std::unique_ptr<hqplanner::tasks::Planner> planner_;
 
   std::unique_ptr<hqplanner::trajectory::PublishableTrajectory>
       last_publishable_trajectory_;

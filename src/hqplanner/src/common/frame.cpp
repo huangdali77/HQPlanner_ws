@@ -1,4 +1,6 @@
 #include "hqplanner/common/frame.h"
+
+#include "hqplanner/for_proto/vehicle_state_provider.h"
 namespace hqplanner {
 using hqplanner::Subscribe;
 using hqplanner::forproto::ADCTrajectory;
@@ -13,6 +15,7 @@ using hqplanner::forproto::VehicleParam;
 using hqplanner::forproto::VehicleState;
 using hqplanner::math::Box2d;
 // using hqplanner::math::IndexedQueue;
+using hqplanner::forproto::VehicleStateProvider;
 using hqplanner::math::LineSegment2d;
 using hqplanner::math::Vec2d;
 
@@ -121,7 +124,8 @@ const Obstacle *Frame::CreateStaticVirtualObstacle(const std::string &id,
 }
 
 bool Frame::Init() {
-  vehicle_state_ = Subscribe::vehicle_state_;
+  vehicle_state_ = VehicleStateProvider::instance()->vehicle_state();
+  // vehicle_state_ =    Subscribe::vehicle_state_;
   // hdmap_ = hdmap::HDMapUtil::BaseMapPtr();
   // vehicle_state_ = VehicleStateProvider::vehicle_state_;
 
@@ -273,6 +277,15 @@ Obstacle *Frame::Find(const std::string &id) {
   std::unordered_map<std::string, Obstacle> obstacles_;
 
   return &obstacles_[id];
+}
+
+const ReferenceLineInfo *Frame::FindDriveReferenceLineInfo() {
+  drive_reference_line_info_ = &reference_line_info_.front();
+  return drive_reference_line_info_;
+}
+
+const ReferenceLineInfo *Frame::DriveReferenceLineInfo() const {
+  return drive_reference_line_info_;
 }
 
 }  // namespace hqplanner

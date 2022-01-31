@@ -47,6 +47,7 @@ struct ADCTrajectory {
   double total_path_time;    // in seconds
 
   // path data + speed data
+  // planning.cpp中的trajectory_pb的信息在这里面
   std::vector<TrajectoryPoint> trajectory_point;
 
   EStop estop;

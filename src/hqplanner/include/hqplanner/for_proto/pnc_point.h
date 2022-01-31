@@ -31,15 +31,15 @@ struct TrajectoryPoint {
   PathPoint path_point;
 
   // linear velocity
-  double v;  // in [m/s]
-  double v_x;
-  double v_y;
+  double v = 0.0;  // in [m/s]
+  double v_x = 0.0;
+  double v_y = 0.0;
   // linear acceleration
-  double a;
-  double a_x;
-  double a_y;
+  double a = 0.0;
+  double a_x = 0.0;
+  double a_y = 0.0;
   // relative time from beginning of the trajectory
-  double relative_time;
+  double relative_time = 0.0;
 };
 
 struct AnchorPoint {
@@ -48,10 +48,10 @@ struct AnchorPoint {
   AnchorPoint(double x, double y, double s)
       : cartesian_x(x), cartesian_y(y), frenet_s(s) {}
   // x-y plane
-  double cartesian_x;
-  double cartesian_y;
+  double cartesian_x = 0.0;
+  double cartesian_y = 0.0;
   // frenet plane
-  double frenet_s;
+  double frenet_s = 0.0;
   /* data */
 };
 
@@ -60,9 +60,9 @@ struct ReferencePoint {
   ReferencePoint() = default;
   ReferencePoint(double xx, double yy, double ss) : x(xx), y(yy), s(ss) {}
   ReferencePoint(double ss) : s(ss) {}
-  double x;
-  double y;
-  double s;
+  double x = 0.0;
+  double y = 0.0;
+  double s = 0.0;
   // double yaw;
   // double curvature;
   // double d_curvature;

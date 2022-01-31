@@ -23,7 +23,7 @@ double PublishableTrajectory::header_time() const { return header_time_; }
 void PublishableTrajectory::PopulateTrajectoryProtobuf(
     ADCTrajectory* trajectory_pb) const {
   trajectory_pb->header_time = header_time_;
-
+  trajectory_pb->trajectory_point.clear();
   trajectory_pb->trajectory_point.assign(trajectory_points_.begin(),
                                          trajectory_points_.end());
 
