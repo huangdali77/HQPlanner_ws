@@ -77,6 +77,7 @@ const double ConfigParam::FLAGS_look_forward_long_distance = 250.0;
 const double ConfigParam::FLAGS_look_backward_distance = 30.0;
 const double ConfigParam::FLAGS_reference_line_sample_step = 0.1;  // m
 const int ConfigParam::FLAGS_num_reference_points_near_destination = 50;
+// 障碍物预测时间长度
 const double ConfigParam::FLAGS_prediction_total_time = 5.0;
 const double ConfigParam::FLAGS_lateral_ignore_buffer = 3.0;
 const double ConfigParam::FLAGS_static_decision_nudge_l_buffer = 0.5;
