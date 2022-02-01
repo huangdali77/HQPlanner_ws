@@ -6,26 +6,26 @@
 namespace hqplanner {
 namespace forproto {
 struct Point {
-  double x;  // in meters.
-  double y;  // in meters.
-  double z;  // height in meters.
+  double x = 0.0;  // in meters.
+  double y = 0.0;  // in meters.
+  double z = 0.0;  // height in meters.
 };
 
 struct PerceptionObstacle {
-  std::int32_t id;  // obstacle ID.
-  Point position;   // obstacle position in the world coordinate
-                    // system.
-  double theta;     // heading in the world coordinate system.
-  Point velocity;   // obstacle velocity.
+  std::int32_t id = 0;  // obstacle ID.
+  Point position;       // obstacle position in the world coordinate
+                        // system.
+  double theta = 0.0;   // heading in the world coordinate system.
+  Point velocity;       // obstacle velocity.
 
   // Size of obstacle bounding box.
-  double length;  // obstacle length.
-  double width;   // obstacle width.
-  double height;  // obstacle height.
+  double length = 0.0;  // obstacle length.
+  double width = 0.0;   // obstacle width.
+  double height = 0.0;  // obstacle height.
 
   std::vector<Point> polygon_point;  // obstacle corner points.
   // duration of an obstacle since detection in s.
-  double tracking_time = 9;
+  double tracking_time = 0.0;
 
   enum Type {
     UNKNOWN = 0,
@@ -35,8 +35,8 @@ struct PerceptionObstacle {
     BICYCLE = 4,     // bike, motor bike
     VEHICLE = 5      // Passenger car or truck.
   };
-  Type type;              // obstacle type
-  double timestamp = 11;  // GPS time in seconds.
+  Type type;               // obstacle type
+  double timestamp = 0.0;  // GPS time in seconds.
 
   // Just for offline debuging, onboard will not fill this field.
   // Format like : [x0, y0, z0, x1, y1, z1...]
