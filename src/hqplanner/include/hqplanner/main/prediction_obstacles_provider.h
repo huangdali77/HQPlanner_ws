@@ -10,12 +10,14 @@
 #include "hqplanner/reference_line/reference_line.h"
 #include "hqplanner/util/macro.h"
 namespace hqplanner {
-class PotentialPredictionObstacle {
+struct PotentialPredictionObstacle {
  public:
+  PotentialPredictionObstacle() = default;
   PotentialPredictionObstacle(
       hqplanner::forproto::PerceptionObstacle perception_obstacle,
       std::vector<hqplanner::forproto::AnchorPoint> anchor_points);
 
+ public:
   double appear_distance_threshold = 0.0;
   double disappear_distance_threshold = 0.0;
   hqplanner::forproto::PerceptionObstacle perception_obstacle_;
@@ -34,11 +36,12 @@ class PredictionObstaclesProvider {
   void Init();
   void UpdataNextCyclePredictionObstacles();
 
-  hqplanner::forproto::PredictionObstacles GetPredictionObstacles();
+  hqplanner::forproto::PredictionObstacles GetPredictionObstacles() const {
+    return prediction_obstacles_;
+  };
 
  private:
-  //   void UpdataObstacleTrajectory(
-  //       std::vector<hqplanner::forproto::Trajectory> *trajectory);
+  void ShrinkObstacleTrajectory();
 
  private:
   hqplanner::forproto::PredictionObstacles prediction_obstacles_;

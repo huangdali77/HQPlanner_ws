@@ -1,8 +1,10 @@
 #include "hqplanner/common/frame.h"
 
 #include "hqplanner/for_proto/vehicle_state_provider.h"
+#include "hqplanner/main/prediction_obstacles_provider.h"
 namespace hqplanner {
-using hqplanner::Subscribe;
+// using hqplanner::Subscribe;
+using hqplanner::PredictionObstaclesProvider;
 using hqplanner::forproto::ADCTrajectory;
 using hqplanner::forproto::ConfigParam;
 using hqplanner::forproto::PerceptionObstacle;
@@ -29,7 +31,8 @@ Frame::Frame(std::uint32_t sequence_num,
       start_time_(start_time),
       vehicle_state_(vehicle_state),
       reference_line_provider_(reference_line_provider) {
-  prediction_ = Subscribe::prediction_obstacles_;
+  prediction_ =
+      PredictionObstaclesProvider::instance()->GetPredictionObstacles();
   // prediction_ = subscribe_info_.GetPredictionObstacles();
 }
 

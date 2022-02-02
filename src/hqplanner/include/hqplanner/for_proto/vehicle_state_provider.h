@@ -22,7 +22,7 @@ class VehicleStateProvider {
  public:
   VehicleStateProvider();
   void UpdateNextCycleVehicleState(const VehicleState& vehicle_state);
-
+  void Init(const VehicleState& vehicle_state);
   double timestamp() const;
 
   // const localization::Pose& pose() const;

@@ -32,11 +32,13 @@ PathObstacle *PathDecision::AddPathObstacle(const PathObstacle &path_obstacle) {
   return &path_obstacles_.at(path_obstacle.Id());
 }
 
-PathObstacle *PathDecision::Find(const std::string &object_id) {
+const PathObstacle *PathDecision::Find(const std::string &object_id) const {
   // return path_obstacles_.Find(object_id);
   if (path_obstacles_.find(object_id) == path_obstacles_.end()) {
     return nullptr;
   }
+  const PathObstacle *path_obs = &path_obstacles_[object_id];
+
   return &path_obstacles_[object_id];
 }
 

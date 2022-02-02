@@ -1,6 +1,7 @@
 #include "hqplanner/main/prediction_obstacles_provider.h"
 
 #include <math.h>
+#include <ros/ros.h>
 
 #include "hqplanner/for_proto/config_param.h"
 #include "hqplanner/for_proto/vehicle_state_provider.h"
@@ -11,6 +12,8 @@ using hqplanner::forproto::ConfigParam;
 using hqplanner::forproto::PerceptionObstacle;
 using hqplanner::forproto::PredictionObstacle;
 using hqplanner::forproto::PredictionObstacles;
+using hqplanner::forproto::ReferencePoint;
+using hqplanner::forproto::Trajectory;
 using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::forproto::VehicleState;
 using hqplanner::forproto::VehicleStateProvider;
@@ -31,16 +34,18 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
   double obs_speed = std::sqrt(
       perception_obstacle_.velocity.x * perception_obstacle_.velocity.x +
       perception_obstacle_.velocity.y * perception_obstacle_.velocity.y);
+  double planning_duration_time = 1 / ConfigParam::FLAGS_planning_loop_rate;
   int trajectory_sample_step =
-      int(0.1 * obs_speed / ConfigParam::FLAGS_reference_line_sample_step);
+      int(planning_duration_time * obs_speed /
+          ConfigParam::FLAGS_reference_line_sample_step);
 
-  int trajectory_sample_points_num = ConfigParam::FLAGS_prediction_total_time *
-                                     ConfigParam::FLAGS_planning_loop_rate;
+  int trajectory_sample_points_num =
+      ConfigParam::FLAGS_prediction_total_time / planning_duration_time;
   trajectory_point_.clear();
   double relative_time = 0.0;
   for (int i = 0; i < obstacle_reference_points_.size();) {
     auto const& obstacle_reference_point = obstacle_reference_points_[i];
-    if (trajectory_point_.size() > 50) {
+    if (trajectory_point_.size() > trajectory_sample_points_num) {
       break;
     }
     TrajectoryPoint tp;
@@ -64,10 +69,12 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
 
 // ==============================PredictionObstaclesProvider===============
 PredictionObstaclesProvider::PredictionObstaclesProvider() {}
+
 void PredictionObstaclesProvider::Init(
     std::unordered_map<std::int32_t, PotentialPredictionObstacle>
         potential_prediction_obstacles) {
   potential_prediction_obstacles_ = potential_prediction_obstacles;
+  UpdataNextCyclePredictionObstacles();
 }
 
 void PredictionObstaclesProvider::UpdataNextCyclePredictionObstacles() {
@@ -102,7 +109,11 @@ void PredictionObstaclesProvider::UpdataNextCyclePredictionObstacles() {
     publish_prediction_obstacles_.erase(clear_id);
   }
 
+  // shrink publish_prediction_obstacles_中障碍物的trajectory_point_
+  ShrinkObstacleTrajectory();
+
   //添加要显示的障碍物
+  std::vector<std::int32_t> add_obs_id;
   for (const auto& potential_prediction_obstacle :
        potential_prediction_obstacles_) {
     auto obs_id = potential_prediction_obstacle.second.perception_obstacle_.id;
@@ -116,12 +127,103 @@ void PredictionObstaclesProvider::UpdataNextCyclePredictionObstacles() {
     if (dist < potential_prediction_obstacle.second.appear_distance_threshold) {
       if (publish_prediction_obstacles_.find(obs_id) ==
           publish_prediction_obstacles_.end()) {
+        add_obs_id.push_back(obs_id);
         publish_prediction_obstacles_.insert(
             std::make_pair(obs_id, potential_prediction_obstacle.second));
       }
     }
   }
+  // 将添加到publish_prediction_obstacles_中的障碍物从potential_prediction_obstacles_中删除
+  for (auto add_id : add_obs_id) {
+    potential_prediction_obstacles_.erase(add_id);
+  }
 
-  // 更新
+  // 更新prediction_obstacles_
+  prediction_obstacles_.start_timestamp = ros::Time::now().toSec();
+  prediction_obstacles_.start_timestamp =
+      ros::Time::now().toSec() + ConfigParam::FLAGS_prediction_total_time;
+  prediction_obstacles_.prediction_obstacle.clear();
+  for (auto& publish_prediction_obstacle : publish_prediction_obstacles_) {
+    PredictionObstacle pred_obs;
+    pred_obs.perception_obstacle =
+        publish_prediction_obstacle.second.perception_obstacle_;
+    pred_obs.timestamp = prediction_obstacles_.start_timestamp;
+    pred_obs.predicted_period = ConfigParam::FLAGS_prediction_total_time;
+    Trajectory traj;
+    traj.probability = 1.0;
+    traj.trajectory_point =
+        publish_prediction_obstacle.second.trajectory_point_;
+    pred_obs.trajectory.emplace_back(std::move(traj));
+    prediction_obstacles_.prediction_obstacle.emplace_back(pred_obs);
+  }
+}
+
+void PredictionObstaclesProvider::ShrinkObstacleTrajectory() {
+  for (auto& publish_prediction_obstacle : publish_prediction_obstacles_) {
+    //  获得一个规划周期轨迹重采样的步长大小
+    double obs_speed = std::sqrt(
+        publish_prediction_obstacle.second.perception_obstacle_.velocity.x *
+            publish_prediction_obstacle.second.perception_obstacle_.velocity.x +
+        publish_prediction_obstacle.second.perception_obstacle_.velocity.y *
+            publish_prediction_obstacle.second.perception_obstacle_.velocity.y);
+    double planning_duration_time = 1 / ConfigParam::FLAGS_planning_loop_rate;
+    int trajectory_sample_step =
+        int(planning_duration_time * obs_speed /
+            ConfigParam::FLAGS_reference_line_sample_step);
+
+    // 清除obstacle_reference_points_中上个周期的点
+    if (publish_prediction_obstacle.second.obstacle_reference_points_.size() <=
+        trajectory_sample_step + 5) {
+      continue;
+    }
+    auto iter =
+        publish_prediction_obstacle.second.obstacle_reference_points_.begin();
+    publish_prediction_obstacle.second.obstacle_reference_points_.erase(
+        iter, iter + trajectory_sample_step);
+
+    //   障碍物预测轨迹起点状态
+    publish_prediction_obstacle.second.perception_obstacle_.position.x =
+        publish_prediction_obstacle.second.obstacle_reference_points_.front().x;
+    publish_prediction_obstacle.second.perception_obstacle_.position.y =
+        publish_prediction_obstacle.second.obstacle_reference_points_.front().y;
+    publish_prediction_obstacle.second.perception_obstacle_.theta =
+        publish_prediction_obstacle.second.obstacle_reference_points_.front()
+            .heading;
+    //   障碍物5s轨迹
+
+    int trajectory_sample_points_num =
+        ConfigParam::FLAGS_prediction_total_time / planning_duration_time;
+
+    publish_prediction_obstacle.second.trajectory_point_.clear();
+    double relative_time = 0.0;
+    for (int i = 0; i < publish_prediction_obstacle.second
+                            .obstacle_reference_points_.size();) {
+      auto const& obstacle_reference_point =
+          publish_prediction_obstacle.second.obstacle_reference_points_[i];
+      if (publish_prediction_obstacle.second.trajectory_point_.size() >
+          trajectory_sample_points_num) {
+        break;
+      }
+      TrajectoryPoint tp;
+      tp.path_point.x = obstacle_reference_point.x;
+      tp.path_point.y = obstacle_reference_point.y;
+      tp.path_point.theta = obstacle_reference_point.heading;
+      tp.path_point.s = obstacle_reference_point.s;
+      tp.path_point.kappa = obstacle_reference_point.kappa;
+      tp.path_point.dkappa = obstacle_reference_point.dkappa;
+
+      tp.v = obs_speed;
+      tp.v_x =
+          publish_prediction_obstacle.second.perception_obstacle_.velocity.x;
+      tp.v_y =
+          publish_prediction_obstacle.second.perception_obstacle_.velocity.y;
+      tp.relative_time = relative_time;
+      publish_prediction_obstacle.second.trajectory_point_.emplace_back(
+          std::move(tp));
+
+      relative_time += 0.1;
+      i += trajectory_sample_step;
+    }
+  }
 }
 }  // namespace hqplanner

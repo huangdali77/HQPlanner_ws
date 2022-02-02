@@ -14,6 +14,10 @@ void VehicleStateProvider::UpdateNextCycleVehicleState(
   vehicle_state_ = vehicle_state;
 }
 
+void VehicleStateProvider::Init(const VehicleState &vehicle_state) {
+  vehicle_state_ = vehicle_state;
+}
+
 double VehicleStateProvider::x() const { return vehicle_state_.x; }
 
 double VehicleStateProvider::y() const { return vehicle_state_.y; }

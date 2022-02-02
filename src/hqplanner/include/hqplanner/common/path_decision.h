@@ -13,9 +13,9 @@
 #include "hqplanner/for_proto/decision.h"
 #include "hqplanner/for_proto/geometry.h"
 #include "hqplanner/for_proto/pnc_point.h"
+#include "hqplanner/for_proto/sl_boundary.h"
 #include "hqplanner/reference_line/reference_line.h"
 #include "hqplanner/speed/st_boundary.h"
-
 namespace hqplanner {
 
 class PathDecision {
@@ -44,10 +44,10 @@ class PathDecision {
   PathObstacle *Find(const std::string &object_id);
 
   double stop_reference_line_s() const { return stop_reference_line_s_; }
-  bool MergeWithMainStop(const hqplanner::forproto::ObjectStop &obj_stop,
-                         const std::string &obj_id,
-                         const ReferenceLine &ref_line,
-                         const SLBoundary &adc_sl_boundary);
+  bool MergeWithMainStop(
+      const hqplanner::forproto::ObjectStop &obj_stop,
+      const std::string &obj_id, const ReferenceLine &ref_line,
+      const hqplanner::forproto::SLBoundary &adc_sl_boundary);
   const std::vector<const PathObstacle *> path_obstacle_items() const {
     return path_obstacle_items_;
   }
