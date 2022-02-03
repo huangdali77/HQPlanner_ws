@@ -25,7 +25,7 @@ class PathDecision {
   // void AddPathObstacle(PathObstacle path_obstacle);
   PathObstacle *AddPathObstacle(const PathObstacle &path_obstacle);
 
-  const std::unordered_map<std::string, hqplanner::PathObstacle>
+  const std::unordered_map<std::string, std::unique_ptr<PathObstacle>>
       &path_obstacles() const;
 
   // PathObstacle Find(const std::string &object_id);
@@ -39,22 +39,21 @@ class PathDecision {
                      const hqplanner::speed::StBoundary &boundary);
   void EraseStBoundaries();
   hqplanner::forproto::MainStop main_stop() const { return main_stop_; }
-  const PathObstacle *Find(const std::string &object_id) const;
+  const PathObstacle *Find(const std::string &object_id);
 
-  PathObstacle *Find(const std::string &object_id);
+  //   PathObstacle *Find(const std::string &object_id);
 
   double stop_reference_line_s() const { return stop_reference_line_s_; }
   bool MergeWithMainStop(
       const hqplanner::forproto::ObjectStop &obj_stop,
       const std::string &obj_id, const ReferenceLine &ref_line,
       const hqplanner::forproto::SLBoundary &adc_sl_boundary);
-  const std::vector<const PathObstacle *> path_obstacle_items() const {
-    return path_obstacle_items_;
-  }
+  const std::vector<const PathObstacle *> path_obstacle_items() const;
 
  private:
-  std::unordered_map<std::string, PathObstacle> path_obstacles_;
-  std::vector<const PathObstacle *> path_obstacle_items_;
+  std::unordered_map<std::string, std::unique_ptr<PathObstacle>>
+      path_obstacles_;
+  //   std::vector<const PathObstacle *> path_obstacle_items_;
   double stop_reference_line_s_ = std::numeric_limits<double>::max();
   hqplanner::forproto::MainStop main_stop_;
 };
