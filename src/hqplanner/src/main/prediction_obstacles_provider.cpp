@@ -30,6 +30,8 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
   perception_obstacle_.position.x = obstacle_reference_points_.front().x;
   perception_obstacle_.position.y = obstacle_reference_points_.front().y;
   perception_obstacle_.theta = obstacle_reference_points_.front().heading;
+
+  InitPolygonPoint(perception_obstacle_.polygon_point);
   //   障碍物5s轨迹
   double obs_speed = std::sqrt(
       perception_obstacle_.velocity.x * perception_obstacle_.velocity.x +
@@ -65,6 +67,40 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
     relative_time += 0.1;
     i += trajectory_sample_step;
   }
+}
+
+void PotentialPredictionObstacle::InitPolygonPoint(
+    std::vector<hqplanner::forproto::Point>& polygon_point) {
+  double sin_heading = std::sin(perception_obstacle_.theta);
+  double cos_heading = std::cos(perception_obstacle_.theta);
+  double half_length = perception_obstacle_.length / 2;
+  double half_width = perception_obstacle_.width / 2;
+
+  const double dx1 = cos_heading * half_length;
+  const double dy1 = sin_heading * half_length;
+  const double dx2 = sin_heading * half_width;
+  const double dy2 = -cos_heading * half_width;
+  polygon_point.clear();
+
+  hqplanner::forproto::Point point1;
+  point1.x = perception_obstacle_.position.x + dx1 + dx2;
+  point1.y = perception_obstacle_.position.y + dy1 + dy2;
+  polygon_point.emplace_back(std::move(point1));
+
+  hqplanner::forproto::Point point2;
+  point2.x = perception_obstacle_.position.x + dx1 - dx2;
+  point2.y = perception_obstacle_.position.y + dy1 - dy2;
+  polygon_point.emplace_back(std::move(point2));
+
+  hqplanner::forproto::Point point3;
+  point3.x = perception_obstacle_.position.x - dx1 - dx2;
+  point3.y = perception_obstacle_.position.y - dy1 - dy2;
+  polygon_point.emplace_back(std::move(point3));
+
+  hqplanner::forproto::Point point4;
+  point4.x = perception_obstacle_.position.x - dx1 + dx2;
+  point4.y = perception_obstacle_.position.y - dy1 + dy2;
+  polygon_point.emplace_back(std::move(point4));
 }
 
 // ==============================PredictionObstaclesProvider===============

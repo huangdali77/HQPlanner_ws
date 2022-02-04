@@ -33,7 +33,7 @@ class Obstacle {
            const hqplanner::forproto::PerceptionObstacle &perception_obstacle);
 
   Obstacle(const std::string &id,
-           const hqplanner::forproto::PerceptionObstacle &perception,
+           const hqplanner::forproto::PerceptionObstacle &perception_obstacle,
            const hqplanner::forproto::Trajectory &trajectory);
 
   const std::string &Id() const;

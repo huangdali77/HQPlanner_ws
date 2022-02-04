@@ -1,12 +1,13 @@
 #include "hqplanner/common/obstacle.h"
 
 #include "hqplanner/math/linear_interpolation.h"
+#include "hqplanner/util/util.h"
 namespace hqplanner {
 using hqplanner::forproto::ConfigParam;
 using hqplanner::forproto::PerceptionObstacle;
 using hqplanner::forproto::Point;
 using hqplanner::forproto::PredictionObstacles;
-using hqplanner::forproto::Trajectory;
+// using hqplanner::forproto::Trajectory;
 using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::math::Box2d;
 using hqplanner::math::Polygon2d;
@@ -34,6 +35,31 @@ Obstacle::Obstacle(const std::string &id,
   is_virtual_ = IsVirtualObstacle(perception_obstacle);
   speed_ = std::hypot(perception_obstacle.velocity.x,
                       perception_obstacle.velocity.y);
+}
+
+Obstacle::Obstacle(const std::string &id,
+                   const PerceptionObstacle &perception_obstacle,
+                   const hqplanner::forproto::Trajectory &trajectory)
+    : Obstacle(id, perception_obstacle) {
+  trajectory_ = trajectory;
+  auto &trajectory_points = trajectory_.trajectory_point;
+  double cumulative_s = 0.0;
+  if (trajectory_points.size() > 0) {
+    trajectory_points[0].path_point.s = 0.0;
+  }
+  for (int i = 1; i < trajectory_points.size(); ++i) {
+    const auto &prev = trajectory_points[i - 1];
+    const auto &cur = trajectory_points[i];
+    // if (prev.relative_time() >= cur.relative_time()) {
+    //   AERROR << "prediction time is not increasing."
+    //          << "current point: " << cur.ShortDebugString()
+    //          << "previous point: " << prev.ShortDebugString();
+    // }
+    cumulative_s += std::hypot(prev.path_point.x - cur.path_point.x,
+                               prev.path_point.y - cur.path_point.y);
+    // hqplanner::util::DistanceXY(prev.path_point, cur.path_point);
+    trajectory_points[i].path_point.s = cumulative_s;
+  }
 }
 
 bool Obstacle::IsStaticObstacle(const PerceptionObstacle &perception_obstacle) {

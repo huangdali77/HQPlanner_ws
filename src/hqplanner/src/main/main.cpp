@@ -20,6 +20,7 @@ using hqplanner::forproto::AnchorPoint;
 using hqplanner::forproto::PerceptionObstacle;
 using hqplanner::forproto::VehicleState;
 using hqplanner::forproto::VehicleStateProvider;
+
 PotentialPredictionObstacle CreatPotentialPredictionObstacle(
     PerceptionObstacle perception_obstacle, AnchorPoint start_anchor) {
   double pred_traj_length = 300.0;
@@ -154,5 +155,6 @@ int main(int argc, char **argv) {
   ros::Rate r(10);
   while (ros::ok()) {
     planning.RunOnce();
+    planning
   }
 }

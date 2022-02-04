@@ -29,13 +29,14 @@ PathObstacle *PathDecision::AddPathObstacle(const PathObstacle &path_obstacle) {
   return path_obstacles_[path_obstacle.Id()].get();
 }
 
-const PathObstacle *PathDecision::Find(const std::string &object_id) {
+const PathObstacle *PathDecision::Find(const std::string &object_id) const {
   // return path_obstacles_.Find(object_id);
-  if (path_obstacles_.find(object_id) == path_obstacles_.end()) {
+  const auto path_obs_ptr = path_obstacles_.find(object_id);
+  if (path_obs_ptr == path_obstacles_.end()) {
     return nullptr;
   }
 
-  return path_obstacles_[object_id].get();
+  return path_obs_ptr->second.get();
 }
 
 const std::unordered_map<std::string, std::unique_ptr<PathObstacle>>

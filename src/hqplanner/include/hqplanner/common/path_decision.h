@@ -39,7 +39,7 @@ class PathDecision {
                      const hqplanner::speed::StBoundary &boundary);
   void EraseStBoundaries();
   hqplanner::forproto::MainStop main_stop() const { return main_stop_; }
-  const PathObstacle *Find(const std::string &object_id);
+  const PathObstacle *Find(const std::string &object_id) const;
 
   //   PathObstacle *Find(const std::string &object_id);
 
