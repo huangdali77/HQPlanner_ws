@@ -1,26 +1,32 @@
-// #include <ros/ros.h>
+#include <ros/ros.h>
+#include <visualization_msgs/Marker.h>
 
 #include <unordered_map>
 
+#include "hqplanner/common/frame.h"
 #include "hqplanner/for_proto/perception_obstacle.h"
 #include "hqplanner/for_proto/pnc_point.h"
+#include "hqplanner/for_proto/vehicle_config_helper.h"
 #include "hqplanner/for_proto/vehicle_state.h"
 #include "hqplanner/for_proto/vehicle_state_provider.h"
 #include "hqplanner/main/anchor_points_provider.h"
 #include "hqplanner/main/global_number_provider.h"
 #include "hqplanner/main/planning.h"
 #include "hqplanner/main/prediction_obstacles_provider.h"
+
 // #include"hqplanner/main/planning.h"
 using hqplanner::AnchorPointsProvider;
+using hqplanner::Frame;
 using hqplanner::GlobalNumberProvider;
 using hqplanner::Planning;
 using hqplanner::PotentialPredictionObstacle;
 using hqplanner::PredictionObstaclesProvider;
 using hqplanner::forproto::AnchorPoint;
 using hqplanner::forproto::PerceptionObstacle;
+using hqplanner::forproto::VehicleConfig;
+using hqplanner::forproto::VehicleConfigHelper;
 using hqplanner::forproto::VehicleState;
 using hqplanner::forproto::VehicleStateProvider;
-
 PotentialPredictionObstacle CreatPotentialPredictionObstacle(
     PerceptionObstacle perception_obstacle, AnchorPoint start_anchor) {
   double pred_traj_length = 300.0;
@@ -55,7 +61,7 @@ void GetPotentialPredictionObstacles(
   perception_obstacle.velocity.x = 5.0;
   perception_obstacle.length = 4.0;
   perception_obstacle.width = 2.0;
-  perception_obstacle.length = 1.7;
+  perception_obstacle.height = 1.7;
   perception_obstacle.type = PerceptionObstacle::VEHICLE;
   perception_obstacle.timestamp = ros::Time::now().toSec();
 
@@ -73,7 +79,7 @@ void GetPotentialPredictionObstacles(
   perception_obstacle2.velocity.y = 6.0;
   perception_obstacle2.length = 4.0;
   perception_obstacle2.width = 2.0;
-  perception_obstacle2.length = 1.7;
+  perception_obstacle2.height = 1.7;
   perception_obstacle2.type = PerceptionObstacle::VEHICLE;
   perception_obstacle2.timestamp = ros::Time::now().toSec();
 
@@ -83,6 +89,22 @@ void GetPotentialPredictionObstacles(
   start_anchor2.cartesian_y = 10;
   start_anchor2.frenet_s = 0.0;
 
+  // 静态障碍物障碍物3沿y轴直行========================================================
+  //   障碍物感知信息
+  PerceptionObstacle perception_obstacle3;
+  perception_obstacle3.id =
+      GlobalNumberProvider::instance()->GetPerceptionObstacleId();
+
+  perception_obstacle3.length = 2.0;
+  perception_obstacle3.width = 2.0;
+  perception_obstacle3.height = 1.7;
+  perception_obstacle3.type = PerceptionObstacle::VEHICLE;
+  perception_obstacle3.timestamp = ros::Time::now().toSec();
+
+  perception_obstacle3.position.x = 30;
+  perception_obstacle3.position.y = 50;
+  perception_obstacle3.theta = 0.0;
+
   // adc沿x轴直行========================================================
   //   障碍物感知信息
   PerceptionObstacle adc;
@@ -90,7 +112,7 @@ void GetPotentialPredictionObstacles(
   adc.velocity.x = 4.0;
   adc.length = 4.0;
   adc.width = 2.0;
-  adc.length = 1.7;
+  adc.height = 1.7;
   adc.type = PerceptionObstacle::VEHICLE;
   adc.timestamp = ros::Time::now().toSec();
 
@@ -116,22 +138,68 @@ void GetPotentialPredictionObstacles(
   ptt_pred_obs_adc.appear_distance_threshold = 99999;
   ptt_pred_obs_adc.disappear_distance_threshold = 99999;
 
+  std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points;
+  null_anchor_points.clear();
+  PotentialPredictionObstacle ptt_pred_obs3(std::move(perception_obstacle3),
+                                            std::move(null_anchor_points));
+
   potential_prediction_obstacles.insert(
       std::make_pair(perception_obstacle.id, std::move(ptt_pred_obs)));
-
   potential_prediction_obstacles.insert(
       std::make_pair(perception_obstacle2.id, std::move(ptt_pred_obs2)));
   potential_prediction_obstacles.insert(
       std::make_pair(adc.id, std::move(ptt_pred_obs_adc)));
+
+  potential_prediction_obstacles.insert(
+      std::make_pair(perception_obstacle3.id, std::move(ptt_pred_obs3)));
+}
+
+visualization_msgs::Marker GetObsMarker(
+    const PerceptionObstacle &perception_obstacle) {
+  static int id = 1;
+  visualization_msgs::Marker marker;
+  marker.header.frame_id = "/obsframe";
+  marker.header.stamp = ros::Time::now();
+  marker.ns = "hqplanner";
+  marker.id = id;
+  marker.type = visualization_msgs::Marker::CUBE;
+  marker.action = visualization_msgs::Marker::ADD;
+
+  marker.pose.position.x = perception_obstacle.position.x;
+  marker.pose.position.y = perception_obstacle.position.y;
+  marker.pose.position.z = perception_obstacle.position.z;
+  // orientation应该适合heading有关
+  marker.pose.orientation.x = 0.0;
+  marker.pose.orientation.y = 0.0;
+  marker.pose.orientation.z = 0.0;
+  marker.pose.orientation.w = 1.0;
+
+  marker.scale.x = perception_obstacle.length;
+  marker.scale.y = perception_obstacle.width;
+  marker.scale.z = perception_obstacle.height;
+
+  marker.color.r = 1.0f;
+  marker.color.g = 0.0f;
+  marker.color.b = 0.0f;
+  marker.color.a = 1.0;
+
+  marker.lifetime = ros::Duration();  // marker 存在的时间
+
+  ++id;
+  return marker;
 }
 
 int main(int argc, char **argv) {
   ros::init(argc, argv, "hqplanner_test");
   ros::NodeHandle n;
+  ros::Rate r(10);
+  ros::Publisher marker_pub =
+      n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
+
   // 0、提供全局路由锚点
   std::vector<std::vector<AnchorPoint>> anchor_points;
   std::vector<AnchorPoint> anchor_point;
-  for (int i = 0; i <= 20; ++i) {
+  for (int i = 0; i <= 30; ++i) {
     AnchorPoint ap;
     ap.cartesian_x = i * 20.0;
     ap.cartesian_y = 0.0;
@@ -140,21 +208,76 @@ int main(int argc, char **argv) {
   }
   anchor_points.emplace_back(std::move(anchor_point));
   AnchorPointsProvider::instance()->SetAnchorPoints(anchor_points);
+
   //   1、先初始化adc状态
   VehicleState adc_state;
   VehicleStateProvider::instance()->Init(adc_state);
+
   //   2、再初始化障碍物信息
   std::unordered_map<std::int32_t, PotentialPredictionObstacle>
       potential_prediction_obstacles;
   GetPotentialPredictionObstacles(potential_prediction_obstacles);
   PredictionObstaclesProvider::instance()->Init(potential_prediction_obstacles);
+
   // 实例化规划对象
   Planning planning;
+  //   初始化全局路由的anchor
   planning.Init();
+  VehicleConfig veh_conf =
+      VehicleConfigHelper::instance()->GetConfig() ros::Rate r(10);
 
-  ros::Rate r(10);
   while (ros::ok()) {
     planning.RunOnce();
-    planning
+    VehicleState veh_state = VehicleStateProvider::instance()->vehicle_state();
+
+    Frame *frame = planning.GetFrame();
+    const auto path_obs_items = frame->FindDriveReferenceLineInfo()
+                                    ->path_decision()
+                                    .path_obstacle_items();
+
+    // adc maker
+    visualization_msgs::Marker adc_marker;
+    adc_marker.header.frame_id = "/adcframe";
+    adc_marker.header.stamp = ros::Time::now();
+    adc_marker.ns = "hqplanner";
+    adc_marker.id = 0;
+    adc_marker.type = visualization_msgs::Marker::CUBE;
+    adc_marker.action = visualization_msgs::Marker::ADD;
+
+    adc_marker.pose.position.x = veh_state.x;
+    adc_marker.pose.position.y = veh_state.y;
+    adc_marker.pose.position.z = veh_state.z;
+    // orientation应该适合heading有关
+    adc_marker.pose.orientation.x = 0.0;
+    adc_marker.pose.orientation.y = 0.0;
+    adc_marker.pose.orientation.z = 0.0;
+    adc_marker.pose.orientation.w = 1.0;
+
+    adc_marker.scale.x = veh_conf.vehicle_param.length;
+    adc_marker.scale.y = veh_conf.vehicle_param.width;
+    adc_marker.scale.z = veh_conf.vehicle_param.height;
+
+    adc_marker.color.r = 0.0f;
+    adc_marker.color.g = 1.0f;
+    adc_marker.color.b = 0.0f;
+    adc_marker.color.a = 1.0;
+
+    adc_marker.lifetime = ros::Duration();  // marker 存在的时间
+
+    // obstacle marker
+    std::vector<visualization_msgs::Marker> obs_markers;
+    for (const auto &path_obs : path_obs_items) {
+      const PerceptionObstacle perception_obstacle =
+          path_obs->obstacle()->Perception();
+      visualization_msgs::Marker obs_marker = GetObsMarker(perception_obstacle);
+      obs_markers.emplace_back(std::move(obs_marker));
+    }
+    marker_pub.publish(adc_marker);
+    for (auto &marker : obs_markers) {
+      marker_pub.publish(marker);
+    }
+
+    ros::spinOnce();
+    r.sleep();
   }
 }

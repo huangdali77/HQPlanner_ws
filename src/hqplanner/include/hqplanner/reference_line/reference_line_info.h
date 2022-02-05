@@ -130,6 +130,7 @@ class ReferenceLineInfo {
   }
 
   void set_is_on_reference_line() { is_on_reference_line_ = true; }
+  bool IsUnrelaventObstacle(PathObstacle* path_obstacle);
 
  private:
   const hqplanner::forproto::VehicleState vehicle_state_;

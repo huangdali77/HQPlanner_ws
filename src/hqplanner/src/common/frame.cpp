@@ -143,9 +143,9 @@ bool Frame::Init() {
   }
   // 碰撞检查
   const auto *collision_obstacle = FindCollisionObstacle();
-  if (collision_obstacle) {
-    return false;
-  }
+  // if (collision_obstacle) {
+  //   return false;
+  // }
   // 生成ReferenceLineInfo
   if (!CreateReferenceLineInfo()) {
     return false;

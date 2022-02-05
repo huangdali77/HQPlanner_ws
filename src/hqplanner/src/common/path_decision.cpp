@@ -26,7 +26,8 @@ PathObstacle *PathDecision::AddPathObstacle(const PathObstacle &path_obstacle) {
   } else {
     path_obstacles_.insert({path_obstacle.Id(), std::move(temp)});
   }
-  return path_obstacles_[path_obstacle.Id()].get();
+  return path_obstacles_.find(path_obstacle.Id())->second.get();
+  // return path_obstacles_[path_obstacle.Id()].get();
 }
 
 const PathObstacle *PathDecision::Find(const std::string &object_id) const {

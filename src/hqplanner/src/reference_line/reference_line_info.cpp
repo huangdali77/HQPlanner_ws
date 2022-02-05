@@ -106,43 +106,33 @@ PathObstacle* ReferenceLineInfo::AddObstacle(const Obstacle* obstacle) {
   }
   path_obstacle->SetPerceptionSlBoundary(perception_sl);
 
-  if (path_obstacle->Id() == ConfigParam::FLAGS_destination_obstacle_id) {
-    const double fence_s =
-        perception_sl.start_s - ConfigParam::FLAGS_stop_line_stop_distance;
-    const auto fence_point = reference_line_.GetReferencePoint(fence_s);
-    ObjectDecisionType stop_decision;
-    stop_decision.object_tag = ObjectDecisionType::STOP;
+  if (IsUnrelaventObstacle(path_obstacle)) {
+    ObjectDecisionType ignore;
+    ignore.object_tag = ObjectDecisionType::IGNORE;
+    // ignore.mutable_ignore();
+    path_decision_.AddLateralDecision("reference_line_filter", obstacle->Id(),
+                                      ignore);
+    path_decision_.AddLongitudinalDecision("reference_line_filter",
+                                           obstacle->Id(), ignore);
 
-    stop_decision.stop_.distance_s =
-        -ConfigParam::FLAGS_stop_line_stop_distance;
-    stop_decision.stop_.stop_point.x = fence_point.x;
-    stop_decision.stop_.stop_point.y = fence_point.y;
-    stop_decision.stop_.stop_point.z = 0.0;
-    stop_decision.stop_.stop_heading = fence_point.heading;
+  } else {
+    path_obstacle->BuildReferenceLineStBoundary(reference_line_,
+                                                adc_sl_boundary_.start_s);
   }
-  // if (IsUnrelaventObstacle(path_obstacle)) {
-  //   ObjectDecisionType ignore;
-  //   ignore.mutable_ignore();
-  //   path_decision_.AddLateralDecision("reference_line_filter",
-  //   obstacle->Id(),
-  //                                     ignore);
-  //   path_decision_.AddLongitudinalDecision("reference_line_filter",
-  //                                          obstacle->Id(), ignore);
-  //   ADEBUG << "NO build reference line st boundary. id:" << obstacle->Id();
-  // // } else {
-  //   ADEBUG << "build reference line st boundary. id:" << obstacle->Id();
-  path_obstacle->BuildReferenceLineStBoundary(reference_line_,
-                                              adc_sl_boundary_.start_s);
-
-  // ADEBUG << "reference line st boundary: "
-  //        << path_obstacle->reference_line_st_boundary().min_t() << ", "
-  //        << path_obstacle->reference_line_st_boundary().max_t()
-  //        << ", s_max: " <<
-  //        path_obstacle->reference_line_st_boundary().max_s()
-  //        << ", s_min: " <<
-  //        path_obstacle->reference_line_st_boundary().min_s();
-  // }
   return path_obstacle;
+}
+
+bool ReferenceLineInfo::IsUnrelaventObstacle(PathObstacle* path_obstacle) {
+  // if adc is on the road, and obstacle behind adc, ignore
+  if (path_obstacle->PerceptionSLBoundary().end_s > reference_line_.Length()) {
+    return true;
+  }
+  if (is_on_reference_line_ &&
+      path_obstacle->PerceptionSLBoundary().end_s < adc_sl_boundary_.end_s &&
+      reference_line_.IsOnRoad(path_obstacle->PerceptionSLBoundary())) {
+    return true;
+  }
+  return false;
 }
 
 void ReferenceLineInfo::SetDrivable(bool drivable) { is_drivable_ = drivable; }

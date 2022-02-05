@@ -16,6 +16,8 @@ struct PotentialPredictionObstacle {
   PotentialPredictionObstacle(
       hqplanner::forproto::PerceptionObstacle perception_obstacle,
       std::vector<hqplanner::forproto::AnchorPoint> anchor_points);
+
+ private:
   void InitPolygonPoint(std::vector<hqplanner::forproto::Point> &polygon_point);
 
  public:

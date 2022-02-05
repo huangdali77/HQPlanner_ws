@@ -1,7 +1,7 @@
 #ifndef HQPLANNING_MAIN_PLANNING_H_
 #define HQPLANNING_MAIN_PLANNING_H_
 
-// #include <ros/ros.h>
+#include <ros/ros.h>
 
 #include <memory>
 #include <string>
@@ -76,6 +76,9 @@ class Planning {
    */
   void SetLastPublishableTrajectory(
       const hqplanner::forproto::ADCTrajectory& adc_trajectory);
+
+  // 仅供测试使用
+  Frame* GetFrame() { return frame_.get(); }
 
  private:
   // Watch dog timer
