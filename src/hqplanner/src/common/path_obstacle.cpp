@@ -55,8 +55,8 @@ void PathObstacle::BuildReferenceLineStBoundary(ReferenceLine& reference_line,
     point_pairs.emplace_back(STPoint(start_s - adc_start_s, 0.0),
                              STPoint(end_s - adc_start_s, 0.0));
     point_pairs.emplace_back(
-        STPoint(start_s - adc_start_s, ConfigParam::FLAGS_st_max_t),
-        STPoint(end_s - adc_start_s, ConfigParam::FLAGS_st_max_t));
+        STPoint(start_s - adc_start_s, ConfigParam::instance()->FLAGS_st_max_t),
+        STPoint(end_s - adc_start_s, ConfigParam::instance()->FLAGS_st_max_t));
     reference_line_st_boundary_ = StBoundary(point_pairs);
   } else {
     BuildTrajectoryStBoundary(reference_line, adc_start_s,
@@ -176,7 +176,7 @@ bool PathObstacle::BuildTrajectoryStBoundary(ReferenceLine& reference_line,
     double low_s = std::max(object_boundary.start_s - adc_half_length, 0.0);
     bool has_low = false;
     double high_s = std::min(object_boundary.end_s + adc_half_length,
-                             ConfigParam::FLAGS_st_max_s);
+                             ConfigParam::instance()->FLAGS_st_max_s);
     bool has_high = false;
     while (low_s + st_boundary_delta_s < high_s && !(has_low && has_high)) {
       if (!has_low) {
@@ -415,10 +415,10 @@ double PathObstacle::MinRadiusStopDistance(
       stop_distance_buffer;
   stop_distance -= vehicle_param.front_edge_to_center;
   // 将stop_distance控制在6m到10m之间
-  stop_distance =
-      std::min(stop_distance, ConfigParam::FLAGS_max_stop_distance_obstacle);
-  stop_distance =
-      std::max(stop_distance, ConfigParam::FLAGS_min_stop_distance_obstacle);
+  stop_distance = std::min(
+      stop_distance, ConfigParam::instance()->FLAGS_max_stop_distance_obstacle);
+  stop_distance = std::max(
+      stop_distance, ConfigParam::instance()->FLAGS_min_stop_distance_obstacle);
   return stop_distance;
 }
 

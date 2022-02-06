@@ -1,7 +1,7 @@
 #include "hqplanner/main/planning.h"
 
 #include <assert.h>
-#include <ros/ror.h>
+#include <ros/ros.h>
 
 #include <algorithm>
 #include <list>
@@ -143,7 +143,7 @@ void Planning::RunOnce() {
   assert(start_timestamp >= vehicle_state.timestamp);
 
   const double planning_cycle_time =
-      1.0 / ConfigParam::FLAGS_planning_loop_rate;
+      1.0 / ConfigParam::instance()->FLAGS_planning_loop_rate;
 
   bool is_replan = false;
   std::vector<TrajectoryPoint> stitching_trajectory;

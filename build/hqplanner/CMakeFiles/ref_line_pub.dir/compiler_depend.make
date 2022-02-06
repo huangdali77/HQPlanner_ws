@@ -162,6 +162,52 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/c++/7/bits/basic_string.tcc \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/util/macro.h \
+  /usr/include/c++/7/iomanip \
+  /usr/include/c++/7/bits/ios_base.h \
+  /usr/include/c++/7/bits/locale_classes.h \
+  /usr/include/c++/7/bits/locale_classes.tcc \
+  /usr/include/c++/7/system_error \
+  /usr/include/x86_64-linux-gnu/c++/7/bits/error_constants.h \
+  /usr/include/c++/7/stdexcept \
+  /usr/include/c++/7/locale \
+  /usr/include/c++/7/bits/locale_facets.h \
+  /usr/include/c++/7/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/7/bits/ctype_base.h \
+  /usr/include/c++/7/streambuf \
+  /usr/include/c++/7/bits/streambuf.tcc \
+  /usr/include/c++/7/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/7/bits/ctype_inline.h \
+  /usr/include/c++/7/bits/locale_facets.tcc \
+  /usr/include/c++/7/bits/locale_facets_nonio.h \
+  /usr/include/c++/7/ctime \
+  /usr/include/x86_64-linux-gnu/c++/7/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/7/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/7/bits/codecvt.h \
+  /usr/include/c++/7/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/7/bits/locale_conv.h \
+  /usr/include/c++/7/bits/stringfwd.h \
+  /usr/include/c++/7/bits/allocator.h \
+  /usr/include/c++/7/bits/codecvt.h \
+  /usr/include/c++/7/bits/unique_ptr.h \
+  /usr/include/c++/7/tuple \
+  /usr/include/c++/7/array \
+  /usr/include/c++/7/bits/uses_allocator.h \
+  /usr/include/c++/7/bits/invoke.h \
+  /usr/include/c++/7/bits/quoted_string.h \
+  /usr/include/c++/7/sstream \
+  /usr/include/c++/7/istream \
+  /usr/include/c++/7/ios \
+  /usr/include/c++/7/bits/basic_ios.h \
+  /usr/include/c++/7/bits/basic_ios.tcc \
+  /usr/include/c++/7/ostream \
+  /usr/include/c++/7/bits/ostream.tcc \
+  /usr/include/c++/7/bits/istream.tcc \
+  /usr/include/c++/7/bits/sstream.tcc \
+  /usr/include/c++/7/iostream \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/pnc_point.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/sl_boundary.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/box2d.h \
@@ -183,31 +229,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
   /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
   /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
   /usr/include/c++/7/complex \
-  /usr/include/c++/7/sstream \
-  /usr/include/c++/7/istream \
-  /usr/include/c++/7/ios \
-  /usr/include/c++/7/bits/ios_base.h \
-  /usr/include/c++/7/bits/locale_classes.h \
-  /usr/include/c++/7/bits/locale_classes.tcc \
-  /usr/include/c++/7/system_error \
-  /usr/include/x86_64-linux-gnu/c++/7/bits/error_constants.h \
-  /usr/include/c++/7/stdexcept \
-  /usr/include/c++/7/streambuf \
-  /usr/include/c++/7/bits/streambuf.tcc \
-  /usr/include/c++/7/bits/basic_ios.h \
-  /usr/include/c++/7/bits/locale_facets.h \
-  /usr/include/c++/7/cwctype \
-  /usr/include/wctype.h \
-  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
-  /usr/include/x86_64-linux-gnu/c++/7/bits/ctype_base.h \
-  /usr/include/c++/7/bits/streambuf_iterator.h \
-  /usr/include/x86_64-linux-gnu/c++/7/bits/ctype_inline.h \
-  /usr/include/c++/7/bits/locale_facets.tcc \
-  /usr/include/c++/7/bits/basic_ios.tcc \
-  /usr/include/c++/7/ostream \
-  /usr/include/c++/7/bits/ostream.tcc \
-  /usr/include/c++/7/bits/istream.tcc \
-  /usr/include/c++/7/bits/sstream.tcc \
   /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
   /usr/lib/gcc/x86_64-linux-gnu/7/include/mmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/7/include/emmintrin.h \
@@ -217,10 +238,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
   /usr/include/c++/7/cstddef \
   /usr/include/c++/7/cassert \
   /usr/include/c++/7/functional \
-  /usr/include/c++/7/tuple \
-  /usr/include/c++/7/array \
-  /usr/include/c++/7/bits/uses_allocator.h \
-  /usr/include/c++/7/bits/invoke.h \
   /usr/include/c++/7/bits/std_function.h \
   /usr/include/c++/7/bits/refwrap.h \
   /usr/include/c++/7/cstring \
@@ -418,7 +435,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
   /opt/ros/melodic/include/ros/macros.h \
   /opt/ros/melodic/include/ros/time.h \
   /opt/ros/melodic/include/ros/platform.h \
-  /usr/include/c++/7/iostream \
   /opt/ros/melodic/include/ros/exception.h \
   /opt/ros/melodic/include/ros/duration.h \
   /usr/include/c++/7/math.h \
@@ -576,21 +592,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
   /usr/lib/gcc/x86_64-linux-gnu/7/include/float.h \
   /usr/include/boost/math/tools/user.hpp \
   /usr/include/boost/math/policies/error_handling.hpp \
-  /usr/include/c++/7/iomanip \
-  /usr/include/c++/7/locale \
-  /usr/include/c++/7/bits/locale_facets_nonio.h \
-  /usr/include/c++/7/ctime \
-  /usr/include/x86_64-linux-gnu/c++/7/bits/time_members.h \
-  /usr/include/x86_64-linux-gnu/c++/7/bits/messages_members.h \
-  /usr/include/libintl.h \
-  /usr/include/c++/7/bits/codecvt.h \
-  /usr/include/c++/7/bits/locale_facets_nonio.tcc \
-  /usr/include/c++/7/bits/locale_conv.h \
-  /usr/include/c++/7/bits/stringfwd.h \
-  /usr/include/c++/7/bits/allocator.h \
-  /usr/include/c++/7/bits/codecvt.h \
-  /usr/include/c++/7/bits/unique_ptr.h \
-  /usr/include/c++/7/bits/quoted_string.h \
   /usr/include/boost/config/no_tr1/complex.hpp \
   /usr/include/boost/math/policies/policy.hpp \
   /usr/include/boost/mpl/list.hpp \
@@ -1491,12 +1492,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /opt/ros/melodic/include/ros/advertise_service_options.h:
 
-/usr/include/boost/predef/os/solaris.h:
-
-/usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
 /usr/include/boost/mpl/list/list20.hpp:
 
 /opt/ros/melodic/include/ros/subscriber.h:
@@ -1541,13 +1536,9 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/c++/7/bits/stl_pair.h:
 
-/usr/include/boost/predef/compiler/iar.h:
-
 /usr/include/boost/predef/os/bsd/bsdi.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
-/usr/include/boost/predef/os/windows.h:
 
 /usr/include/boost/predef/compiler/edg.h:
 
@@ -1609,8 +1600,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/predef/make.h:
 
-/usr/include/boost/predef/version_number.h:
-
 /usr/include/boost/predef.h:
 
 /usr/include/boost/mpl/aux_/numeric_cast_utils.hpp:
@@ -1620,12 +1609,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h:
 
 /usr/include/boost/config/detail/select_platform_config.hpp:
-
-/usr/include/boost/numeric/conversion/converter_policies.hpp:
-
-/usr/include/boost/type_traits/is_union.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h:
 
@@ -1671,14 +1654,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/mpl/aux_/begin_end_impl.hpp:
 
-/usr/include/c++/7/iostream:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/c++/7/cfloat:
-
-/usr/include/boost/preprocessor/arithmetic/inc.hpp:
-
 /opt/ros/melodic/include/ros/macros.h:
 
 /usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
@@ -1686,10 +1661,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/boost/predef/os/aix.h:
 
 /opt/ros/melodic/include/ros/types.h:
-
-/usr/include/boost/predef/os/qnxnto.h:
-
-/usr/include/c++/7/bits/stl_multimap.h:
 
 /usr/include/c++/7/ext/aligned_buffer.h:
 
@@ -1703,6 +1674,8 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
 
+/usr/include/boost/predef/compiler/iar.h:
+
 /usr/include/boost/mpl/size.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
@@ -1713,6 +1686,14 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
+/usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/c++/7/bits/stl_multimap.h:
+
+/usr/include/boost/predef/os/qnxnto.h:
+
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/c++/7/type_traits:
@@ -1720,8 +1701,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/boost/mpl/aux_/config/preprocessor.hpp:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h:
-
-/usr/include/boost/predef/os/hpux.h:
 
 /usr/include/eigen3/Eigen/Eigenvalues:
 
@@ -1851,10 +1830,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
 
-/usr/include/boost/mpl/sequence_tag.hpp:
-
-/usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
-
 /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
 
 /usr/include/boost/mpl/aux_/config/workaround.hpp:
@@ -1907,6 +1882,12 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/Core/Map.h:
 
+/usr/include/boost/numeric/conversion/converter_policies.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/boost/type_traits/is_union.hpp:
+
 /usr/include/boost/predef/os/android.h:
 
 /usr/include/boost/predef/os/bsd/net.h:
@@ -1940,6 +1921,8 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/boost/config/platform/linux.hpp:
 
 /usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
+
+/usr/include/boost/predef/os/windows.h:
 
 /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h:
 
@@ -1979,15 +1962,27 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/preprocessor/list/fold_left.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h:
+/usr/include/c++/7/cmath:
 
-/opt/ros/melodic/include/ros/advertise_options.h:
+/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
 
-/usr/include/boost/predef/library/std/stdcpp3.h:
+/usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
 
-/usr/include/boost/type_traits/integral_constant.hpp:
+/usr/include/boost/predef/library/c/zos.h:
 
-/usr/include/boost/type_traits/add_reference.hpp:
+/usr/include/boost/predef/compiler/compaq.h:
+
+/usr/include/boost/mpl/list/aux_/front.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h:
+
+/usr/include/boost/range/has_range_iterator.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Visitor.h:
+
+/usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h:
 
 /usr/include/eigen3/Eigen/src/misc/Kernel.h:
 
@@ -2021,6 +2016,26 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:
 
+/usr/include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h:
+
+/usr/include/boost/predef/architecture/sparc.h:
+
+/opt/ros/melodic/include/ros/names.h:
+
+/usr/include/boost/preprocessor/arithmetic/sub.hpp:
+
+/usr/include/boost/mpl/list/aux_/O1_size.hpp:
+
+/usr/include/eigen3/Eigen/Geometry:
+
+/usr/include/boost/mpl/prior.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
+
+/usr/include/c++/7/bits/stl_list.h:
+
+/usr/include/c++/7/bits/quoted_string.h:
+
 /usr/include/eigen3/Eigen/src/Core/Ref.h:
 
 /usr/include/c++/7/exception:
@@ -2053,15 +2068,27 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/mpl/list/aux_/tag.hpp:
 
-/opt/ros/melodic/include/ros/serialization.h:
-
-/usr/include/x86_64-linux-gnu/c++/7/bits/ctype_base.h:
-
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/c++/7/new:
 
 /usr/include/c++/7/bits/sstream.tcc:
+
+/usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h:
+
+/opt/ros/melodic/include/ros/advertise_options.h:
+
+/usr/include/boost/predef/library/std/stdcpp3.h:
+
+/usr/include/boost/type_traits/integral_constant.hpp:
+
+/usr/include/boost/type_traits/add_reference.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/7/bits/messages_members.h:
+
+/usr/include/boost/detail/indirect_traits.hpp:
+
+/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
 
 /usr/include/c++/7/ext/new_allocator.h:
 
@@ -2078,6 +2105,8 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h:
 
 /usr/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
+
+/usr/include/c++/7/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/7/bits/stl_bvector.h:
 
@@ -2096,8 +2125,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/c++/7/bits/cxxabi_init_exception.h:
 
 /usr/include/boost/preprocessor/control/detail/while.hpp:
-
-/usr/include/boost/predef/os/unix.h:
 
 /usr/include/c++/7/bits/stl_iterator.h:
 
@@ -2151,17 +2178,9 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/predef/compiler/metaware.h:
 
-/usr/include/c++/7/bits/quoted_string.h:
-
 /usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
 
 /usr/include/boost/predef/version.h:
-
-/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
-
-/usr/include/boost/predef/os/vms.h:
-
-/usr/include/boost/preprocessor/logical/compl.hpp:
 
 /usr/include/c++/7/system_error:
 
@@ -2213,7 +2232,15 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/bind/arg.hpp:
 
+/usr/include/boost/predef/compiler/clang.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
+
 /usr/include/boost/mpl/long.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/7/bits/ctype_base.h:
 
 /usr/include/boost/predef/library/std.h:
 
@@ -2222,12 +2249,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h:
 
 /usr/include/c++/7/cassert:
-
-/usr/include/boost/range/has_range_iterator.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/Visitor.h:
-
-/usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
@@ -2245,11 +2266,9 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
 
-/usr/include/boost/predef/os/cygwin.h:
+/usr/include/c++/7/locale:
 
-/usr/include/boost/predef/compiler/dignus.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+/usr/include/boost/mpl/aux_/contains_impl.hpp:
 
 /usr/include/eigen3/Eigen/src/LU/Determinant.h:
 
@@ -2264,6 +2283,10 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/include/c++/7/bits/cpp_type_traits.h:
+
+/usr/include/c++/7/bits/locale_facets_nonio.h:
+
+/usr/include/boost/function/function_base.hpp:
 
 /usr/include/c++/7/ext/alloc_traits.h:
 
@@ -2292,6 +2315,14 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/locale.h:
 
 /usr/include/c++/7/bits/functional_hash.h:
+
+/usr/include/boost/range/rend.hpp:
+
+/usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
+
+/usr/include/boost/type_traits/has_trivial_assign.hpp:
+
+/usr/include/boost/mpl/arg.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
@@ -2325,8 +2356,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h:
 
-/usr/include/boost/assert.hpp:
-
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line.h:
 
 /usr/include/boost/iterator/detail/config_undef.hpp:
@@ -2357,28 +2386,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
 
-/opt/ros/melodic/include/ros/names.h:
-
-/usr/include/boost/preprocessor/arithmetic/sub.hpp:
-
-/usr/include/boost/mpl/list/aux_/O1_size.hpp:
-
-/usr/include/eigen3/Eigen/Geometry:
-
-/usr/include/boost/mpl/prior.hpp:
-
-/usr/include/boost/range/rend.hpp:
-
-/usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
-
-/usr/include/boost/mpl/arg.hpp:
-
-/usr/include/boost/type_traits/has_trivial_assign.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
-
-/usr/include/c++/7/bits/stl_list.h:
-
 /opt/ros/melodic/include/ros/service_server.h:
 
 /usr/include/c++/7/typeinfo:
@@ -2396,10 +2403,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h:
 
 /usr/include/boost/core/ref.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/arch/CUDA/Half.h:
-
-/usr/include/c++/7/bits/stl_construct.h:
 
 /usr/include/boost/next_prior.hpp:
 
@@ -2450,6 +2453,12 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/boost/predef/compiler/mpw.h:
 
 /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h:
+
+/usr/include/boost/function/detail/function_iterate.hpp:
+
+/usr/include/c++/7/bits/hash_bytes.h:
+
+/usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp:
 
 /usr/include/boost/predef/compiler/digitalmars.h:
 
@@ -2509,9 +2518,21 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/log4cxx/helpers/transcoder.h:
 
+/usr/include/boost/preprocessor/control/if.hpp:
+
+/opt/ros/melodic/include/ros/time.h:
+
 /usr/include/errno.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/c++/7/iostream:
+
+/usr/include/c++/7/cfloat:
+
+/usr/include/boost/preprocessor/arithmetic/inc.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
@@ -2546,6 +2567,10 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/boost/type_traits/is_convertible.hpp:
 
 /usr/include/c++/7/array:
+
+/opt/ros/melodic/include/ros/steady_timer_options.h:
+
+/usr/include/c++/7/bits/ostream_insert.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -2619,14 +2644,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/pthread.h:
 
-/usr/include/boost/predef/library/c/zos.h:
-
-/opt/ros/melodic/include/ros/time.h:
-
-/usr/include/boost/preprocessor/control/if.hpp:
-
-/usr/include/c++/7/bits/locale_facets_nonio.tcc:
-
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
 /usr/include/c++/7/ios:
@@ -2652,12 +2669,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/time.h:
 
 /usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h:
-
-/usr/include/boost/function/detail/function_iterate.hpp:
-
-/usr/include/c++/7/bits/hash_bytes.h:
-
-/usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
@@ -2705,9 +2716,93 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
 
-/usr/include/c++/7/cmath:
+/usr/include/boost/assert.hpp:
 
-/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/util/macro.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
+
+/usr/include/boost/predef/os/vms.h:
+
+/usr/include/boost/preprocessor/logical/compl.hpp:
+
+/usr/include/c++/7/bits/locale_classes.h:
+
+/usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
+
+/usr/include/c++/7/stdexcept:
+
+/usr/include/boost/type_traits/has_left_shift.hpp:
+
+/usr/include/boost/core/swap.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Block.h:
+
+/usr/include/boost/mpl/list/aux_/push_front.hpp:
+
+/usr/include/boost/predef/architecture/blackfin.h:
+
+/usr/include/boost/preprocessor/control/while.hpp:
+
+/usr/include/c++/7/bits/streambuf_iterator.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
+
+/usr/include/boost/mpl/list/aux_/size.hpp:
+
+/usr/include/boost/core/noncopyable.hpp:
+
+/usr/include/boost/mpl/aux_/at_impl.hpp:
+
+/usr/include/c++/7/ctime:
+
+/usr/include/boost/predef/version_number.h:
+
+/opt/ros/melodic/include/ros/serialization.h:
+
+/usr/include/c++/7/bits/stl_construct.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/CUDA/Half.h:
+
+/usr/include/boost/predef/compiler/sgi_mipspro.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h:
+
+/usr/include/c++/7/bits/codecvt.h:
+
+/usr/include/c++/7/debug/debug.h:
+
+/usr/include/c++/7/bits/locale_conv.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline.h:
+
+/usr/include/log4cxx/level.h:
+
+/usr/include/eigen3/Eigen/src/Core/Reverse.h:
+
+/usr/include/c++/7/bits/uses_allocator.h:
+
+/usr/include/c++/7/bits/ptr_traits.h:
+
+/usr/include/boost/mpl/aux_/full_lambda.hpp:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/sl_boundary.h:
+
+/usr/include/c++/7/bits/invoke.h:
+
+/usr/include/boost/predef/architecture/x86/32.h:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
+
+/usr/include/c++/7/bits/basic_ios.h:
+
+/usr/include/boost/lexical_cast/bad_lexical_cast.hpp:
+
+/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
+
+/usr/include/boost/mpl/aux_/config/bcc.hpp:
+
+/usr/include/c++/7/bits/ostream.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
@@ -2716,6 +2811,32 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/pnc_point.h:
 
 /usr/include/boost/preprocessor/array/elem.hpp:
+
+/usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
+
+/usr/include/c++/7/math.h:
+
+/usr/include/c++/7/bits/list.tcc:
+
+/usr/include/limits.h:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
+
+/usr/include/boost/mpl/list/aux_/empty.hpp:
+
+/usr/include/boost/type_traits/remove_cv.hpp:
+
+/usr/include/boost/mpl/aux_/config/has_apply.hpp:
+
+/usr/include/boost/smart_ptr/allocate_shared_array.hpp:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/box2d.h:
+
+/usr/include/boost/concept/detail/has_constraints.hpp:
+
+/usr/include/eigen3/Eigen/Householder:
+
+/usr/include/boost/type_traits/is_base_and_derived.hpp:
 
 /usr/include/ctype.h:
 
@@ -2749,63 +2870,7 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/mpl/aux_/config/arrays.hpp:
 
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline.h:
-
-/usr/include/c++/7/debug/debug.h:
-
-/usr/include/c++/7/bits/locale_conv.h:
-
-/usr/include/log4cxx/level.h:
-
 /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
-
-/usr/include/c++/7/bits/locale_classes.h:
-
-/usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
-
-/usr/include/c++/7/stdexcept:
-
-/usr/include/boost/type_traits/has_left_shift.hpp:
-
-/usr/include/boost/core/swap.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/Block.h:
-
-/usr/include/boost/mpl/list/aux_/push_front.hpp:
-
-/usr/include/boost/concept/detail/has_constraints.hpp:
-
-/usr/include/eigen3/Eigen/Householder:
-
-/usr/include/boost/type_traits/is_base_and_derived.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
-
-/usr/include/c++/7/bits/basic_ios.h:
-
-/usr/include/boost/predef/architecture/blackfin.h:
-
-/usr/include/boost/preprocessor/control/while.hpp:
-
-/usr/include/c++/7/bits/streambuf_iterator.h:
-
-/usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
-
-/usr/include/boost/mpl/list/aux_/size.hpp:
-
-/usr/include/boost/core/noncopyable.hpp:
-
-/usr/include/boost/mpl/aux_/at_impl.hpp:
-
-/usr/include/boost/lexical_cast/bad_lexical_cast.hpp:
-
-/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
-
-/usr/include/boost/mpl/aux_/config/bcc.hpp:
-
-/usr/include/c++/7/bits/ostream.tcc:
-
-/usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h:
 
 /usr/include/c++/7/cstddef:
 
@@ -2815,51 +2880,13 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/detail/call_traits.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/NumTraits.h:
+
 /usr/include/c++/7/functional:
-
-/usr/include/eigen3/Eigen/src/Core/Reverse.h:
-
-/usr/include/c++/7/bits/uses_allocator.h:
-
-/usr/include/c++/7/bits/ptr_traits.h:
-
-/usr/include/boost/mpl/aux_/full_lambda.hpp:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/sl_boundary.h:
-
-/usr/include/c++/7/bits/invoke.h:
 
 /usr/include/strings.h:
 
-/usr/include/boost/predef/compiler/clang.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
-
-/usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
-
-/usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h:
-
-/usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
-
-/usr/include/c++/7/math.h:
-
-/usr/include/c++/7/bits/list.tcc:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/box2d.h:
-
-/usr/include/limits.h:
-
-/usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
-
-/usr/include/boost/mpl/list/aux_/empty.hpp:
-
-/usr/include/boost/type_traits/remove_cv.hpp:
-
-/usr/include/boost/mpl/aux_/config/has_apply.hpp:
-
-/usr/include/boost/smart_ptr/allocate_shared_array.hpp:
 
 /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:
 
@@ -2881,19 +2908,21 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h:
 
-/usr/include/boost/predef/architecture/x86/32.h:
+/usr/include/boost/predef/compiler/dignus.h:
 
-/usr/include/boost/predef/compiler/compaq.h:
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
-/usr/include/boost/mpl/list/aux_/front.hpp:
+/usr/include/boost/predef/os/cygwin.h:
 
-/usr/include/boost/predef/architecture/sparc.h:
+/usr/include/boost/predef/os/hpux.h:
 
-/usr/include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h:
+/usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
 
-/usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
+/usr/include/boost/mpl/sequence_tag.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/NumTraits.h:
+/usr/include/boost/predef/os/solaris.h:
+
+/usr/include/boost/predef/os/unix.h:
 
 /usr/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp:
 
@@ -2942,28 +2971,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/boost/math/tools/user.hpp:
 
 /usr/include/boost/math/policies/error_handling.hpp:
-
-/usr/include/c++/7/locale:
-
-/usr/include/boost/mpl/aux_/contains_impl.hpp:
-
-/usr/include/c++/7/bits/locale_facets_nonio.h:
-
-/usr/include/boost/function/function_base.hpp:
-
-/usr/include/c++/7/ctime:
-
-/usr/include/x86_64-linux-gnu/c++/7/bits/messages_members.h:
-
-/usr/include/boost/detail/indirect_traits.hpp:
-
-/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
-
-/usr/include/boost/predef/compiler/sgi_mipspro.h:
-
-/usr/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h:
-
-/usr/include/c++/7/bits/codecvt.h:
 
 /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
 
@@ -3017,10 +3024,6 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/preprocessor/punctuation/comma.hpp:
 
-/usr/include/c++/7/bits/ostream_insert.h:
-
-/opt/ros/melodic/include/ros/steady_timer_options.h:
-
 /usr/include/c++/7/bits/stl_algobase.h:
 
 /usr/include/boost/mpl/aux_/config/static_constant.hpp:
@@ -3049,9 +3052,9 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/mpl/vector/aux_/push_back.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/7/include/xmmintrin.h:
-
 /opt/ros/melodic/include/ros/duration.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/7/include/xmmintrin.h:
 
 /usr/include/boost/mpl/next.hpp:
 
@@ -3087,9 +3090,9 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 
 /usr/include/boost/mpl/lambda_fwd.hpp:
 
-/usr/include/boost/predef/os/os400.h:
-
 /usr/include/boost/predef/hardware/simd/ppc/versions.h:
+
+/usr/include/boost/predef/os/os400.h:
 
 /usr/include/boost/mpl/aux_/config/ttp.hpp:
 

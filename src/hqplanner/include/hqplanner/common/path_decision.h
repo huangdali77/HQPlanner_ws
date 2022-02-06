@@ -3,9 +3,9 @@
 
 #include <limits>
 #include <list>
+#include <map>
 #include <memory>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 #include "hqplanner/common/obstacle.h"
@@ -25,8 +25,8 @@ class PathDecision {
   // void AddPathObstacle(PathObstacle path_obstacle);
   PathObstacle *AddPathObstacle(const PathObstacle &path_obstacle);
 
-  const std::unordered_map<std::string, std::unique_ptr<PathObstacle>>
-      &path_obstacles() const;
+  const std::map<std::string, std::shared_ptr<PathObstacle>> &path_obstacles()
+      const;
 
   // PathObstacle Find(const std::string &object_id);
   bool AddLateralDecision(
@@ -51,8 +51,7 @@ class PathDecision {
   const std::vector<const PathObstacle *> path_obstacle_items() const;
 
  private:
-  std::unordered_map<std::string, std::unique_ptr<PathObstacle>>
-      path_obstacles_;
+  std::map<std::string, std::shared_ptr<PathObstacle>> path_obstacles_;
   //   std::vector<const PathObstacle *> path_obstacle_items_;
   double stop_reference_line_s_ = std::numeric_limits<double>::max();
   hqplanner::forproto::MainStop main_stop_;

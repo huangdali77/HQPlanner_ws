@@ -39,13 +39,15 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
     double obs_speed = std::sqrt(
         perception_obstacle_.velocity.x * perception_obstacle_.velocity.x +
         perception_obstacle_.velocity.y * perception_obstacle_.velocity.y);
-    double planning_duration_time = 1 / ConfigParam::FLAGS_planning_loop_rate;
+    double planning_duration_time =
+        1 / ConfigParam::instance()->FLAGS_planning_loop_rate;
     int trajectory_sample_step =
         int(planning_duration_time * obs_speed /
-            ConfigParam::FLAGS_reference_line_sample_step);
+            ConfigParam::instance()->FLAGS_reference_line_sample_step);
 
     int trajectory_sample_points_num =
-        ConfigParam::FLAGS_prediction_total_time / planning_duration_time;
+        ConfigParam::instance()->FLAGS_prediction_total_time /
+        planning_duration_time;
     trajectory_point_.clear();
     double relative_time = 0.0;
     for (int i = 0; i < obstacle_reference_points_.size();) {
@@ -111,7 +113,7 @@ void PotentialPredictionObstacle::InitPolygonPoint(
 PredictionObstaclesProvider::PredictionObstaclesProvider() {}
 
 void PredictionObstaclesProvider::Init(
-    std::unordered_map<std::int32_t, PotentialPredictionObstacle>
+    std::map<std::int32_t, PotentialPredictionObstacle>
         potential_prediction_obstacles) {
   potential_prediction_obstacles_ = potential_prediction_obstacles;
   UpdataNextCyclePredictionObstacles();
@@ -180,14 +182,16 @@ void PredictionObstaclesProvider::UpdataNextCyclePredictionObstacles() {
   // 更新prediction_obstacles_
   prediction_obstacles_.start_timestamp = ros::Time::now().toSec();
   prediction_obstacles_.start_timestamp =
-      ros::Time::now().toSec() + ConfigParam::FLAGS_prediction_total_time;
+      ros::Time::now().toSec() +
+      ConfigParam::instance()->FLAGS_prediction_total_time;
   prediction_obstacles_.prediction_obstacle.clear();
   for (auto& publish_prediction_obstacle : publish_prediction_obstacles_) {
     PredictionObstacle pred_obs;
     pred_obs.perception_obstacle =
         publish_prediction_obstacle.second.perception_obstacle_;
     pred_obs.timestamp = prediction_obstacles_.start_timestamp;
-    pred_obs.predicted_period = ConfigParam::FLAGS_prediction_total_time;
+    pred_obs.predicted_period =
+        ConfigParam::instance()->FLAGS_prediction_total_time;
     Trajectory traj;
     traj.probability = 1.0;
     traj.trajectory_point =
@@ -205,10 +209,11 @@ void PredictionObstaclesProvider::ShrinkObstacleTrajectory() {
             publish_prediction_obstacle.second.perception_obstacle_.velocity.x +
         publish_prediction_obstacle.second.perception_obstacle_.velocity.y *
             publish_prediction_obstacle.second.perception_obstacle_.velocity.y);
-    double planning_duration_time = 1 / ConfigParam::FLAGS_planning_loop_rate;
+    double planning_duration_time =
+        1 / ConfigParam::instance()->FLAGS_planning_loop_rate;
     int trajectory_sample_step =
         int(planning_duration_time * obs_speed /
-            ConfigParam::FLAGS_reference_line_sample_step);
+            ConfigParam::instance()->FLAGS_reference_line_sample_step);
 
     // 清除obstacle_reference_points_中上个周期的点
     if (publish_prediction_obstacle.second.obstacle_reference_points_.size() <=
@@ -231,7 +236,8 @@ void PredictionObstaclesProvider::ShrinkObstacleTrajectory() {
     //   障碍物5s轨迹
 
     int trajectory_sample_points_num =
-        ConfigParam::FLAGS_prediction_total_time / planning_duration_time;
+        ConfigParam::instance()->FLAGS_prediction_total_time /
+        planning_duration_time;
 
     publish_prediction_obstacle.second.trajectory_point_.clear();
     double relative_time = 0.0;

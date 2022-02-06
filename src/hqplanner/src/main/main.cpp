@@ -1,7 +1,7 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
 
-#include <unordered_map>
+#include <map>
 
 #include "hqplanner/common/frame.h"
 #include "hqplanner/for_proto/perception_obstacle.h"
@@ -51,7 +51,7 @@ PotentialPredictionObstacle CreatPotentialPredictionObstacle(
 }
 
 void GetPotentialPredictionObstacles(
-    std::unordered_map<std::int32_t, PotentialPredictionObstacle>
+    std::map<std::int32_t, PotentialPredictionObstacle>
         &potential_prediction_obstacles) {
   // 障碍物1沿x轴直行========================================================
   //   障碍物感知信息
@@ -214,7 +214,7 @@ int main(int argc, char **argv) {
   VehicleStateProvider::instance()->Init(adc_state);
 
   //   2、再初始化障碍物信息
-  std::unordered_map<std::int32_t, PotentialPredictionObstacle>
+  std::map<std::int32_t, PotentialPredictionObstacle>
       potential_prediction_obstacles;
   GetPotentialPredictionObstacles(potential_prediction_obstacles);
   PredictionObstaclesProvider::instance()->Init(potential_prediction_obstacles);
@@ -223,8 +223,7 @@ int main(int argc, char **argv) {
   Planning planning;
   //   初始化全局路由的anchor
   planning.Init();
-  VehicleConfig veh_conf =
-      VehicleConfigHelper::instance()->GetConfig() ros::Rate r(10);
+  VehicleConfig veh_conf = VehicleConfigHelper::instance()->GetConfig();
 
   while (ros::ok()) {
     planning.RunOnce();

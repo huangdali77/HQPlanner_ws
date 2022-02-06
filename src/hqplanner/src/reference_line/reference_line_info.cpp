@@ -61,8 +61,9 @@ bool ReferenceLineInfo::Init(const std::vector<const Obstacle*>& obstacles) {
 
   // 添加速度限制
   auto ref_line = reference_line_.GetReferenceLinePoints();
-  reference_line_.AddSpeedLimit(ref_line.front().s, ref_line.back().s,
-                                ConfigParam::FLAGS_planning_upper_speed_limit);
+  reference_line_.AddSpeedLimit(
+      ref_line.front().s, ref_line.back().s,
+      ConfigParam::instance()->FLAGS_planning_upper_speed_limit);
   // if (hdmap::GetSpeedControls()) {
   //   auto* speed_controls = hdmap::GetSpeedControls();
   //   for (const auto& speed_control : speed_controls->speed_control()) {
@@ -184,11 +185,14 @@ bool ReferenceLineInfo::CombinePathAndSpeedProfile(
   // use varied resolution to reduce data load but also provide enough data
   // point for control module
   const double kDenseTimeResoltuion =
-      config_param_.FLAGS_trajectory_time_min_interval;
+      ConfigParam::instance()->FLAGS_trajectory_time_min_interval;
+
   const double kSparseTimeResolution =
-      config_param_.FLAGS_trajectory_time_max_interval;
+      ConfigParam::instance()->FLAGS_trajectory_time_max_interval;
+
   const double kDenseTimeSec =
-      config_param_.FLAGS_trajectory_time_high_density_period;
+      ConfigParam::instance()->FLAGS_trajectory_time_high_density_period;
+
   if (path_data_.discretized_path().NumOfPoints() == 0) {
     // AWARN << "path data is empty";
     return false;
@@ -229,8 +233,8 @@ bool ReferenceLineInfo::IsDrivable() const { return is_drivable_; }
 
 bool ReferenceLineInfo::ReachedDestination() const {
   constexpr double kDestinationDeltaS = 0.05;
-  const auto* dest_ptr =
-      path_decision_.Find(ConfigParam::FLAGS_destination_obstacle_id);
+  const auto* dest_ptr = path_decision_.Find(
+      ConfigParam::instance()->FLAGS_destination_obstacle_id);
   if (!dest_ptr) {
     return false;
   }

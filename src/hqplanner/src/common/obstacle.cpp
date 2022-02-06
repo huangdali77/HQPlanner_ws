@@ -97,7 +97,7 @@ math::Box2d Obstacle::GetBoundingBox(const TrajectoryPoint &point) const {
                      perception_obstacle_.width);
 }
 
-std::unique_ptr<Obstacle> Obstacle::CreateStaticVirtualObstacles(
+std::shared_ptr<Obstacle> Obstacle::CreateStaticVirtualObstacles(
     const std::string &id, const Box2d &obstacle_box) {
   // create a "virtual" perception_obstacle
   PerceptionObstacle perception_obstacle;
@@ -118,7 +118,8 @@ std::unique_ptr<Obstacle> Obstacle::CreateStaticVirtualObstacles(
 
   perception_obstacle.length = obstacle_box.length();
   perception_obstacle.width = obstacle_box.width();
-  perception_obstacle.height = ConfigParam::FLAGS_virtual_stop_wall_height;
+  perception_obstacle.height =
+      ConfigParam::instance()->FLAGS_virtual_stop_wall_height;
   perception_obstacle.type = PerceptionObstacle::UNKNOWN_UNMOVABLE;
   perception_obstacle.tracking_time = 1.0;
 
@@ -133,7 +134,7 @@ std::unique_ptr<Obstacle> Obstacle::CreateStaticVirtualObstacles(
   }
   auto *obstacle = new Obstacle(id, perception_obstacle);
   obstacle->is_virtual_ = true;
-  return std::unique_ptr<Obstacle>(obstacle);
+  return std::shared_ptr<Obstacle>(obstacle);
 }
 bool Obstacle::IsVirtual() const { return is_virtual_; }
 
@@ -142,9 +143,9 @@ bool Obstacle::IsVirtualObstacle(
   return perception_obstacle.id < 0;
 }
 
-std::list<std::unique_ptr<Obstacle>> Obstacle::CreateObstacles(
+std::list<std::shared_ptr<Obstacle>> Obstacle::CreateObstacles(
     const PredictionObstacles &predictions) {
-  std::list<std::unique_ptr<Obstacle>> obstacles;
+  std::list<std::shared_ptr<Obstacle>> obstacles;
 
   for (const auto &prediction_obstacle : predictions.prediction_obstacle) {
     const auto perception_id =

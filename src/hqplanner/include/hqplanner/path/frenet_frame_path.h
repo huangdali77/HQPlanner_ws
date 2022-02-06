@@ -35,7 +35,7 @@ class FrenetFramePath {
    * smallest l() in SLBoundary's s range [start_s(), end_s()]
    */
   hqplanner::forproto::FrenetFramePoint GetNearestPoint(
-      const SLBoundary& sl) const;
+      const hqplanner::forproto::SLBoundary& sl) const;
 
   virtual void Clear();
 

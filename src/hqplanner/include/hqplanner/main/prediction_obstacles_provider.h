@@ -1,7 +1,7 @@
 #ifndef HQPLANNING_MAIN_PREDICTION_OBSTACLES_PROVIDER_H_
 #define HQPLANNING_MAIN_PREDICTION_OBSTACLES_PROVIDER_H_
 
-#include <unordered_map>
+#include <map>
 #include <vector>
 
 #include "hqplanner/for_proto/perception_obstacle.h"
@@ -34,7 +34,7 @@ struct PotentialPredictionObstacle {
 
 class PredictionObstaclesProvider {
  public:
-  void Init(std::unordered_map<std::int32_t, PotentialPredictionObstacle>
+  void Init(std::map<std::int32_t, PotentialPredictionObstacle>
                 potential_prediction_obstacles);
   void Init();
   void UpdataNextCyclePredictionObstacles();
@@ -48,10 +48,10 @@ class PredictionObstaclesProvider {
 
  private:
   hqplanner::forproto::PredictionObstacles prediction_obstacles_;
-  //   std::unordered_map<std::int32_t, double> disappear_distance_threshold_;
-  std::unordered_map<std::int32_t, PotentialPredictionObstacle>
+  //   std::map<std::int32_t, double> disappear_distance_threshold_;
+  std::map<std::int32_t, PotentialPredictionObstacle>
       publish_prediction_obstacles_;
-  std::unordered_map<std::int32_t, PotentialPredictionObstacle>
+  std::map<std::int32_t, PotentialPredictionObstacle>
       potential_prediction_obstacles_;
 
   DECLARE_SINGLETON(PredictionObstaclesProvider);

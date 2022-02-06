@@ -20,7 +20,7 @@ namespace forproto {
  */
 class VehicleStateProvider {
  public:
-  VehicleStateProvider();
+  // VehicleStateProvider();
   void UpdateNextCycleVehicleState(const VehicleState& vehicle_state);
   void Init(const VehicleState& vehicle_state);
   double timestamp() const;

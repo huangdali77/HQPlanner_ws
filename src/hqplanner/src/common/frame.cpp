@@ -56,14 +56,15 @@ const Obstacle *Frame::CreateStopObstacle(
 
   const auto &reference_line = reference_line_info->reference_line();
   const double box_center_s =
-      obstacle_s + ConfigParam::FLAGS_virtual_stop_wall_length / 2.0;
+      obstacle_s +
+      ConfigParam::instance()->FLAGS_virtual_stop_wall_length / 2.0;
   auto box_center = reference_line.GetReferencePoint(box_center_s);
   double heading = reference_line.GetReferencePoint(obstacle_s).heading;
   double lane_left_width = 0.0;
   double lane_right_width = 0.0;
   reference_line.GetLaneWidth(obstacle_s, &lane_left_width, &lane_right_width);
   Box2d stop_wall_box(Vec2d(box_center.x, box_center.y), heading,
-                      ConfigParam::FLAGS_virtual_stop_wall_length,
+                      ConfigParam::instance()->FLAGS_virtual_stop_wall_length,
                       lane_left_width + lane_right_width);
 
   return CreateStaticVirtualObstacle(obstacle_id, stop_wall_box);
@@ -121,8 +122,8 @@ const Obstacle *Frame::CreateStaticVirtualObstacle(const std::string &id,
     return object->second.get();
   }
 
-  std::unique_ptr<Obstacle> obs_ptr =
-      Obstacle::CreateStaticVirtualObstacles(id, box);
+  std::shared_ptr<Obstacle> obs_ptr =
+      std::move(Obstacle::CreateStaticVirtualObstacles(id, box));
 
   obstacles_.insert(std::make_pair(id, std::move(obs_ptr)));
   return (obstacles_.find(id))->second.get();
@@ -177,15 +178,15 @@ const Obstacle *Frame::FindCollisionObstacle() const {
     double center_dist =
         adc_box.center().DistanceTo(obstacle->PerceptionBoundingBox().center());
 
-    if (center_dist > obstacle->PerceptionBoundingBox().diagonal() / 2.0 +
-                          adc_half_diagnal +
-                          ConfigParam::FLAGS_max_collision_distance) {
+    if (center_dist >
+        obstacle->PerceptionBoundingBox().diagonal() / 2.0 + adc_half_diagnal +
+            ConfigParam::instance()->FLAGS_max_collision_distance) {
       // ADEBUG << "Obstacle : " << obstacle->Id() << " is too far to collide";
       continue;
     }
     double distance = obstacle->PerceptionPolygon().DistanceTo(adc_box);
 
-    if (distance < ConfigParam::FLAGS_max_collision_distance) {
+    if (distance < ConfigParam::instance()->FLAGS_max_collision_distance) {
       // AERROR << "Found collision with obstacle " << obstacle->Id();
       return obstacle;
     }
@@ -207,7 +208,7 @@ bool Frame::CreateReferenceLineInfo() {
 
   for (auto &ref_line : reference_lines) {
     if (!ref_line.Shrink(Vec2d(vehicle_state_.x, vehicle_state_.y),
-                         ConfigParam::FLAGS_look_backward_distance,
+                         ConfigParam::instance()->FLAGS_look_backward_distance,
                          forword_limit)) {
       return false;
     }
@@ -218,7 +219,7 @@ bool Frame::CreateReferenceLineInfo() {
   // auto segments_iter = segments.begin();
   while (ref_line_iter != reference_lines.end()) {
     if (ref_line_iter->GetReferenceLinePoints().size() <
-        ConfigParam::FLAGS_num_reference_points_near_destination) {
+        ConfigParam::instance()->FLAGS_num_reference_points_near_destination) {
       is_near_destination_ = true;
     }
     reference_line_info_.emplace_back(vehicle_state_, planning_start_point_,
@@ -262,14 +263,14 @@ bool Frame::CreateReferenceLineInfo() {
 }
 
 void Frame::AddObstacle(const Obstacle &obstacle) {
-  std::unique_ptr<Obstacle> temp(new Obstacle(obstacle));
+  std::shared_ptr<Obstacle> temp(new Obstacle(obstacle));
   obstacles_.insert({obstacle.Id(), std::move(temp)});
   // obstacles_.insert({obstacle.Id(), obstacle});
   // obstacle_items_.push_back(&(obstacles_[obstacle.Id()]));
 }
-// const std::unordered_map<std::string, Obstacle> obstacles() const;
-const std::unordered_map<std::string, std::unique_ptr<Obstacle>>
-Frame::obstacles() const {
+// const std::map<std::string, Obstacle> obstacles() const;
+const std::map<std::string, std::shared_ptr<Obstacle>> Frame::obstacles()
+    const {
   return obstacles_;
 }
 

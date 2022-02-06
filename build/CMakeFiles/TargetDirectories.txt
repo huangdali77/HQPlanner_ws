@@ -36,6 +36,7 @@
 /home/zx414/HQPlanner_ws/build/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir
 /home/zx414/HQPlanner_ws/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/edit_cache.dir
+/home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/main.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/hqplanner.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/hqplanner_generate_messages_py.dir
 /home/zx414/HQPlanner_ws/build/hqplanner/CMakeFiles/hqplanner_genpy.dir

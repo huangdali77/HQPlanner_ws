@@ -26,14 +26,15 @@ bool ReferenceLineProvider::GetReferenceLines(
 }
 
 double ReferenceLineProvider::LookForwardDistance(const VehicleState& state) {
-  auto forward_distance =
-      state.linear_velocity * ConfigParam::FLAGS_look_forward_time_sec;
+  auto forward_distance = state.linear_velocity *
+                          ConfigParam::instance()->FLAGS_look_forward_time_sec;
 
-  if (forward_distance > ConfigParam::FLAGS_look_forward_short_distance) {
-    return ConfigParam::FLAGS_look_forward_long_distance;
+  if (forward_distance >
+      ConfigParam::instance()->FLAGS_look_forward_short_distance) {
+    return ConfigParam::instance()->FLAGS_look_forward_long_distance;
   }
 
-  return ConfigParam::FLAGS_look_forward_short_distance;
+  return ConfigParam::instance()->FLAGS_look_forward_short_distance;
 }
 
 void ReferenceLineProvider::Stop() { is_stop_ = true; }

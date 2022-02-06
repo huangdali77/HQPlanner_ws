@@ -1,7 +1,7 @@
 #ifndef HQPLANNER_TRAJECTORY_TRAJECTORY_H_
 #define HQPLANNER_TRAJECTORY_TRAJECTORY_H_
 
-#include "for_proto/pnc_point.h"
+#include "hqplanner/for_proto/pnc_point.h"
 
 namespace hqplanner {
 namespace trajectory {

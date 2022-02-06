@@ -166,8 +166,6 @@ class ReferenceLineInfo {
   double offset_to_other_reference_line_ = 0.0;
 
   double priority_cost_ = 0.0;
-
-  hqplanner::forproto::ConfigParam config_param_;
 };
 
 }  // namespace hqplanner

@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <string>
 
-#include "math/vec2d.h"
+#include "hqplanner/math/vec2d.h"
 namespace hqplanner {
 namespace speed {
 

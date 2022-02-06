@@ -6,7 +6,7 @@ namespace hqplanner {
 
 class GlobalNumberProvider {
  public:
-  GlobalNumberProvider() = default;
+  // GlobalNumberProvider() = default;
 
   std::uint32_t GetSequenceNum();
   std::int32_t GetPerceptionObstacleId();

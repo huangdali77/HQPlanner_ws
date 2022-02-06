@@ -172,6 +172,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+hqplanner/CMakeFiles/main.dir/rule:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hqplanner/CMakeFiles/main.dir/rule
+.PHONY : hqplanner/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: hqplanner/CMakeFiles/main.dir/rule
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/main.dir/build.make hqplanner/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+# Convenience name for target.
 hqplanner/CMakeFiles/hqplanner.dir/rule:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hqplanner/CMakeFiles/hqplanner.dir/rule
 .PHONY : hqplanner/CMakeFiles/hqplanner.dir/rule
@@ -731,6 +745,318 @@ hqplanner_gencpp/fast:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner_gencpp.dir/build.make hqplanner/CMakeFiles/hqplanner_gencpp.dir/build
 .PHONY : hqplanner_gencpp/fast
 
+src/common/frame.o: src/common/frame.cpp.o
+.PHONY : src/common/frame.o
+
+# target to build an object file
+src/common/frame.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o
+.PHONY : src/common/frame.cpp.o
+
+src/common/frame.i: src/common/frame.cpp.i
+.PHONY : src/common/frame.i
+
+# target to preprocess a source file
+src/common/frame.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.i
+.PHONY : src/common/frame.cpp.i
+
+src/common/frame.s: src/common/frame.cpp.s
+.PHONY : src/common/frame.s
+
+# target to generate assembly for a file
+src/common/frame.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.s
+.PHONY : src/common/frame.cpp.s
+
+src/common/obstacle.o: src/common/obstacle.cpp.o
+.PHONY : src/common/obstacle.o
+
+# target to build an object file
+src/common/obstacle.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/obstacle.cpp.o
+.PHONY : src/common/obstacle.cpp.o
+
+src/common/obstacle.i: src/common/obstacle.cpp.i
+.PHONY : src/common/obstacle.i
+
+# target to preprocess a source file
+src/common/obstacle.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/obstacle.cpp.i
+.PHONY : src/common/obstacle.cpp.i
+
+src/common/obstacle.s: src/common/obstacle.cpp.s
+.PHONY : src/common/obstacle.s
+
+# target to generate assembly for a file
+src/common/obstacle.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/obstacle.cpp.s
+.PHONY : src/common/obstacle.cpp.s
+
+src/common/path_decision.o: src/common/path_decision.cpp.o
+.PHONY : src/common/path_decision.o
+
+# target to build an object file
+src/common/path_decision.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/path_decision.cpp.o
+.PHONY : src/common/path_decision.cpp.o
+
+src/common/path_decision.i: src/common/path_decision.cpp.i
+.PHONY : src/common/path_decision.i
+
+# target to preprocess a source file
+src/common/path_decision.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/path_decision.cpp.i
+.PHONY : src/common/path_decision.cpp.i
+
+src/common/path_decision.s: src/common/path_decision.cpp.s
+.PHONY : src/common/path_decision.s
+
+# target to generate assembly for a file
+src/common/path_decision.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/path_decision.cpp.s
+.PHONY : src/common/path_decision.cpp.s
+
+src/common/path_obstacle.o: src/common/path_obstacle.cpp.o
+.PHONY : src/common/path_obstacle.o
+
+# target to build an object file
+src/common/path_obstacle.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/path_obstacle.cpp.o
+.PHONY : src/common/path_obstacle.cpp.o
+
+src/common/path_obstacle.i: src/common/path_obstacle.cpp.i
+.PHONY : src/common/path_obstacle.i
+
+# target to preprocess a source file
+src/common/path_obstacle.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/path_obstacle.cpp.i
+.PHONY : src/common/path_obstacle.cpp.i
+
+src/common/path_obstacle.s: src/common/path_obstacle.cpp.s
+.PHONY : src/common/path_obstacle.s
+
+# target to generate assembly for a file
+src/common/path_obstacle.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/common/path_obstacle.cpp.s
+.PHONY : src/common/path_obstacle.cpp.s
+
+src/for_proto/config_param.o: src/for_proto/config_param.cpp.o
+.PHONY : src/for_proto/config_param.o
+
+# target to build an object file
+src/for_proto/config_param.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/config_param.cpp.o
+.PHONY : src/for_proto/config_param.cpp.o
+
+src/for_proto/config_param.i: src/for_proto/config_param.cpp.i
+.PHONY : src/for_proto/config_param.i
+
+# target to preprocess a source file
+src/for_proto/config_param.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/config_param.cpp.i
+.PHONY : src/for_proto/config_param.cpp.i
+
+src/for_proto/config_param.s: src/for_proto/config_param.cpp.s
+.PHONY : src/for_proto/config_param.s
+
+# target to generate assembly for a file
+src/for_proto/config_param.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/config_param.cpp.s
+.PHONY : src/for_proto/config_param.cpp.s
+
+src/for_proto/vehicle_config_helper.o: src/for_proto/vehicle_config_helper.cpp.o
+.PHONY : src/for_proto/vehicle_config_helper.o
+
+# target to build an object file
+src/for_proto/vehicle_config_helper.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/vehicle_config_helper.cpp.o
+.PHONY : src/for_proto/vehicle_config_helper.cpp.o
+
+src/for_proto/vehicle_config_helper.i: src/for_proto/vehicle_config_helper.cpp.i
+.PHONY : src/for_proto/vehicle_config_helper.i
+
+# target to preprocess a source file
+src/for_proto/vehicle_config_helper.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/vehicle_config_helper.cpp.i
+.PHONY : src/for_proto/vehicle_config_helper.cpp.i
+
+src/for_proto/vehicle_config_helper.s: src/for_proto/vehicle_config_helper.cpp.s
+.PHONY : src/for_proto/vehicle_config_helper.s
+
+# target to generate assembly for a file
+src/for_proto/vehicle_config_helper.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/vehicle_config_helper.cpp.s
+.PHONY : src/for_proto/vehicle_config_helper.cpp.s
+
+src/for_proto/vehicle_state_provider.o: src/for_proto/vehicle_state_provider.cpp.o
+.PHONY : src/for_proto/vehicle_state_provider.o
+
+# target to build an object file
+src/for_proto/vehicle_state_provider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/vehicle_state_provider.cpp.o
+.PHONY : src/for_proto/vehicle_state_provider.cpp.o
+
+src/for_proto/vehicle_state_provider.i: src/for_proto/vehicle_state_provider.cpp.i
+.PHONY : src/for_proto/vehicle_state_provider.i
+
+# target to preprocess a source file
+src/for_proto/vehicle_state_provider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/vehicle_state_provider.cpp.i
+.PHONY : src/for_proto/vehicle_state_provider.cpp.i
+
+src/for_proto/vehicle_state_provider.s: src/for_proto/vehicle_state_provider.cpp.s
+.PHONY : src/for_proto/vehicle_state_provider.s
+
+# target to generate assembly for a file
+src/for_proto/vehicle_state_provider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/for_proto/vehicle_state_provider.cpp.s
+.PHONY : src/for_proto/vehicle_state_provider.cpp.s
+
+src/main/anchor_points_provider.o: src/main/anchor_points_provider.cpp.o
+.PHONY : src/main/anchor_points_provider.o
+
+# target to build an object file
+src/main/anchor_points_provider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/anchor_points_provider.cpp.o
+.PHONY : src/main/anchor_points_provider.cpp.o
+
+src/main/anchor_points_provider.i: src/main/anchor_points_provider.cpp.i
+.PHONY : src/main/anchor_points_provider.i
+
+# target to preprocess a source file
+src/main/anchor_points_provider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/anchor_points_provider.cpp.i
+.PHONY : src/main/anchor_points_provider.cpp.i
+
+src/main/anchor_points_provider.s: src/main/anchor_points_provider.cpp.s
+.PHONY : src/main/anchor_points_provider.s
+
+# target to generate assembly for a file
+src/main/anchor_points_provider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/anchor_points_provider.cpp.s
+.PHONY : src/main/anchor_points_provider.cpp.s
+
+src/main/environment_publish.o: src/main/environment_publish.cpp.o
+.PHONY : src/main/environment_publish.o
+
+# target to build an object file
+src/main/environment_publish.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/environment_publish.cpp.o
+.PHONY : src/main/environment_publish.cpp.o
+
+src/main/environment_publish.i: src/main/environment_publish.cpp.i
+.PHONY : src/main/environment_publish.i
+
+# target to preprocess a source file
+src/main/environment_publish.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/environment_publish.cpp.i
+.PHONY : src/main/environment_publish.cpp.i
+
+src/main/environment_publish.s: src/main/environment_publish.cpp.s
+.PHONY : src/main/environment_publish.s
+
+# target to generate assembly for a file
+src/main/environment_publish.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/environment_publish.cpp.s
+.PHONY : src/main/environment_publish.cpp.s
+
+src/main/global_number_provider.o: src/main/global_number_provider.cpp.o
+.PHONY : src/main/global_number_provider.o
+
+# target to build an object file
+src/main/global_number_provider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/global_number_provider.cpp.o
+.PHONY : src/main/global_number_provider.cpp.o
+
+src/main/global_number_provider.i: src/main/global_number_provider.cpp.i
+.PHONY : src/main/global_number_provider.i
+
+# target to preprocess a source file
+src/main/global_number_provider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/global_number_provider.cpp.i
+.PHONY : src/main/global_number_provider.cpp.i
+
+src/main/global_number_provider.s: src/main/global_number_provider.cpp.s
+.PHONY : src/main/global_number_provider.s
+
+# target to generate assembly for a file
+src/main/global_number_provider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/global_number_provider.cpp.s
+.PHONY : src/main/global_number_provider.cpp.s
+
+src/main/main.o: src/main/main.cpp.o
+.PHONY : src/main/main.o
+
+# target to build an object file
+src/main/main.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/main.dir/build.make hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o
+.PHONY : src/main/main.cpp.o
+
+src/main/main.i: src/main/main.cpp.i
+.PHONY : src/main/main.i
+
+# target to preprocess a source file
+src/main/main.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/main.dir/build.make hqplanner/CMakeFiles/main.dir/src/main/main.cpp.i
+.PHONY : src/main/main.cpp.i
+
+src/main/main.s: src/main/main.cpp.s
+.PHONY : src/main/main.s
+
+# target to generate assembly for a file
+src/main/main.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/main.dir/build.make hqplanner/CMakeFiles/main.dir/src/main/main.cpp.s
+.PHONY : src/main/main.cpp.s
+
+src/main/planning.o: src/main/planning.cpp.o
+.PHONY : src/main/planning.o
+
+# target to build an object file
+src/main/planning.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/planning.cpp.o
+.PHONY : src/main/planning.cpp.o
+
+src/main/planning.i: src/main/planning.cpp.i
+.PHONY : src/main/planning.i
+
+# target to preprocess a source file
+src/main/planning.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/planning.cpp.i
+.PHONY : src/main/planning.cpp.i
+
+src/main/planning.s: src/main/planning.cpp.s
+.PHONY : src/main/planning.s
+
+# target to generate assembly for a file
+src/main/planning.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/planning.cpp.s
+.PHONY : src/main/planning.cpp.s
+
+src/main/prediction_obstacles_provider.o: src/main/prediction_obstacles_provider.cpp.o
+.PHONY : src/main/prediction_obstacles_provider.o
+
+# target to build an object file
+src/main/prediction_obstacles_provider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/prediction_obstacles_provider.cpp.o
+.PHONY : src/main/prediction_obstacles_provider.cpp.o
+
+src/main/prediction_obstacles_provider.i: src/main/prediction_obstacles_provider.cpp.i
+.PHONY : src/main/prediction_obstacles_provider.i
+
+# target to preprocess a source file
+src/main/prediction_obstacles_provider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/prediction_obstacles_provider.cpp.i
+.PHONY : src/main/prediction_obstacles_provider.cpp.i
+
+src/main/prediction_obstacles_provider.s: src/main/prediction_obstacles_provider.cpp.s
+.PHONY : src/main/prediction_obstacles_provider.s
+
+# target to generate assembly for a file
+src/main/prediction_obstacles_provider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/prediction_obstacles_provider.cpp.s
+.PHONY : src/main/prediction_obstacles_provider.cpp.s
+
 src/math/aabox2d.o: src/math/aabox2d.cpp.o
 .PHONY : src/math/aabox2d.o
 
@@ -947,6 +1273,78 @@ src/math/vec2d.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/vec2d.cpp.s
 .PHONY : src/math/vec2d.cpp.s
 
+src/path/discretized_path.o: src/path/discretized_path.cpp.o
+.PHONY : src/path/discretized_path.o
+
+# target to build an object file
+src/path/discretized_path.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o
+.PHONY : src/path/discretized_path.cpp.o
+
+src/path/discretized_path.i: src/path/discretized_path.cpp.i
+.PHONY : src/path/discretized_path.i
+
+# target to preprocess a source file
+src/path/discretized_path.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.i
+.PHONY : src/path/discretized_path.cpp.i
+
+src/path/discretized_path.s: src/path/discretized_path.cpp.s
+.PHONY : src/path/discretized_path.s
+
+# target to generate assembly for a file
+src/path/discretized_path.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.s
+.PHONY : src/path/discretized_path.cpp.s
+
+src/path/frenet_frame_path.o: src/path/frenet_frame_path.cpp.o
+.PHONY : src/path/frenet_frame_path.o
+
+# target to build an object file
+src/path/frenet_frame_path.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o
+.PHONY : src/path/frenet_frame_path.cpp.o
+
+src/path/frenet_frame_path.i: src/path/frenet_frame_path.cpp.i
+.PHONY : src/path/frenet_frame_path.i
+
+# target to preprocess a source file
+src/path/frenet_frame_path.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.i
+.PHONY : src/path/frenet_frame_path.cpp.i
+
+src/path/frenet_frame_path.s: src/path/frenet_frame_path.cpp.s
+.PHONY : src/path/frenet_frame_path.s
+
+# target to generate assembly for a file
+src/path/frenet_frame_path.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.s
+.PHONY : src/path/frenet_frame_path.cpp.s
+
+src/path/path_data.o: src/path/path_data.cpp.o
+.PHONY : src/path/path_data.o
+
+# target to build an object file
+src/path/path_data.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o
+.PHONY : src/path/path_data.cpp.o
+
+src/path/path_data.i: src/path/path_data.cpp.i
+.PHONY : src/path/path_data.i
+
+# target to preprocess a source file
+src/path/path_data.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.i
+.PHONY : src/path/path_data.cpp.i
+
+src/path/path_data.s: src/path/path_data.cpp.s
+.PHONY : src/path/path_data.s
+
+# target to generate assembly for a file
+src/path/path_data.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.s
+.PHONY : src/path/path_data.cpp.s
+
 src/reference_line/reference_line.o: src/reference_line/reference_line.cpp.o
 .PHONY : src/reference_line/reference_line.o
 
@@ -970,6 +1368,54 @@ src/reference_line/reference_line.s: src/reference_line/reference_line.cpp.s
 src/reference_line/reference_line.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.s
 .PHONY : src/reference_line/reference_line.cpp.s
+
+src/reference_line/reference_line_info.o: src/reference_line/reference_line_info.cpp.o
+.PHONY : src/reference_line/reference_line_info.o
+
+# target to build an object file
+src/reference_line/reference_line_info.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o
+.PHONY : src/reference_line/reference_line_info.cpp.o
+
+src/reference_line/reference_line_info.i: src/reference_line/reference_line_info.cpp.i
+.PHONY : src/reference_line/reference_line_info.i
+
+# target to preprocess a source file
+src/reference_line/reference_line_info.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.i
+.PHONY : src/reference_line/reference_line_info.cpp.i
+
+src/reference_line/reference_line_info.s: src/reference_line/reference_line_info.cpp.s
+.PHONY : src/reference_line/reference_line_info.s
+
+# target to generate assembly for a file
+src/reference_line/reference_line_info.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.s
+.PHONY : src/reference_line/reference_line_info.cpp.s
+
+src/reference_line/reference_line_provider.o: src/reference_line/reference_line_provider.cpp.o
+.PHONY : src/reference_line/reference_line_provider.o
+
+# target to build an object file
+src/reference_line/reference_line_provider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o
+.PHONY : src/reference_line/reference_line_provider.cpp.o
+
+src/reference_line/reference_line_provider.i: src/reference_line/reference_line_provider.cpp.i
+.PHONY : src/reference_line/reference_line_provider.i
+
+# target to preprocess a source file
+src/reference_line/reference_line_provider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.i
+.PHONY : src/reference_line/reference_line_provider.cpp.i
+
+src/reference_line/reference_line_provider.s: src/reference_line/reference_line_provider.cpp.s
+.PHONY : src/reference_line/reference_line_provider.s
+
+# target to generate assembly for a file
+src/reference_line/reference_line_provider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.s
+.PHONY : src/reference_line/reference_line_provider.cpp.s
 
 src/reference_line_test.o: src/reference_line_test.cpp.o
 .PHONY : src/reference_line_test.o
@@ -1018,6 +1464,198 @@ src/ros_test.s: src/ros_test.cpp.s
 src/ros_test.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/ros_test.dir/build.make hqplanner/CMakeFiles/ros_test.dir/src/ros_test.cpp.s
 .PHONY : src/ros_test.cpp.s
+
+src/speed/speed_data.o: src/speed/speed_data.cpp.o
+.PHONY : src/speed/speed_data.o
+
+# target to build an object file
+src/speed/speed_data.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o
+.PHONY : src/speed/speed_data.cpp.o
+
+src/speed/speed_data.i: src/speed/speed_data.cpp.i
+.PHONY : src/speed/speed_data.i
+
+# target to preprocess a source file
+src/speed/speed_data.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.i
+.PHONY : src/speed/speed_data.cpp.i
+
+src/speed/speed_data.s: src/speed/speed_data.cpp.s
+.PHONY : src/speed/speed_data.s
+
+# target to generate assembly for a file
+src/speed/speed_data.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.s
+.PHONY : src/speed/speed_data.cpp.s
+
+src/speed/speed_limit.o: src/speed/speed_limit.cpp.o
+.PHONY : src/speed/speed_limit.o
+
+# target to build an object file
+src/speed/speed_limit.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o
+.PHONY : src/speed/speed_limit.cpp.o
+
+src/speed/speed_limit.i: src/speed/speed_limit.cpp.i
+.PHONY : src/speed/speed_limit.i
+
+# target to preprocess a source file
+src/speed/speed_limit.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.i
+.PHONY : src/speed/speed_limit.cpp.i
+
+src/speed/speed_limit.s: src/speed/speed_limit.cpp.s
+.PHONY : src/speed/speed_limit.s
+
+# target to generate assembly for a file
+src/speed/speed_limit.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.s
+.PHONY : src/speed/speed_limit.cpp.s
+
+src/speed/st_boundary.o: src/speed/st_boundary.cpp.o
+.PHONY : src/speed/st_boundary.o
+
+# target to build an object file
+src/speed/st_boundary.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o
+.PHONY : src/speed/st_boundary.cpp.o
+
+src/speed/st_boundary.i: src/speed/st_boundary.cpp.i
+.PHONY : src/speed/st_boundary.i
+
+# target to preprocess a source file
+src/speed/st_boundary.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.i
+.PHONY : src/speed/st_boundary.cpp.i
+
+src/speed/st_boundary.s: src/speed/st_boundary.cpp.s
+.PHONY : src/speed/st_boundary.s
+
+# target to generate assembly for a file
+src/speed/st_boundary.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.s
+.PHONY : src/speed/st_boundary.cpp.s
+
+src/speed/st_point.o: src/speed/st_point.cpp.o
+.PHONY : src/speed/st_point.o
+
+# target to build an object file
+src/speed/st_point.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o
+.PHONY : src/speed/st_point.cpp.o
+
+src/speed/st_point.i: src/speed/st_point.cpp.i
+.PHONY : src/speed/st_point.i
+
+# target to preprocess a source file
+src/speed/st_point.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.i
+.PHONY : src/speed/st_point.cpp.i
+
+src/speed/st_point.s: src/speed/st_point.cpp.s
+.PHONY : src/speed/st_point.s
+
+# target to generate assembly for a file
+src/speed/st_point.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.s
+.PHONY : src/speed/st_point.cpp.s
+
+src/trajectory/discretized_trajectory.o: src/trajectory/discretized_trajectory.cpp.o
+.PHONY : src/trajectory/discretized_trajectory.o
+
+# target to build an object file
+src/trajectory/discretized_trajectory.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o
+.PHONY : src/trajectory/discretized_trajectory.cpp.o
+
+src/trajectory/discretized_trajectory.i: src/trajectory/discretized_trajectory.cpp.i
+.PHONY : src/trajectory/discretized_trajectory.i
+
+# target to preprocess a source file
+src/trajectory/discretized_trajectory.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.i
+.PHONY : src/trajectory/discretized_trajectory.cpp.i
+
+src/trajectory/discretized_trajectory.s: src/trajectory/discretized_trajectory.cpp.s
+.PHONY : src/trajectory/discretized_trajectory.s
+
+# target to generate assembly for a file
+src/trajectory/discretized_trajectory.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.s
+.PHONY : src/trajectory/discretized_trajectory.cpp.s
+
+src/trajectory/publishable_trajectory.o: src/trajectory/publishable_trajectory.cpp.o
+.PHONY : src/trajectory/publishable_trajectory.o
+
+# target to build an object file
+src/trajectory/publishable_trajectory.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o
+.PHONY : src/trajectory/publishable_trajectory.cpp.o
+
+src/trajectory/publishable_trajectory.i: src/trajectory/publishable_trajectory.cpp.i
+.PHONY : src/trajectory/publishable_trajectory.i
+
+# target to preprocess a source file
+src/trajectory/publishable_trajectory.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.i
+.PHONY : src/trajectory/publishable_trajectory.cpp.i
+
+src/trajectory/publishable_trajectory.s: src/trajectory/publishable_trajectory.cpp.s
+.PHONY : src/trajectory/publishable_trajectory.s
+
+# target to generate assembly for a file
+src/trajectory/publishable_trajectory.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.s
+.PHONY : src/trajectory/publishable_trajectory.cpp.s
+
+src/trajectory/trajectory_stitcher.o: src/trajectory/trajectory_stitcher.cpp.o
+.PHONY : src/trajectory/trajectory_stitcher.o
+
+# target to build an object file
+src/trajectory/trajectory_stitcher.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o
+.PHONY : src/trajectory/trajectory_stitcher.cpp.o
+
+src/trajectory/trajectory_stitcher.i: src/trajectory/trajectory_stitcher.cpp.i
+.PHONY : src/trajectory/trajectory_stitcher.i
+
+# target to preprocess a source file
+src/trajectory/trajectory_stitcher.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.i
+.PHONY : src/trajectory/trajectory_stitcher.cpp.i
+
+src/trajectory/trajectory_stitcher.s: src/trajectory/trajectory_stitcher.cpp.s
+.PHONY : src/trajectory/trajectory_stitcher.s
+
+# target to generate assembly for a file
+src/trajectory/trajectory_stitcher.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.s
+.PHONY : src/trajectory/trajectory_stitcher.cpp.s
+
+src/util/util.o: src/util/util.cpp.o
+.PHONY : src/util/util.o
+
+# target to build an object file
+src/util/util.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o
+.PHONY : src/util/util.cpp.o
+
+src/util/util.i: src/util/util.cpp.i
+.PHONY : src/util/util.i
+
+# target to preprocess a source file
+src/util/util.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.i
+.PHONY : src/util/util.cpp.i
+
+src/util/util.s: src/util/util.cpp.s
+.PHONY : src/util/util.s
+
+# target to generate assembly for a file
+src/util/util.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.s
+.PHONY : src/util/util.cpp.s
 
 # Help Target
 help:
@@ -1070,8 +1708,48 @@ help:
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... hqplanner"
+	@echo "... main"
 	@echo "... ref_line_pub"
 	@echo "... ros_test"
+	@echo "... src/common/frame.o"
+	@echo "... src/common/frame.i"
+	@echo "... src/common/frame.s"
+	@echo "... src/common/obstacle.o"
+	@echo "... src/common/obstacle.i"
+	@echo "... src/common/obstacle.s"
+	@echo "... src/common/path_decision.o"
+	@echo "... src/common/path_decision.i"
+	@echo "... src/common/path_decision.s"
+	@echo "... src/common/path_obstacle.o"
+	@echo "... src/common/path_obstacle.i"
+	@echo "... src/common/path_obstacle.s"
+	@echo "... src/for_proto/config_param.o"
+	@echo "... src/for_proto/config_param.i"
+	@echo "... src/for_proto/config_param.s"
+	@echo "... src/for_proto/vehicle_config_helper.o"
+	@echo "... src/for_proto/vehicle_config_helper.i"
+	@echo "... src/for_proto/vehicle_config_helper.s"
+	@echo "... src/for_proto/vehicle_state_provider.o"
+	@echo "... src/for_proto/vehicle_state_provider.i"
+	@echo "... src/for_proto/vehicle_state_provider.s"
+	@echo "... src/main/anchor_points_provider.o"
+	@echo "... src/main/anchor_points_provider.i"
+	@echo "... src/main/anchor_points_provider.s"
+	@echo "... src/main/environment_publish.o"
+	@echo "... src/main/environment_publish.i"
+	@echo "... src/main/environment_publish.s"
+	@echo "... src/main/global_number_provider.o"
+	@echo "... src/main/global_number_provider.i"
+	@echo "... src/main/global_number_provider.s"
+	@echo "... src/main/main.o"
+	@echo "... src/main/main.i"
+	@echo "... src/main/main.s"
+	@echo "... src/main/planning.o"
+	@echo "... src/main/planning.i"
+	@echo "... src/main/planning.s"
+	@echo "... src/main/prediction_obstacles_provider.o"
+	@echo "... src/main/prediction_obstacles_provider.i"
+	@echo "... src/main/prediction_obstacles_provider.s"
 	@echo "... src/math/aabox2d.o"
 	@echo "... src/math/aabox2d.i"
 	@echo "... src/math/aabox2d.s"
@@ -1099,15 +1777,54 @@ help:
 	@echo "... src/math/vec2d.o"
 	@echo "... src/math/vec2d.i"
 	@echo "... src/math/vec2d.s"
+	@echo "... src/path/discretized_path.o"
+	@echo "... src/path/discretized_path.i"
+	@echo "... src/path/discretized_path.s"
+	@echo "... src/path/frenet_frame_path.o"
+	@echo "... src/path/frenet_frame_path.i"
+	@echo "... src/path/frenet_frame_path.s"
+	@echo "... src/path/path_data.o"
+	@echo "... src/path/path_data.i"
+	@echo "... src/path/path_data.s"
 	@echo "... src/reference_line/reference_line.o"
 	@echo "... src/reference_line/reference_line.i"
 	@echo "... src/reference_line/reference_line.s"
+	@echo "... src/reference_line/reference_line_info.o"
+	@echo "... src/reference_line/reference_line_info.i"
+	@echo "... src/reference_line/reference_line_info.s"
+	@echo "... src/reference_line/reference_line_provider.o"
+	@echo "... src/reference_line/reference_line_provider.i"
+	@echo "... src/reference_line/reference_line_provider.s"
 	@echo "... src/reference_line_test.o"
 	@echo "... src/reference_line_test.i"
 	@echo "... src/reference_line_test.s"
 	@echo "... src/ros_test.o"
 	@echo "... src/ros_test.i"
 	@echo "... src/ros_test.s"
+	@echo "... src/speed/speed_data.o"
+	@echo "... src/speed/speed_data.i"
+	@echo "... src/speed/speed_data.s"
+	@echo "... src/speed/speed_limit.o"
+	@echo "... src/speed/speed_limit.i"
+	@echo "... src/speed/speed_limit.s"
+	@echo "... src/speed/st_boundary.o"
+	@echo "... src/speed/st_boundary.i"
+	@echo "... src/speed/st_boundary.s"
+	@echo "... src/speed/st_point.o"
+	@echo "... src/speed/st_point.i"
+	@echo "... src/speed/st_point.s"
+	@echo "... src/trajectory/discretized_trajectory.o"
+	@echo "... src/trajectory/discretized_trajectory.i"
+	@echo "... src/trajectory/discretized_trajectory.s"
+	@echo "... src/trajectory/publishable_trajectory.o"
+	@echo "... src/trajectory/publishable_trajectory.i"
+	@echo "... src/trajectory/publishable_trajectory.s"
+	@echo "... src/trajectory/trajectory_stitcher.o"
+	@echo "... src/trajectory/trajectory_stitcher.i"
+	@echo "... src/trajectory/trajectory_stitcher.s"
+	@echo "... src/util/util.o"
+	@echo "... src/util/util.i"
+	@echo "... src/util/util.s"
 .PHONY : help
 
 

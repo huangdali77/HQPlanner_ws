@@ -277,11 +277,13 @@ bool ReferenceLine::GetApproximateSLBoundary(
 }
 
 void ReferenceLine::ConstructReferenceLineByFixedStep() {
-  int reference_line_points_num = int(
-      anchor_points_s_.back() / ConfigParam::FLAGS_reference_line_sample_step);
+  int reference_line_points_num =
+      int(anchor_points_s_.back() /
+          ConfigParam::instance()->FLAGS_reference_line_sample_step);
   std::vector<double> ref_s(reference_line_points_num, 0);
   for (int i = 1; i < ref_s.size(); ++i) {
-    ref_s[i] = ref_s[i - 1] + ConfigParam::FLAGS_reference_line_sample_step;
+    ref_s[i] = ref_s[i - 1] +
+               ConfigParam::instance()->FLAGS_reference_line_sample_step;
   }
   accumulated_s_ = ref_s;
   for (auto i_s : ref_s) {
@@ -317,8 +319,8 @@ void ReferenceLine::ConstructReferenceLineByFixedStep() {
 
 bool ReferenceLine::GetLaneWidth(const double s, double *const lane_left_width,
                                  double *const lane_right_width) const {
-  *lane_left_width = ConfigParam::FLAGS_lane_left_width;
-  *lane_right_width = ConfigParam::FLAGS_lane_right_width;
+  *lane_left_width = ConfigParam::instance()->FLAGS_lane_left_width;
+  *lane_right_width = ConfigParam::instance()->FLAGS_lane_right_width;
   return true;
 }
 
@@ -365,7 +367,8 @@ double ReferenceLine::GetSpeedLimitFromS(const double s) const {
     }
   }
   // const auto& map_path_point = GetReferencePoint(s);
-  double speed_limit = ConfigParam::FLAGS_planning_upper_speed_limit;
+  double speed_limit =
+      ConfigParam::instance()->FLAGS_planning_upper_speed_limit;
   // for (const auto& lane_waypoint : map_path_point.lane_waypoints()) {
   //   if (lane_waypoint.lane == nullptr) {
   //     AWARN << "lane_waypoint.lane is nullptr";

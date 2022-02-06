@@ -143,6 +143,39 @@ add_library(hqplanner
   src/math/math_utils.cpp
   src/math/polygon2d.cpp
   src/math/vec2d.cpp 
+  
+  src/common/frame.cpp
+  src/common/obstacle.cpp
+  src/common/path_decision.cpp
+  src/common/path_obstacle.cpp
+
+  src/for_proto/vehicle_config_helper.cpp
+  src/for_proto/vehicle_state_provider.cpp
+  src/for_proto/config_param.cpp
+     
+  src/main/anchor_points_provider.cpp
+  src/main/environment_publish.cpp
+  src/main/global_number_provider.cpp
+  src/main/planning.cpp
+  src/main/prediction_obstacles_provider.cpp
+
+  src/path/discretized_path.cpp
+  src/path/frenet_frame_path.cpp
+  src/path/path_data.cpp
+
+  src/reference_line/reference_line_info.cpp
+  src/reference_line/reference_line_provider.cpp
+
+  src/speed/speed_data.cpp
+  src/speed/speed_limit.cpp
+  src/speed/st_boundary.cpp
+  src/speed/st_point.cpp
+
+  src/trajectory/discretized_trajectory.cpp
+  src/trajectory/publishable_trajectory.cpp
+  src/trajectory/trajectory_stitcher.cpp
+
+  src/util/util.cpp
 )
 
 ## Add cmake target dependencies of the library
@@ -171,15 +204,20 @@ add_library(hqplanner
 # )
 
 add_executable(ref_line_pub src/reference_line_test.cpp)
-
 #add_dependencies(ref_line_pub ${PROJECT_NAME}_generate_messages_cpp)
 add_dependencies(ref_line_pub hqplanner ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
 #target_link_libraries(ref_line_pub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} ${catkin_LIBRARIES})
 target_link_libraries(ref_line_pub hqplanner ${catkin_LIBRARIES})
 
+add_executable(main src/main/main.cpp)
+add_dependencies(main hqplanner ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
+target_link_libraries(main hqplanner ${catkin_LIBRARIES})
+
 
 add_executable(ros_test src/ros_test.cpp)
 target_link_libraries(ros_test ${catkin_LIBRARIES})
+
+
 
 #############
 ## Install ##

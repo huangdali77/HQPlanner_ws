@@ -17,7 +17,7 @@ using hqplanner::speed::StBoundary;
 
 PathObstacle *PathDecision::AddPathObstacle(const PathObstacle &path_obstacle) {
   auto obs = path_obstacles_.find(path_obstacle.Id());
-  std::unique_ptr<PathObstacle> temp(new PathObstacle(path_obstacle));
+  std::shared_ptr<PathObstacle> temp(new PathObstacle(path_obstacle));
   if (obs != path_obstacles_.end()) {
     path_obstacles_.erase(path_obstacle.Id());
     path_obstacles_.insert({path_obstacle.Id(), std::move(temp)});
@@ -40,7 +40,7 @@ const PathObstacle *PathDecision::Find(const std::string &object_id) const {
   return path_obs_ptr->second.get();
 }
 
-const std::unordered_map<std::string, std::unique_ptr<PathObstacle>>
+const std::map<std::string, std::shared_ptr<PathObstacle>>
     &PathDecision::path_obstacles() const {
   return path_obstacles_;
 }

@@ -54,7 +54,7 @@ std::vector<TrajectoryPoint> TrajectoryStitcher::ComputeStitchingTrajectory(
     const double planning_cycle_time,
     const PublishableTrajectory* prev_trajectory, bool* is_replan) {
   *is_replan = true;
-  if (!ConfigParam::FLAGS_enable_trajectory_stitcher) {
+  if (!ConfigParam::instance()->FLAGS_enable_trajectory_stitcher) {
     return ComputeReinitStitchingTrajectory(vehicle_state);
   }
   if (!prev_trajectory) {
@@ -98,8 +98,10 @@ std::vector<TrajectoryPoint> TrajectoryStitcher::ComputeStitchingTrajectory(
   auto lon_diff = std::fabs(frenet_sd.first);
   auto lat_diff = std::fabs(frenet_sd.second);
 
-  if (lat_diff > ConfigParam::FLAGS_replan_lateral_distance_threshold ||
-      lon_diff > ConfigParam::FLAGS_replan_longitudinal_distance_threshold) {
+  if (lat_diff >
+          ConfigParam::instance()->FLAGS_replan_lateral_distance_threshold ||
+      lon_diff > ConfigParam::instance()
+                     ->FLAGS_replan_longitudinal_distance_threshold) {
     return ComputeReinitStitchingTrajectory(vehicle_state);
   }
 

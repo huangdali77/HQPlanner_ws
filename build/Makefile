@@ -289,6 +289,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/main.dir/build.make hqplanner/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
 # Target rules for targets named hqplanner
 
 # Build rule for target.
@@ -868,6 +881,7 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... hqplanner"
+	@echo "... main"
 	@echo "... ref_line_pub"
 	@echo "... ros_test"
 .PHONY : help

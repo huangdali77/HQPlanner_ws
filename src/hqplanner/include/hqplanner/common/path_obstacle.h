@@ -2,8 +2,8 @@
 #define HQPLANNER_PATH_OBSTACLE_H_
 
 #include <list>
+#include <map>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 #include "hqplanner/common/obstacle.h"

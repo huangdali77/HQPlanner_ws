@@ -3,6 +3,24 @@
 #include "hqplanner/for_proto/geometry.h"
 namespace hqplanner {
 namespace forproto {
+
+enum StopReasonCode {
+  STOP_REASON_HEAD_VEHICLE = 1,
+  STOP_REASON_DESTINATION = 2,
+  STOP_REASON_PEDESTRIAN = 3,
+  STOP_REASON_OBSTACLE = 4,
+  STOP_REASON_PREPARKING = 5,
+  STOP_REASON_SIGNAL = 100,  // only for red signal
+  STOP_REASON_STOP_SIGN = 101,
+  STOP_REASON_YIELD_SIGN = 102,
+  STOP_REASON_CLEAR_ZONE = 103,
+  STOP_REASON_CROSSWALK = 104,
+  STOP_REASON_CREEPER = 105,
+  STOP_REASON_REFERENCE_END = 106,  // end of the reference_line
+  STOP_REASON_YELLOW_SIGNAL = 107,  // yellow signal
+  STOP_REASON_PULL_OVER = 108       // pull over
+};
+
 struct ObjectSidePass {
   enum Type { LEFT = 1, RIGHT = 2 };
   Type type;
@@ -32,17 +50,6 @@ struct ObjectStop {
   std::vector<std::string> wait_for_obstacle;
 };
 
-struct ObjectNudge {
-  enum Type {
-    LEFT_NUDGE = 1,   // drive from the left side of the obstacle
-    RIGHT_NUDGE = 2,  // drive from the right side of the obstacle
-    NO_NUDGE = 3      // No nudge is set.
-  };
-  Type type;
-  // minimum lateral distance in meters. positive if type = LEFT_NUDGE
-  // negative if type = RIGHT_NUDGE
-  double distance_l = 0.0;
-};
 struct ObjectYield {
   double distance_s = 0.0;  // minimum longitudinal distance in meters
   PointENU fence_point;
@@ -105,22 +112,6 @@ struct ObjectDecisionType {
   ObjectOvertake overtake() const { return overtake_; }
 };
 
-enum StopReasonCode {
-  STOP_REASON_HEAD_VEHICLE = 1,
-  STOP_REASON_DESTINATION = 2,
-  STOP_REASON_PEDESTRIAN = 3,
-  STOP_REASON_OBSTACLE = 4,
-  STOP_REASON_PREPARKING = 5,
-  STOP_REASON_SIGNAL = 100,  // only for red signal
-  STOP_REASON_STOP_SIGN = 101,
-  STOP_REASON_YIELD_SIGN = 102,
-  STOP_REASON_CLEAR_ZONE = 103,
-  STOP_REASON_CROSSWALK = 104,
-  STOP_REASON_CREEPER = 105,
-  STOP_REASON_REFERENCE_END = 106,  // end of the reference_line
-  STOP_REASON_YELLOW_SIGNAL = 107,  // yellow signal
-  STOP_REASON_PULL_OVER = 108       // pull over
-};
 struct MainStop {
   StopReasonCode reason_code;
   std::string reason = "";

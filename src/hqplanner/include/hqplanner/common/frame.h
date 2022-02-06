@@ -27,6 +27,8 @@
 #include "hqplanner/reference_line/reference_line_info.h"
 #include "hqplanner/reference_line/reference_line_provider.h"
 // #include "subscribe.h"
+#include <map>
+
 #include "hqplanner/for_proto/vehicle_state_provider.h"
 namespace hqplanner {
 
@@ -60,8 +62,7 @@ class Frame {
   const ReferenceLineInfo *DriveReferenceLineInfo() const;
 
   const std::vector<const Obstacle *> obstacle_items() const;
-  const std::unordered_map<std::string, std::unique_ptr<Obstacle>> obstacles()
-      const;
+  const std::map<std::string, std::shared_ptr<Obstacle>> obstacles() const;
   const Obstacle *CreateStopObstacle(
       ReferenceLineInfo *const reference_line_info,
       const std::string &obstacle_id, const double obstacle_s);
@@ -127,10 +128,8 @@ class Frame {
   const ReferenceLineInfo *drive_reference_line_info_ = nullptr;
   hqplanner::forproto::PredictionObstacles prediction_;
 
-  std::unordered_map<std::string, std::unique_ptr<Obstacle>> obstacles_;
+  std::map<std::string, std::shared_ptr<Obstacle>> obstacles_;
 
-  // std::unordered_map<std::string, Obstacle> obstacles_;
-  // std::vector<const Obstacle *> obstacle_items_;
   hqplanner::forproto::ADCTrajectory trajectory_;  // last published trajectory
 
   ReferenceLineProvider *reference_line_provider_ = nullptr;

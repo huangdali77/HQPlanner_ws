@@ -2,8 +2,8 @@
 #define HQPLANNER_FOR_PROTO_PREDICTION_OBSTACLE_H_
 #include <vector>
 
-#include "hqplanner/for_proto/perception_obstacle.h";
-#include "hqplanner/for_proto/pnc_point.h";
+#include "hqplanner/for_proto/perception_obstacle.h"
+#include "hqplanner/for_proto/pnc_point.h"
 namespace hqplanner {
 namespace forproto {
 struct Trajectory {
