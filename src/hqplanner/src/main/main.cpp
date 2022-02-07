@@ -1,4 +1,12 @@
+#include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/Quaternion.h>
+#include <nav_msgs/Odometry.h>
+#include <nav_msgs/Path.h>
+#include <ros/console.h>
 #include <ros/ros.h>
+#include <std_msgs/String.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2_ros/transform_broadcaster.h>
 #include <visualization_msgs/Marker.h>
 
 #include <map>
@@ -46,8 +54,7 @@ PotentialPredictionObstacle CreatPotentialPredictionObstacle(
     anchor.frenet_s = anchor_points.back().frenet_s + traj_step;
     anchor_points.emplace_back(std::move(anchor));
   }
-  return PotentialPredictionObstacle(std::move(perception_obstacle),
-                                     std::move(anchor_points));
+  return PotentialPredictionObstacle(perception_obstacle, anchor_points);
 }
 
 void GetPotentialPredictionObstacles(
@@ -118,7 +125,7 @@ void GetPotentialPredictionObstacles(
 
   // 障碍物的预测轨迹起始锚点
   AnchorPoint start_anchor_adc;
-  start_anchor_adc.cartesian_x = 0.0;
+  start_anchor_adc.cartesian_x = 3.0;
   start_anchor_adc.cartesian_y = 0.0;
   start_anchor_adc.frenet_s = 0.0;
   //   ===================================================
@@ -158,7 +165,7 @@ visualization_msgs::Marker GetObsMarker(
     const PerceptionObstacle &perception_obstacle) {
   static int id = 1;
   visualization_msgs::Marker marker;
-  marker.header.frame_id = "/obsframe";
+  marker.header.frame_id = "obsframe";
   marker.header.stamp = ros::Time::now();
   marker.ns = "hqplanner";
   marker.id = id;
@@ -188,14 +195,19 @@ visualization_msgs::Marker GetObsMarker(
   ++id;
   return marker;
 }
+//   ==================================================================
+// geometry_msgs::Quaternion odom_quat;
+//   ==================================================================
 
 int main(int argc, char **argv) {
+  ROS_INFO("start main()");
   ros::init(argc, argv, "hqplanner_test");
   ros::NodeHandle n;
-  ros::Rate r(10);
   ros::Publisher marker_pub =
       n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
-
+  //   ==================================================================
+  //   tf2_ros::TransformBroadcaster odom_broadcaster;
+  //   ==================================================================
   // 0、提供全局路由锚点
   std::vector<std::vector<AnchorPoint>> anchor_points;
   std::vector<AnchorPoint> anchor_point;
@@ -211,8 +223,9 @@ int main(int argc, char **argv) {
 
   //   1、先初始化adc状态
   VehicleState adc_state;
+  adc_state.x = 3.0;
+  adc_state.timestamp = ros::Time::now().toSec();
   VehicleStateProvider::instance()->Init(adc_state);
-
   //   2、再初始化障碍物信息
   std::map<std::int32_t, PotentialPredictionObstacle>
       potential_prediction_obstacles;
@@ -224,11 +237,18 @@ int main(int argc, char **argv) {
   //   初始化全局路由的anchor
   planning.Init();
   VehicleConfig veh_conf = VehicleConfigHelper::instance()->GetConfig();
+  ROS_INFO("before ros::ok()");
 
+  ros::Rate r(10);
   while (ros::ok()) {
+    ROS_INFO("time:%f", ros::Time::now().toSec());
     planning.RunOnce();
-    VehicleState veh_state = VehicleStateProvider::instance()->vehicle_state();
+    ROS_INFO("after runonce");
 
+    VehicleState veh_state = VehicleStateProvider::instance()->vehicle_state();
+    if (std::hypot(veh_state.x, veh_state.y) > 200) {
+      break;
+    }
     Frame *frame = planning.GetFrame();
     const auto path_obs_items = frame->FindDriveReferenceLineInfo()
                                     ->path_decision()
@@ -236,7 +256,7 @@ int main(int argc, char **argv) {
 
     // adc maker
     visualization_msgs::Marker adc_marker;
-    adc_marker.header.frame_id = "/adcframe";
+    adc_marker.header.frame_id = "obsframe";
     adc_marker.header.stamp = ros::Time::now();
     adc_marker.ns = "hqplanner";
     adc_marker.id = 0;
@@ -276,7 +296,21 @@ int main(int argc, char **argv) {
       marker_pub.publish(marker);
     }
 
-    ros::spinOnce();
+    //   ==================================================================
+    // geometry_msgs::TransformStamped odom_trans;
+    // odom_trans.header.stamp = ros::Time::now();
+    // odom_trans.header.frame_id = "obsframe";
+    // odom_trans.child_frame_id = "adcframe";
+    // odom_quat = adc_marker.pose.orientation;
+    // odom_trans.transform.translation.x = veh_state.x;
+    // odom_trans.transform.translation.y = veh_state.x;
+    // odom_trans.transform.translation.z = 0.0;
+    // odom_trans.transform.rotation = odom_quat;
+
+    // odom_broadcaster.sendTransform(odom_trans);
+    //   ==================================================================
+
+    // ros::spinOnce();
     r.sleep();
   }
 }

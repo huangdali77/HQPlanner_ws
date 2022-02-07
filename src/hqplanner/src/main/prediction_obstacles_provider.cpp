@@ -26,7 +26,6 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
     InitPolygonPoint(perception_obstacle_.polygon_point);
   } else {
     obstacle_reference_trajectory_ = ReferenceLine(anchor_points);
-    // 障碍物全部轨迹
     obstacle_reference_points_ =
         obstacle_reference_trajectory_.GetReferenceLinePoints();
     //   障碍物预测轨迹起点状态
@@ -40,7 +39,7 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
         perception_obstacle_.velocity.x * perception_obstacle_.velocity.x +
         perception_obstacle_.velocity.y * perception_obstacle_.velocity.y);
     double planning_duration_time =
-        1 / ConfigParam::instance()->FLAGS_planning_loop_rate;
+        1.0 / ConfigParam::instance()->FLAGS_planning_loop_rate;
     int trajectory_sample_step =
         int(planning_duration_time * obs_speed /
             ConfigParam::instance()->FLAGS_reference_line_sample_step);
@@ -50,6 +49,7 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
         planning_duration_time;
     trajectory_point_.clear();
     double relative_time = 0.0;
+
     for (int i = 0; i < obstacle_reference_points_.size();) {
       auto const& obstacle_reference_point = obstacle_reference_points_[i];
       if (trajectory_point_.size() > trajectory_sample_points_num) {
@@ -210,7 +210,7 @@ void PredictionObstaclesProvider::ShrinkObstacleTrajectory() {
         publish_prediction_obstacle.second.perception_obstacle_.velocity.y *
             publish_prediction_obstacle.second.perception_obstacle_.velocity.y);
     double planning_duration_time =
-        1 / ConfigParam::instance()->FLAGS_planning_loop_rate;
+        1.0 / ConfigParam::instance()->FLAGS_planning_loop_rate;
     int trajectory_sample_step =
         int(planning_duration_time * obs_speed /
             ConfigParam::instance()->FLAGS_reference_line_sample_step);

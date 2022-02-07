@@ -1,5 +1,7 @@
 #include "hqplanner/reference_line/reference_line_info.h"
 
+#include <ros/ros.h>
+
 #include "hqplanner/math/box2d.h"
 #include "hqplanner/math/vec2d.h"
 namespace hqplanner {

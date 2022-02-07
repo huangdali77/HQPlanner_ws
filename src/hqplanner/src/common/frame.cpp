@@ -1,5 +1,7 @@
 #include "hqplanner/common/frame.h"
 
+#include <ros/ros.h>
+
 #include "hqplanner/for_proto/vehicle_state_provider.h"
 #include "hqplanner/main/prediction_obstacles_provider.h"
 namespace hqplanner {

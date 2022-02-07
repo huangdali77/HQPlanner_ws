@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   cmake_modules
   visualization_msgs
+  tf
 )
 find_package(Eigen REQUIRED) 
 ## System dependencies are found with CMake's conventions
@@ -116,7 +117,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES hqplanner
-  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime visualization_msgs
+  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime visualization_msgs tf
   DEPENDS system_lib
 )
 

@@ -139,7 +139,8 @@ void Planning::RunOnce() {
 
   VehicleState vehicle_state =
       VehicleStateProvider::instance()->vehicle_state();
-
+  ROS_INFO("s:%f", start_timestamp);
+  ROS_INFO("v:%f", vehicle_state.timestamp);
   assert(start_timestamp >= vehicle_state.timestamp);
 
   const double planning_cycle_time =
@@ -174,7 +175,7 @@ void Planning::RunOnce() {
     next_cycle_state.y = next_cycle_trajectory_point.path_point.y;
     next_cycle_state.z = next_cycle_trajectory_point.path_point.z;
     next_cycle_state.timestamp =
-        start_timestamp + next_cycle_trajectory_point.relative_time;
+        vehicle_state.timestamp + next_cycle_trajectory_point.relative_time;
 
     next_cycle_state.heading = next_cycle_trajectory_point.path_point.theta;
     next_cycle_state.kappa = next_cycle_trajectory_point.path_point.kappa;

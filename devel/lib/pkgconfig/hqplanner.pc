@@ -5,4 +5,4 @@ Description: Description of hqplanner
 Version: 0.0.0
 Cflags: -I/home/zx414/HQPlanner_ws/devel/include -I/home/zx414/HQPlanner_ws/src/hqplanner/include
 Libs: -L${prefix}/lib -lhqplanner
-Requires: roscpp std_msgs geometry_msgs message_runtime visualization_msgs
+Requires: roscpp std_msgs geometry_msgs message_runtime visualization_msgs tf

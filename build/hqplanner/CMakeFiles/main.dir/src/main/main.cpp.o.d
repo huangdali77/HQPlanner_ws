@@ -1,9 +1,8 @@
 hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /home/zx414/HQPlanner_ws/src/hqplanner/src/main/main.cpp \
- /usr/include/stdc-predef.h /opt/ros/melodic/include/ros/ros.h \
- /opt/ros/melodic/include/ros/time.h \
- /opt/ros/melodic/include/ros/platform.h /usr/include/c++/7/stdlib.h \
- /usr/include/c++/7/cstdlib \
+ /usr/include/stdc-predef.h \
+ /opt/ros/melodic/include/geometry_msgs/PoseStamped.h \
+ /usr/include/c++/7/string \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -12,40 +11,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h \
- /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
- /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
- /usr/include/x86_64-linux-gnu/sys/select.h \
- /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/c++/7/bits/std_abs.h /usr/include/c++/7/string \
  /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/memoryfwd.h \
  /usr/include/c++/7/bits/char_traits.h \
  /usr/include/c++/7/bits/stl_algobase.h \
@@ -63,15 +28,25 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/c++/7/bits/ptr_traits.h /usr/include/c++/7/debug/debug.h \
  /usr/include/c++/7/bits/predefined_ops.h \
  /usr/include/c++/7/bits/postypes.h /usr/include/c++/7/cwchar \
- /usr/include/wchar.h /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
+ /usr/include/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/c++/7/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/c++/7/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h \
@@ -85,7 +60,11 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h \
  /usr/include/c++/7/clocale /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/7/iosfwd \
- /usr/include/c++/7/cctype /usr/include/ctype.h \
+ /usr/include/c++/7/cctype /usr/include/ctype.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
  /usr/include/c++/7/bits/ostream_insert.h \
  /usr/include/c++/7/bits/cxxabi_forced.h \
  /usr/include/c++/7/bits/stl_function.h \
@@ -97,17 +76,37 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h \
  /usr/include/c++/7/ext/alloc_traits.h \
  /usr/include/c++/7/bits/alloc_traits.h \
- /usr/include/c++/7/ext/string_conversions.h /usr/include/c++/7/cstdio \
+ /usr/include/c++/7/ext/string_conversions.h /usr/include/c++/7/cstdlib \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/sysmacros.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/c++/7/bits/std_abs.h /usr/include/c++/7/cstdio \
  /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/libio.h \
  /usr/include/x86_64-linux-gnu/bits/_G_config.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
@@ -117,15 +116,31 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/7/bits/functional_hash.h \
- /usr/include/c++/7/bits/basic_string.tcc /usr/include/c++/7/iostream \
- /usr/include/c++/7/ostream /usr/include/c++/7/ios \
- /usr/include/c++/7/bits/ios_base.h \
+ /usr/include/c++/7/bits/basic_string.tcc /usr/include/c++/7/vector \
+ /usr/include/c++/7/bits/stl_construct.h \
+ /usr/include/c++/7/bits/stl_uninitialized.h \
+ /usr/include/c++/7/bits/stl_vector.h \
+ /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
+ /usr/include/c++/7/map /usr/include/c++/7/bits/stl_tree.h \
+ /usr/include/c++/7/ext/aligned_buffer.h \
+ /usr/include/c++/7/bits/stl_map.h /usr/include/c++/7/tuple \
+ /usr/include/c++/7/utility /usr/include/c++/7/bits/stl_relops.h \
+ /usr/include/c++/7/array /usr/include/c++/7/stdexcept \
+ /usr/include/c++/7/bits/uses_allocator.h \
+ /usr/include/c++/7/bits/invoke.h /usr/include/c++/7/bits/stl_multimap.h \
+ /opt/ros/melodic/include/ros/types.h \
+ /opt/ros/melodic/include/ros/serialization.h \
+ /opt/ros/melodic/include/ros/roscpp_serialization_macros.h \
+ /opt/ros/melodic/include/ros/macros.h \
+ /opt/ros/melodic/include/ros/time.h \
+ /opt/ros/melodic/include/ros/platform.h /usr/include/c++/7/stdlib.h \
+ /usr/include/c++/7/iostream /usr/include/c++/7/ostream \
+ /usr/include/c++/7/ios /usr/include/c++/7/bits/ios_base.h \
  /usr/include/c++/7/bits/locale_classes.h \
  /usr/include/c++/7/bits/locale_classes.tcc \
  /usr/include/c++/7/system_error \
  /usr/include/x86_64-linux-gnu/c++/7/bits/error_constants.h \
- /usr/include/c++/7/stdexcept /usr/include/c++/7/streambuf \
- /usr/include/c++/7/bits/streambuf.tcc \
+ /usr/include/c++/7/streambuf /usr/include/c++/7/bits/streambuf.tcc \
  /usr/include/c++/7/bits/basic_ios.h \
  /usr/include/c++/7/bits/locale_facets.h /usr/include/c++/7/cwctype \
  /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
@@ -156,7 +171,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
  /opt/ros/melodic/include/ros/rostime_decl.h \
- /opt/ros/melodic/include/ros/macros.h \
  /usr/include/boost/math/special_functions/round.hpp \
  /usr/include/boost/math/tools/config.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
@@ -293,11 +307,9 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/boost/config/workaround.hpp \
  /usr/include/boost/type_traits/is_integral.hpp \
  /usr/include/boost/type_traits/integral_constant.hpp \
- /usr/include/c++/7/algorithm /usr/include/c++/7/utility \
- /usr/include/c++/7/bits/stl_relops.h /usr/include/c++/7/bits/stl_algo.h \
+ /usr/include/c++/7/algorithm /usr/include/c++/7/bits/stl_algo.h \
  /usr/include/c++/7/bits/algorithmfwd.h \
  /usr/include/c++/7/bits/stl_heap.h /usr/include/c++/7/bits/stl_tempbuf.h \
- /usr/include/c++/7/bits/stl_construct.h \
  /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
  /usr/include/boost/config/no_tr1/cmath.hpp /usr/include/c++/7/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/float.h \
@@ -312,11 +324,9 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/c++/7/bits/locale_conv.h \
  /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/allocator.h \
  /usr/include/c++/7/bits/codecvt.h /usr/include/c++/7/bits/unique_ptr.h \
- /usr/include/c++/7/tuple /usr/include/c++/7/array \
- /usr/include/c++/7/bits/uses_allocator.h \
- /usr/include/c++/7/bits/invoke.h /usr/include/c++/7/bits/quoted_string.h \
- /usr/include/c++/7/sstream /usr/include/c++/7/bits/sstream.tcc \
- /usr/include/c++/7/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/7/bits/quoted_string.h /usr/include/c++/7/sstream \
+ /usr/include/c++/7/bits/sstream.tcc /usr/include/c++/7/cstring \
+ /usr/include/string.h /usr/include/strings.h \
  /usr/include/boost/config/no_tr1/complex.hpp /usr/include/c++/7/complex \
  /usr/include/boost/math/policies/policy.hpp \
  /usr/include/boost/mpl/list.hpp /usr/include/boost/mpl/limits/list.hpp \
@@ -605,9 +615,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/boost/exception/exception.hpp \
  /usr/include/boost/current_function.hpp \
  /usr/include/boost/math/special_functions/math_fwd.hpp \
- /usr/include/c++/7/vector /usr/include/c++/7/bits/stl_uninitialized.h \
- /usr/include/c++/7/bits/stl_vector.h \
- /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
  /usr/include/boost/math/special_functions/detail/round_fwd.hpp \
  /usr/include/boost/math/tools/promotion.hpp \
  /usr/include/boost/type_traits/is_floating_point.hpp \
@@ -639,36 +646,15 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/boost/predef/detail/endian_compat.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/quadmath.h \
  /usr/include/x86_64-linux-gnu/sys/time.h \
- /opt/ros/melodic/include/ros/rate.h \
- /opt/ros/melodic/include/ros/console.h \
- /opt/ros/melodic/include/ros/console_backend.h \
- /usr/include/c++/7/cstdarg /usr/include/c++/7/map \
- /usr/include/c++/7/bits/stl_tree.h \
- /usr/include/c++/7/ext/aligned_buffer.h \
- /usr/include/c++/7/bits/stl_map.h /usr/include/c++/7/bits/stl_multimap.h \
- /usr/include/log4cxx/level.h /usr/include/log4cxx/logstring.h \
- /usr/include/log4cxx/log4cxx.h /usr/include/log4cxx/helpers/transcoder.h \
- /usr/include/log4cxx/helpers/objectimpl.h \
- /usr/include/log4cxx/helpers/object.h \
- /usr/include/log4cxx/helpers/class.h \
- /usr/include/log4cxx/helpers/objectptr.h \
- /usr/include/log4cxx/helpers/classregistration.h \
- /opt/ros/melodic/include/rosconsole/macros_generated.h \
- /opt/ros/melodic/include/ros/assert.h \
- /opt/ros/melodic/include/ros/static_assert.h \
- /opt/ros/melodic/include/ros/common.h \
- /opt/ros/melodic/include/ros/forwards.h /usr/include/c++/7/set \
- /usr/include/c++/7/bits/stl_set.h /usr/include/c++/7/bits/stl_multiset.h \
- /usr/include/c++/7/list /usr/include/c++/7/bits/stl_list.h \
- /usr/include/c++/7/bits/allocated_ptr.h /usr/include/c++/7/bits/list.tcc \
- /usr/include/boost/shared_ptr.hpp \
- /usr/include/boost/smart_ptr/shared_ptr.hpp \
- /usr/include/boost/config/no_tr1/memory.hpp /usr/include/c++/7/memory \
+ /opt/ros/melodic/include/ros/serialized_message.h \
+ /usr/include/boost/shared_array.hpp \
+ /usr/include/boost/smart_ptr/shared_array.hpp /usr/include/c++/7/memory \
  /usr/include/c++/7/bits/stl_raw_storage_iter.h \
  /usr/include/c++/7/ext/concurrence.h \
  /usr/include/c++/7/bits/unique_ptr.h \
  /usr/include/c++/7/bits/shared_ptr.h \
  /usr/include/c++/7/bits/shared_ptr_base.h \
+ /usr/include/c++/7/bits/allocated_ptr.h \
  /usr/include/c++/7/bits/refwrap.h \
  /usr/include/c++/7/bits/shared_ptr_atomic.h \
  /usr/include/c++/7/bits/atomic_base.h \
@@ -676,6 +662,8 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/c++/7/backward/auto_ptr.h \
  /usr/include/boost/checked_delete.hpp \
  /usr/include/boost/core/checked_delete.hpp \
+ /usr/include/boost/smart_ptr/shared_ptr.hpp \
+ /usr/include/boost/config/no_tr1/memory.hpp \
  /usr/include/boost/smart_ptr/detail/shared_count.hpp \
  /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
  /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
@@ -700,6 +688,51 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
+ /usr/include/boost/shared_ptr.hpp \
+ /opt/ros/melodic/include/ros/message_traits.h \
+ /opt/ros/melodic/include/ros/message_forward.h \
+ /usr/include/boost/type_traits/remove_const.hpp \
+ /usr/include/boost/type_traits/remove_reference.hpp \
+ /opt/ros/melodic/include/ros/builtin_message_traits.h \
+ /opt/ros/melodic/include/ros/message_traits.h \
+ /opt/ros/melodic/include/ros/datatypes.h /usr/include/c++/7/set \
+ /usr/include/c++/7/bits/stl_set.h /usr/include/c++/7/bits/stl_multiset.h \
+ /usr/include/c++/7/list /usr/include/c++/7/bits/stl_list.h \
+ /usr/include/c++/7/bits/list.tcc /usr/include/boost/array.hpp \
+ /usr/include/boost/swap.hpp /usr/include/boost/core/swap.hpp \
+ /usr/include/boost/detail/iterator.hpp /usr/include/c++/7/iterator \
+ /usr/include/c++/7/bits/stream_iterator.h \
+ /usr/include/boost/call_traits.hpp \
+ /usr/include/boost/detail/call_traits.hpp \
+ /usr/include/boost/type_traits/is_enum.hpp \
+ /usr/include/boost/type_traits/is_pointer.hpp \
+ /opt/ros/melodic/include/ros/message_operations.h \
+ /opt/ros/melodic/include/std_msgs/Header.h \
+ /opt/ros/melodic/include/geometry_msgs/Pose.h \
+ /opt/ros/melodic/include/geometry_msgs/Point.h \
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h \
+ /opt/ros/melodic/include/nav_msgs/Odometry.h \
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h \
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h \
+ /opt/ros/melodic/include/geometry_msgs/Twist.h \
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h \
+ /opt/ros/melodic/include/nav_msgs/Path.h \
+ /opt/ros/melodic/include/ros/console.h \
+ /opt/ros/melodic/include/ros/console_backend.h \
+ /usr/include/c++/7/cstdarg /usr/include/log4cxx/level.h \
+ /usr/include/log4cxx/logstring.h /usr/include/log4cxx/log4cxx.h \
+ /usr/include/log4cxx/helpers/transcoder.h \
+ /usr/include/log4cxx/helpers/objectimpl.h \
+ /usr/include/log4cxx/helpers/object.h \
+ /usr/include/log4cxx/helpers/class.h \
+ /usr/include/log4cxx/helpers/objectptr.h \
+ /usr/include/log4cxx/helpers/classregistration.h \
+ /opt/ros/melodic/include/rosconsole/macros_generated.h \
+ /opt/ros/melodic/include/ros/ros.h /opt/ros/melodic/include/ros/rate.h \
+ /opt/ros/melodic/include/ros/assert.h \
+ /opt/ros/melodic/include/ros/static_assert.h \
+ /opt/ros/melodic/include/ros/common.h \
+ /opt/ros/melodic/include/ros/forwards.h \
  /usr/include/boost/make_shared.hpp \
  /usr/include/boost/smart_ptr/make_shared.hpp \
  /usr/include/boost/smart_ptr/make_shared_object.hpp \
@@ -715,8 +748,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/boost/type_traits/alignment_of.hpp \
  /usr/include/boost/type_traits/is_pod.hpp \
  /usr/include/boost/type_traits/is_scalar.hpp \
- /usr/include/boost/type_traits/is_enum.hpp \
- /usr/include/boost/type_traits/is_pointer.hpp \
  /usr/include/boost/type_traits/is_member_pointer.hpp \
  /usr/include/boost/type_traits/is_member_function_pointer.hpp \
  /usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
@@ -744,7 +775,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/boost/integer_traits.hpp /usr/include/boost/type_index.hpp \
  /usr/include/boost/type_index/stl_type_index.hpp \
  /usr/include/boost/type_index/type_index_facade.hpp \
- /usr/include/boost/type_traits/remove_reference.hpp \
  /usr/include/boost/type_traits/has_trivial_copy.hpp \
  /usr/include/boost/type_traits/is_copy_constructible.hpp \
  /usr/include/boost/type_traits/is_constructible.hpp \
@@ -769,27 +799,10 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /usr/include/boost/detail/no_exceptions_support.hpp \
  /usr/include/boost/core/no_exceptions_support.hpp \
  /opt/ros/melodic/include/ros/exceptions.h \
- /opt/ros/melodic/include/ros/datatypes.h \
  /opt/ros/melodic/include/ros/serialized_message.h \
- /opt/ros/melodic/include/ros/roscpp_serialization_macros.h \
- /usr/include/boost/shared_array.hpp \
- /usr/include/boost/smart_ptr/shared_array.hpp \
- /opt/ros/melodic/include/ros/types.h \
  /opt/ros/melodic/include/ros/node_handle.h \
  /opt/ros/melodic/include/ros/publisher.h \
- /opt/ros/melodic/include/ros/message.h /usr/include/boost/array.hpp \
- /usr/include/boost/swap.hpp /usr/include/boost/core/swap.hpp \
- /usr/include/boost/detail/iterator.hpp /usr/include/c++/7/iterator \
- /usr/include/c++/7/bits/stream_iterator.h \
- /opt/ros/melodic/include/ros/serialization.h \
- /opt/ros/melodic/include/ros/serialized_message.h \
- /opt/ros/melodic/include/ros/message_traits.h \
- /opt/ros/melodic/include/ros/message_forward.h \
- /usr/include/boost/type_traits/remove_const.hpp \
- /opt/ros/melodic/include/ros/builtin_message_traits.h \
- /opt/ros/melodic/include/ros/message_traits.h \
- /usr/include/boost/call_traits.hpp \
- /usr/include/boost/detail/call_traits.hpp /usr/include/boost/bind.hpp \
+ /opt/ros/melodic/include/ros/message.h /usr/include/boost/bind.hpp \
  /usr/include/boost/bind/bind.hpp /usr/include/boost/type.hpp \
  /usr/include/boost/is_placeholder.hpp /usr/include/boost/bind/arg.hpp \
  /usr/include/boost/visit_each.hpp /usr/include/boost/core/is_same.hpp \
@@ -969,13 +982,16 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: \
  /opt/ros/melodic/include/ros/param.h \
  /opt/ros/melodic/include/ros/topic.h \
  /opt/ros/melodic/include/ros/node_handle.h \
+ /opt/ros/melodic/include/std_msgs/String.h \
+ /opt/ros/melodic/include/tf2/LinearMath/Quaternion.h \
+ /opt/ros/melodic/include/tf2/LinearMath/Vector3.h \
+ /opt/ros/melodic/include/tf2/LinearMath/Scalar.h \
+ /opt/ros/melodic/include/tf2/LinearMath/MinMax.h \
+ /opt/ros/melodic/include/tf2/LinearMath/QuadWord.h \
+ /opt/ros/melodic/include/tf2_ros/transform_broadcaster.h \
+ /opt/ros/melodic/include/geometry_msgs/TransformStamped.h \
+ /opt/ros/melodic/include/geometry_msgs/Transform.h \
  /opt/ros/melodic/include/visualization_msgs/Marker.h \
- /opt/ros/melodic/include/ros/message_operations.h \
- /opt/ros/melodic/include/std_msgs/Header.h \
- /opt/ros/melodic/include/geometry_msgs/Pose.h \
- /opt/ros/melodic/include/geometry_msgs/Point.h \
- /opt/ros/melodic/include/geometry_msgs/Quaternion.h \
- /opt/ros/melodic/include/geometry_msgs/Vector3.h \
  /opt/ros/melodic/include/std_msgs/ColorRGBA.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/frame.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/adc_trajectory.h \

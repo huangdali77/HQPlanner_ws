@@ -1,5 +1,6 @@
 #include "hqplanner/reference_line/reference_line.h"
 
+#include <ros/ros.h>
 namespace hqplanner {
 using hqplanner::forproto::AnchorPoint;
 using hqplanner::forproto::ConfigParam;
@@ -13,15 +14,19 @@ using hqplanner::math::Vec2d;
 
 double REFERENCE_LINE_SAMPLE_STEP = 0.1;
 
-ReferenceLine::ReferenceLine(const std::vector<AnchorPoint> anchor_points) {
-  std::vector<double> x;
-  std::vector<double> y;
+ReferenceLine::ReferenceLine(const std::vector<AnchorPoint> anchor_points)
+    : anchor_points_(anchor_points) {
+  // std::vector<double> x;
+  // std::vector<double> y;
   for (auto anchor_point : anchor_points) {
-    x.push_back(anchor_point.cartesian_x);
-    y.push_back(anchor_point.cartesian_y);
+    anchor_points_x_.push_back(anchor_point.cartesian_x);
+    anchor_points_y_.push_back(anchor_point.cartesian_y);
   }
 
-  ReferenceLine(x, y);
+  AccumulateOnS();
+  anchor_points_x_s_ = CubicSpline(anchor_points_s_, anchor_points_x_);
+  anchor_points_y_s_ = CubicSpline(anchor_points_s_, anchor_points_y_);
+  ConstructReferenceLineByFixedStep();  //根据上游信息给出路由信息，供寻找最近点使用，
 }
 
 ReferenceLine::ReferenceLine(const std::vector<double> &x,
@@ -104,7 +109,7 @@ bool ReferenceLine::XYToSL(const Vec2d &xy_point,
   double min_distance = std::numeric_limits<double>::infinity();
   int index_min = 0;
   int start_index = 0;
-  for (int i = 0; i < reference_line_points_.size(); + i) {
+  for (int i = 0; i < reference_line_points_.size(); ++i) {
     const auto ref_point = reference_line_points_[i];
     double square_distance =
         xy_point.DistanceSquareTo(Vec2d(ref_point.x, ref_point.y));

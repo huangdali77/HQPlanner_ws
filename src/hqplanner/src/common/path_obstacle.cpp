@@ -1,5 +1,6 @@
 #include "hqplanner/common/path_obstacle.h"
 
+#include <ros/ros.h>
 namespace hqplanner {
 using hqplanner::forproto::ConfigParam;
 using hqplanner::forproto::ObjectDecisionType;
