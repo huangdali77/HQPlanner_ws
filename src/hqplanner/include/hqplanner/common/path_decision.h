@@ -41,7 +41,7 @@ class PathDecision {
   hqplanner::forproto::MainStop main_stop() const { return main_stop_; }
   const PathObstacle *Find(const std::string &object_id) const;
 
-  //   PathObstacle *Find(const std::string &object_id);
+  PathObstacle *Find(const std::string &object_id);
 
   double stop_reference_line_s() const { return stop_reference_line_s_; }
   bool MergeWithMainStop(

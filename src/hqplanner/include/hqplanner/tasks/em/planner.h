@@ -1,11 +1,9 @@
 #ifndef HQPLANER_TASKS_EM_PLANNER_H_
 #define HQPLANER_TASKS_EM_PLANNER_H_
 
-#include "hqplanner/for_proto/pnc_point.h"
-// #include "modules/common/status/status.h"
-// #include "modules/planning/common/frame.h"
 #include "hqplanner/common/frame.h"
 #include "hqplanner/for_proto/planning_config.h"
+#include "hqplanner/for_proto/pnc_point.h"
 
 /**
  * @namespace apollo::planning

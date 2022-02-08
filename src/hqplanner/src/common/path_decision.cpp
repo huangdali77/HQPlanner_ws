@@ -40,6 +40,16 @@ const PathObstacle *PathDecision::Find(const std::string &object_id) const {
   return path_obs_ptr->second.get();
 }
 
+PathObstacle *PathDecision::Find(const std::string &object_id) {
+  // return path_obstacles_.Find(object_id);
+  const auto path_obs_ptr = path_obstacles_.find(object_id);
+  if (path_obs_ptr == path_obstacles_.end()) {
+    return nullptr;
+  }
+
+  return path_obs_ptr->second.get();
+}
+
 const std::map<std::string, std::shared_ptr<PathObstacle>>
     &PathDecision::path_obstacles() const {
   return path_obstacles_;
