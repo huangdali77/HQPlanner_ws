@@ -2,6 +2,9 @@
 
 namespace hqplanner {
 namespace tasks {
+using hqplanner::Frame;
+using hqplanner::ReferenceLineInfo;
+using hqplanner::forproto::PlanningConfig;
 Task::Task(const std::string& name) : name_(name) {}
 
 const std::string& Task::Name() const { return name_; }

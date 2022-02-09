@@ -151,6 +151,11 @@ class ConfigParam {
 
   const double FLAGS_replan_lateral_distance_threshold = 5.0;
   const double FLAGS_replan_longitudinal_distance_threshold = 5.0;
+  // adc规划轨迹时间长度
+  const double FLAGS_trajectory_time_length = 8.0;
+  // 历史frame记录数量
+  const std::size_t FLAGS_max_history_frame_num = 5;
+  const double FLAGS_slowdown_profile_deceleration = -1.0;
 
   DECLARE_SINGLETON(ConfigParam);
 };

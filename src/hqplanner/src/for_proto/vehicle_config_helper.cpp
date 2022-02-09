@@ -4,7 +4,7 @@ namespace hqplanner {
 namespace forproto {
 
 VehicleConfig VehicleConfigHelper::vehicle_config_;
-bool VehicleConfigHelper::is_init_ = true;
+bool VehicleConfigHelper::is_init_ = false;
 
 VehicleConfigHelper::VehicleConfigHelper() {}
 

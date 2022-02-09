@@ -17,13 +17,18 @@ using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::forproto::VehicleConfigHelper;
 using hqplanner::forproto::VehicleParam;
 using hqplanner::forproto::VehicleState;
-using hqplanner::math::Box2d;
-// using hqplanner::math::IndexedQueue;
 using hqplanner::forproto::VehicleStateProvider;
+using hqplanner::math::Box2d;
+using hqplanner::math::IndexedQueue;
 using hqplanner::math::LineSegment2d;
 using hqplanner::math::Vec2d;
 
 constexpr double kMathEpsilon = 1e-8;
+
+FrameHistory::FrameHistory()
+    : IndexedQueue<std::uint32_t, Frame>(
+          ConfigParam::instance()->FLAGS_max_history_frame_num) {}
+
 Frame::Frame(std::uint32_t sequence_num,
              const TrajectoryPoint &planning_start_point,
              const double start_time, const VehicleState &vehicle_state,
@@ -220,7 +225,7 @@ bool Frame::CreateReferenceLineInfo() {
   auto ref_line_iter = reference_lines.begin();
   // auto segments_iter = segments.begin();
   while (ref_line_iter != reference_lines.end()) {
-    if (ref_line_iter->GetReferenceLinePoints().size() <
+    if (ref_line_iter->reference_points().size() <
         ConfigParam::instance()->FLAGS_num_reference_points_near_destination) {
       is_near_destination_ = true;
     }

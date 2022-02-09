@@ -62,7 +62,9 @@ class DpStGraph {
 
   // vehicle configuration parameter
   const hqplanner::forproto::VehicleParam& vehicle_param_ =
-      hqplanner::forproto::VehicleConfigHelper::GetConfig().vehicle_param;
+      hqplanner::forproto::VehicleConfigHelper::instance()
+          ->GetConfig()
+          .vehicle_param;
 
   // initial status
   hqplanner::forproto::TrajectoryPoint init_point_;

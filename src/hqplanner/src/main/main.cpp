@@ -236,6 +236,10 @@ int main(int argc, char **argv) {
   Planning planning;
   //   初始化全局路由的anchor
   planning.Init();
+
+  // 初始化VehicleConfigHelper
+  VehicleConfig vehicle_param;
+  VehicleConfigHelper::Init(vehicle_param);
   VehicleConfig veh_conf = VehicleConfigHelper::instance()->GetConfig();
   ROS_INFO("before ros::ok()");
 
@@ -246,10 +250,12 @@ int main(int argc, char **argv) {
     ROS_INFO("after runonce");
 
     VehicleState veh_state = VehicleStateProvider::instance()->vehicle_state();
-    if (std::hypot(veh_state.x, veh_state.y) > 200) {
+
+    Frame *frame = planning.GetFrame();
+    if (frame->IsNearDestination()) {
       break;
     }
-    Frame *frame = planning.GetFrame();
+
     const auto path_obs_items = frame->FindDriveReferenceLineInfo()
                                     ->path_decision()
                                     .path_obstacle_items();

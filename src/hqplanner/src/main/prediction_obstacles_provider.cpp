@@ -27,7 +27,7 @@ PotentialPredictionObstacle::PotentialPredictionObstacle(
   } else {
     obstacle_reference_trajectory_ = ReferenceLine(anchor_points);
     obstacle_reference_points_ =
-        obstacle_reference_trajectory_.GetReferenceLinePoints();
+        obstacle_reference_trajectory_.reference_points();
     //   障碍物预测轨迹起点状态
     perception_obstacle_.position.x = obstacle_reference_points_.front().x;
     perception_obstacle_.position.y = obstacle_reference_points_.front().y;

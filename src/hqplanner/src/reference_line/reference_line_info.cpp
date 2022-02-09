@@ -1,6 +1,6 @@
 #include "hqplanner/reference_line/reference_line_info.h"
 
-#include <ros/ros.h>
+// #include <ros/ros.h>
 
 #include "hqplanner/math/box2d.h"
 #include "hqplanner/math/vec2d.h"
@@ -10,6 +10,7 @@ using hqplanner::forproto::ConfigParam;
 using hqplanner::forproto::ObjectDecisionType;
 using hqplanner::forproto::PathPoint;
 using hqplanner::forproto::SLBoundary;
+using hqplanner::forproto::SLPoint;
 using hqplanner::forproto::SpeedPoint;
 using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::forproto::VehicleConfig;
@@ -21,6 +22,7 @@ using hqplanner::math::Vec2d;
 using hqplanner::path::PathData;
 using hqplanner::speed::SpeedData;
 using hqplanner::trajectory::DiscretizedTrajectory;
+
 ReferenceLineInfo::ReferenceLineInfo(const VehicleState& vehicle_state,
                                      const TrajectoryPoint& adc_planning_point,
                                      const ReferenceLine& reference_line)
@@ -62,7 +64,7 @@ bool ReferenceLineInfo::Init(const std::vector<const Obstacle*>& obstacles) {
   }
 
   // 添加速度限制
-  auto ref_line = reference_line_.GetReferenceLinePoints();
+  auto ref_line = reference_line_.reference_points();
   reference_line_.AddSpeedLimit(
       ref_line.front().s, ref_line.back().s,
       ConfigParam::instance()->FLAGS_planning_upper_speed_limit);
@@ -139,6 +141,21 @@ bool ReferenceLineInfo::IsUnrelaventObstacle(PathObstacle* path_obstacle) {
 }
 
 void ReferenceLineInfo::SetDrivable(bool drivable) { is_drivable_ = drivable; }
+
+bool ReferenceLineInfo::IsStartFrom(
+    const ReferenceLineInfo& previous_reference_line_info) const {
+  if (reference_line_.reference_points().empty()) {
+    return false;
+  }
+  auto start_ref_point = reference_line_.reference_points().front();
+  Vec2d start_point(start_ref_point.x, start_ref_point.y);
+  const auto& prev_reference_line =
+      previous_reference_line_info.reference_line();
+  SLPoint sl_point;
+  prev_reference_line.XYToSL(start_point, &sl_point);
+  return previous_reference_line_info.reference_line_.IsOnRoad(sl_point);
+}
+
 const PathData& ReferenceLineInfo::path_data() const { return path_data_; }
 
 const SpeedData& ReferenceLineInfo::speed_data() const { return speed_data_; }

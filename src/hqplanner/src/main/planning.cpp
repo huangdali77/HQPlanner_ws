@@ -48,7 +48,7 @@ std::string Planning::Name() const { return "planning"; }
 bool Planning::Init() {
   reference_line_provider_ = std::make_unique<ReferenceLineProvider>(
       AnchorPointsProvider::instance()->GetAnchorPoints());
-  planner_ = New EMPlanner();
+  planner_ = new EMPlanner();
   return true；
   // return planner_->Init(config_);
 }

@@ -10,7 +10,6 @@
 
 namespace hqplanner {
 namespace tasks {
-
 using hqplanner::PathDecision;
 using hqplanner::ReferenceLine;
 using hqplanner::forproto::ConfigParam;
@@ -20,6 +19,7 @@ using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::forproto::VehicleConfigHelper;
 using hqplanner::path::PathData;
 using hqplanner::speed::SpeedData;
+using hqplanner::speed::SpeedLimit;
 using hqplanner::speed::StBoundary;
 
 DpStSpeedOptimizer::DpStSpeedOptimizer()

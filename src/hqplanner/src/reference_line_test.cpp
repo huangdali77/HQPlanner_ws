@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
   std::vector<double> y = {0, 45, 35, 5, -5, -10, 10, 56};
   ReferenceLine ref_line(x, y);
   std::vector<ReferencePoint> reference_line_points =
-      ref_line.GetReferenceLinePoints();
+      ref_line.reference_points();
 
   // std::cout << reference_line_points.size() << std::endl;
   std::vector<AnchorPoint> an_points = ref_line.GetAnchorPoints();

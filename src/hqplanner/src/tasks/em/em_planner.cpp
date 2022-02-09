@@ -1,5 +1,8 @@
 #include "hqplanner/tasks/em/em_planner.h"
 
+#include <assert.h>
+#include <ros/ros.h>
+
 #include <fstream>
 #include <limits>
 #include <utility>
@@ -13,15 +16,22 @@
 #include "hqplanner/tasks/path_decider/path_decider.h"
 #include "hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h"
 #include "hqplanner/tasks/speed_decider/speed_decider.h"
-
+#include "hqplanner/util/util.h"
 namespace hqplanner {
 namespace tasks {
+using hqplanner::FrameHistory;
+using hqplanner::forproto::ConfigParam;
+using hqplanner::forproto::PathPoint;
 using hqplanner::forproto::SLPoint;
 using hqplanner::forproto::SpeedPoint;
 using hqplanner::forproto::TrajectoryPoint;
+using hqplanner::math::QuinticPolynomialCurve1d;
 using hqplanner::math::Vec2d;
+using hqplanner::path::DiscretizedPath;
+using hqplanner::path::PathData;
+using hqplanner::speed::SpeedData;
 using hqplanner::tasks::DpPolyPathOptimizer;
-
+using hqplanner::trajectory::DiscretizedTrajectory;
 namespace {
 constexpr double kPathOptimizationFallbackClost = 2e4;
 constexpr double kSpeedOptimizationFallbackClost = 2e4;
@@ -88,47 +98,42 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
   if (!reference_line_info->IsChangeLanePath()) {
     reference_line_info->AddCost(kStraightForwardLineCost);
   }
-  // ADEBUG << "planning start point:" << planning_start_point.DebugString();
+
   auto* heuristic_speed_data = reference_line_info->mutable_speed_data();
   auto speed_profile =
       GenerateInitSpeedProfile(planning_start_point, reference_line_info);
   if (speed_profile.empty()) {
     speed_profile = GenerateSpeedHotStart(planning_start_point);
-    ADEBUG << "Using dummy hot start for speed vector";
+    ROS_INFO("Using dummy hot start for speed vector");
   }
   heuristic_speed_data->set_speed_vector(speed_profile);
 
-  auto ret = Status::OK();
+  bool ret;
 
   for (auto& optimizer : tasks_) {
-    const double start_timestamp = Clock::NowInSeconds();
+    const double start_timestamp = ros::Time::now().toSec();
     ret = optimizer->Execute(frame, reference_line_info);
-    if (!ret.ok()) {
-      AERROR << "Failed to run tasks[" << optimizer->Name()
-             << "], Error message: " << ret.error_message();
+    if (!ret) {
+      ROS_INFO("Failed to run tasks[%s]", optimizer->Name());
       break;
     }
-    const double end_timestamp = Clock::NowInSeconds();
+    const double end_timestamp = ros::Time::now().toSec();
     const double time_diff_ms = (end_timestamp - start_timestamp) * 1000;
 
-    ADEBUG << "after optimizer " << optimizer->Name() << ":"
-           << reference_line_info->PathSpeedDebugString() << std::endl;
-    ADEBUG << optimizer->Name() << " time spend: " << time_diff_ms << " ms.";
-
-    RecordDebugInfo(reference_line_info, optimizer->Name(), time_diff_ms);
+    ROS_INFO("after optimizer [%s] time spend: %f", optimizer->Name(),
+             time_diff_ms);
   }
 
-  RecordObstacleDebugInfo(reference_line_info);
-
   if (reference_line_info->path_data().Empty()) {
-    ADEBUG << "Path fallback.";
+    ROS_INFO("Path fallback.");
+
     GenerateFallbackPathProfile(reference_line_info,
                                 reference_line_info->mutable_path_data());
     reference_line_info->AddCost(kPathOptimizationFallbackClost);
   }
 
-  if (!ret.ok() || reference_line_info->speed_data().Empty()) {
-    ADEBUG << "Speed fallback.";
+  if (!ret || reference_line_info->speed_data().Empty()) {
+    ROS_INFO("Speed fallback.");
     GenerateFallbackSpeedProfile(reference_line_info,
                                  reference_line_info->mutable_speed_data());
     reference_line_info->AddCost(kSpeedOptimizationFallbackClost);
@@ -136,15 +141,15 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
 
   DiscretizedTrajectory trajectory;
   if (!reference_line_info->CombinePathAndSpeedProfile(
-          planning_start_point.relative_time(),
-          planning_start_point.path_point().s(), &trajectory)) {
-    std::string msg("Fail to aggregate planning trajectory.");
-    AERROR << msg;
-    return Status(ErrorCode::PLANNING_ERROR, msg);
+          planning_start_point.relative_time, planning_start_point.path_point.s,
+          &trajectory)) {
+    ROS_INFO("Fail to aggregate planning trajectory.");
+
+    return false;
   }
 
   for (const auto* path_obstacle :
-       reference_line_info->path_decision()->path_obstacles().Items()) {
+       reference_line_info->path_decision()->path_obstacle_items()) {
     if (path_obstacle->obstacle()->IsVirtual()) {
       continue;
     }
@@ -157,17 +162,17 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
     }
   }
 
-  if (FLAGS_enable_trajectory_check) {
-    if (!ConstraintChecker::ValidTrajectory(trajectory)) {
-      std::string msg("Failed to validate current planning trajectory.");
-      AERROR << msg;
-      return Status(ErrorCode::PLANNING_ERROR, msg);
-    }
-  }
+  // if (FLAGS_enable_trajectory_check) {
+  //   if (!ConstraintChecker::ValidTrajectory(trajectory)) {
+  //     std::string msg("Failed to validate current planning trajectory.");
+  //     AERROR << msg;
+  //     return Status(ErrorCode::PLANNING_ERROR, msg);
+  //   }
+  // }
 
   reference_line_info->SetTrajectory(trajectory);
   reference_line_info->SetDrivable(true);
-  return Status::OK();
+  return true;
 }
 
 std::vector<SpeedPoint> EMPlanner::GenerateInitSpeedProfile(
@@ -176,58 +181,61 @@ std::vector<SpeedPoint> EMPlanner::GenerateInitSpeedProfile(
   std::vector<SpeedPoint> speed_profile;
   const auto* last_frame = FrameHistory::instance()->Latest();
   if (!last_frame) {
-    AWARN << "last frame is empty";
+    ROS_INFO("last frame is empty");
     return speed_profile;
   }
   const ReferenceLineInfo* last_reference_line_info =
       last_frame->DriveReferenceLineInfo();
   if (!last_reference_line_info) {
-    ADEBUG << "last reference line info is empty";
+    ROS_INFO("last reference line info is empty");
     return speed_profile;
   }
-  if (!reference_line_info->IsStartFrom(*last_reference_line_info)) {
-    ADEBUG << "Current reference line is not started previous drived line";
-    return speed_profile;
-  }
+
+  // ====================NoNeed===============
+  // if (!reference_line_info->IsStartFrom(*last_reference_line_info)) {
+  //   ROS_INFO("Current reference line is not started previous drived line");
+  //   return speed_profile;
+  // }
+  // ====================NoNeed===============
   const auto& last_speed_vector =
       last_reference_line_info->speed_data().speed_vector();
 
   if (!last_speed_vector.empty()) {
-    const auto& last_init_point = last_frame->PlanningStartPoint().path_point();
-    Vec2d last_xy_point(last_init_point.x(), last_init_point.y());
+    const auto& last_init_point = last_frame->PlanningStartPoint().path_point;
+    Vec2d last_xy_point(last_init_point.x, last_init_point.y);
     SLPoint last_sl_point;
     if (!last_reference_line_info->reference_line().XYToSL(last_xy_point,
                                                            &last_sl_point)) {
-      AERROR << "Fail to transfer xy to sl when init speed profile";
+      ROS_INFO("Fail to transfer xy to sl when init speed profile");
     }
 
-    Vec2d xy_point(planning_init_point.path_point().x(),
-                   planning_init_point.path_point().y());
+    Vec2d xy_point(planning_init_point.path_point.x,
+                   planning_init_point.path_point.y);
     SLPoint sl_point;
     if (!last_reference_line_info->reference_line().XYToSL(xy_point,
                                                            &sl_point)) {
-      AERROR << "Fail to transfer xy to sl when init speed profile";
+      ROS_INFO("Fail to transfer xy to sl when init speed profile");
     }
 
-    double s_diff = sl_point.s() - last_sl_point.s();
+    double s_diff = sl_point.s - last_sl_point.s;
     double start_time = 0.0;
     double start_s = 0.0;
     bool is_updated_start = false;
     for (const auto& speed_point : last_speed_vector) {
-      if (speed_point.s() < s_diff) {
+      if (speed_point.s < s_diff) {
         continue;
       }
       if (!is_updated_start) {
-        start_time = speed_point.t();
-        start_s = speed_point.s();
+        start_time = speed_point.t;
+        start_s = speed_point.s;
         is_updated_start = true;
       }
       SpeedPoint refined_speed_point;
-      refined_speed_point.set_s(speed_point.s() - start_s);
-      refined_speed_point.set_t(speed_point.t() - start_time);
-      refined_speed_point.set_v(speed_point.v());
-      refined_speed_point.set_a(speed_point.a());
-      refined_speed_point.set_da(speed_point.da());
+      refined_speed_point.s = speed_point.s - start_s;
+      refined_speed_point.t = speed_point.t - start_time;
+      refined_speed_point.v = speed_point.v;
+      refined_speed_point.a = speed_point.a;
+      refined_speed_point.da = speed_point.da;
       speed_profile.push_back(std::move(refined_speed_point));
     }
   }
@@ -240,18 +248,19 @@ std::vector<SpeedPoint> EMPlanner::GenerateSpeedHotStart(
   std::vector<SpeedPoint> hot_start_speed_profile;
   double s = 0.0;
   double t = 0.0;
-  double v = common::math::Clamp(planning_init_point.v(), 5.0,
-                                 FLAGS_planning_upper_speed_limit);
-  while (t < FLAGS_trajectory_time_length) {
+  double v = hqplanner::math::Clamp(
+      planning_init_point.v, 5.0,
+      ConfigParam::instance()->FLAGS_planning_upper_speed_limit);
+  while (t < ConfigParam ::instance()->FLAGS_trajectory_time_length) {
     SpeedPoint speed_point;
-    speed_point.set_s(s);
-    speed_point.set_t(t);
-    speed_point.set_v(v);
+    speed_point.s = s;
+    speed_point.t = t;
+    speed_point.v = v;
 
     hot_start_speed_profile.push_back(std::move(speed_point));
 
-    t += FLAGS_trajectory_time_min_interval;
-    s += v * FLAGS_trajectory_time_min_interval;
+    t += ConfigParam::instance()->FLAGS_trajectory_time_min_interval;
+    s += v * ConfigParam::instance()->FLAGS_trajectory_time_min_interval;
   }
   return hot_start_speed_profile;
 }
@@ -259,7 +268,7 @@ std::vector<SpeedPoint> EMPlanner::GenerateSpeedHotStart(
 void EMPlanner::GenerateFallbackPathProfile(
     const ReferenceLineInfo* reference_line_info, PathData* path_data) {
   auto adc_point = reference_line_info->AdcPlanningPoint();
-  double adc_s = reference_line_info->AdcSlBoundary().end_s();
+  double adc_s = reference_line_info->AdcSlBoundary().end_s;
   const double max_s = 150.0;
   const double unit_s = 1.0;
 
@@ -267,18 +276,21 @@ void EMPlanner::GenerateFallbackPathProfile(
   const auto& adc_ref_point =
       reference_line_info->reference_line().GetReferencePoint(adc_s);
 
-  DCHECK(adc_point.has_path_point());
-  const double dx = adc_point.path_point().x() - adc_ref_point.x();
-  const double dy = adc_point.path_point().y() - adc_ref_point.y();
+  if (adc_point.path_point.x == 0 && adc_point.path_point.y == 0 &&
+      adc_point.path_point.s == 0) {
+    assert(0);
+  }
+  const double dx = adc_point.path_point.x - adc_ref_point.x;
+  const double dy = adc_point.path_point.y - adc_ref_point.y;
 
-  std::vector<common::PathPoint> path_points;
+  std::vector<PathPoint> path_points;
   for (double s = adc_s; s < max_s; s += unit_s) {
     const auto& ref_point =
         reference_line_info->reference_line().GetReferencePoint(adc_s);
-    common::PathPoint path_point = common::util::MakePathPoint(
-        ref_point.x() + dx, ref_point.y() + dy, 0.0, ref_point.heading(),
-        ref_point.kappa(), ref_point.dkappa(), 0.0);
-    path_point.set_s(s);
+    PathPoint path_point = hqplanner::util::MakePathPoint(
+        ref_point.x + dx, ref_point.y + dy, 0.0, ref_point.heading,
+        ref_point.kappa, ref_point.dkappa, 0.0);
+    path_point.s = s;
 
     path_points.push_back(std::move(path_point));
   }
@@ -288,19 +300,20 @@ void EMPlanner::GenerateFallbackPathProfile(
 void EMPlanner::GenerateFallbackSpeedProfile(
     const ReferenceLineInfo* reference_line_info, SpeedData* speed_data) {
   *speed_data = GenerateStopProfileFromPolynomial(
-      reference_line_info->AdcPlanningPoint().v(),
-      reference_line_info->AdcPlanningPoint().a());
+      reference_line_info->AdcPlanningPoint().v,
+      reference_line_info->AdcPlanningPoint().a);
 
   if (speed_data->Empty()) {
     *speed_data =
-        GenerateStopProfile(reference_line_info->AdcPlanningPoint().v(),
-                            reference_line_info->AdcPlanningPoint().a());
+        GenerateStopProfile(reference_line_info->AdcPlanningPoint().v,
+                            reference_line_info->AdcPlanningPoint().a);
   }
 }
 
 SpeedData EMPlanner::GenerateStopProfile(const double init_speed,
                                          const double init_acc) const {
-  AERROR << "Slowing down the car.";
+  ROS_INFO("Slowing down the car.");
+
   SpeedData speed_data;
 
   const double kFixedJerk = -1.0;
@@ -311,7 +324,9 @@ SpeedData EMPlanner::GenerateStopProfile(const double init_speed,
 
   double pre_s = 0.0;
   const double t_mid =
-      (FLAGS_slowdown_profile_deceleration - first_point_acc) / kFixedJerk;
+      (ConfigParam::instance()->FLAGS_slowdown_profile_deceleration -
+       first_point_acc) /
+      kFixedJerk;
   const double s_mid = init_speed * t_mid +
                        0.5 * first_point_acc * t_mid * t_mid +
                        1.0 / 6.0 * kFixedJerk * t_mid * t_mid * t_mid;
@@ -330,13 +345,20 @@ SpeedData EMPlanner::GenerateStopProfile(const double init_speed,
       speed_data.AppendSpeedPoint(s, t, v, a, 0.0);
       pre_s = s;
     } else {
-      s = std::fmax(pre_s, s_mid + v_mid * (t - t_mid) +
-                               0.5 * FLAGS_slowdown_profile_deceleration *
-                                   (t - t_mid) * (t - t_mid));
-      v = std::fmax(0.0,
-                    v_mid + (t - t_mid) * FLAGS_slowdown_profile_deceleration);
-      speed_data.AppendSpeedPoint(s, t, v, FLAGS_slowdown_profile_deceleration,
-                                  0.0);
+      s = std::fmax(
+          pre_s,
+          s_mid + v_mid * (t - t_mid) +
+              0.5 *
+                  ConfigParam::instance()->FLAGS_slowdown_profile_deceleration *
+                  (t - t_mid) * (t - t_mid));
+      v = std::fmax(
+          0.0,
+          v_mid +
+              (t - t_mid) *
+                  ConfigParam::instance()->FLAGS_slowdown_profile_deceleration);
+      speed_data.AppendSpeedPoint(
+          s, t, v, ConfigParam::instance()->FLAGS_slowdown_profile_deceleration,
+          0.0);
     }
     pre_s = s;
   }
@@ -345,7 +367,8 @@ SpeedData EMPlanner::GenerateStopProfile(const double init_speed,
 
 SpeedData EMPlanner::GenerateStopProfileFromPolynomial(
     const double init_speed, const double init_acc) const {
-  AERROR << "Slowing down the car with polynomial.";
+  ROS_INFO("Slowing down the car with polynomial.");
+
   constexpr double kMaxT = 4.0;
   for (double t = 2.0; t <= kMaxT; t += 0.5) {
     for (double s = 0.0; s < 50.0; s += 1.0) {

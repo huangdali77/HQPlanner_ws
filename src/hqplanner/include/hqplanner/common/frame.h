@@ -5,10 +5,12 @@
 // #include <fsd_common_msgs/TrajectoryPoint.h>
 #include <cstdint>
 #include <list>
+#include <map>
 #include <memory>
 #include <string>
 #include <vector>
 
+#include "hqplanner/common/obstacle.h"
 #include "hqplanner/for_proto/adc_trajectory.h"
 #include "hqplanner/for_proto/config_param.h"
 #include "hqplanner/for_proto/perception_obstacle.h"
@@ -17,19 +19,16 @@
 #include "hqplanner/for_proto/vehicle_config.h"
 #include "hqplanner/for_proto/vehicle_config_helper.h"
 #include "hqplanner/for_proto/vehicle_state.h"
+#include "hqplanner/for_proto/vehicle_state_provider.h"
 #include "hqplanner/math/box2d.h"
-#include "hqplanner/math/math_utils.h"
-// #include "hqplanner/math/indexed_queue.h"
-#include "hqplanner/common/obstacle.h"
+#include "hqplanner/math/indexed_queue.h"
 #include "hqplanner/math/line_segment2d.h"
+#include "hqplanner/math/math_utils.h"
 #include "hqplanner/math/vec2d.h"
 #include "hqplanner/reference_line/reference_line.h"
 #include "hqplanner/reference_line/reference_line_info.h"
 #include "hqplanner/reference_line/reference_line_provider.h"
-// #include "subscribe.h"
-#include <map>
-
-#include "hqplanner/for_proto/vehicle_state_provider.h"
+#include "hqplanner/util/macro.h"
 namespace hqplanner {
 
 class Frame {
@@ -113,6 +112,7 @@ class Frame {
       const std::string &id, const hqplanner::math::Box2d &box);
 
   void AddObstacle(const Obstacle &obstacle);
+  bool IsNearDestination() const { return is_near_destination_; }
 
  private:
   // Subscribe subscribe_info_;
@@ -133,6 +133,11 @@ class Frame {
   hqplanner::forproto::ADCTrajectory trajectory_;  // last published trajectory
 
   ReferenceLineProvider *reference_line_provider_ = nullptr;
+};
+
+class FrameHistory : public math::IndexedQueue<uint32_t, Frame> {
+ private:
+  DECLARE_SINGLETON(FrameHistory);
 };
 
 }  // namespace hqplanner

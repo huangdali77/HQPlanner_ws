@@ -28,7 +28,7 @@ class ReferenceLine {
   double ComputeCurvature(double dx, double ddx, double dy, double ddy) const;
   double ComputeCurvatureDerivative(double dx, double ddx, double dddx,
                                     double dy, double ddy, double dddy) const;
-  std::vector<hqplanner::forproto::ReferencePoint> GetReferenceLinePoints()
+  const std::vector<hqplanner::forproto::ReferencePoint> reference_points()
       const {
     return reference_line_points_;
   }
