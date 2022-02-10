@@ -110,6 +110,7 @@ class ConfigParam {
  public:
   const double FLAGS_st_max_s = 40.0;
   const double FLAGS_st_max_t = 8.0;
+  // 最小adc规划轨迹时间步长
   const double FLAGS_trajectory_time_min_interval = 0.02;
   const double FLAGS_trajectory_time_max_interval = 0.1;
   const double FLAGS_trajectory_time_high_density_period = 1.0;

@@ -1,7 +1,7 @@
 #include "hqplanner/tasks/em/em_planner.h"
 
 #include <assert.h>
-#include <ros/ros.h>
+// #include <ros/ros.h>
 
 #include <fstream>
 #include <limits>
@@ -13,6 +13,7 @@
 #include "hqplanner/for_proto/vehicle_state_provider.h"
 #include "hqplanner/math/math_utils.h"
 #include "hqplanner/tasks/dp_poly_path/dp_poly_path_optimizer.h"
+#include "hqplanner/tasks/dp_st_speed/dp_st_speed_optimizer.h"
 #include "hqplanner/tasks/path_decider/path_decider.h"
 #include "hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h"
 #include "hqplanner/tasks/speed_decider/speed_decider.h"
@@ -22,8 +23,10 @@ namespace tasks {
 using hqplanner::FrameHistory;
 using hqplanner::forproto::ConfigParam;
 using hqplanner::forproto::PathPoint;
+using hqplanner::forproto::PlanningConfig;
 using hqplanner::forproto::SLPoint;
 using hqplanner::forproto::SpeedPoint;
+using hqplanner::forproto::TaskType;
 using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::math::QuinticPolynomialCurve1d;
 using hqplanner::math::Vec2d;
@@ -31,30 +34,52 @@ using hqplanner::path::DiscretizedPath;
 using hqplanner::path::PathData;
 using hqplanner::speed::SpeedData;
 using hqplanner::tasks::DpPolyPathOptimizer;
+using hqplanner::tasks::DpStSpeedOptimizer;
+using hqplanner::tasks::PathDecider;
+using hqplanner::tasks::SpeedDecider;
 using hqplanner::trajectory::DiscretizedTrajectory;
+
 namespace {
 constexpr double kPathOptimizationFallbackClost = 2e4;
 constexpr double kSpeedOptimizationFallbackClost = 2e4;
 constexpr double kStraightForwardLineCost = 10.0;
 }  // namespace
 
-// bool EMPlanner::Init(const PlanningConfig& config) {
-//   // RegisterTasks();
-//   for (const auto task : config.em_planner_config.task) {
-//     tasks_.emplace_back(
-//         task_factory_.CreateObject(static_cast<TaskType>(task)));
-//     AINFO << "Created task:" << tasks_.back()->Name();
-//   }
-//   for (auto& task : tasks_) {
-//     if (!task->Init(config)) {
-//       std::string msg(
-//           common::util::StrCat("Init task[", task->Name(), "] failed."));
-//       AERROR << msg;
-//       return Status(ErrorCode::PLANNING_ERROR, msg);
-//     }
-//   }
-//   return Status::OK();
-// }
+bool EMPlanner::Init(const PlanningConfig& config) {
+  // RegisterTasks();
+  for (const auto task : config.em_planner_config.task) {
+    switch (task) {
+      case TaskType::DP_POLY_PATH_OPTIMIZER: {
+        tasks_.emplace_back(new DpPolyPathOptimizer());
+        break;
+      }
+      case TaskType::DP_ST_SPEED_OPTIMIZER: {
+        tasks_.emplace_back(new DpStSpeedOptimizer());
+        break;
+      }
+      case TaskType::PATH_DECIDER: {
+        tasks_.emplace_back(new PathDecider());
+        break;
+      }
+      case TaskType::SPEED_DECIDER: {
+        tasks_.emplace_back(new SpeedDecider());
+        break;
+      }
+      default: {
+        ROS_INFO("no exist task type");
+        assert(0);
+      }
+    }
+  }
+  for (auto& task : tasks_) {
+    if (!task->Init(config)) {
+      ROS_INFO("Init task[%s] failed.", task->Name());
+
+      return false;
+    }
+  }
+  return true;
+}
 
 EMPlanner::EMPlanner() {
   std::unique_ptr<DpPolyPathOptimizer> dp_poly_path_optimizer_ptr(
@@ -66,13 +91,13 @@ bool EMPlanner::Plan(const TrajectoryPoint& planning_start_point,
                      Frame* frame) {
   bool has_drivable_reference_line = false;
   bool disable_low_priority_path = false;
-  // auto status =
-  //     Status(ErrorCode::PLANNING_ERROR, "reference line not drivable");
+
   for (auto& reference_line_info : frame->reference_line_info()) {
     if (disable_low_priority_path) {
       reference_line_info.SetDrivable(false);
     }
     if (!reference_line_info.IsDrivable()) {
+      ROS_INFO("reference line is not drivable");
       continue;
     }
     auto cur_status =
@@ -106,6 +131,7 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
     speed_profile = GenerateSpeedHotStart(planning_start_point);
     ROS_INFO("Using dummy hot start for speed vector");
   }
+  // 将reference_line_info中的speed_data换成heuristic_speed_data
   heuristic_speed_data->set_speed_vector(speed_profile);
 
   bool ret;

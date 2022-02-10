@@ -1,7 +1,7 @@
 #include "hqplanner/main/planning.h"
 
 #include <assert.h>
-#include <ros/ros.h>
+// #include <ros/ros.h>
 
 #include <algorithm>
 #include <list>
@@ -30,6 +30,7 @@ using hqplanner::PathDecision;
 using hqplanner::PathObstacle;
 using hqplanner::forproto::ADCTrajectory;
 using hqplanner::forproto::ConfigParam;
+using hqplanner::forproto::TaskType;
 using hqplanner::forproto::Trajectory;
 using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::forproto::VehicleState;
@@ -48,9 +49,18 @@ std::string Planning::Name() const { return "planning"; }
 bool Planning::Init() {
   reference_line_provider_ = std::make_unique<ReferenceLineProvider>(
       AnchorPointsProvider::instance()->GetAnchorPoints());
-  planner_ = new EMPlanner();
-  return true；
-  // return planner_->Init(config_);
+
+  planner_.reset(new EMPlanner());
+  // return true;
+  // 规划配置
+  auto& planning_tasks = config_.em_planner_config.task;
+  planning_tasks.emplace_back(TaskType::DP_POLY_PATH_OPTIMIZER);
+  planning_tasks.emplace_back(TaskType::PATH_DECIDER);
+  planning_tasks.emplace_back(TaskType::DP_ST_SPEED_OPTIMIZER);
+  planning_tasks.emplace_back(TaskType::SPEED_DECIDER);
+
+  ROS_INFO("tasks size:%d", config_.em_planner_config.task.size());
+  return planner_->Init(config_);
 }
 
 bool Planning::InitFrame(const std::uint32_t sequence_num,
@@ -85,7 +95,7 @@ void Planning::RunOnce() {
   assert(start_timestamp >= vehicle_state.timestamp);
 
   const double planning_cycle_time =
-      1.0 / ConfigParam::FLAGS_planning_loop_rate;
+      1.0 / ConfigParam::instance()->FLAGS_planning_loop_rate;
 
   bool is_replan = false;
   std::vector<TrajectoryPoint> stitching_trajectory;

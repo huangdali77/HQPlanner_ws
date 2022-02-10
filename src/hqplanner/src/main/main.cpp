@@ -221,11 +221,6 @@ int main(int argc, char **argv) {
   anchor_points.emplace_back(std::move(anchor_point));
   AnchorPointsProvider::instance()->SetAnchorPoints(anchor_points);
 
-  //   1、先初始化adc状态
-  VehicleState adc_state;
-  adc_state.x = 3.0;
-  adc_state.timestamp = ros::Time::now().toSec();
-  VehicleStateProvider::instance()->Init(adc_state);
   //   2、再初始化障碍物信息
   std::map<std::int32_t, PotentialPredictionObstacle>
       potential_prediction_obstacles;
@@ -234,7 +229,7 @@ int main(int argc, char **argv) {
 
   // 实例化规划对象
   Planning planning;
-  //   初始化全局路由的anchor
+  //   初始化全局路由的anchor和planning config
   planning.Init();
 
   // 初始化VehicleConfigHelper
@@ -242,6 +237,12 @@ int main(int argc, char **argv) {
   VehicleConfigHelper::Init(vehicle_param);
   VehicleConfig veh_conf = VehicleConfigHelper::instance()->GetConfig();
   ROS_INFO("before ros::ok()");
+
+  //   1、先初始化adc状态
+  VehicleState adc_state;
+  adc_state.x = 3.0;
+  adc_state.timestamp = ros::Time::now().toSec();
+  VehicleStateProvider::instance()->Init(adc_state);
 
   ros::Rate r(10);
   while (ros::ok()) {

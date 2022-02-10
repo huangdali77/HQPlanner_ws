@@ -1,31 +1,18 @@
 #ifndef HQPLANNING_MAIN_PLANNING_H_
 #define HQPLANNING_MAIN_PLANNING_H_
 
-#include <ros/ros.h>
+// #include <ros/ros.h>
 
 #include <memory>
 #include <string>
 #include <utility>
 #include <vector>
-// #include "modules/common/proto/pnc_point.pb.h"
-#include "hqplanner/for_proto/pnc_point.h"
 
-// #include "modules/planning/proto/planning.pb.h"
-#include "hqplanner/for_proto/adc_trajectory.h"
-// #include "modules/planning/proto/planning_config.pb.h"
-#include "hqplanner/for_proto/planning_config.h"
-// #include "modules/planning/proto/traffic_rule_config.pb.h"
-
-// #include "modules/common/adapters/adapter_manager.h"
-// #include "modules/common/apollo_app.h"
-// #include "modules/common/status/status.h"
-// #include "modules/common/util/factory.h"
-// #include "modules/common/vehicle_state/vehicle_state_provider.h"
-#include "hqplanner/for_proto/vehicle_state_provider.h"
-// #include "modules/planning/common/frame.h"
 #include "hqplanner/common/frame.h"
-// #include "modules/planning/common/trajectory/publishable_trajectory.h"
-// #include "modules/planning/planner/planner.h"
+#include "hqplanner/for_proto/adc_trajectory.h"
+#include "hqplanner/for_proto/planning_config.h"
+#include "hqplanner/for_proto/pnc_point.h"
+#include "hqplanner/for_proto/vehicle_state_provider.h"
 #include "hqplanner/reference_line/reference_line_provider.h"
 #include "hqplanner/tasks/em/planner.h"
 #include "hqplanner/trajectory/publishable_trajectory.h"
@@ -125,7 +112,7 @@ class Planning {
   //   common::util::Factory<PlanningConfig::PlannerType, Planner>
   //   planner_factory_;
 
-  //   PlanningConfig config_;
+  hqplanner::forproto::PlanningConfig config_;
 
   //   TrafficRuleConfigs traffic_rule_configs_;
 
