@@ -1,7 +1,7 @@
 #include "hqplanner/tasks/dp_poly_path/dp_road_graph.h"
 
 #include <assert.h>
-// huangqing
+
 #include <algorithm>
 #include <utility>
 
@@ -42,7 +42,6 @@ bool DPRoadGraph::FindPathTunnel(
     const TrajectoryPoint &init_point,
     const std::vector<const PathObstacle *> &obstacles,
     PathData *const path_data) {
-  //   CHECK_NOTNULL(path_data);
   assert(path_data != nullptr);
 
   init_point_ = init_point;
@@ -53,14 +52,16 @@ bool DPRoadGraph::FindPathTunnel(
   }
 
   if (!CalculateFrenetPoint(init_point_, &init_frenet_frame_point_)) {
-    // AERROR << "Fail to create init_frenet_frame_point_ from : "
-    //        << init_point_.DebugString();
+    ROS_INFO("Fail to create init_frenet_frame_point_ at : (%f, %f)",
+             init_point_.path_point.x, init_point_.path_point.y);
+
     return false;
   }
 
   std::vector<DPRoadGraphNode> min_cost_path;
   if (!GenerateMinCostPath(obstacles, &min_cost_path)) {
-    // AERROR << "Fail to generate graph!";
+    ROS_INFO("Fail to generate graph!");
+
     return false;
   }
   // 将dp得到的多段路径按特定步长采点FrenetFramePoint存放到frenet_path

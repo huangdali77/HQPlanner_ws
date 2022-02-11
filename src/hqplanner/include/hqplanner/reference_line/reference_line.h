@@ -47,9 +47,15 @@ class ReferenceLine {
 
   bool SLToXY(const hqplanner::forproto::SLPoint &sl_point,
               hqplanner::math::Vec2d *const xy_point) const;
+
   bool XYToSL(const hqplanner::math::Vec2d &xy_point,
               hqplanner::forproto::SLPoint *const sl_point) const;
 
+  template <class XYPoint>
+  bool XYToSL(const XYPoint &xy,
+              hqplanner::forproto::SLPoint *const sl_point) const {
+    return XYToSL(hqplanner::math::Vec2d(xy.x, xy.y), sl_point);
+  }
   hqplanner::forproto::ReferencePoint GetReferencePoint(const double x,
                                                         const double y) const;
   hqplanner::forproto::ReferencePoint GetReferencePoint(const double s) const;

@@ -8,6 +8,7 @@
 
 #include "hqplanner/for_proto/planning_config.h"
 #include "hqplanner/tasks/dp_poly_path/dp_road_graph.h"
+#include "ros/ros.h"
 
 namespace hqplanner {
 namespace tasks {
