@@ -1,5 +1,6 @@
 #include "hqplanner/tasks/path_optimizer.h"
 
+#include "ros/ros.h"
 namespace hqplanner {
 namespace tasks {
 
@@ -13,6 +14,7 @@ bool PathOptimizer::Execute(Frame* frame,
       frame->PlanningStartPoint(), reference_line_info->mutable_path_data());
 
   if (!ret) {
+    ROS_INFO("not drivabale reference line");
     reference_line_info->SetDrivable(false);
   }
   return ret;

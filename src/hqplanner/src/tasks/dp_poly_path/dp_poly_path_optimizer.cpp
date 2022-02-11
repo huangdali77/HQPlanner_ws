@@ -30,16 +30,18 @@ bool DpPolyPathOptimizer::Process(const SpeedData &speed_data,
                                   const TrajectoryPoint &init_point,
                                   PathData *const path_data) {
   if (!is_init_) {
+    ROS_INFO("Please call Init() before Process().");
     return false;
   }
   assert(path_data != nullptr);
-
+  // speed_data 为heuristic_speed_data
   DPRoadGraph dp_road_graph(config_, *reference_line_info_, speed_data);
 
   if (!dp_road_graph.FindPathTunnel(
           init_point,
           reference_line_info_->path_decision()->path_obstacle_items(),
           path_data)) {
+    ROS_INFO("Failed to find tunnel in road graph");
     return false;
   }
 

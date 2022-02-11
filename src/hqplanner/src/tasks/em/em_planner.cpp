@@ -1,7 +1,7 @@
 #include "hqplanner/tasks/em/em_planner.h"
 
 #include <assert.h>
-// #include <ros/ros.h>
+#include <ros/ros.h>
 
 #include <fstream>
 #include <limits>

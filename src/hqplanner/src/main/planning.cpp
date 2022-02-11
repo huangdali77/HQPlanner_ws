@@ -1,7 +1,7 @@
 #include "hqplanner/main/planning.h"
 
 #include <assert.h>
-// #include <ros/ros.h>
+#include <ros/ros.h>
 
 #include <algorithm>
 #include <list>

@@ -98,6 +98,7 @@ class DPRoadGraph {
   hqplanner::forproto::TrajectoryPoint init_point_;
   const hqplanner::ReferenceLineInfo &reference_line_info_;
   const hqplanner::ReferenceLine &reference_line_;
+  // speed_data_ 为heuristic_speed_data
   hqplanner::speed::SpeedData speed_data_;
   hqplanner::forproto::SLPoint init_sl_point_;
   hqplanner::forproto::FrenetFramePoint init_frenet_frame_point_;
