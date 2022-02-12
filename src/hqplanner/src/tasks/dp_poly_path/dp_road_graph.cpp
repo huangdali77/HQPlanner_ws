@@ -1,6 +1,7 @@
 #include "hqplanner/tasks/dp_poly_path/dp_road_graph.h"
-// huangqing
+
 #include <assert.h>
+#include <ros/ros.h>
 
 #include <algorithm>
 #include <utility>
@@ -67,7 +68,7 @@ bool DPRoadGraph::FindPathTunnel(
   // 将dp得到的多段路径按特定步长采点FrenetFramePoint存放到frenet_path
   std::vector<FrenetFramePoint> frenet_path;
   float accumulated_s = init_sl_point_.s;
-  const float path_resolution = config_.path_resolution;
+  const float path_resolution = config_.path_resolution;  // 1m
 
   for (std::size_t i = 1; i < min_cost_path.size(); ++i) {
     const auto &prev_node = min_cost_path[i - 1];
@@ -109,8 +110,9 @@ bool DPRoadGraph::GenerateMinCostPath(
   std::vector<std::vector<SLPoint>> path_waypoints;
   if (!SamplePathWaypoints(init_point_, &path_waypoints) ||
       path_waypoints.size() < 1) {
-    // AERROR << "Fail to sample path waypoints! reference_line_length = "
-    //        << reference_line_.Length();
+    ROS_INFO("Fail to sample path waypoints! reference_line_length = %f",
+             reference_line_.Length());
+
     return false;
   }
   path_waypoints.insert(path_waypoints.begin(),
@@ -236,19 +238,19 @@ bool DPRoadGraph::SamplePathWaypoints(
   assert(points != nullptr);
 
   const float kMinSampleDistance = 40.0;
+  // 1、确定规划路径的长度，规划路径的长度为8s或40m
   const float total_length = std::fmin(
       init_sl_point_.s + std::fmax(init_point.v * 8.0, kMinSampleDistance),
       reference_line_.Length());
   const auto &vehicle_config = VehicleConfigHelper::instance()->GetConfig();
   const float half_adc_width = vehicle_config.vehicle_param.width / 2.0;
-  // num_sample_per_level = 7
+  // 2、确定路径动态规划的横向采样点数，num_sample_per_level = 7
   const size_t num_sample_per_level =
       ConfigParam::instance()->FLAGS_use_navigation_mode
           ? config_.navigator_sample_num_each_level
           : config_.sample_points_num_each_level;
 
-  const bool has_sidepass = HasSidepass();
-
+  // 3、确定路径动态规划的采样步长
   constexpr float kSamplePointLookForwardTime = 4.0;
   // step_length=[8m,...speed x 4s...,15m]
   const float step_length =
@@ -303,6 +305,7 @@ bool DPRoadGraph::SamplePathWaypoints(
     }
     prev_s = s;
 
+    //设置道路的左右boundary
     double left_width = 0.0;
     double right_width = 0.0;
     reference_line_.GetLaneWidth(s, &left_width, &right_width);
@@ -329,20 +332,30 @@ bool DPRoadGraph::SamplePathWaypoints(
       sample_left_boundary = std::fmax(eff_left_width, init_sl_point_.l);
 
       if (init_sl_point_.l > eff_left_width) {
+        ROS_INFO("adc out road left boundary ");
+        // 测试合适出现这种情况
+        assert(0);
         sample_right_boundary =
             std::fmax(sample_right_boundary, init_sl_point_.l - sample_l_range);
       }
       if (init_sl_point_.l < eff_right_width) {
+        ROS_INFO("adc out road right boundary ");
+        // 测试合适出现这种情况
+        assert(0);
         sample_left_boundary =
             std::fmin(sample_left_boundary, init_sl_point_.l + sample_l_range);
       }
     }
 
-    std::vector<float> sample_l;
+    // =====================NoNeed=================================
+    const bool has_sidepass = HasSidepass();
+
+    std::vector<float> sample_l;  //横向采样点的横向坐标
     if (reference_line_info_.IsChangeLanePath() &&
         !reference_line_info_.IsSafeToChangeLane()) {
       sample_l.push_back(reference_line_info_.OffsetToOtherReferenceLine());
     } else if (has_sidepass) {
+      ROS_INFO("has sidepass decisoin");
       // currently only left nudge is supported. Need road hard boundary for
       // both sides
       switch (sidepass_.type) {
@@ -362,7 +375,7 @@ bool DPRoadGraph::SamplePathWaypoints(
                                      sample_left_boundary,
                                      num_sample_per_level - 1, &sample_l);
     }
-    std::vector<SLPoint> level_points;
+    std::vector<SLPoint> level_points;  //横向采样点在frenet坐标系下的坐标
     // planning_internal::SampleLayerDebug sample_layer_debug;
     for (size_t j = 0; j < sample_l.size(); ++j) {
       SLPoint sl = hqplanner::util::MakeSLPoint(s, sample_l[j]);
@@ -439,15 +452,15 @@ void DPRoadGraph::GetCurveCost(TrajectoryCost trajectory_cost,
   *cost =
       trajectory_cost.Calculate(curve, start_s, end_s, curr_level, total_level);
 }
-
+// ==============NoNeed================================
 bool DPRoadGraph::HasSidepass() {
   const auto &path_decision = reference_line_info_.path_decision();
-  // for (const auto &obstacle : path_decision.path_obstacles().Items()) {
-  //   if (obstacle->LateralDecision().has_sidepass()) {
-  //     sidepass_ = obstacle->LateralDecision().sidepass();
-  //     return true;
-  //   }
-  // }
+  for (const auto &obstacle : path_decision.path_obstacle_items()) {
+    if (obstacle->LateralDecision().has_sidepass()) {
+      sidepass_ = obstacle->LateralDecision().sidepass();
+      return true;
+    }
+  }
   return false;
 }
 

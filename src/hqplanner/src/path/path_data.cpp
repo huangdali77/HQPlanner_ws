@@ -1,5 +1,8 @@
 #include "hqplanner/path/path_data.h"
 
+#include <assert.h>
+#include <ros/ros.h>
+
 #include "hqplanner/for_proto/pnc_point.h"
 namespace hqplanner {
 namespace path {
@@ -30,13 +33,14 @@ bool PathData::SetDiscretizedPath(const DiscretizedPath &path) {
 
 bool PathData::SetFrenetPath(const FrenetFramePath &frenet_path) {
   if (reference_line_ == nullptr) {
-    // AERROR << "Should NOT set frenet path when reference line is nullptr. "
-    //           "Please set reference line first.";
+    ROS_INFO("Should NOT set frenet path when reference line is nullptr. ");
+
     return false;
   }
   frenet_path_ = frenet_path;
   if (!SLToXY(frenet_path_, &discretized_path_)) {
-    // AERROR << "Fail to transfer frenet path to discretized path.";
+    ROS_INFO("Fail to transfer frenet path to discretized path.");
+
     return false;
   }
   assert(discretized_path_.NumOfPoints() == frenet_path_.points().size());

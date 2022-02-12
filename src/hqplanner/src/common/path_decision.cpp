@@ -1,9 +1,9 @@
 #include "hqplanner/common/path_decision.h"
 
+#include <ros/ros.h>
+
 #include <memory>
 #include <utility>
-
-// #include "path_decision.h"
 namespace hqplanner {
 using hqplanner::PathObstacle;
 using hqplanner::ReferenceLine;
@@ -73,7 +73,7 @@ bool PathDecision::AddLateralDecision(const std::string &tag,
                                       const ObjectDecisionType &decision) {
   auto path_obstacle = path_obstacles_.find(object_id);
   if (path_obstacle == path_obstacles_.end()) {
-    // AERROR << "failed to find obstacle";
+    ROS_INFO("failed to find obstacle");
     return false;
   }
   path_obstacle->second->AddLateralDecision(tag, decision);
@@ -86,11 +86,12 @@ bool PathDecision::AddLongitudinalDecision(const std::string &tag,
                                            const ObjectDecisionType &decision) {
   auto path_obstacle = path_obstacles_.find(object_id);
   if (path_obstacle == path_obstacles_.end()) {
-    // AERROR << "failed to find obstacle";
+    ROS_INFO("failed to find obstacle");
+
     return false;
   }
   path_obstacle->second->AddLongitudinalDecision(tag, decision);
-  // path_obstacle->AddLongitudinalDecision(tag, decision);
+
   return true;
 }
 
@@ -112,6 +113,8 @@ bool PathDecision::MergeWithMainStop(const ObjectStop &obj_stop,
 
   double stop_line_s = stop_line_sl.s;
   if (stop_line_s < 0 || stop_line_s > reference_line.Length()) {
+    ROS_INFO("Ignore object: %s fence route_s[%f] not in range[0, %f]", obj_id,
+             stop_line_s, reference_line.Length());
     return false;
   }
 

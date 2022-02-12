@@ -50,11 +50,11 @@ TrajectoryCost::TrajectoryCost(
       static_cast<uint32_t>(std::floor(total_time / config.eval_time_interval));
 
   for (const auto *ptr_path_obstacle : obstacles) {
-    // if (ptr_path_obstacle->IsIgnore()) {
-    //   continue;
-    // } else if (ptr_path_obstacle->LongitudinalDecision().has_stop()) {
-    //   continue;
-    // }
+    if (ptr_path_obstacle->IsIgnore()) {
+      continue;
+    } else if (ptr_path_obstacle->LongitudinalDecision().has_stop()) {
+      continue;
+    }
     const auto &sl_boundary = ptr_path_obstacle->PerceptionSLBoundary();
 
     const float adc_left_l =
@@ -104,9 +104,9 @@ ComparableCost TrajectoryCost::CalculatePathCost(
   ComparableCost cost;
   float path_cost = 0.0;
   std::function<float(const float)> quasi_softmax = [this](const float x) {
-    const float l0 = this->config_.path_l_cost_param_l0;
-    const float b = this->config_.path_l_cost_param_b;
-    const float k = this->config_.path_l_cost_param_k;
+    const float l0 = this->config_.path_l_cost_param_l0;  // 1.50
+    const float b = this->config_.path_l_cost_param_b;    // 0.40
+    const float k = this->config_.path_l_cost_param_k;    // 1.50
     return (b + std::exp(-k * (x - l0))) / (1.0 + std::exp(-k * (x - l0)));
   };
 
@@ -139,8 +139,12 @@ ComparableCost TrajectoryCost::CalculatePathCost(
 
   if (curr_level == total_level) {
     const float end_l = curve.Evaluate(0, end_s - start_s);
-    path_cost +=
-        std::sqrt(end_l - init_sl_point_.l / 2.0) * config_.path_end_l_cost;
+
+    path_cost += std::sqrt(std::pow(end_l - init_sl_point_.l, 2)) *
+                 config_.path_end_l_cost;
+    // =============why========================
+    // path_cost +=
+    //     std::sqrt(end_l - init_sl_point_.l / 2.0) * config_.path_end_l_cost;
   }
   cost.smoothness_cost = path_cost;
   return cost;
@@ -245,6 +249,7 @@ ComparableCost TrajectoryCost::GetCostFromObsSL(
 
   const float delta_s = std::fabs(
       adc_s - (obs_sl_boundary.start_s + obs_sl_boundary.end_s) / 2.0);
+
   obstacle_cost.safety_cost +=
       config_.obstacle_collision_cost *
       Sigmoid(config_.obstacle_collision_distance - delta_s);

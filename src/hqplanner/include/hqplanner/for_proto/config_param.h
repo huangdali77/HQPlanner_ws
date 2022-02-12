@@ -120,10 +120,12 @@ class ConfigParam {
   const double FLAGS_virtual_stop_wall_length = 0.1;
   const double FLAGS_virtual_stop_wall_height = 2.0;
   const double FLAGS_max_collision_distance = 0.1;
+  // reference line shrink前看时间和空间长度
   const double FLAGS_look_forward_time_sec = 8.0;
   const double FLAGS_look_forward_short_distance = 150.0;
   const double FLAGS_look_forward_long_distance = 250.0;
-  const double FLAGS_look_backward_distance = 30.0;
+  // reference line shrink后看长度
+  const double FLAGS_look_backward_distance = 10.0;
   const double FLAGS_reference_line_sample_step = 0.1;  // m
   const int FLAGS_num_reference_points_near_destination = 50;
   // 障碍物预测时间长度

@@ -98,4 +98,4 @@ class ComparableCost {
 }  // namespace tasks
 }  // namespace hqplanner
 
-#endif  // MODULES_PLANNING_TASKS_DP_POLY_PATH_COMPARABLE_COST_H_
+#endif

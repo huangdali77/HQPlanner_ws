@@ -3,6 +3,7 @@
 #include "hqplanner/tasks/path_decider/path_decider.h"
 
 #include <assert.h>
+#include <ros/ros.h>
 
 #include <algorithm>
 #include <cmath>
@@ -43,6 +44,7 @@ bool PathDecider::Process(const PathData &path_data,
   assert(path_decision != nullptr);
 
   if (!MakeObjectDecision(path_data, path_decision)) {
+    ROS_INFO("Failed to make decision based on tunnel");
     return false;
   }
   return true;
@@ -53,6 +55,7 @@ bool PathDecider::MakeObjectDecision(const PathData &path_data,
   assert(path_decision != nullptr);
 
   if (!MakeStaticObstacleDecision(path_data, path_decision)) {
+    ROS_INFO("Failed to make decisions for static obstacles");
     return false;
   }
   return true;
@@ -84,6 +87,7 @@ bool PathDecider::MakeStaticObstacleDecision(
          obstacle.Perception().type == PerceptionObstacle::PEDESTRIAN);
 
     if (!is_bycycle_or_pedestrain && !obstacle.IsStatic()) {
+      // 障碍物不是自行车和行人兵器不静止就不可考虑，只考虑自行车和行人和其他静止的障碍物
       continue;
     }
 
