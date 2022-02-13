@@ -69,7 +69,7 @@ class StBoundaryMapper {
   const ReferenceLine& reference_line_;
   const hqplanner::path::PathData& path_data_;
   const hqplanner::forproto::VehicleParam& vehicle_param_;
-  const double planning_distance_;
+  const double planning_distance_;  // 149m
   const double planning_time_;
   bool is_change_lane_ = false;
 };

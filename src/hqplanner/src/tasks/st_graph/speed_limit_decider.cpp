@@ -1,6 +1,7 @@
 #include "hqplanner/tasks/st_graph/speed_limit_decider.h"
 
 #include <assert.h>
+#include <ros/ros.h>
 
 #include <algorithm>
 #include <limits>
@@ -70,7 +71,6 @@ bool SpeedLimitDecider::GetSpeedLimits(
     const std::map<std::string, std::shared_ptr<PathObstacle>>& path_obstacles,
     SpeedLimit* const speed_limit_data) const {
   assert(speed_limit_data != nullptr);
-  //   CHECK_NOTNULL(speed_limit_data);
 
   std::vector<double> avg_kappa;
   GetAvgKappa(path_data_.discretized_path().path_points(), &avg_kappa);
@@ -81,7 +81,8 @@ bool SpeedLimitDecider::GetSpeedLimits(
     const double path_s = discretized_path_points.at(i).s;
     const double frenet_point_s = frenet_path_points.at(i).s;
     if (frenet_point_s > reference_line_.Length()) {
-      return false;
+      ROS_INFO("path length is LARGER than reference_line_ length ");
+      break;
     }
 
     // (1) speed limit from map

@@ -366,14 +366,15 @@ bool ReferenceLine::Shrink(const Vec2d &point, double look_backward,
 }
 
 double ReferenceLine::GetSpeedLimitFromS(const double s) const {
-  for (const auto &speed_limit : speed_limit_) {
-    if (s >= speed_limit.start_s && s <= speed_limit.end_s) {
-      return speed_limit.speed_limit;
-    }
-  }
+  // ================NoNeed==================================
+  // for (const auto &speed_limit : speed_limit_) {
+  //   if (s >= speed_limit.start_s && s <= speed_limit.end_s) {
+  //     return speed_limit.speed_limit;
+  //   }
+  // }
   // const auto& map_path_point = GetReferencePoint(s);
-  double speed_limit =
-      ConfigParam::instance()->FLAGS_planning_upper_speed_limit;
+  // double speed_limit =
+  //     ConfigParam::instance()->FLAGS_planning_upper_speed_limit;
   // for (const auto& lane_waypoint : map_path_point.lane_waypoints()) {
   //   if (lane_waypoint.lane == nullptr) {
   //     AWARN << "lane_waypoint.lane is nullptr";
@@ -382,7 +383,7 @@ double ReferenceLine::GetSpeedLimitFromS(const double s) const {
   //   speed_limit =
   //       std::fmin(lane_waypoint.lane->lane().speed_limit(), speed_limit);
   // }
-  return speed_limit;
+  return ConfigParam::instance()->FLAGS_planning_upper_speed_limit;
 }
 
 void ReferenceLine::AddSpeedLimit(double start_s, double end_s,

@@ -159,6 +159,7 @@ STPoint StBoundary::BottomRightPoint() const {
 
 StBoundary StBoundary::ExpandByS(const double s) const {
   if (lower_points_.empty()) {
+    ROS_INFO("The current st_boundary has NO points.");
     return StBoundary();
   }
   std::vector<std::pair<STPoint, STPoint>> point_pairs;
@@ -172,7 +173,8 @@ StBoundary StBoundary::ExpandByS(const double s) const {
 
 StBoundary StBoundary::ExpandByT(const double t) const {
   if (lower_points_.empty()) {
-    //   AERROR << "The current st_boundary has NO points.";
+    ROS_INFO("The current st_boundary has NO points.");
+
     return StBoundary();
   }
 

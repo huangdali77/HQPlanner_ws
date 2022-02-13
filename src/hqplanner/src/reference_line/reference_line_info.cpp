@@ -1,6 +1,6 @@
 #include "hqplanner/reference_line/reference_line_info.h"
 
-// #include <ros/ros.h>
+#include <ros/ros.h>
 
 #include "hqplanner/math/box2d.h"
 #include "hqplanner/math/vec2d.h"
@@ -42,24 +42,28 @@ bool ReferenceLineInfo::Init(const std::vector<const Obstacle*>& obstacles) {
 
   // 获取自车的sl_boundary
   if (!reference_line_.GetSLBoundary(box, &adc_sl_boundary_)) {
+    ROS_INFO("Failed to get ADC boundary from box.");
     return false;
   }
   if (adc_sl_boundary_.end_s < 0 ||
       adc_sl_boundary_.start_s > reference_line_.Length()) {
+    ROS_INFO("Vehicle SL is not on reference line:[0, %f]",
+             reference_line_.Length());
     assert(0);
-    // AWARN << "Vehicle SL " << adc_sl_boundary_.ShortDebugString()
-    //       << " is not on reference line:[0, " << reference_line_.Length()
-    //       << "]";
   }
   constexpr double kOutOfReferenceLineL = 10.0;  // in meters
   if (adc_sl_boundary_.start_l > kOutOfReferenceLineL ||
       adc_sl_boundary_.end_l < -kOutOfReferenceLineL) {
     is_on_reference_line_ = false;
-    // AERROR << "Ego vehicle is too far away from reference line.";
+    ROS_INFO("Ego vehicle is too far away from reference line.");
+    assert(0);
+    // AERROR << ;
     return false;
   }
   is_on_reference_line_ = reference_line_.IsOnRoad(adc_sl_boundary_);
   if (!AddObstacles(obstacles)) {
+    ROS_INFO("Failed to add obstacles to reference line");
+    assert(0);
     return false;
   }
 

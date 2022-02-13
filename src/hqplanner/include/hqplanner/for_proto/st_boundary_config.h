@@ -14,7 +14,7 @@ struct StBoundaryConfig {
   double lowest_speed = 2.5;
   int num_points_to_avg_kappa = 2;
 
-  double static_obs_nudge_speed_ratio = 0.6;
+  double static_obs_nudge_speed_ratio = 0.8;
   double dynamic_obs_nudge_speed_ratio = 0.8;
   double centri_jerk_speed_coeff = 1.0;
 };

@@ -131,6 +131,8 @@ class ConfigParam {
   // 障碍物预测时间长度
   const double FLAGS_prediction_total_time = 5.0;
   const double FLAGS_lateral_ignore_buffer = 3.0;
+  // path_decider.cpp 的lateral_stop_radius参数  和
+  // trajectory_cost.cpp的no_overlap参数
   const double FLAGS_static_decision_nudge_l_buffer = 0.5;
   const bool FLAGS_use_navigation_mode = false;
   const double FLAGS_max_stop_speed = 0.2;  //被定义为停车的最大速度

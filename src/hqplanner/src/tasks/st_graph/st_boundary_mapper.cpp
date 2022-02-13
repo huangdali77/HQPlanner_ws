@@ -2,6 +2,7 @@
 #include "hqplanner/tasks/st_graph/st_boundary_mapper.h"
 
 #include <assert.h>
+#include <ros/ros.h>
 
 #include <algorithm>
 #include <limits>
@@ -62,22 +63,18 @@ StBoundaryMapper::StBoundaryMapper(const SLBoundary& adc_sl_boundary,
       is_change_lane_(is_change_lane) {}
 
 bool StBoundaryMapper::CreateStBoundary(PathDecision* path_decision) const {
-  // const auto& path_obstacles = path_decision->path_obstacles();
-
   if (planning_time_ < 0.0) {
-    // const std::string msg = "Fail to get params since planning_time_ < 0.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    // planning_time_ = 7.0
+    ROS_INFO("Fail to get params since planning_time_ < 0.");
+    assert(0);
     return false;
   }
 
   if (path_data_.discretized_path().NumOfPoints() < 2) {
-    // AERROR << "Fail to get params because of too few path points. path points
-    // "
-    //           "size: "
-    //        << path_data_.discretized_path().NumOfPoints() << ".";
-    // return Status(ErrorCode::PLANNING_ERROR,
-    //               "Fail to get params because of too few path points");
+    ROS_INFO("Fail because of too few path points. path points size : % d ",
+             path_data_.discretized_path().NumOfPoints());
+    assert(0);
+
     return false;
   }
 
@@ -87,8 +84,8 @@ bool StBoundaryMapper::CreateStBoundary(PathDecision* path_decision) const {
   const auto& path_obstacles = path_decision->path_obstacle_items();
 
   for (const auto* const_path_obstacle : path_obstacles) {
-    // auto* path_obstacle = const_path_obstacle;
     auto* path_obstacle = path_decision->Find(const_path_obstacle->Id());
+    // 处理没有决策标签的障碍物
     if (!path_obstacle->HasLongitudinalDecision()) {
       if (!MapWithoutDecision(path_obstacle)) {
         // MapWithoutDecision失败说明无人车的规划路径与障碍物的预测轨迹没有干涉，此时可以对障碍物进行ignore决策
@@ -101,15 +98,11 @@ bool StBoundaryMapper::CreateStBoundary(PathDecision* path_decision) const {
                                                path_obstacle->obstacle()->Id(),
                                                object_decision);
       }
-      // if (!MapWithoutDecision(path_obstacle).ok()) {
-      //   std::string msg = StrCat("Fail to map obstacle ",
-      //   path_obstacle->Id(),
-      //                            " without decision.");
-      //   AERROR << msg;
-      //   return Status(ErrorCode::PLANNING_ERROR, msg);
-      // }
+
       continue;
     }
+
+    // 处理有决策标签的障碍物（一般是自行车、行人和静止障碍物）
     const auto& decision = path_obstacle->LongitudinalDecision();
     if (decision.has_stop()) {
       const double stop_s = (path_obstacle->PerceptionSLBoundary()).start_s +
@@ -118,11 +111,8 @@ bool StBoundaryMapper::CreateStBoundary(PathDecision* path_decision) const {
       // buffer is used.
       constexpr double stop_buff = 1.0;
       if (stop_s + stop_buff < adc_sl_boundary_.end_s) {
-        // AERROR << "Invalid stop decision. not stop at behind of current "
-        //           "position. stop_s : "
-        //        << stop_s << ", and current adc_s is; "
-        //        << adc_sl_boundary_.end_s();
-        // return Status(ErrorCode::PLANNING_ERROR, "invalid decision");
+        ROS_INFO("Invalid stop decision");
+
         return false;
       }
       if (stop_s < min_stop_s) {
@@ -149,9 +139,6 @@ bool StBoundaryMapper::CreateStBoundary(PathDecision* path_decision) const {
   if (stop_obstacle) {
     bool success = MapStopDecision(stop_obstacle, stop_decision);
     if (!success) {
-      // std::string msg = "Fail to MapStopDecision.";
-      // AERROR << msg;
-      // return Status(ErrorCode::PLANNING_ERROR, msg);
       return false;
     }
   }
@@ -281,7 +268,9 @@ bool StBoundaryMapper::MapStopDecision(
   } else {
     PathPoint stop_point;
     if (!path_data_.GetPathPointWithRefS(stop_ref_s, &stop_point)) {
-      // AERROR << "Fail to get path point from reference s. The sl boundary of
+      ROS_INFO("Fail to get path point from reference s");
+      assert(0);
+      // AERROR << ". The sl boundary of
       // "
       //           "stop obstacle "
       //        << stop_obstacle->Id()
@@ -355,11 +344,11 @@ bool StBoundaryMapper::GetOverlapBoundaryPoints(
 
   const auto& trajectory = obstacle.Trajectory();
   if (trajectory.trajectory_point.size() == 0) {
-    // if (!obstacle.IsStatic()) {
-    //   AWARN << "Non-static obstacle[" << obstacle.Id()
-    //         << "] has NO prediction trajectory."
-    //         << obstacle.Perception().ShortDebugString();
-    // }
+    // 处理静态障碍物
+    if (!obstacle.IsStatic()) {
+      ROS_INFO("Non-static obstacle[%s] has NO prediction trajectory.",
+               obstacle.Id());
+    }
     for (const auto& curr_point_on_path : path_points) {
       if (curr_point_on_path.s > planning_distance_) {
         break;
@@ -383,8 +372,9 @@ bool StBoundaryMapper::GetOverlapBoundaryPoints(
       }
     }
   } else {
+    //处理动态障碍物
     const int default_num_point = 50;
-    DiscretizedPath discretized_path;
+    DiscretizedPath discretized_path;  // size为[50,99)
     if (path_points.size() > 2 * default_num_point) {
       const int ratio = path_points.size() / default_num_point;
       std::vector<PathPoint> sampled_path_points;
@@ -397,6 +387,7 @@ bool StBoundaryMapper::GetOverlapBoundaryPoints(
     } else {
       discretized_path.set_path_points(path_points);
     }
+    // 遍历障碍物的预测轨迹
     for (int i = 0; i < trajectory.trajectory_point.size(); ++i) {
       const auto& trajectory_point = (trajectory.trajectory_point)[i];
       const Box2d obs_box = obstacle.GetBoundingBox(trajectory_point);
@@ -407,6 +398,7 @@ bool StBoundaryMapper::GetOverlapBoundaryPoints(
         continue;
       }
 
+      // 以front_edge_to_center为步长遍历adc的路径
       const double step_length = vehicle_param_.front_edge_to_center;
       for (double path_s = 0.0; path_s < discretized_path.Length();
            path_s += step_length) {
@@ -483,7 +475,7 @@ bool StBoundaryMapper::MapWithDecision(
   if (!GetOverlapBoundaryPoints(path_data_.discretized_path().path_points(),
                                 *(path_obstacle->obstacle()), &upper_points,
                                 &lower_points)) {
-    return false;
+    return true;
   }
 
   if (decision.has_follow() && lower_points.back().t() < planning_time_) {

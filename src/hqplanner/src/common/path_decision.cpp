@@ -98,8 +98,6 @@ bool PathDecision::AddLongitudinalDecision(const std::string &tag,
 void PathDecision::EraseStBoundaries() {
   for (auto &path_obstacle : path_obstacles_) {
     path_obstacle.second->EraseStBoundary();
-    // auto *obstacle_ptr = path_obstacles_.Find(path_obstacle->Id());
-    // obstacle_ptr->EraseStBoundary();
   }
 }
 

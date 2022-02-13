@@ -217,6 +217,7 @@ void DPRoadGraph::UpdateNode(const std::list<DPRoadGraphNode> &prev_nodes,
   }
 
   // try to connect the current point with the first point directly
+  // 尝试直接连接当前采样点和规划路径初始点
   if (level >= 2) {
     const float init_dl = init_frenet_frame_point_.dl;
     const float init_ddl = init_frenet_frame_point_.ddl;

@@ -83,7 +83,7 @@ bool DpStSpeedOptimizer::SearchStGraph(
   SpeedLimit speed_limit;
   if (!speed_limit_decider.GetSpeedLimits(path_decision->path_obstacles(),
                                           &speed_limit)) {
-    // AERROR << "Getting speed limits for dp st speed optimizer failed!";
+    ROS_INFO("Getting speed limits for dp st speed optimizer failed!");
     return false;
   }
 
@@ -112,8 +112,8 @@ bool DpStSpeedOptimizer::Process(const SLBoundary& adc_sl_boundary,
                                  PathDecision* const path_decision,
                                  SpeedData* const speed_data) {
   if (!is_init_) {
-    // AERROR << "Please call Init() before process DpStSpeedOptimizer.";
-    // return Status(ErrorCode::PLANNING_ERROR, "Not inited.");
+    ROS_INFO("Please call Init() before process DpStSpeedOptimizer.");
+    assert(0);
     return false;
   }
   init_point_ = init_point;
@@ -121,9 +121,8 @@ bool DpStSpeedOptimizer::Process(const SLBoundary& adc_sl_boundary,
   reference_line_ = &reference_line;
 
   if (path_data.discretized_path().NumOfPoints() == 0) {
-    // std::string msg("Empty path data");
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Empty path data");
+    assert(0);
     return false;
   }
 
@@ -132,32 +131,19 @@ bool DpStSpeedOptimizer::Process(const SLBoundary& adc_sl_boundary,
       dp_st_speed_config_.total_path_length, dp_st_speed_config_.total_time,
       reference_line_info_->IsChangeLanePath());
 
-  //   auto* debug = reference_line_info_->mutable_debug();
-  //   STGraphDebug* st_graph_debug =
-  //   debug->mutable_planning_data()->add_st_graph();
-  // 为什么要清除障碍物的boundary？？？？？？？？？？？？？？？？？
   path_decision->EraseStBoundaries();
   if (!(boundary_mapper.CreateStBoundary(path_decision))) {
+    ROS_INFO("Mapping obstacle for dp st speed optimizer failed.");
     return false;
   }
-  //   if (boundary_mapper.CreateStBoundary(path_decision).code() ==
-  //       ErrorCode::PLANNING_ERROR) {
-  //     const std::string msg =
-  //         "Mapping obstacle for dp st speed optimizer failed.";
-  //     AERROR << msg;
-  //     return Status(ErrorCode::PLANNING_ERROR, msg);
-  //   }
 
   SpeedLimitDecider speed_limit_decider(adc_sl_boundary, st_boundary_config_,
                                         *reference_line_, path_data);
 
   if (!SearchStGraph(boundary_mapper, speed_limit_decider, path_data,
                      speed_data, path_decision)) {
-    // const std::string msg(Name() +
-    //                       ":Failed to search graph with dynamic
-    //                       programming.");
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Failed to search graph with dynamic programming.");
+
     return false;
   }
   return true;

@@ -79,7 +79,7 @@ bool PathDecider::MakeStaticObstacleDecision(
   const double lateral_stop_radius =
       half_width +
       ConfigParam::instance()->FLAGS_static_decision_nudge_l_buffer;
-
+  // path decider做的决策有：stop、ignore、nudge三种
   for (const auto *path_obstacle : path_decision->path_obstacle_items()) {
     const auto &obstacle = *path_obstacle->obstacle();
     bool is_bycycle_or_pedestrain =
