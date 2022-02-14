@@ -141,6 +141,7 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
     ret = optimizer->Execute(frame, reference_line_info);
     if (!ret) {
       ROS_INFO("Failed to run tasks[%s]", optimizer->Name());
+      asser(0);
       break;
     }
     const double end_timestamp = ros::Time::now().toSec();
@@ -152,7 +153,7 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
 
   if (reference_line_info->path_data().Empty()) {
     ROS_INFO("Path fallback.");
-
+    assert(0);
     GenerateFallbackPathProfile(reference_line_info,
                                 reference_line_info->mutable_path_data());
     reference_line_info->AddCost(kPathOptimizationFallbackClost);
@@ -160,6 +161,7 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
 
   if (!ret || reference_line_info->speed_data().Empty()) {
     ROS_INFO("Speed fallback.");
+    assert(0);
     GenerateFallbackSpeedProfile(reference_line_info,
                                  reference_line_info->mutable_speed_data());
     reference_line_info->AddCost(kSpeedOptimizationFallbackClost);
@@ -170,7 +172,7 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
           planning_start_point.relative_time, planning_start_point.path_point.s,
           &trajectory)) {
     ROS_INFO("Fail to aggregate planning trajectory.");
-
+    assert(0);
     return false;
   }
 
@@ -304,6 +306,7 @@ void EMPlanner::GenerateFallbackPathProfile(
 
   if (adc_point.path_point.x == 0 && adc_point.path_point.y == 0 &&
       adc_point.path_point.s == 0) {
+    // 说明此时adc_point没有被初始化
     assert(0);
   }
   const double dx = adc_point.path_point.x - adc_ref_point.x;

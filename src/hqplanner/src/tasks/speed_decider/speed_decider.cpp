@@ -1,5 +1,7 @@
 #include "hqplanner/tasks/speed_decider/speed_decider.h"
 
+#include <ros/ros.h>
+
 #include <algorithm>
 #include <string>
 #include <utility>
@@ -41,9 +43,7 @@ bool SpeedDecider::Execute(Frame* frame,
   reference_line_ = &reference_line_info_->reference_line();
   if (!MakeObjectDecision(reference_line_info->speed_data(),
                           reference_line_info->path_decision())) {
-    // const std::string msg = "Get object decision by speed profile failed.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Get object decision by speed profile failed.");
     return false;
   }
   return true;
@@ -73,7 +73,8 @@ SpeedDecider::StPosition SpeedDecider::GetStPosition(
 
     hqplanner::math::LineSegment2d speed_line(curr_st, next_st);
     if (st_boundary.HasOverlap(speed_line)) {
-      //   ADEBUG << "speed profile cross st_boundaries.";
+      ROS_INFO("speed profile cross st_boundaries.");
+
       st_position = CROSS;
       break;
     }
@@ -117,9 +118,8 @@ bool SpeedDecider::IsFollowTooClose(const PathObstacle& path_obstacle) const {
 bool SpeedDecider::MakeObjectDecision(const SpeedData& speed_profile,
                                       PathDecision* const path_decision) const {
   if (speed_profile.speed_vector().size() < 2) {
-    // const std::string msg = "dp_st_graph failed to get speed profile.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("dp_st_graph failed to get speed profile.");
+
     return false;
   }
   for (const auto* obstacle : path_decision->path_obstacle_items()) {

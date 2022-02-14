@@ -217,16 +217,19 @@ bool ReferenceLineInfo::CombinePathAndSpeedProfile(
       ConfigParam::instance()->FLAGS_trajectory_time_high_density_period;
 
   if (path_data_.discretized_path().NumOfPoints() == 0) {
-    // AWARN << "path data is empty";
+    ROS_INFO("path data is empty");
+
     return false;
   }
+
+  // 轨迹规划前1秒的时间步长为0.02秒，后面的时间为0.1秒，但是这里修改kDenseTimeResoltuion=0.1
   for (double cur_rel_time = 0.0; cur_rel_time < speed_data_.TotalTime();
        cur_rel_time += (cur_rel_time < kDenseTimeSec ? kDenseTimeResoltuion
                                                      : kSparseTimeResolution)) {
     SpeedPoint speed_point;
     if (!speed_data_.EvaluateByTime(cur_rel_time, &speed_point)) {
-      // AERROR << "Fail to get speed point with relative time " <<
-      // cur_rel_time;
+      ROS_INFO("Fail to get speed point with relative time:%f", cur_rel_time);
+
       return false;
     }
 
@@ -235,15 +238,15 @@ bool ReferenceLineInfo::CombinePathAndSpeedProfile(
     }
     PathPoint path_point;
     if (!path_data_.GetPathPointWithPathS(speed_point.s, &path_point)) {
-      // AERROR << "Fail to get path data with s " << speed_point.s()
-      //        << "path total length " <<
-      //        path_data_.discretized_path().Length();
+      ROS_INFO("Fail to get path data with s: %f, path total length:%f",
+               speed_point.s(), path_data_.discretized_path().Length());
+
       return false;
     }
     path_point.s = path_point.s + start_s;
 
     TrajectoryPoint trajectory_point;
-    // trajectory_point.mutable_path_point()->CopyFrom(path_point);
+
     trajectory_point.path_point = path_point;
     trajectory_point.v = speed_point.v;
     trajectory_point.a = speed_point.a;

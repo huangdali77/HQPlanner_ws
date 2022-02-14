@@ -1,5 +1,7 @@
 #include "hqplanner/tasks/dp_st_speed/dp_st_speed_optimizer.h"
 
+#include <ros/ros.h>
+
 #include <algorithm>
 #include <vector>
 
@@ -96,11 +98,11 @@ bool DpStSpeedOptimizer::SearchStGraph(
       adc_sl_boundary_);
 
   if (!st_graph.Search(speed_data)) {
-    // AERROR << "failed to search graph with dynamic programming.";
-    // RecordSTGraphDebug(st_graph_data, st_graph_debug);
+    ROS_INFO("failed to search graph with dynamic programming.");
+    assert(0);
     return false;
   }
-  //   RecordSTGraphDebug(st_graph_data, st_graph_debug);
+
   return true;
 }
 

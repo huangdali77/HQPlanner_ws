@@ -111,7 +111,8 @@ class ConfigParam {
   const double FLAGS_st_max_s = 40.0;
   const double FLAGS_st_max_t = 8.0;
   // 最小adc规划轨迹时间步长
-  const double FLAGS_trajectory_time_min_interval = 0.02;
+  //原为0.02s,因为规划周期为0.1s，所以暂时改为0.1s
+  const double FLAGS_trajectory_time_min_interval = 0.1;
   const double FLAGS_trajectory_time_max_interval = 0.1;
   const double FLAGS_trajectory_time_high_density_period = 1.0;
   const std::size_t FLAGS_max_history_frame_num = 2;
@@ -152,7 +153,9 @@ class ConfigParam {
   const double FLAGS_yield_distance_pedestrian_bycicle = 5.0;
   const std::string FLAGS_destination_obstacle_id = "DEST";
   const int FLAGS_planning_loop_rate = 10;
-  const bool FLAGS_enable_trajectory_stitcher = true;
+  // false：每次规划的起点都是adc当前的位置
+  // true：每次规划的起点都是根据上次规划的结果确定（预测）出下周期adc的位置
+  const bool FLAGS_enable_trajectory_stitcher = false;
 
   const double FLAGS_replan_lateral_distance_threshold = 5.0;
   const double FLAGS_replan_longitudinal_distance_threshold = 5.0;

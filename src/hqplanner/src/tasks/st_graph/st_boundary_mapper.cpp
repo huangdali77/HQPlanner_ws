@@ -88,7 +88,7 @@ bool StBoundaryMapper::CreateStBoundary(PathDecision* path_decision) const {
     // 处理没有决策标签的障碍物
     if (!path_obstacle->HasLongitudinalDecision()) {
       if (!MapWithoutDecision(path_obstacle)) {
-        // MapWithoutDecision失败说明无人车的规划路径与障碍物的预测轨迹没有干涉，此时可以对障碍物进行ignore决策
+        // MapWithoutDecision失败说明无人车的规划路径与障碍物的预测轨迹没有干涉（overlap），此时可以对障碍物进行ignore决策
         ObjectDecisionType object_decision;
         object_decision.object_tag = ObjectDecisionType::ObjectTag::IGNORE;
         path_decision->AddLateralDecision("PathDecider/not-has-overlap",
@@ -307,6 +307,7 @@ bool StBoundaryMapper::MapWithoutDecision(PathObstacle* path_obstacle) const {
   if (!GetOverlapBoundaryPoints(path_data_.discretized_path().path_points(),
                                 *(path_obstacle->obstacle()), &upper_points,
                                 &lower_points)) {
+    // 没有overlap
     return false;
   }
   // 将障碍物的StBoundary存放到PathObstacle中

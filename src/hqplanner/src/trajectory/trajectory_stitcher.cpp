@@ -1,18 +1,14 @@
-// #include "modules/planning/common/trajectory/trajectory_stitcher.h"
 #include "hqplanner/trajectory/trajectory_stitcher.h"
+
+#include <ros/ros.h>
 
 #include <algorithm>
 #include <list>
 #include <utility>
 
-// #include "modules/common/configs/config_gflags.h"
-// #include "modules/common/log.h"
-// #include "modules/common/math/quaternion.h"
-// #include "modules/common/util/util.h"
 #include "hqplanner/for_proto/config_param.h"
-#include "hqplanner/util/util.h"
-// #include "modules/planning/common/planning_gflags.h"
 #include "hqplanner/math/vec2d.h"
+#include "hqplanner/util/util.h"
 namespace hqplanner {
 namespace trajectory {
 
@@ -34,7 +30,7 @@ TrajectoryStitcher::ComputeReinitStitchingTrajectory(
   init_point.v = vehicle_state.linear_velocity;
   init_point.a = vehicle_state.linear_acceleration;
   init_point.relative_time = 0.0;
-
+  // init_point.path_point.s,在此未设置，默认为0
   return std::vector<TrajectoryPoint>(1, init_point);
 }
 

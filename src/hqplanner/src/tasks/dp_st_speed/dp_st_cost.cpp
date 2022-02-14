@@ -23,13 +23,15 @@ DpStCost::DpStCost(const DpStSpeedConfig& config,
     : config_(config),
       obstacles_(obstacles),
       init_point_(init_point),
-      unit_t_(config_.total_time / config_.matrix_dimension_t) {
+      unit_t_(config_.total_time / (config_.matrix_dimension_t - 1)) {
+  //  unit_t_(config_.total_time / config_.matrix_dimension_t
+  //  )???????????????????????/
   int index = 0;
   for (auto& obstacle : obstacles) {
     boundary_map_[obstacle->st_boundary().id()] = index++;
   }
-
-  AddToKeepClearRange(obstacles);
+  // ==============NoNeed========================
+  // AddToKeepClearRange(obstacles);
 
   boundary_cost_.resize(obstacles_.size());
   for (auto& vec : boundary_cost_) {
@@ -160,6 +162,7 @@ float DpStCost::GetSpeedCost(const STPoint& first, const STPoint& second,
     return kInf;
   }
 
+  // ===========NoNeed=====================
   if (speed < ConfigParam::instance()->FLAGS_max_stop_speed &&
       InKeepClearRange(second.s())) {
     // first.s in range
@@ -173,7 +176,7 @@ float DpStCost::GetSpeedCost(const STPoint& first, const STPoint& second,
             fabs(speed * speed) * unit_t_;
   } else if (det_speed < 0) {
     cost += config_.low_speed_penalty * config_.default_speed_cost *
-            -det_speed * unit_t_;
+            (-det_speed) * unit_t_;
   }
   return cost;
 }

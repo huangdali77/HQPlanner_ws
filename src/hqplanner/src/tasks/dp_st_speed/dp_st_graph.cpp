@@ -1,5 +1,8 @@
 #include "hqplanner/tasks/dp_st_speed/dp_st_graph.h"
 
+#include <assert.h>
+#include <ros/ros.h>
+
 #include <algorithm>
 #include <limits>
 #include <string>
@@ -7,6 +10,7 @@
 
 #include "hqplanner/for_proto/pnc_point.h"
 #include "hqplanner/math/vec2d.h"
+#include "hqplanner/speed/st_boundary.h"
 
 namespace hqplanner {
 namespace tasks {
@@ -20,6 +24,7 @@ using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::forproto::VehicleParam;
 using hqplanner::math::Vec2d;
 using hqplanner::speed::SpeedData;
+using hqplanner::speed::StBoundary;
 using hqplanner::speed::STPoint;
 namespace {
 constexpr float kInf = std::numeric_limits<float>::infinity();
@@ -50,18 +55,19 @@ DpStGraph::DpStGraph(const StGraphData& st_graph_data,
       init_point_(init_point),
       dp_st_cost_(dp_config, obstacles, init_point_),
       adc_sl_boundary_(adc_sl_boundary) {
+  // 速度规划的总路径长度为min(149, path_data.discretized_path().Length())
   dp_st_speed_config_.total_path_length = std::fmin(
       dp_st_speed_config_.total_path_length, st_graph_data_.path_data_length());
-  //   dp_st_speed_config_.set_total_path_length(
-  //       std::fmin(dp_st_speed_config_.total_path_length,
-  //                 st_graph_data_.path_data_length()));
+  // unit_s_=(0, 1]
   unit_s_ = dp_st_speed_config_.total_path_length /
             (dp_st_speed_config_.matrix_dimension_s - 1);
+  // unit_t_=1
   unit_t_ = dp_st_speed_config_.total_time /
             (dp_st_speed_config_.matrix_dimension_t - 1);
 }
 
 bool DpStGraph::Search(SpeedData* const speed_data) {
+  // 如果adc规划起点被障碍物阻塞，则停车
   constexpr float kBounadryEpsilon = 1e-2;
   for (const auto& boundary : st_graph_data_.st_boundaries()) {
     if (boundary->boundary_type() == StBoundary::BoundaryType::KEEP_CLEAR) {
@@ -77,8 +83,7 @@ bool DpStGraph::Search(SpeedData* const speed_data) {
         SpeedPoint speed_point;
         speed_point.s = 0.0;
         speed_point.t = t;
-        // speed_point.set_s(0.0);
-        // speed_point.set_t(t);
+
         speed_profile.emplace_back(speed_point);
       }
       speed_data->set_speed_vector(speed_profile);
@@ -88,44 +93,42 @@ bool DpStGraph::Search(SpeedData* const speed_data) {
 
   // 当没有obstacle st boundary的时候速度为1m/s????????
 
-  if (st_graph_data_.st_boundaries().empty()) {
-    // ADEBUG << "No path obstacles, dp_st_graph output default speed profile.";
-    std::vector<SpeedPoint> speed_profile;
-    float s = 0.0;
-    float t = 0.0;
-    for (int i = 0; i < dp_st_speed_config_.matrix_dimension_t &&
-                    i < dp_st_speed_config_.matrix_dimension_s;
-         ++i, t += unit_t_, s += unit_s_) {
-      SpeedPoint speed_point;
-      speed_point.s = s;
-      speed_point.t = t;
-      const float v_default = unit_s_ / unit_t_;
-      speed_point.v = v_default;
-      speed_point.a = 0.0;
-      speed_profile.emplace_back(std::move(speed_point));
-    }
-    speed_data->set_speed_vector(std::move(speed_profile));
-    return true;
-  }
+  // if (st_graph_data_.st_boundaries().empty()) {
+  //   ROS_INFO("No path obstacles, dp_st_graph output default speed profile.");
+
+  //   std::vector<SpeedPoint> speed_profile;
+  //   float s = 0.0;
+  //   float t = 0.0;
+  //   for (int i = 0; i < dp_st_speed_config_.matrix_dimension_t &&
+  //                   i < dp_st_speed_config_.matrix_dimension_s;
+  //        ++i, t += unit_t_, s += unit_s_) {
+  //     SpeedPoint speed_point;
+  //     speed_point.s = s;
+  //     speed_point.t = t;
+  //     const float v_default = unit_s_ / unit_t_;
+  //     speed_point.v = v_default;
+  //     speed_point.a = 0.0;
+  //     speed_profile.emplace_back(std::move(speed_point));
+  //   }
+  //   speed_data->set_speed_vector(std::move(speed_profile));
+  //   return true;
+  // }
 
   if (!InitCostTable()) {
-    // const std::string msg = "Initialize cost table failed.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Initialize cost table failed.");
+    assert(0);
     return false;
   }
 
   if (!CalculateTotalCost()) {
-    // const std::string msg = "Calculate total cost failed.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Calculate total cost failed.");
+    assert(0);
     return false;
   }
 
   if (!RetrieveSpeedProfile(speed_data)) {
-    // const std::string msg = "Retrieve best speed profile failed.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Retrieve best speed profile failed.");
+    assert(0);
     return false;
   }
   return true;
@@ -230,11 +233,13 @@ void DpStGraph::CalculateCostAt(const uint32_t c, const uint32_t r) {
   auto& cost_cr = cost_table_[c][r];
   cost_cr.SetObstacleCost(dp_st_cost_.GetObstacleCost(cost_cr));
   if (cost_cr.obstacle_cost() > std::numeric_limits<float>::max()) {
+    // 与障碍物的stboundary相交
     return;
   }
 
   const auto& cost_init = cost_table_[0][0];
   if (c == 0) {
+    assert(r == 0);
     // DCHECK_EQ(r, 0) << "Incorrect. Row should be 0 with col = 0. row: " << r;
     cost_cr.SetTotalCost(0.0);
     return;
@@ -243,7 +248,9 @@ void DpStGraph::CalculateCostAt(const uint32_t c, const uint32_t r) {
   float speed_limit =
       st_graph_data_.speed_limit().GetSpeedLimitByS(unit_s_ * r);
   if (c == 1) {
+    // at = v1-v2
     const float acc = (r * unit_s_ / unit_t_ - init_point_.v) / unit_t_;
+    // const float acc = 2 * (r * unit_s_ / unit_t_ - init_point_.v) / unit_t_;
     if (acc < dp_st_speed_config_.max_deceleration ||
         acc > dp_st_speed_config_.max_acceleration) {
       // totalcost默认的是infinite
@@ -358,9 +365,8 @@ bool DpStGraph::RetrieveSpeedProfile(SpeedData* const speed_data) {
   }
 
   if (best_end_point == nullptr) {
-    // const std::string msg = "Fail to find the best feasible trajectory.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Fail to find the best feasible trajectory.");
+    assert(0);
     return false;
   }
 
@@ -370,8 +376,7 @@ bool DpStGraph::RetrieveSpeedProfile(SpeedData* const speed_data) {
     SpeedPoint speed_point;
     speed_point.s = cur_point->point().s();
     speed_point.t = cur_point->point().t();
-    // speed_point.set_s(cur_point->point().s());
-    // speed_point.set_t(cur_point->point().t());
+
     speed_profile.emplace_back(speed_point);
     cur_point = cur_point->pre_point();
   }
@@ -380,9 +385,8 @@ bool DpStGraph::RetrieveSpeedProfile(SpeedData* const speed_data) {
   constexpr float kEpsilon = std::numeric_limits<float>::epsilon();
   if (speed_profile.front().t > kEpsilon ||
       speed_profile.front().s > kEpsilon) {
-    // const std::string msg = "Fail to retrieve speed profile.";
-    // AERROR << msg;
-    // return Status(ErrorCode::PLANNING_ERROR, msg);
+    ROS_INFO("Fail to retrieve speed profile.");
+    assert(0);
     return false;
   }
   speed_data->set_speed_vector(speed_profile);
