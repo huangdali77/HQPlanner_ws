@@ -13,9 +13,9 @@ struct Trajectory {
 
 struct PredictionObstacle {
   PerceptionObstacle perception_obstacle;
-  double timestamp;  // GPS time in seconds
+  double timestamp = 0.0;  // GPS time in seconds
   // the length of the time for this prediction (e.g. 10s)
-  double predicted_period;
+  double predicted_period = 0.0;
   // can have multiple trajectories per obstacle
   std::vector<Trajectory> trajectory;
 };
@@ -24,9 +24,9 @@ struct PredictionObstacles {
   // make prediction for multiple obstacles
   std::vector<PredictionObstacle> prediction_obstacle;
   // start timestamp
-  double start_timestamp;
+  double start_timestamp = 0.0;
   // end timestamp
-  double end_timestamp;
+  double end_timestamp = 0.0;
 };
 
 }  // namespace forproto

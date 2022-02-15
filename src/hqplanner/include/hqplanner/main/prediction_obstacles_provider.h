@@ -17,12 +17,13 @@ struct PotentialPredictionObstacle {
       hqplanner::forproto::PerceptionObstacle perception_obstacle,
       std::vector<hqplanner::forproto::AnchorPoint> anchor_points);
 
- private:
-  void InitPolygonPoint(std::vector<hqplanner::forproto::Point> &polygon_point);
+  void InitPolygonPoint();
 
  public:
-  double appear_distance_threshold = 0.0;
-  double disappear_distance_threshold = 0.0;
+  double appear_when_adc_at_x_ = 0.0;
+  double appear_when_adc_at_y_ = 0.0;
+  //   double appear_distance_threshold = 0.0;
+  //   double disappear_distance_threshold = 0.0;
   hqplanner::forproto::PerceptionObstacle perception_obstacle_;
   std::vector<hqplanner::forproto::AnchorPoint> anchor_points_;
   ReferenceLine obstacle_reference_trajectory_;
