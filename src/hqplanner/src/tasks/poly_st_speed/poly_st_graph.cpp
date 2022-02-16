@@ -108,8 +108,6 @@ bool PolyStGraph::SampleStPoints(
   constexpr double start_t = 6.0;
   constexpr double start_s = 0.0;
 
-  // constexpr double start_t = 0.0;
-  // constexpr double start_s = 6.0;
   for (double t = start_t; t <= planning_time_; t += unit_t_) {
     std::vector<STPoint> level_points;
     for (double s = start_s; s < planning_distance_ + kEpsilon; s += unit_s_) {
