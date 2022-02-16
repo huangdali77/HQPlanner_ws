@@ -64,8 +64,8 @@ class Planning {
   void SetLastPublishableTrajectory(
       const hqplanner::forproto::ADCTrajectory& adc_trajectory);
 
-  // 仅供测试使用
-  Frame* GetFrame() { return frame_.get(); }
+  //   // 仅供测试使用
+  //   Frame* GetFrame() { return frame_.get(); }
 
  private:
   // Watch dog timer

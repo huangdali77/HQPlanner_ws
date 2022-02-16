@@ -59,7 +59,8 @@ bool Planning::Init() {
   planning_tasks.emplace_back(TaskType::DP_ST_SPEED_OPTIMIZER);
   planning_tasks.emplace_back(TaskType::SPEED_DECIDER);
 
-  ROS_INFO("tasks size:%d", config_.em_planner_config.task.size());
+  ROS_INFO("tasks size:%d",
+           static_cast<int>(config_.em_planner_config.task.size()));
   return planner_->Init(config_);
 }
 
@@ -117,6 +118,10 @@ void Planning::RunOnce() {
   TrajectoryPoint& next_cycle_trajectory_point =
       trajectory_pb->trajectory_point.at(1);
 
+  ROS_INFO("planning:x:%f,y:%f,v:%f", next_cycle_trajectory_point.path_point.x,
+           next_cycle_trajectory_point.path_point.y,
+           next_cycle_trajectory_point.v);
+
   VehicleState next_cycle_state;
   next_cycle_state.x = next_cycle_trajectory_point.path_point.x;
   next_cycle_state.y = next_cycle_trajectory_point.path_point.y;
@@ -138,7 +143,8 @@ void Planning::RunOnce() {
   PredictionObstaclesProvider::instance()->UpdataNextCyclePredictionObstacles();
   // PublishPlanningPb(trajectory_pb, start_timestamp);
 
-  // auto seq_num = frame_->SequenceNum();
+  auto seq_num = frame_->SequenceNum();
+  FrameHistory::instance()->Add(seq_num, std::move(frame_));
 }
 // ===================================测试planning所用到的工具======================
 // ===================================================================================
@@ -223,6 +229,14 @@ bool Planning::Plan(const double current_time_stamp,
                     ADCTrajectory* trajectory_pb) {
   bool status = planner_->Plan(stitching_trajectory.back(), frame_.get());
   const auto* best_ref_info = frame_->FindDriveReferenceLineInfo();
+
+  ROS_INFO("====x:%f,y:%f,v:%f", stitching_trajectory.back().path_point.x,
+           stitching_trajectory.back().path_point.y,
+           stitching_trajectory.back().v);
+  auto traj = best_ref_info->trajectory().trajectory_points();
+
+  ROS_INFO("=============%f:", traj[1].v);
+
   if (!best_ref_info) {
     ROS_INFO("planner failed to make a driving plan");
     return false;

@@ -348,7 +348,7 @@ bool StBoundaryMapper::GetOverlapBoundaryPoints(
     // 处理静态障碍物
     if (!obstacle.IsStatic()) {
       ROS_INFO("Non-static obstacle[%s] has NO prediction trajectory.",
-               obstacle.Id());
+               obstacle.Id().c_str());
     }
     for (const auto& curr_point_on_path : path_points) {
       if (curr_point_on_path.s > planning_distance_) {

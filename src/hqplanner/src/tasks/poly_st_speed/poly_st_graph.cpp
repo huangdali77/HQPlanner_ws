@@ -21,6 +21,7 @@ using hqplanner::math::QuarticPolynomialCurve1d;
 using hqplanner::speed::SpeedData;
 using hqplanner::speed::SpeedLimit;
 using hqplanner::speed::STPoint;
+
 PolyStGraph::PolyStGraph(const PolyStSpeedConfig &config,
                          const ReferenceLineInfo *reference_line_info,
                          const SpeedLimit &speed_limit)
@@ -43,7 +44,8 @@ bool PolyStGraph::FindStTunnel(
   // sample end points
   std::vector<std::vector<STPoint>> points;
   if (!SampleStPoints(&points)) {
-    // AERROR << "Fail to sample st points.";
+    ROS_INFO("Fail to sample st points.");
+    assert(0);
     return false;
   }
 

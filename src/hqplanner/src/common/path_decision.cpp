@@ -111,8 +111,8 @@ bool PathDecision::MergeWithMainStop(const ObjectStop &obj_stop,
 
   double stop_line_s = stop_line_sl.s;
   if (stop_line_s < 0 || stop_line_s > reference_line.Length()) {
-    ROS_INFO("Ignore object: %s fence route_s[%f] not in range[0, %f]", obj_id,
-             stop_line_s, reference_line.Length());
+    ROS_INFO("Ignore object: %s fence route_s[%f] not in range[0, %f]",
+             obj_id.c_str(), stop_line_s, reference_line.Length());
     return false;
   }
 

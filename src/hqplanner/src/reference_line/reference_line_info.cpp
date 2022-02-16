@@ -239,7 +239,7 @@ bool ReferenceLineInfo::CombinePathAndSpeedProfile(
     PathPoint path_point;
     if (!path_data_.GetPathPointWithPathS(speed_point.s, &path_point)) {
       ROS_INFO("Fail to get path data with s: %f, path total length:%f",
-               speed_point.s(), path_data_.discretized_path().Length());
+               speed_point.s, path_data_.discretized_path().Length());
 
       return false;
     }

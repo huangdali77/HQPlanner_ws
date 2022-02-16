@@ -13,9 +13,9 @@
 namespace hqplanner {
 
 class ManualSetting {
+ public:
   ManualSetting() = default;
 
- public:
   //  设置全局锚点
   void SetAnchorPiont(
       std::vector<hqplanner::forproto::AnchorPoint> &anchor_point);

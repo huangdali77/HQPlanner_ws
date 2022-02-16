@@ -15,7 +15,7 @@
 #include "hqplanner/tasks/dp_poly_path/dp_poly_path_optimizer.h"
 #include "hqplanner/tasks/dp_st_speed/dp_st_speed_optimizer.h"
 #include "hqplanner/tasks/path_decider/path_decider.h"
-#include "hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h"
+// #include "hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h"
 #include "hqplanner/tasks/speed_decider/speed_decider.h"
 #include "hqplanner/util/util.h"
 namespace hqplanner {
@@ -73,18 +73,12 @@ bool EMPlanner::Init(const PlanningConfig& config) {
   }
   for (auto& task : tasks_) {
     if (!task->Init(config)) {
-      ROS_INFO("Init task[%s] failed.", task->Name());
+      ROS_INFO("Init task[%s] failed.", task->Name().c_str());
 
       return false;
     }
   }
   return true;
-}
-
-EMPlanner::EMPlanner() {
-  std::unique_ptr<DpPolyPathOptimizer> dp_poly_path_optimizer_ptr(
-      new DpPolyPathOptimizer);
-  tasks_.emplace_back(dp_poly_path_optimizer_ptr);
 }
 
 bool EMPlanner::Plan(const TrajectoryPoint& planning_start_point,
@@ -140,14 +134,14 @@ bool EMPlanner::PlanOnReferenceLine(const TrajectoryPoint& planning_start_point,
     const double start_timestamp = ros::Time::now().toSec();
     ret = optimizer->Execute(frame, reference_line_info);
     if (!ret) {
-      ROS_INFO("Failed to run tasks[%s]", optimizer->Name());
-      asser(0);
+      ROS_INFO("Failed to run tasks[%s]", optimizer->Name().c_str());
+      assert(0);
       break;
     }
     const double end_timestamp = ros::Time::now().toSec();
     const double time_diff_ms = (end_timestamp - start_timestamp) * 1000;
 
-    ROS_INFO("after optimizer [%s] time spend: %f", optimizer->Name(),
+    ROS_INFO("after optimizer [%s] time spend: %f", optimizer->Name().c_str(),
              time_diff_ms);
   }
 

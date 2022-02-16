@@ -23,7 +23,7 @@ using hqplanner::forproto::SLBoundary;
 using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::path::PathData;
 using hqplanner::speed::SpeedData;
-
+using hqplanner::speed::SpeedLimit;
 PolyStSpeedOptimizer::PolyStSpeedOptimizer()
     : SpeedOptimizer("PolyStSpeedOptimizer") {}
 
@@ -46,6 +46,8 @@ bool PolyStSpeedOptimizer::Process(const SLBoundary& adc_sl_boundary,
                                    PathDecision* const path_decision,
                                    SpeedData* const speed_data) {
   if (reference_line_info_->ReachedDestination()) {
+    ROS_INFO("Please call Init() before process PolyStSpeedOptimizer.");
+    assert(0);
     return true;
   }
   if (!is_init_) {
@@ -54,8 +56,8 @@ bool PolyStSpeedOptimizer::Process(const SLBoundary& adc_sl_boundary,
   }
 
   if (path_data.discretized_path().NumOfPoints() == 0) {
-    // std::string msg("Empty path data");
-    // AERROR << msg;
+    ROS_INFO("Empty path data");
+    assert(0);
     return false;
   }
 
@@ -64,12 +66,14 @@ bool PolyStSpeedOptimizer::Process(const SLBoundary& adc_sl_boundary,
       poly_st_speed_config_.total_path_length, poly_st_speed_config_.total_time,
       reference_line_info_->IsChangeLanePath());
 
-  // for (const auto* path_obstacle : path_decision->path_obstacles().Items()) {
-  //   DCHECK(path_obstacle->HasLongitudinalDecision());
-  // }
+  //   for (const auto* path_obstacle : path_decision->path_obstacles().Items())
+  //   {
+  //     DCHECK(path_obstacle->HasLongitudinalDecision());
+  //   }
   // step 1 get boundaries
   path_decision->EraseStBoundaries();
   if (boundary_mapper.CreateStBoundary(path_decision) == false) {
+    ROS_INFO("Mapping obstacle for dp st speed optimizer failed.");
     return false;
   }
 

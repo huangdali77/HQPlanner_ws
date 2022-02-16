@@ -48,11 +48,14 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /usr/include/c++/7/bits/alloc_traits.h \
  /usr/include/c++/7/bits/allocated_ptr.h \
  /usr/include/c++/7/ext/aligned_buffer.h /usr/include/c++/7/bits/list.tcc \
- /usr/include/c++/7/memory /usr/include/c++/7/bits/stl_construct.h \
- /usr/include/c++/7/bits/stl_uninitialized.h \
- /usr/include/c++/7/bits/stl_tempbuf.h \
- /usr/include/c++/7/bits/stl_raw_storage_iter.h /usr/include/c++/7/iosfwd \
- /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/postypes.h \
+ /usr/include/c++/7/map /usr/include/c++/7/bits/stl_tree.h \
+ /usr/include/c++/7/bits/stl_function.h \
+ /usr/include/c++/7/backward/binders.h /usr/include/c++/7/bits/stl_map.h \
+ /usr/include/c++/7/tuple /usr/include/c++/7/utility \
+ /usr/include/c++/7/bits/stl_relops.h /usr/include/c++/7/array \
+ /usr/include/c++/7/stdexcept /usr/include/c++/7/string \
+ /usr/include/c++/7/bits/stringfwd.h \
+ /usr/include/c++/7/bits/char_traits.h /usr/include/c++/7/bits/postypes.h \
  /usr/include/c++/7/cwchar /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
@@ -64,14 +67,22 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/c++/7/ext/atomicity.h \
- /usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h \
- /usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/endian.h \
+ /usr/include/c++/7/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h \
+ /usr/include/c++/7/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/7/iosfwd \
+ /usr/include/c++/7/cctype /usr/include/ctype.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/x86_64-linux-gnu/bits/uintn-identity.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+ /usr/include/c++/7/bits/ostream_insert.h \
+ /usr/include/c++/7/bits/cxxabi_forced.h \
+ /usr/include/c++/7/bits/basic_string.h \
+ /usr/include/c++/7/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
@@ -89,21 +100,6 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h \
- /usr/include/c++/7/ext/concurrence.h \
- /usr/include/c++/7/bits/stl_function.h \
- /usr/include/c++/7/backward/binders.h \
- /usr/include/c++/7/bits/uses_allocator.h \
- /usr/include/c++/7/bits/unique_ptr.h /usr/include/c++/7/utility \
- /usr/include/c++/7/bits/stl_relops.h /usr/include/c++/7/tuple \
- /usr/include/c++/7/array /usr/include/c++/7/stdexcept \
- /usr/include/c++/7/string /usr/include/c++/7/bits/char_traits.h \
- /usr/include/c++/7/bits/localefwd.h \
- /usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h \
- /usr/include/c++/7/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/7/cctype \
- /usr/include/ctype.h /usr/include/c++/7/bits/ostream_insert.h \
- /usr/include/c++/7/bits/cxxabi_forced.h \
- /usr/include/c++/7/bits/basic_string.h \
  /usr/include/c++/7/ext/string_conversions.h /usr/include/c++/7/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -126,7 +122,15 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/7/bits/functional_hash.h \
  /usr/include/c++/7/bits/basic_string.tcc \
- /usr/include/c++/7/bits/invoke.h /usr/include/c++/7/bits/shared_ptr.h \
+ /usr/include/c++/7/bits/uses_allocator.h \
+ /usr/include/c++/7/bits/invoke.h /usr/include/c++/7/bits/stl_multimap.h \
+ /usr/include/c++/7/memory /usr/include/c++/7/bits/stl_construct.h \
+ /usr/include/c++/7/bits/stl_uninitialized.h \
+ /usr/include/c++/7/bits/stl_tempbuf.h \
+ /usr/include/c++/7/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/7/ext/concurrence.h \
+ /usr/include/c++/7/bits/unique_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr.h \
  /usr/include/c++/7/bits/shared_ptr_base.h \
  /usr/include/c++/7/bits/refwrap.h \
  /usr/include/c++/7/bits/shared_ptr_atomic.h \
@@ -135,8 +139,21 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /usr/include/c++/7/backward/auto_ptr.h /usr/include/c++/7/vector \
  /usr/include/c++/7/bits/stl_vector.h \
  /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/adc_trajectory.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/pnc_point.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/obstacle.h \
+ /usr/include/assert.h /usr/include/c++/7/algorithm \
+ /usr/include/c++/7/bits/stl_algo.h \
+ /usr/include/c++/7/bits/algorithmfwd.h \
+ /usr/include/c++/7/bits/stl_heap.h \
+ /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
+ /usr/include/c++/7/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/config_param.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/util/macro.h \
  /usr/include/c++/7/iomanip /usr/include/c++/7/bits/ios_base.h \
@@ -167,31 +184,26 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /usr/include/c++/7/bits/ostream.tcc /usr/include/c++/7/bits/istream.tcc \
  /usr/include/c++/7/bits/sstream.tcc /usr/include/c++/7/iostream \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/perception_obstacle.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/pnc_point.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/prediction_obstacle.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config_helper.h \
- /usr/include/c++/7/algorithm /usr/include/c++/7/bits/stl_algo.h \
- /usr/include/c++/7/bits/algorithmfwd.h \
- /usr/include/c++/7/bits/stl_heap.h \
- /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
- /usr/include/c++/7/cmath /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/math-vector.h \
- /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
- /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
- /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/box2d.h \
- /usr/include/assert.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/aabox2d.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/math_utils.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/vec2d.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/line_segment2d.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/obstacle.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/polygon2d.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/adc_trajectory.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config_helper.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state_provider.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/indexed_queue.h \
+ /usr/include/c++/7/queue /usr/include/c++/7/deque \
+ /usr/include/c++/7/bits/stl_deque.h /usr/include/c++/7/bits/deque.tcc \
+ /usr/include/c++/7/bits/stl_queue.h /usr/include/c++/7/unordered_map \
+ /usr/include/c++/7/bits/hashtable.h \
+ /usr/include/c++/7/bits/hashtable_policy.h \
+ /usr/include/c++/7/bits/unordered_map.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/sl_boundary.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline.h \
@@ -385,12 +397,8 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line_info.h \
- /usr/include/c++/7/unordered_set /usr/include/c++/7/bits/hashtable.h \
- /usr/include/c++/7/bits/hashtable_policy.h \
- /usr/include/c++/7/bits/unordered_set.h \
+ /usr/include/c++/7/unordered_set /usr/include/c++/7/bits/unordered_set.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/path_decision.h \
- /usr/include/c++/7/map /usr/include/c++/7/bits/stl_tree.h \
- /usr/include/c++/7/bits/stl_map.h /usr/include/c++/7/bits/stl_multimap.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/path_obstacle.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/decision.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/geometry.h \
@@ -405,7 +413,6 @@ hqplanner/CMakeFiles/hqplanner.dir/src/common/frame.cpp.o: \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/discretized_trajectory.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/trajectory.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line_provider.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state_provider.h \
  /opt/ros/melodic/include/ros/ros.h /opt/ros/melodic/include/ros/time.h \
  /opt/ros/melodic/include/ros/platform.h \
  /opt/ros/melodic/include/ros/exception.h \

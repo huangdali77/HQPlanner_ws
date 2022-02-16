@@ -1,7 +1,7 @@
 #include "hqplanner/main/prediction_obstacles_provider.h"
 
 #include <math.h>
-// #include <ros/ros.h>
+#include <ros/ros.h>
 
 #include "hqplanner/for_proto/config_param.h"
 #include "hqplanner/for_proto/vehicle_state_provider.h"
@@ -173,7 +173,7 @@ void PredictionObstaclesProvider::UpdataNextCyclePredictionObstacles() {
                  potential_prediction_obstacle.second.appear_when_adc_at_y_);
 
     double dist = std::sqrt(dx * dx + dy * dy);
-    if (dist < 5) {
+    if (dist < 10) {
       if (publish_prediction_obstacles_.find(obs_id) ==
           publish_prediction_obstacles_.end()) {
         add_obs_id.push_back(obs_id);

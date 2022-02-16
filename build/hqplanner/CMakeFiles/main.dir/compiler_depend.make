@@ -1113,22 +1113,33 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
   /opt/ros/melodic/include/visualization_msgs/Marker.h \
   /opt/ros/melodic/include/std_msgs/ColorRGBA.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/frame.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/adc_trajectory.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/pnc_point.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/obstacle.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/config_param.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/util/macro.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/perception_obstacle.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/pnc_point.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/prediction_obstacle.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config_helper.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/box2d.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/aabox2d.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/math_utils.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/vec2d.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/line_segment2d.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/obstacle.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/polygon2d.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/adc_trajectory.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config_helper.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state_provider.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/indexed_queue.h \
+  /usr/include/c++/7/queue \
+  /usr/include/c++/7/deque \
+  /usr/include/c++/7/bits/stl_deque.h \
+  /usr/include/c++/7/bits/deque.tcc \
+  /usr/include/c++/7/bits/stl_queue.h \
+  /usr/include/c++/7/unordered_map \
+  /usr/include/c++/7/bits/hashtable.h \
+  /usr/include/c++/7/bits/hashtable_policy.h \
+  /usr/include/c++/7/bits/unordered_map.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/sl_boundary.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline.h \
@@ -1313,8 +1324,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
   /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line_info.h \
   /usr/include/c++/7/unordered_set \
-  /usr/include/c++/7/bits/hashtable.h \
-  /usr/include/c++/7/bits/hashtable_policy.h \
   /usr/include/c++/7/bits/unordered_set.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/path_decision.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/path_obstacle.h \
@@ -1331,9 +1340,10 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/discretized_trajectory.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/trajectory.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line_provider.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state_provider.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/anchor_points_provider.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/global_number_provider.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/manual_setting.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/prediction_obstacles_provider.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/planning.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/planning_config.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_poly_path_config.h \
@@ -1341,8 +1351,7 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/poly_st_speed_config.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/em/planner.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/publishable_trajectory.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/prediction_obstacles_provider.h
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/publishable_trajectory.h
 
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/em/planner.h:
@@ -1351,11 +1360,11 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_poly_path_config.h:
 
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/manual_setting.h:
+
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/global_number_provider.h:
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/anchor_points_provider.h:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state_provider.h:
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/linear_interpolation.h:
 
@@ -1370,10 +1379,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/path_decision.h:
 
 /usr/include/c++/7/bits/unordered_set.h:
-
-/usr/include/c++/7/bits/hashtable_policy.h:
-
-/usr/include/c++/7/bits/hashtable.h:
 
 /usr/include/c++/7/unordered_set:
 
@@ -1591,17 +1596,31 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line.h:
 
+/usr/include/c++/7/bits/unordered_map.h:
+
+/usr/include/c++/7/bits/hashtable_policy.h:
+
+/usr/include/c++/7/bits/hashtable.h:
+
+/usr/include/c++/7/bits/stl_queue.h:
+
+/usr/include/c++/7/bits/deque.tcc:
+
+/usr/include/c++/7/bits/stl_deque.h:
+
+/usr/include/c++/7/queue:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/indexed_queue.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state_provider.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config_helper.h:
+
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/polygon2d.h:
 
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/obstacle.h:
-
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/line_segment2d.h:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/math_utils.h:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/aabox2d.h:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/box2d.h:
 
 /usr/include/boost/mpl/aux_/contains_impl.hpp:
 
@@ -1796,8 +1815,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /usr/include/boost/mpl/next_prior.hpp:
 
 /usr/include/boost/preprocessor/arithmetic/dec.hpp:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_state.h:
 
 /usr/include/boost/mpl/list/aux_/push_front.hpp:
 
@@ -2045,6 +2062,10 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 
 /usr/include/boost/type_traits/conditional.hpp:
 
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/adc_trajectory.h:
+
+/usr/include/boost/predef/os/bsd.h:
+
 /usr/include/boost/predef/os/windows.h:
 
 /usr/include/boost/predef/compiler/edg.h:
@@ -2150,6 +2171,8 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
+
+/usr/include/c++/7/unordered_map:
 
 /usr/include/boost/predef/os/amigaos.h:
 
@@ -2729,6 +2752,8 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 
 /usr/include/c++/7/bits/stl_algo.h:
 
+/usr/include/c++/7/deque:
+
 /usr/include/boost/mpl/limits/vector.hpp:
 
 /opt/ros/melodic/include/geometry_msgs/Point.h:
@@ -2848,6 +2873,8 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /usr/include/boost/mpl/aux_/inserter_algorithm.hpp:
 
 /opt/ros/melodic/include/tf2/LinearMath/Vector3.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/math_utils.h:
 
 /usr/include/c++/7/ostream:
 
@@ -3473,6 +3500,10 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 
 /usr/include/c++/7/bits/stream_iterator.h:
 
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config.h:
+
+/usr/include/c++/7/bits/shared_ptr_atomic.h:
+
 /usr/include/c++/7/bits/atomic_base.h:
 
 /usr/include/c++/7/backward/auto_ptr.h:
@@ -3514,10 +3545,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /usr/include/boost/config/user.hpp:
 
 /usr/include/boost/iterator/detail/config_def.hpp:
-
-/usr/include/c++/7/bits/shared_ptr_atomic.h:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config.h:
 
 /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
 
@@ -3634,8 +3661,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /usr/include/boost/math/special_functions/sign.hpp:
 
 /usr/include/boost/move/detail/meta_utils.hpp:
-
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/vehicle_config_helper.h:
 
 /usr/include/boost/mpl/list/list10.hpp:
 
@@ -3768,6 +3793,8 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /usr/include/boost/mpl/aux_/preprocessor/default_params.hpp:
 
 /usr/include/boost/range/iterator_range_core.hpp:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/common/obstacle.h:
 
 /usr/include/boost/lexical_cast/detail/converter_lexical_streams.hpp:
 
@@ -3991,6 +4018,6 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/util/macro.h:
 
-/usr/include/boost/predef/os/bsd.h:
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/box2d.h:
 
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/adc_trajectory.h:
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/aabox2d.h:

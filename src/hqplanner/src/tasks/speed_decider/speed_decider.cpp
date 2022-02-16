@@ -210,7 +210,7 @@ bool SpeedDecider::MakeObjectDecision(const SpeedData& speed_profile,
         }
         break;
       default:
-        // AERROR << "Unknown position:" << position;
+        ROS_INFO("Unknown position in st graph");
     }
     AppendIgnoreDecision(path_obstacle);
   }

@@ -22,7 +22,7 @@ class DpStSpeedOptimizer : public SpeedOptimizer {
  public:
   DpStSpeedOptimizer();
 
-  bool Init(const PlanningConfig& config) override;
+  bool Init(const hqplanner::forproto::PlanningConfig& config) override;
 
  private:
   bool Process(const hqplanner::forproto::SLBoundary& adc_sl_boundary,

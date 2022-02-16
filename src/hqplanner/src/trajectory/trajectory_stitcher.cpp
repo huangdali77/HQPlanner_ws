@@ -66,7 +66,8 @@ std::vector<TrajectoryPoint> TrajectoryStitcher::ComputeStitchingTrajectory(
       current_timestamp - prev_trajectory->header_time();
 
   std::size_t matched_index = prev_trajectory->QueryNearestPoint(veh_rel_time);
-  ROS_INFO("trajectory_stitcher matched_index: %d", matched_index);
+  ROS_INFO("trajectory_stitcher matched_index: %d",
+           static_cast<int>(matched_index));
   if (matched_index == 0 &&
       veh_rel_time < prev_trajectory->StartPoint().relative_time) {
     ROS_INFO("current time smaller than the previous trajectory's first time");

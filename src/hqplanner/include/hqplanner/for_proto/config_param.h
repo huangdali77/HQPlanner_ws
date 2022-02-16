@@ -115,7 +115,7 @@ class ConfigParam {
   const double FLAGS_trajectory_time_min_interval = 0.1;
   const double FLAGS_trajectory_time_max_interval = 0.1;
   const double FLAGS_trajectory_time_high_density_period = 1.0;
-  const std::size_t FLAGS_max_history_frame_num = 2;
+  // const std::size_t FLAGS_max_history_frame_num = 2;
   const double FLAGS_lane_left_width = 3.0;
   const double FLAGS_lane_right_width = 3.0;
   const double FLAGS_virtual_stop_wall_length = 0.1;
@@ -162,7 +162,7 @@ class ConfigParam {
   // adc规划轨迹时间长度
   const double FLAGS_trajectory_time_length = 8.0;
   // 历史frame记录数量
-  const std::size_t FLAGS_max_history_frame_num = 5;
+  const std::size_t FLAGS_max_history_frame_num = 3;
   const double FLAGS_slowdown_profile_deceleration = -1.0;
 
   DECLARE_SINGLETON(ConfigParam);

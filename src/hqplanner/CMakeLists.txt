@@ -134,7 +134,22 @@ include_directories(
 include_directories(${Eigen_INCLUDE_DIRS})
 ## Declare a C++ library
 add_library(hqplanner
-  src/reference_line/reference_line.cpp
+  src/common/frame.cpp
+  src/common/obstacle.cpp
+  src/common/path_decision.cpp
+  src/common/path_obstacle.cpp
+
+  src/for_proto/config_param.cpp
+  src/for_proto/vehicle_config_helper.cpp
+  src/for_proto/vehicle_state_provider.cpp
+     
+  src/main/anchor_points_provider.cpp
+  src/main/environment_publish.cpp
+  src/main/global_number_provider.cpp
+  src/main/planning.cpp
+  src/main/prediction_obstacles_provider.cpp
+  src/main/manual_setting.cpp
+
   src/math/aabox2d.cpp
   src/math/box2d.cpp
   src/math/cartesian_frenet_conversion.cpp
@@ -143,27 +158,15 @@ add_library(hqplanner
   src/math/linear_interpolation.cpp
   src/math/math_utils.cpp
   src/math/polygon2d.cpp
-  src/math/vec2d.cpp 
-  
-  src/common/frame.cpp
-  src/common/obstacle.cpp
-  src/common/path_decision.cpp
-  src/common/path_obstacle.cpp
-
-  src/for_proto/vehicle_config_helper.cpp
-  src/for_proto/vehicle_state_provider.cpp
-  src/for_proto/config_param.cpp
-     
-  src/main/anchor_points_provider.cpp
-  src/main/environment_publish.cpp
-  src/main/global_number_provider.cpp
-  src/main/planning.cpp
-  src/main/prediction_obstacles_provider.cpp
+  src/math/vec2d.cpp
+  src/math/curve1d/quartic_polynomial_curve1d.cpp
+  src/math/curve1d/quintic_polynomial_curve1d.cpp
 
   src/path/discretized_path.cpp
   src/path/frenet_frame_path.cpp
   src/path/path_data.cpp
 
+  src/reference_line/reference_line.cpp
   src/reference_line/reference_line_info.cpp
   src/reference_line/reference_line_provider.cpp
 
@@ -171,6 +174,23 @@ add_library(hqplanner
   src/speed/speed_limit.cpp
   src/speed/st_boundary.cpp
   src/speed/st_point.cpp
+
+  src/tasks/path_optimizer.cpp
+  src/tasks/speed_optimizer.cpp
+  src/tasks/task.cpp
+  src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp
+  src/tasks/dp_poly_path/dp_road_graph.cpp
+  src/tasks/dp_poly_path/trajectory_cost.cpp
+  src/tasks/dp_st_speed/dp_st_cost.cpp
+  src/tasks/dp_st_speed/dp_st_graph.cpp
+  src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp
+  src/tasks/dp_st_speed/st_graph_point.cpp
+  src/tasks/em/em_planner.cpp
+  src/tasks/path_decider/path_decider.cpp
+  src/tasks/speed_decider/speed_decider.cpp
+  src/tasks/st_graph/speed_limit_decider.cpp
+  src/tasks/st_graph/st_boundary_mapper.cpp
+  src/tasks/st_graph/st_graph_data.cpp
 
   src/trajectory/discretized_trajectory.cpp
   src/trajectory/publishable_trajectory.cpp

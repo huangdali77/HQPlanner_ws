@@ -1,13 +1,14 @@
-// #include <geometry_msgs/PoseStamped.h>
-// #include <geometry_msgs/Quaternion.h>
-// #include <nav_msgs/Odometry.h>
-// #include <nav_msgs/Path.h>
-// #include <ros/console.h>
-// #include <ros/ros.h>
-// #include <std_msgs/String.h>
-// #include <tf2/LinearMath/Quaternion.h>
-// #include <tf2_ros/transform_broadcaster.h>
-// #include <visualization_msgs/Marker.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/Quaternion.h>
+#include <nav_msgs/Odometry.h>
+#include <nav_msgs/Path.h>
+#include <ros/console.h>
+#include <ros/ros.h>
+#include <std_msgs/String.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2_ros/transform_broadcaster.h>
+#include <visualization_msgs/Marker.h>
+
 #include <map>
 
 #include "hqplanner/common/frame.h"
@@ -24,6 +25,7 @@
 
 using hqplanner::AnchorPointsProvider;
 using hqplanner::Frame;
+using hqplanner::FrameHistory;
 using hqplanner::GlobalNumberProvider;
 using hqplanner::ManualSetting;
 using hqplanner::Planning;
@@ -35,7 +37,6 @@ using hqplanner::forproto::VehicleConfig;
 using hqplanner::forproto::VehicleConfigHelper;
 using hqplanner::forproto::VehicleState;
 using hqplanner::forproto::VehicleStateProvider;
-
 // PotentialPredictionObstacle CreatPotentialPredictionObstacle(
 //     PerceptionObstacle perception_obstacle, AnchorPoint start_anchor) {
 //   double pred_traj_length = 300.0;
@@ -239,10 +240,11 @@ int main(int argc, char **argv) {
 
   //   1、先初始化adc状态
   VehicleState adc_state;
-  adc_state.x = 3.0;
+  adc_state.x = 1.0;
   adc_state.timestamp = ros::Time::now().toSec();
   VehicleStateProvider::instance()->Init(adc_state);
-
+  ROS_INFO("x:%f,y:%f,v:%f", adc_state.x, adc_state.y,
+           adc_state.linear_velocity);
   ros::Rate r(10);
   while (ros::ok()) {
     ROS_INFO("time:%f", ros::Time::now().toSec());
@@ -251,15 +253,24 @@ int main(int argc, char **argv) {
 
     VehicleState veh_state = VehicleStateProvider::instance()->vehicle_state();
 
-    Frame *frame = planning.GetFrame();
-    if (frame->IsNearDestination()) {
+    // Frame *frame = planning.GetFrame();
+
+    const auto *frame = FrameHistory::instance()->Latest();
+    if (frame->is_near_destination()) {
       break;
     }
 
-    const auto path_obs_items = frame->FindDriveReferenceLineInfo()
-                                    ->path_decision()
-                                    .path_obstacle_items();
-
+    if (frame == nullptr) {
+      ROS_INFO("frame==nullptr");
+    }
+    if (frame->DriveReferenceLineInfo() == nullptr) {
+      ROS_INFO("frame->drive_reference_line_info_ == nullptr");
+    }
+    ROS_INFO("x:%f,y:%f,v:%f", veh_state.x, veh_state.y,
+             veh_state.linear_velocity);
+    const auto path_obs_items =
+        frame->DriveReferenceLineInfo()->path_decision().path_obstacle_items();
+    ROS_INFO("obs size:%d", static_cast<int>(path_obs_items.size()));
     // adc maker
     visualization_msgs::Marker adc_marker;
     adc_marker.header.frame_id = "obsframe";

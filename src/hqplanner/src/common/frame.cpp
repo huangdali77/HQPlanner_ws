@@ -202,6 +202,8 @@ const Obstacle *Frame::FindCollisionObstacle() const {
   return nullptr;
 }
 
+uint32_t Frame::SequenceNum() const { return sequence_num_; }
+
 bool Frame::CreateReferenceLineInfo() {
   std::list<ReferenceLine> reference_lines;
   // std::list<hdmap::RouteSegments> segments;

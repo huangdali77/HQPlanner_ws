@@ -99,10 +99,11 @@ double SpeedProfileCost::CalculatePointCost(
   }
   cost += config_.speed_weight * std::pow((v - speed_limit), 2);
   cost += config_.jerk_weight * std::pow(da, 2);
-  //   ADEBUG << "t = " << t << ", s = " << s << ", v = " << v << ", a = " << a
-  //          << ", da = " << da << ", cost = " << cost;
+  //   ADEBUG << "t = " << t << ", s = " << s << ", v = " << v << ", a = " <<
+  a
+      //          << ", da = " << da << ", cost = " << cost;
 
-  return cost;
+      return cost;
 }
 
 }  // namespace tasks

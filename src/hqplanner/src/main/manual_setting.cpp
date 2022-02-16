@@ -19,39 +19,67 @@ void ManualSetting::SetPotentialPredictionObstacles(
         &potential_prediction_obstacles) {
   // 障碍物1沿x轴直行========================================================
   //   障碍物感知信息
-  PerceptionObstacle perception_obstacle;
-  perception_obstacle.id =
-      GlobalNumberProvider::instance()->GetPerceptionObstacleId();
-  perception_obstacle.velocity.x = 5.0;
-  perception_obstacle.length = 4.0;
-  perception_obstacle.width = 2.0;
-  perception_obstacle.height = 1.7;
-  perception_obstacle.type = PerceptionObstacle::VEHICLE;
-  //   perception_obstacle.timestamp = ros::Time::now().toSec();
+  //   PerceptionObstacle perception_obstacle;
+  //   perception_obstacle.id =
+  //       GlobalNumberProvider::instance()->GetPerceptionObstacleId();
+  //   perception_obstacle.velocity.x = 5.0;
+  //   perception_obstacle.length = 4.0;
+  //   perception_obstacle.width = 2.0;
+  //   perception_obstacle.height = 1.7;
+  //   perception_obstacle.type = PerceptionObstacle::VEHICLE;
+  //   //   perception_obstacle.timestamp = ros::Time::now().toSec();
 
-  // 障碍物的预测轨迹起始锚点
-  AnchorPoint start_anchor;
-  start_anchor.cartesian_x = 10.0;
-  start_anchor.cartesian_y = 2.0;
-  start_anchor.frenet_s = 0.0;
+  //   // 障碍物的预测轨迹起始锚点
+  //   AnchorPoint start_anchor;
+  //   start_anchor.cartesian_x = 10.0;
+  //   start_anchor.cartesian_y = 2.0;
+  //   start_anchor.frenet_s = 0.0;
+
+  PerceptionObstacle perception_obstacle1;
+  perception_obstacle1.id =
+      GlobalNumberProvider::instance()->GetPerceptionObstacleId();
+
+  perception_obstacle1.length = 2.0;
+  perception_obstacle1.width = 2.0;
+  perception_obstacle1.height = 1.7;
+  perception_obstacle1.type = PerceptionObstacle::UNKNOWN_UNMOVABLE;
+  //   perception_obstacle3.timestamp = ros::Time::now().toSec();
+
+  perception_obstacle1.position.x = 100;
+  perception_obstacle1.position.y = -1.5;
+  perception_obstacle1.theta = 0.0;
 
   // 障碍物2沿y轴直行========================================================
   //   障碍物感知信息
+  //   PerceptionObstacle perception_obstacle2;
+  //   perception_obstacle2.id =
+  //       GlobalNumberProvider::instance()->GetPerceptionObstacleId();
+  //   perception_obstacle2.velocity.y = 6.0;
+  //   perception_obstacle2.length = 4.0;
+  //   perception_obstacle2.width = 2.0;
+  //   perception_obstacle2.height = 1.7;
+  //   perception_obstacle2.type = PerceptionObstacle::VEHICLE;
+  //   //   perception_obstacle2.timestamp = ros::Time::now().toSec();
+
+  //   // 障碍物的预测轨迹起始锚点
+  //   AnchorPoint start_anchor2;
+  //   start_anchor2.cartesian_x = 70.0;
+  //   start_anchor2.cartesian_y = 10;
+  //   start_anchor2.frenet_s = 0.0;
+
   PerceptionObstacle perception_obstacle2;
   perception_obstacle2.id =
       GlobalNumberProvider::instance()->GetPerceptionObstacleId();
-  perception_obstacle2.velocity.y = 6.0;
-  perception_obstacle2.length = 4.0;
+
+  perception_obstacle2.length = 2.0;
   perception_obstacle2.width = 2.0;
   perception_obstacle2.height = 1.7;
-  perception_obstacle2.type = PerceptionObstacle::VEHICLE;
-  //   perception_obstacle2.timestamp = ros::Time::now().toSec();
+  perception_obstacle2.type = PerceptionObstacle::UNKNOWN_UNMOVABLE;
+  //   perception_obstacle3.timestamp = ros::Time::now().toSec();
 
-  // 障碍物的预测轨迹起始锚点
-  AnchorPoint start_anchor2;
-  start_anchor2.cartesian_x = 70.0;
-  start_anchor2.cartesian_y = 10;
-  start_anchor2.frenet_s = 0.0;
+  perception_obstacle2.position.x = 150;
+  perception_obstacle2.position.y = 1.5;
+  perception_obstacle2.theta = 0.0;
 
   // 静态障碍物障碍物3沿y轴直行========================================================
   //   障碍物感知信息
@@ -65,58 +93,99 @@ void ManualSetting::SetPotentialPredictionObstacles(
   perception_obstacle3.type = PerceptionObstacle::UNKNOWN_UNMOVABLE;
   //   perception_obstacle3.timestamp = ros::Time::now().toSec();
 
-  perception_obstacle3.position.x = 30;
-  perception_obstacle3.position.y = 50;
+  perception_obstacle3.position.x = 180;
+  perception_obstacle3.position.y = 0;
   perception_obstacle3.theta = 0.0;
 
   // adc沿x轴直行========================================================
   //   障碍物感知信息
-  PerceptionObstacle adc;
-  adc.id = GlobalNumberProvider::instance()->GetPerceptionObstacleId();
-  ;
-  adc.velocity.x = 4.0;
-  adc.length = 4.0;
-  adc.width = 2.0;
-  adc.height = 1.7;
-  adc.type = PerceptionObstacle::VEHICLE;
-  //   adc.timestamp = ros::Time::now().toSec();
+  //   PerceptionObstacle adc;
+  //   adc.id = GlobalNumberProvider::instance()->GetPerceptionObstacleId();
+  //   ;
+  //   adc.velocity.x = 4.0;
+  //   adc.length = 4.0;
+  //   adc.width = 2.0;
+  //   adc.height = 1.7;
+  //   adc.type = PerceptionObstacle::VEHICLE;
+  //   //   adc.timestamp = ros::Time::now().toSec();
 
-  // 障碍物的预测轨迹起始锚点
-  AnchorPoint start_anchor_adc;
-  start_anchor_adc.cartesian_x = 3.0;
-  start_anchor_adc.cartesian_y = 0.0;
-  start_anchor_adc.frenet_s = 0.0;
+  //   // 障碍物的预测轨迹起始锚点
+  //   AnchorPoint start_anchor_adc;
+  //   start_anchor_adc.cartesian_x = 3.0;
+  //   start_anchor_adc.cartesian_y = 0.0;
+  //   start_anchor_adc.frenet_s = 0.0;
+
+  PerceptionObstacle perception_obstacle4;
+  perception_obstacle4.id =
+      GlobalNumberProvider::instance()->GetPerceptionObstacleId();
+
+  perception_obstacle4.length = 2.0;
+  perception_obstacle4.width = 2.0;
+  perception_obstacle4.height = 1.7;
+  perception_obstacle4.type = PerceptionObstacle::UNKNOWN_UNMOVABLE;
+  //   perception_obstacle3.timestamp = ros::Time::now().toSec();
+
+  perception_obstacle4.position.x = 200;
+  perception_obstacle4.position.y = 0;
+  perception_obstacle4.theta = 0.0;
   //   ===================================================
 
-  auto ptt_pred_obs =
-      CreatPotentialPredictionObstacle(perception_obstacle, start_anchor);
-  ptt_pred_obs.appear_when_adc_at_x_ = 50;
-  ptt_pred_obs.appear_when_adc_at_y_ = 200;
+  //   auto ptt_pred_obs =
+  //       CreatPotentialPredictionObstacle(perception_obstacle, start_anchor);
+  //   ptt_pred_obs.appear_when_adc_at_x_ = 50;
+  //   ptt_pred_obs.appear_when_adc_at_y_ = 200;
 
-  auto ptt_pred_obs2 =
-      CreatPotentialPredictionObstacle(perception_obstacle2, start_anchor2);
-  ptt_pred_obs2.appear_when_adc_at_x_ = 50;
-  ptt_pred_obs2.appear_when_adc_at_y_ = 200;
+  //   auto ptt_pred_obs2 =
+  //       CreatPotentialPredictionObstacle(perception_obstacle2,
+  //       start_anchor2);
+  //   ptt_pred_obs2.appear_when_adc_at_x_ = 50;
+  //   ptt_pred_obs2.appear_when_adc_at_y_ = 200;
 
-  auto ptt_pred_obs_adc =
-      CreatPotentialPredictionObstacle(adc, start_anchor_adc);
-  ptt_pred_obs_adc.appear_when_adc_at_x_ = 99999;
-  ptt_pred_obs_adc.appear_when_adc_at_y_ = 99999;
-
-  std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points;
-  null_anchor_points.clear();
+  //   auto ptt_pred_obs_adc =
+  //       CreatPotentialPredictionObstacle(adc, start_anchor_adc);
+  //   ptt_pred_obs_adc.appear_when_adc_at_x_ = 99999;
+  //   ptt_pred_obs_adc.appear_when_adc_at_y_ = 99999;
+  //
+  std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points1;
+  null_anchor_points1.clear();
+  PotentialPredictionObstacle ptt_pred_obs1(std::move(perception_obstacle1),
+                                            std::move(null_anchor_points1));
+  ptt_pred_obs1.appear_when_adc_at_x_ = 10;
+  ptt_pred_obs1.appear_when_adc_at_y_ = 0;
+  //
+  std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points2;
+  null_anchor_points2.clear();
+  PotentialPredictionObstacle ptt_pred_obs2(std::move(perception_obstacle2),
+                                            std::move(null_anchor_points2));
+  ptt_pred_obs2.appear_when_adc_at_x_ = 10;
+  ptt_pred_obs2.appear_when_adc_at_y_ = 0;
+  //
+  std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points3;
+  null_anchor_points3.clear();
   PotentialPredictionObstacle ptt_pred_obs3(std::move(perception_obstacle3),
-                                            std::move(null_anchor_points));
+                                            std::move(null_anchor_points3));
+  ptt_pred_obs3.appear_when_adc_at_x_ = 10;
+  ptt_pred_obs3.appear_when_adc_at_y_ = 0;
+  //
+  std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points4;
+  null_anchor_points4.clear();
+  PotentialPredictionObstacle ptt_pred_obs4(std::move(perception_obstacle4),
+                                            std::move(null_anchor_points4));
+  ptt_pred_obs4.appear_when_adc_at_x_ = 10;
+  ptt_pred_obs4.appear_when_adc_at_y_ = 0;
+  //
 
   potential_prediction_obstacles.insert(
-      std::make_pair(perception_obstacle.id, std::move(ptt_pred_obs)));
+      std::make_pair(perception_obstacle1.id, std::move(ptt_pred_obs1)));
+
   potential_prediction_obstacles.insert(
       std::make_pair(perception_obstacle2.id, std::move(ptt_pred_obs2)));
-  potential_prediction_obstacles.insert(
-      std::make_pair(adc.id, std::move(ptt_pred_obs_adc)));
 
   potential_prediction_obstacles.insert(
       std::make_pair(perception_obstacle3.id, std::move(ptt_pred_obs3)));
+
+  potential_prediction_obstacles.insert(
+      std::make_pair(perception_obstacle4.id, std::move(ptt_pred_obs4)));
 }
 
 PotentialPredictionObstacle ManualSetting::CreatPotentialPredictionObstacle(

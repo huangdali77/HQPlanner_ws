@@ -1,4 +1,6 @@
 #include "hqplanner/speed/st_boundary.h"
+
+#include <ros/ros.h>
 namespace hqplanner {
 namespace speed {
 using hqplanner::math::LineSegment2d;

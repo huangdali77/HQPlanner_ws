@@ -1359,6 +1359,30 @@ src/main/main.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/main.dir/build.make hqplanner/CMakeFiles/main.dir/src/main/main.cpp.s
 .PHONY : src/main/main.cpp.s
 
+src/main/manual_setting.o: src/main/manual_setting.cpp.o
+.PHONY : src/main/manual_setting.o
+
+# target to build an object file
+src/main/manual_setting.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/manual_setting.cpp.o
+.PHONY : src/main/manual_setting.cpp.o
+
+src/main/manual_setting.i: src/main/manual_setting.cpp.i
+.PHONY : src/main/manual_setting.i
+
+# target to preprocess a source file
+src/main/manual_setting.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/manual_setting.cpp.i
+.PHONY : src/main/manual_setting.cpp.i
+
+src/main/manual_setting.s: src/main/manual_setting.cpp.s
+.PHONY : src/main/manual_setting.s
+
+# target to generate assembly for a file
+src/main/manual_setting.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/main/manual_setting.cpp.s
+.PHONY : src/main/manual_setting.cpp.s
+
 src/main/planning.o: src/main/planning.cpp.o
 .PHONY : src/main/planning.o
 
@@ -1502,6 +1526,54 @@ src/math/cubic_spline.s: src/math/cubic_spline.cpp.s
 src/math/cubic_spline.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline.cpp.s
 .PHONY : src/math/cubic_spline.cpp.s
+
+src/math/curve1d/quartic_polynomial_curve1d.o: src/math/curve1d/quartic_polynomial_curve1d.cpp.o
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d.o
+
+# target to build an object file
+src/math/curve1d/quartic_polynomial_curve1d.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.o
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d.cpp.o
+
+src/math/curve1d/quartic_polynomial_curve1d.i: src/math/curve1d/quartic_polynomial_curve1d.cpp.i
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d.i
+
+# target to preprocess a source file
+src/math/curve1d/quartic_polynomial_curve1d.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.i
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d.cpp.i
+
+src/math/curve1d/quartic_polynomial_curve1d.s: src/math/curve1d/quartic_polynomial_curve1d.cpp.s
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d.s
+
+# target to generate assembly for a file
+src/math/curve1d/quartic_polynomial_curve1d.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.s
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d.cpp.s
+
+src/math/curve1d/quintic_polynomial_curve1d.o: src/math/curve1d/quintic_polynomial_curve1d.cpp.o
+.PHONY : src/math/curve1d/quintic_polynomial_curve1d.o
+
+# target to build an object file
+src/math/curve1d/quintic_polynomial_curve1d.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.o
+.PHONY : src/math/curve1d/quintic_polynomial_curve1d.cpp.o
+
+src/math/curve1d/quintic_polynomial_curve1d.i: src/math/curve1d/quintic_polynomial_curve1d.cpp.i
+.PHONY : src/math/curve1d/quintic_polynomial_curve1d.i
+
+# target to preprocess a source file
+src/math/curve1d/quintic_polynomial_curve1d.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.i
+.PHONY : src/math/curve1d/quintic_polynomial_curve1d.cpp.i
+
+src/math/curve1d/quintic_polynomial_curve1d.s: src/math/curve1d/quintic_polynomial_curve1d.cpp.s
+.PHONY : src/math/curve1d/quintic_polynomial_curve1d.s
+
+# target to generate assembly for a file
+src/math/curve1d/quintic_polynomial_curve1d.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.s
+.PHONY : src/math/curve1d/quintic_polynomial_curve1d.cpp.s
 
 src/math/line_segment2d.o: src/math/line_segment2d.cpp.o
 .PHONY : src/math/line_segment2d.o
@@ -1911,6 +1983,390 @@ src/speed/st_point.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.s
 .PHONY : src/speed/st_point.cpp.s
 
+src/tasks/dp_poly_path/dp_poly_path_optimizer.o: src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o
+.PHONY : src/tasks/dp_poly_path/dp_poly_path_optimizer.o
+
+# target to build an object file
+src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o
+.PHONY : src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o
+
+src/tasks/dp_poly_path/dp_poly_path_optimizer.i: src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.i
+.PHONY : src/tasks/dp_poly_path/dp_poly_path_optimizer.i
+
+# target to preprocess a source file
+src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.i
+.PHONY : src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.i
+
+src/tasks/dp_poly_path/dp_poly_path_optimizer.s: src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.s
+.PHONY : src/tasks/dp_poly_path/dp_poly_path_optimizer.s
+
+# target to generate assembly for a file
+src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.s
+.PHONY : src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.s
+
+src/tasks/dp_poly_path/dp_road_graph.o: src/tasks/dp_poly_path/dp_road_graph.cpp.o
+.PHONY : src/tasks/dp_poly_path/dp_road_graph.o
+
+# target to build an object file
+src/tasks/dp_poly_path/dp_road_graph.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o
+.PHONY : src/tasks/dp_poly_path/dp_road_graph.cpp.o
+
+src/tasks/dp_poly_path/dp_road_graph.i: src/tasks/dp_poly_path/dp_road_graph.cpp.i
+.PHONY : src/tasks/dp_poly_path/dp_road_graph.i
+
+# target to preprocess a source file
+src/tasks/dp_poly_path/dp_road_graph.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.i
+.PHONY : src/tasks/dp_poly_path/dp_road_graph.cpp.i
+
+src/tasks/dp_poly_path/dp_road_graph.s: src/tasks/dp_poly_path/dp_road_graph.cpp.s
+.PHONY : src/tasks/dp_poly_path/dp_road_graph.s
+
+# target to generate assembly for a file
+src/tasks/dp_poly_path/dp_road_graph.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.s
+.PHONY : src/tasks/dp_poly_path/dp_road_graph.cpp.s
+
+src/tasks/dp_poly_path/trajectory_cost.o: src/tasks/dp_poly_path/trajectory_cost.cpp.o
+.PHONY : src/tasks/dp_poly_path/trajectory_cost.o
+
+# target to build an object file
+src/tasks/dp_poly_path/trajectory_cost.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o
+.PHONY : src/tasks/dp_poly_path/trajectory_cost.cpp.o
+
+src/tasks/dp_poly_path/trajectory_cost.i: src/tasks/dp_poly_path/trajectory_cost.cpp.i
+.PHONY : src/tasks/dp_poly_path/trajectory_cost.i
+
+# target to preprocess a source file
+src/tasks/dp_poly_path/trajectory_cost.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.i
+.PHONY : src/tasks/dp_poly_path/trajectory_cost.cpp.i
+
+src/tasks/dp_poly_path/trajectory_cost.s: src/tasks/dp_poly_path/trajectory_cost.cpp.s
+.PHONY : src/tasks/dp_poly_path/trajectory_cost.s
+
+# target to generate assembly for a file
+src/tasks/dp_poly_path/trajectory_cost.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.s
+.PHONY : src/tasks/dp_poly_path/trajectory_cost.cpp.s
+
+src/tasks/dp_st_speed/dp_st_cost.o: src/tasks/dp_st_speed/dp_st_cost.cpp.o
+.PHONY : src/tasks/dp_st_speed/dp_st_cost.o
+
+# target to build an object file
+src/tasks/dp_st_speed/dp_st_cost.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o
+.PHONY : src/tasks/dp_st_speed/dp_st_cost.cpp.o
+
+src/tasks/dp_st_speed/dp_st_cost.i: src/tasks/dp_st_speed/dp_st_cost.cpp.i
+.PHONY : src/tasks/dp_st_speed/dp_st_cost.i
+
+# target to preprocess a source file
+src/tasks/dp_st_speed/dp_st_cost.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.i
+.PHONY : src/tasks/dp_st_speed/dp_st_cost.cpp.i
+
+src/tasks/dp_st_speed/dp_st_cost.s: src/tasks/dp_st_speed/dp_st_cost.cpp.s
+.PHONY : src/tasks/dp_st_speed/dp_st_cost.s
+
+# target to generate assembly for a file
+src/tasks/dp_st_speed/dp_st_cost.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.s
+.PHONY : src/tasks/dp_st_speed/dp_st_cost.cpp.s
+
+src/tasks/dp_st_speed/dp_st_graph.o: src/tasks/dp_st_speed/dp_st_graph.cpp.o
+.PHONY : src/tasks/dp_st_speed/dp_st_graph.o
+
+# target to build an object file
+src/tasks/dp_st_speed/dp_st_graph.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o
+.PHONY : src/tasks/dp_st_speed/dp_st_graph.cpp.o
+
+src/tasks/dp_st_speed/dp_st_graph.i: src/tasks/dp_st_speed/dp_st_graph.cpp.i
+.PHONY : src/tasks/dp_st_speed/dp_st_graph.i
+
+# target to preprocess a source file
+src/tasks/dp_st_speed/dp_st_graph.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.i
+.PHONY : src/tasks/dp_st_speed/dp_st_graph.cpp.i
+
+src/tasks/dp_st_speed/dp_st_graph.s: src/tasks/dp_st_speed/dp_st_graph.cpp.s
+.PHONY : src/tasks/dp_st_speed/dp_st_graph.s
+
+# target to generate assembly for a file
+src/tasks/dp_st_speed/dp_st_graph.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.s
+.PHONY : src/tasks/dp_st_speed/dp_st_graph.cpp.s
+
+src/tasks/dp_st_speed/dp_st_speed_optimizer.o: src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o
+.PHONY : src/tasks/dp_st_speed/dp_st_speed_optimizer.o
+
+# target to build an object file
+src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o
+.PHONY : src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o
+
+src/tasks/dp_st_speed/dp_st_speed_optimizer.i: src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.i
+.PHONY : src/tasks/dp_st_speed/dp_st_speed_optimizer.i
+
+# target to preprocess a source file
+src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.i
+.PHONY : src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.i
+
+src/tasks/dp_st_speed/dp_st_speed_optimizer.s: src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.s
+.PHONY : src/tasks/dp_st_speed/dp_st_speed_optimizer.s
+
+# target to generate assembly for a file
+src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.s
+.PHONY : src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.s
+
+src/tasks/dp_st_speed/st_graph_point.o: src/tasks/dp_st_speed/st_graph_point.cpp.o
+.PHONY : src/tasks/dp_st_speed/st_graph_point.o
+
+# target to build an object file
+src/tasks/dp_st_speed/st_graph_point.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o
+.PHONY : src/tasks/dp_st_speed/st_graph_point.cpp.o
+
+src/tasks/dp_st_speed/st_graph_point.i: src/tasks/dp_st_speed/st_graph_point.cpp.i
+.PHONY : src/tasks/dp_st_speed/st_graph_point.i
+
+# target to preprocess a source file
+src/tasks/dp_st_speed/st_graph_point.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.i
+.PHONY : src/tasks/dp_st_speed/st_graph_point.cpp.i
+
+src/tasks/dp_st_speed/st_graph_point.s: src/tasks/dp_st_speed/st_graph_point.cpp.s
+.PHONY : src/tasks/dp_st_speed/st_graph_point.s
+
+# target to generate assembly for a file
+src/tasks/dp_st_speed/st_graph_point.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.s
+.PHONY : src/tasks/dp_st_speed/st_graph_point.cpp.s
+
+src/tasks/em/em_planner.o: src/tasks/em/em_planner.cpp.o
+.PHONY : src/tasks/em/em_planner.o
+
+# target to build an object file
+src/tasks/em/em_planner.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o
+.PHONY : src/tasks/em/em_planner.cpp.o
+
+src/tasks/em/em_planner.i: src/tasks/em/em_planner.cpp.i
+.PHONY : src/tasks/em/em_planner.i
+
+# target to preprocess a source file
+src/tasks/em/em_planner.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.i
+.PHONY : src/tasks/em/em_planner.cpp.i
+
+src/tasks/em/em_planner.s: src/tasks/em/em_planner.cpp.s
+.PHONY : src/tasks/em/em_planner.s
+
+# target to generate assembly for a file
+src/tasks/em/em_planner.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.s
+.PHONY : src/tasks/em/em_planner.cpp.s
+
+src/tasks/path_decider/path_decider.o: src/tasks/path_decider/path_decider.cpp.o
+.PHONY : src/tasks/path_decider/path_decider.o
+
+# target to build an object file
+src/tasks/path_decider/path_decider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o
+.PHONY : src/tasks/path_decider/path_decider.cpp.o
+
+src/tasks/path_decider/path_decider.i: src/tasks/path_decider/path_decider.cpp.i
+.PHONY : src/tasks/path_decider/path_decider.i
+
+# target to preprocess a source file
+src/tasks/path_decider/path_decider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.i
+.PHONY : src/tasks/path_decider/path_decider.cpp.i
+
+src/tasks/path_decider/path_decider.s: src/tasks/path_decider/path_decider.cpp.s
+.PHONY : src/tasks/path_decider/path_decider.s
+
+# target to generate assembly for a file
+src/tasks/path_decider/path_decider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.s
+.PHONY : src/tasks/path_decider/path_decider.cpp.s
+
+src/tasks/path_optimizer.o: src/tasks/path_optimizer.cpp.o
+.PHONY : src/tasks/path_optimizer.o
+
+# target to build an object file
+src/tasks/path_optimizer.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o
+.PHONY : src/tasks/path_optimizer.cpp.o
+
+src/tasks/path_optimizer.i: src/tasks/path_optimizer.cpp.i
+.PHONY : src/tasks/path_optimizer.i
+
+# target to preprocess a source file
+src/tasks/path_optimizer.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.i
+.PHONY : src/tasks/path_optimizer.cpp.i
+
+src/tasks/path_optimizer.s: src/tasks/path_optimizer.cpp.s
+.PHONY : src/tasks/path_optimizer.s
+
+# target to generate assembly for a file
+src/tasks/path_optimizer.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.s
+.PHONY : src/tasks/path_optimizer.cpp.s
+
+src/tasks/speed_decider/speed_decider.o: src/tasks/speed_decider/speed_decider.cpp.o
+.PHONY : src/tasks/speed_decider/speed_decider.o
+
+# target to build an object file
+src/tasks/speed_decider/speed_decider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o
+.PHONY : src/tasks/speed_decider/speed_decider.cpp.o
+
+src/tasks/speed_decider/speed_decider.i: src/tasks/speed_decider/speed_decider.cpp.i
+.PHONY : src/tasks/speed_decider/speed_decider.i
+
+# target to preprocess a source file
+src/tasks/speed_decider/speed_decider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.i
+.PHONY : src/tasks/speed_decider/speed_decider.cpp.i
+
+src/tasks/speed_decider/speed_decider.s: src/tasks/speed_decider/speed_decider.cpp.s
+.PHONY : src/tasks/speed_decider/speed_decider.s
+
+# target to generate assembly for a file
+src/tasks/speed_decider/speed_decider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.s
+.PHONY : src/tasks/speed_decider/speed_decider.cpp.s
+
+src/tasks/speed_optimizer.o: src/tasks/speed_optimizer.cpp.o
+.PHONY : src/tasks/speed_optimizer.o
+
+# target to build an object file
+src/tasks/speed_optimizer.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o
+.PHONY : src/tasks/speed_optimizer.cpp.o
+
+src/tasks/speed_optimizer.i: src/tasks/speed_optimizer.cpp.i
+.PHONY : src/tasks/speed_optimizer.i
+
+# target to preprocess a source file
+src/tasks/speed_optimizer.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.i
+.PHONY : src/tasks/speed_optimizer.cpp.i
+
+src/tasks/speed_optimizer.s: src/tasks/speed_optimizer.cpp.s
+.PHONY : src/tasks/speed_optimizer.s
+
+# target to generate assembly for a file
+src/tasks/speed_optimizer.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.s
+.PHONY : src/tasks/speed_optimizer.cpp.s
+
+src/tasks/st_graph/speed_limit_decider.o: src/tasks/st_graph/speed_limit_decider.cpp.o
+.PHONY : src/tasks/st_graph/speed_limit_decider.o
+
+# target to build an object file
+src/tasks/st_graph/speed_limit_decider.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o
+.PHONY : src/tasks/st_graph/speed_limit_decider.cpp.o
+
+src/tasks/st_graph/speed_limit_decider.i: src/tasks/st_graph/speed_limit_decider.cpp.i
+.PHONY : src/tasks/st_graph/speed_limit_decider.i
+
+# target to preprocess a source file
+src/tasks/st_graph/speed_limit_decider.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.i
+.PHONY : src/tasks/st_graph/speed_limit_decider.cpp.i
+
+src/tasks/st_graph/speed_limit_decider.s: src/tasks/st_graph/speed_limit_decider.cpp.s
+.PHONY : src/tasks/st_graph/speed_limit_decider.s
+
+# target to generate assembly for a file
+src/tasks/st_graph/speed_limit_decider.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.s
+.PHONY : src/tasks/st_graph/speed_limit_decider.cpp.s
+
+src/tasks/st_graph/st_boundary_mapper.o: src/tasks/st_graph/st_boundary_mapper.cpp.o
+.PHONY : src/tasks/st_graph/st_boundary_mapper.o
+
+# target to build an object file
+src/tasks/st_graph/st_boundary_mapper.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o
+.PHONY : src/tasks/st_graph/st_boundary_mapper.cpp.o
+
+src/tasks/st_graph/st_boundary_mapper.i: src/tasks/st_graph/st_boundary_mapper.cpp.i
+.PHONY : src/tasks/st_graph/st_boundary_mapper.i
+
+# target to preprocess a source file
+src/tasks/st_graph/st_boundary_mapper.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.i
+.PHONY : src/tasks/st_graph/st_boundary_mapper.cpp.i
+
+src/tasks/st_graph/st_boundary_mapper.s: src/tasks/st_graph/st_boundary_mapper.cpp.s
+.PHONY : src/tasks/st_graph/st_boundary_mapper.s
+
+# target to generate assembly for a file
+src/tasks/st_graph/st_boundary_mapper.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.s
+.PHONY : src/tasks/st_graph/st_boundary_mapper.cpp.s
+
+src/tasks/st_graph/st_graph_data.o: src/tasks/st_graph/st_graph_data.cpp.o
+.PHONY : src/tasks/st_graph/st_graph_data.o
+
+# target to build an object file
+src/tasks/st_graph/st_graph_data.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o
+.PHONY : src/tasks/st_graph/st_graph_data.cpp.o
+
+src/tasks/st_graph/st_graph_data.i: src/tasks/st_graph/st_graph_data.cpp.i
+.PHONY : src/tasks/st_graph/st_graph_data.i
+
+# target to preprocess a source file
+src/tasks/st_graph/st_graph_data.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.i
+.PHONY : src/tasks/st_graph/st_graph_data.cpp.i
+
+src/tasks/st_graph/st_graph_data.s: src/tasks/st_graph/st_graph_data.cpp.s
+.PHONY : src/tasks/st_graph/st_graph_data.s
+
+# target to generate assembly for a file
+src/tasks/st_graph/st_graph_data.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.s
+.PHONY : src/tasks/st_graph/st_graph_data.cpp.s
+
+src/tasks/task.o: src/tasks/task.cpp.o
+.PHONY : src/tasks/task.o
+
+# target to build an object file
+src/tasks/task.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o
+.PHONY : src/tasks/task.cpp.o
+
+src/tasks/task.i: src/tasks/task.cpp.i
+.PHONY : src/tasks/task.i
+
+# target to preprocess a source file
+src/tasks/task.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.i
+.PHONY : src/tasks/task.cpp.i
+
+src/tasks/task.s: src/tasks/task.cpp.s
+.PHONY : src/tasks/task.s
+
+# target to generate assembly for a file
+src/tasks/task.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.s
+.PHONY : src/tasks/task.cpp.s
+
 src/trajectory/discretized_trajectory.o: src/trajectory/discretized_trajectory.cpp.o
 .PHONY : src/trajectory/discretized_trajectory.o
 
@@ -2119,6 +2575,9 @@ help:
 	@echo "... src/main/main.o"
 	@echo "... src/main/main.i"
 	@echo "... src/main/main.s"
+	@echo "... src/main/manual_setting.o"
+	@echo "... src/main/manual_setting.i"
+	@echo "... src/main/manual_setting.s"
 	@echo "... src/main/planning.o"
 	@echo "... src/main/planning.i"
 	@echo "... src/main/planning.s"
@@ -2137,6 +2596,12 @@ help:
 	@echo "... src/math/cubic_spline.o"
 	@echo "... src/math/cubic_spline.i"
 	@echo "... src/math/cubic_spline.s"
+	@echo "... src/math/curve1d/quartic_polynomial_curve1d.o"
+	@echo "... src/math/curve1d/quartic_polynomial_curve1d.i"
+	@echo "... src/math/curve1d/quartic_polynomial_curve1d.s"
+	@echo "... src/math/curve1d/quintic_polynomial_curve1d.o"
+	@echo "... src/math/curve1d/quintic_polynomial_curve1d.i"
+	@echo "... src/math/curve1d/quintic_polynomial_curve1d.s"
 	@echo "... src/math/line_segment2d.o"
 	@echo "... src/math/line_segment2d.i"
 	@echo "... src/math/line_segment2d.s"
@@ -2188,6 +2653,54 @@ help:
 	@echo "... src/speed/st_point.o"
 	@echo "... src/speed/st_point.i"
 	@echo "... src/speed/st_point.s"
+	@echo "... src/tasks/dp_poly_path/dp_poly_path_optimizer.o"
+	@echo "... src/tasks/dp_poly_path/dp_poly_path_optimizer.i"
+	@echo "... src/tasks/dp_poly_path/dp_poly_path_optimizer.s"
+	@echo "... src/tasks/dp_poly_path/dp_road_graph.o"
+	@echo "... src/tasks/dp_poly_path/dp_road_graph.i"
+	@echo "... src/tasks/dp_poly_path/dp_road_graph.s"
+	@echo "... src/tasks/dp_poly_path/trajectory_cost.o"
+	@echo "... src/tasks/dp_poly_path/trajectory_cost.i"
+	@echo "... src/tasks/dp_poly_path/trajectory_cost.s"
+	@echo "... src/tasks/dp_st_speed/dp_st_cost.o"
+	@echo "... src/tasks/dp_st_speed/dp_st_cost.i"
+	@echo "... src/tasks/dp_st_speed/dp_st_cost.s"
+	@echo "... src/tasks/dp_st_speed/dp_st_graph.o"
+	@echo "... src/tasks/dp_st_speed/dp_st_graph.i"
+	@echo "... src/tasks/dp_st_speed/dp_st_graph.s"
+	@echo "... src/tasks/dp_st_speed/dp_st_speed_optimizer.o"
+	@echo "... src/tasks/dp_st_speed/dp_st_speed_optimizer.i"
+	@echo "... src/tasks/dp_st_speed/dp_st_speed_optimizer.s"
+	@echo "... src/tasks/dp_st_speed/st_graph_point.o"
+	@echo "... src/tasks/dp_st_speed/st_graph_point.i"
+	@echo "... src/tasks/dp_st_speed/st_graph_point.s"
+	@echo "... src/tasks/em/em_planner.o"
+	@echo "... src/tasks/em/em_planner.i"
+	@echo "... src/tasks/em/em_planner.s"
+	@echo "... src/tasks/path_decider/path_decider.o"
+	@echo "... src/tasks/path_decider/path_decider.i"
+	@echo "... src/tasks/path_decider/path_decider.s"
+	@echo "... src/tasks/path_optimizer.o"
+	@echo "... src/tasks/path_optimizer.i"
+	@echo "... src/tasks/path_optimizer.s"
+	@echo "... src/tasks/speed_decider/speed_decider.o"
+	@echo "... src/tasks/speed_decider/speed_decider.i"
+	@echo "... src/tasks/speed_decider/speed_decider.s"
+	@echo "... src/tasks/speed_optimizer.o"
+	@echo "... src/tasks/speed_optimizer.i"
+	@echo "... src/tasks/speed_optimizer.s"
+	@echo "... src/tasks/st_graph/speed_limit_decider.o"
+	@echo "... src/tasks/st_graph/speed_limit_decider.i"
+	@echo "... src/tasks/st_graph/speed_limit_decider.s"
+	@echo "... src/tasks/st_graph/st_boundary_mapper.o"
+	@echo "... src/tasks/st_graph/st_boundary_mapper.i"
+	@echo "... src/tasks/st_graph/st_boundary_mapper.s"
+	@echo "... src/tasks/st_graph/st_graph_data.o"
+	@echo "... src/tasks/st_graph/st_graph_data.i"
+	@echo "... src/tasks/st_graph/st_graph_data.s"
+	@echo "... src/tasks/task.o"
+	@echo "... src/tasks/task.i"
+	@echo "... src/tasks/task.s"
 	@echo "... src/trajectory/discretized_trajectory.o"
 	@echo "... src/trajectory/discretized_trajectory.i"
 	@echo "... src/trajectory/discretized_trajectory.s"

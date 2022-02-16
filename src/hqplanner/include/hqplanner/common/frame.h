@@ -112,7 +112,6 @@ class Frame {
       const std::string &id, const hqplanner::math::Box2d &box);
 
   void AddObstacle(const Obstacle &obstacle);
-  bool IsNearDestination() const { return is_near_destination_; }
 
  private:
   // Subscribe subscribe_info_;

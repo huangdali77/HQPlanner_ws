@@ -24,7 +24,7 @@ class DpStGraph {
   DpStGraph(const StGraphData& st_graph_data,
             const hqplanner::forproto::DpStSpeedConfig& dp_config,
             const std::vector<const hqplanner::PathObstacle*>& obstacles,
-            const TrajectoryPoint& init_point,
+            const hqplanner::forproto::TrajectoryPoint& init_point,
             const hqplanner::forproto::SLBoundary& adc_sl_boundary);
 
   bool Search(hqplanner::speed::SpeedData* const speed_data);

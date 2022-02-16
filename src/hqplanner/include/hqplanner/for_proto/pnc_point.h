@@ -85,14 +85,14 @@ struct FrenetFramePoint {
 };
 
 struct SpeedPoint {
-  double s;
-  double t;
+  double s = 0.0;
+  double t = 0.0;
   // speed (m/s)
-  double v;
+  double v = 0.0;
   // acceleration (m/s^2)
-  double a;
+  double a = 0.0;
   // jerk (m/s^3)
-  double da;
+  double da = 0.0;
 };
 
 }  // namespace forproto
