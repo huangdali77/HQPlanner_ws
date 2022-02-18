@@ -154,6 +154,8 @@ add_library(hqplanner
   src/math/box2d.cpp
   src/math/cartesian_frenet_conversion.cpp
   src/math/cubic_spline.cpp
+  src/math/cubic_spline_clamped.cpp
+  src/math/cubic_spline_start_clamped.cpp
   src/math/line_segment2d.cpp
   src/math/linear_interpolation.cpp
   src/math/math_utils.cpp

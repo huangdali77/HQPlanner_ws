@@ -8,11 +8,17 @@
 #include <iostream>
 #include <vector>
 
-#include "hqplanner/ref_line_test.h"
+#include "hqplanner/math/cubic_spline.h"
+#include "hqplanner/math/cubic_spline_clamped.h"
+#include "hqplanner/math/cubic_spline_start_clamped.h"
+// #include "hqplanner/ref_line_test.h"
 
 using hqplanner::ReferenceLine;
 using hqplanner::forproto::AnchorPoint;
 using hqplanner::forproto::ReferencePoint;
+using hqplanner::math::CubicSpline;
+using hqplanner::math::CubicSplineClamped;
+using hqplanner::math::CubicSplineStartClamped;
 int main(int argc, char **argv) {
   ros::init(argc, argv, "ref_line_pub");
   ros::NodeHandle n;
@@ -53,71 +59,89 @@ int main(int argc, char **argv) {
   //     -104.069356173, -104.024870012, -103.981774071, -103.940130138,
   //     -103.9};
 
-  std::vector<double> x = {0, 45, 80, 110, 140, 150, 170, 180};
-  std::vector<double> y = {0, 45, 35, 5, -5, -10, 10, 56};
-  ReferenceLine ref_line(x, y);
-  std::vector<ReferencePoint> reference_line_points =
-      ref_line.reference_points();
+  std::vector<double> x = {0, 10, 20, 30, 40, 50, 60, 70, 80};
+  std::vector<double> y = {0, 11.1, 19.6, 10.2, 26, 49.3, 30.2, 23.3, 99.9};
+  // ReferenceLine ref_line(x, y);
+  // std::vector<ReferencePoint> reference_line_points =
+  //     ref_line.reference_points();
 
-  // std::cout << reference_line_points.size() << std::endl;
-  std::vector<AnchorPoint> an_points = ref_line.GetAnchorPoints();
-
+  // // std::cout << reference_line_points.size() << std::endl;
+  // std::vector<AnchorPoint> an_points = ref_line.GetAnchorPoints();
+  CubicSpline cubic(x, y);
+  CubicSplineClamped cubic_clamped(x, y, 0.0, -0.5);
+  CubicSplineStartClamped cubic_start_clamped(x, y, 0.0, 0.5);
   ros::Rate loop_rate(1);
   while (ros::ok()) {
-    visualization_msgs::Marker anchor_points, ref_points, line_strip;
-    anchor_points.header.frame_id = ref_points.header.frame_id =
-        line_strip.header.frame_id = "MyFrame";
-    anchor_points.header.stamp = ref_points.header.stamp =
-        line_strip.header.stamp = ros::Time::now();
+    visualization_msgs::Marker anchor_points, line_strip, line_strip1,
+        line_strip2;
+    anchor_points.header.frame_id = line_strip.header.frame_id =
+        line_strip1.header.frame_id = line_strip2.header.frame_id = "MyFrame";
+    anchor_points.header.stamp = line_strip.header.stamp =
+        line_strip1.header.stamp = line_strip2.header.stamp = ros::Time::now();
 
-    anchor_points.ns = ref_points.ns = line_strip.ns = "ref_line";
-    anchor_points.action = ref_points.action = line_strip.action =
-        visualization_msgs::Marker::ADD;
-    anchor_points.pose.orientation.w = ref_points.pose.orientation.w =
-        line_strip.pose.orientation.w = 1.0;
+    anchor_points.ns = line_strip.ns = line_strip1.ns = line_strip2.ns =
+        "ref_line";
+    anchor_points.action = line_strip.action = line_strip1.action =
+        line_strip2.action = visualization_msgs::Marker::ADD;
+    anchor_points.pose.orientation.w = line_strip.pose.orientation.w =
+        line_strip1.pose.orientation.w = line_strip2.pose.orientation.w = 1.0;
     anchor_points.id = 0;
-    ref_points.id = 1;
+
     line_strip.id = 2;
-
+    line_strip1.id = 3;
+    line_strip2.id = 2;
     anchor_points.type = visualization_msgs::Marker::POINTS;
-    ref_points.type = visualization_msgs::Marker::POINTS;
-    line_strip.type = visualization_msgs::Marker::LINE_STRIP;
 
+    line_strip.type = visualization_msgs::Marker::LINE_STRIP;
+    line_strip1.type = visualization_msgs::Marker::LINE_STRIP;
+    line_strip2.type = visualization_msgs::Marker::LINE_STRIP;
     anchor_points.scale.x = 0.3;
     anchor_points.scale.y = 0.3;
-    ref_points.scale.x = 0.2;
-    ref_points.scale.y = 0.2;
-    line_strip.scale.x = 0.1;
 
+    line_strip.scale.x = 0.1;
+    line_strip1.scale.x = 0.1;
+    line_strip2.scale.x = 0.1;
     anchor_points.color.g = 1.0;
     anchor_points.color.a = 1.0;
-    ref_points.color.b = 1.0;
-    ref_points.color.a = 1.0;
+
     line_strip.color.r = 1.0;
     line_strip.color.a = 1.0;
 
-    // std::vector<geometry_msgs::Point> arrp;
+    line_strip1.color.b = 1.0;
+    line_strip1.color.a = 1.0;
+    line_strip2.color.b = 0.5;
+    line_strip2.color.r = 0.5;
+    line_strip2.color.a = 1.0;
+    double t = 0.0;
+    while (t <= 80) {
+      double s = cubic.GetSplinePointValue(t);
+      double s1 = cubic_clamped.GetSplinePointValue(t);
+      double s2 = cubic_start_clamped.GetSplinePointValue(t);
+      geometry_msgs::Point temp, temp1, temp2;
 
-    for (auto &ref_point : reference_line_points) {
-      geometry_msgs::Point temp;
-      temp.x = ref_point.x - reference_line_points.front().x;
-      temp.y = ref_point.y - reference_line_points.front().y;
-      temp.z = 0;
-      ref_points.points.push_back(temp);
+      temp2.x = temp1.x = temp.x = t;
+      temp.y = s;
+      temp1.y = s1;
+      temp2.y = s2;
+      temp2.z = temp1.z = temp.z = 0;
       line_strip.points.push_back(temp);
+      line_strip1.points.push_back(temp1);
+      line_strip2.points.push_back(temp2);
+      t += 0.1;
     }
-    for (auto &an_point : an_points) {
+    for (int i = 0; i < x.size(); ++i) {
       geometry_msgs::Point temp;
-      temp.x = an_point.cartesian_x - reference_line_points.front().x;
-      temp.y = an_point.cartesian_y - reference_line_points.front().y;
+      temp.x = x[i];
+      temp.y = y[i];
       temp.z = 0;
       anchor_points.points.push_back(temp);
     }
-    pub.publish(anchor_points);
-    pub.publish(ref_points);
-    pub.publish(line_strip);
 
-    // ros::spinOnce();
+    pub.publish(anchor_points);
+    pub.publish(line_strip1);
+    pub.publish(line_strip);
+    // pub.publish(line_strip2);
+    ros::spinOnce();
     loop_rate.sleep();
   }
   return 0;

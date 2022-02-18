@@ -1287,10 +1287,11 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
   /opt/ros/melodic/include/geometry_msgs/Quaternion.h \
   /opt/ros/melodic/include/geometry_msgs/Vector3.h \
   /opt/ros/melodic/include/std_msgs/ColorRGBA.h \
-  /home/zx414/HQPlanner_ws/devel/include/hqplanner/ref_line_test.h
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline_clamped.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline_start_clamped.h
 
 
-/home/zx414/HQPlanner_ws/devel/include/hqplanner/ref_line_test.h:
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline_clamped.h:
 
 /opt/ros/melodic/include/std_msgs/ColorRGBA.h:
 
@@ -1993,6 +1994,8 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: /home/zx414
 /usr/include/boost/predef/os/macos.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/7/include/emmintrin.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline_start_clamped.h:
 
 /usr/include/log4cxx/helpers/object.h:
 

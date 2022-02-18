@@ -13,16 +13,17 @@ namespace math {
 class CubicSpline {
  public:
   CubicSpline() = default;
-  explicit CubicSpline(std::vector<double>& x, std::vector<double>& y);
-  void CalculateSplineCoefs();
-  Eigen::MatrixXd CalculateAMtrix(const std::vector<double>& h);
-  Eigen::MatrixXd CalculateBMtrix(const std::vector<double>& h);
+  virtual ~CubicSpline() = default;
+  CubicSpline(std::vector<double>& x, std::vector<double>& y);
+  virtual void CalculateSplineCoefs();
+  virtual Eigen::MatrixXd CalculateAMtrix(const std::vector<double>& h);
+  virtual Eigen::MatrixXd CalculateBMtrix(const std::vector<double>& h);
   double GetSplinePointValue(double t) const;
   double GetSplinePointFirstDerivativeValue(double t) const;
   double GetSplinePointSecondDerivativeValue(double t) const;
   double GetSplinePointThirdDerivativeValue(double t) const;
 
- private:
+ protected:
   /* data */
   std::vector<double> spline_coefs_a_;
   std::vector<double> spline_coefs_b_;

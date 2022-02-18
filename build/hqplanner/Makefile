@@ -1527,6 +1527,54 @@ src/math/cubic_spline.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline.cpp.s
 .PHONY : src/math/cubic_spline.cpp.s
 
+src/math/cubic_spline_clamped.o: src/math/cubic_spline_clamped.cpp.o
+.PHONY : src/math/cubic_spline_clamped.o
+
+# target to build an object file
+src/math/cubic_spline_clamped.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline_clamped.cpp.o
+.PHONY : src/math/cubic_spline_clamped.cpp.o
+
+src/math/cubic_spline_clamped.i: src/math/cubic_spline_clamped.cpp.i
+.PHONY : src/math/cubic_spline_clamped.i
+
+# target to preprocess a source file
+src/math/cubic_spline_clamped.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline_clamped.cpp.i
+.PHONY : src/math/cubic_spline_clamped.cpp.i
+
+src/math/cubic_spline_clamped.s: src/math/cubic_spline_clamped.cpp.s
+.PHONY : src/math/cubic_spline_clamped.s
+
+# target to generate assembly for a file
+src/math/cubic_spline_clamped.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline_clamped.cpp.s
+.PHONY : src/math/cubic_spline_clamped.cpp.s
+
+src/math/cubic_spline_start_clamped.o: src/math/cubic_spline_start_clamped.cpp.o
+.PHONY : src/math/cubic_spline_start_clamped.o
+
+# target to build an object file
+src/math/cubic_spline_start_clamped.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline_start_clamped.cpp.o
+.PHONY : src/math/cubic_spline_start_clamped.cpp.o
+
+src/math/cubic_spline_start_clamped.i: src/math/cubic_spline_start_clamped.cpp.i
+.PHONY : src/math/cubic_spline_start_clamped.i
+
+# target to preprocess a source file
+src/math/cubic_spline_start_clamped.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline_start_clamped.cpp.i
+.PHONY : src/math/cubic_spline_start_clamped.cpp.i
+
+src/math/cubic_spline_start_clamped.s: src/math/cubic_spline_start_clamped.cpp.s
+.PHONY : src/math/cubic_spline_start_clamped.s
+
+# target to generate assembly for a file
+src/math/cubic_spline_start_clamped.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/cubic_spline_start_clamped.cpp.s
+.PHONY : src/math/cubic_spline_start_clamped.cpp.s
+
 src/math/curve1d/quartic_polynomial_curve1d.o: src/math/curve1d/quartic_polynomial_curve1d.cpp.o
 .PHONY : src/math/curve1d/quartic_polynomial_curve1d.o
 
@@ -2596,6 +2644,12 @@ help:
 	@echo "... src/math/cubic_spline.o"
 	@echo "... src/math/cubic_spline.i"
 	@echo "... src/math/cubic_spline.s"
+	@echo "... src/math/cubic_spline_clamped.o"
+	@echo "... src/math/cubic_spline_clamped.i"
+	@echo "... src/math/cubic_spline_clamped.s"
+	@echo "... src/math/cubic_spline_start_clamped.o"
+	@echo "... src/math/cubic_spline_start_clamped.i"
+	@echo "... src/math/cubic_spline_start_clamped.s"
 	@echo "... src/math/curve1d/quartic_polynomial_curve1d.o"
 	@echo "... src/math/curve1d/quartic_polynomial_curve1d.i"
 	@echo "... src/math/curve1d/quartic_polynomial_curve1d.s"
