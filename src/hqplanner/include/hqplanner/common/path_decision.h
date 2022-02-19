@@ -48,10 +48,11 @@ class PathDecision {
       const hqplanner::forproto::ObjectStop &obj_stop,
       const std::string &obj_id, const ReferenceLine &ref_line,
       const hqplanner::forproto::SLBoundary &adc_sl_boundary);
-  const std::vector<const PathObstacle *> path_obstacle_items() const;
+  const std::vector<const PathObstacle *> &path_obstacle_items() const;
 
  private:
   std::map<std::string, std::shared_ptr<PathObstacle>> path_obstacles_;
+  std::vector<const PathObstacle *> path_obstacle_items_;
   //   std::vector<const PathObstacle *> path_obstacle_items_;
   double stop_reference_line_s_ = std::numeric_limits<double>::max();
   hqplanner::forproto::MainStop main_stop_;

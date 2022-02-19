@@ -123,8 +123,9 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer
  /usr/include/c++/7/bits/stl_uninitialized.h \
  /usr/include/c++/7/bits/stl_vector.h \
  /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_st_speed_config.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/cubic_st_speed_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_st_speed_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/poly_st_speed_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/path/path_data.h \
  /usr/include/assert.h /usr/include/c++/7/algorithm \

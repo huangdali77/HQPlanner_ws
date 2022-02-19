@@ -5,9 +5,9 @@ namespace math {
 using namespace Eigen;
 
 CubicSplineClamped::CubicSplineClamped(std::vector<double>& x,
-                                       std::vector<double>& y, double dx0,
-                                       double dxn)
-    : dx0_(dx0), dxn_(dxn) {
+                                       std::vector<double>& y, double dy0,
+                                       double dyn)
+    : dy0_(dy0), dyn_(dyn) {
   spline_anchor_points_x_ = x;
   spline_anchor_points_y_ = y;
   anchor_points_num_ = spline_anchor_points_x_.size();
@@ -40,9 +40,9 @@ MatrixXd CubicSplineClamped::CalculateBMtrix(const std::vector<double>& h) {
         3.0 * (spline_coefs_a_[i + 1] - spline_coefs_a_[i]) / h[i];
   }
 
-  b(0, 0) = 3.0 * (spline_coefs_a_[1] - spline_coefs_a_[0]) / h[0] - 3.0 * dx0_;
+  b(0, 0) = 3.0 * (spline_coefs_a_[1] - spline_coefs_a_[0]) / h[0] - 3.0 * dy0_;
   b(anchor_points_num_ - 1, 0) =
-      3.0 * dxn_ - 3.0 *
+      3.0 * dyn_ - 3.0 *
                        (spline_coefs_a_[anchor_points_num_ - 1] -
                         spline_coefs_a_[anchor_points_num_ - 2]) /
                        h[anchor_points_num_ - 2];

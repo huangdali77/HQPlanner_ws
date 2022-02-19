@@ -135,9 +135,10 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o: \
  /usr/include/c++/7/bits/stl_vector.h \
  /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/planning_config.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/cubic_st_speed_config.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_poly_path_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_st_speed_config.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/poly_st_speed_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/pnc_point.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/quintic_polynomial_curve1d.h \
@@ -1205,12 +1206,13 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/7/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++io.h \
  /usr/include/c++/7/bits/fstream.tcc \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/dp_poly_path/dp_poly_path_optimizer.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/path_optimizer.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/dp_st_speed/dp_st_speed_optimizer.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/cubic_st_speed/cubic_st_speed_optimizer.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/speed_optimizer.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/st_graph/st_graph_data.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/speed/speed_limit.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/dp_poly_path/dp_poly_path_optimizer.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/path_optimizer.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/dp_st_speed/dp_st_speed_optimizer.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/st_graph/speed_limit_decider.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/st_graph/st_boundary_mapper.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/path_decider/path_decider.h \

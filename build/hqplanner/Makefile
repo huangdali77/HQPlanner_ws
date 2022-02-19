@@ -2031,6 +2031,54 @@ src/speed/st_point.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.s
 .PHONY : src/speed/st_point.cpp.s
 
+src/tasks/cubic_st_speed/cubic_speed_profile_cost.o: src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o
+.PHONY : src/tasks/cubic_st_speed/cubic_speed_profile_cost.o
+
+# target to build an object file
+src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o
+.PHONY : src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o
+
+src/tasks/cubic_st_speed/cubic_speed_profile_cost.i: src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.i
+.PHONY : src/tasks/cubic_st_speed/cubic_speed_profile_cost.i
+
+# target to preprocess a source file
+src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.i
+.PHONY : src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.i
+
+src/tasks/cubic_st_speed/cubic_speed_profile_cost.s: src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.s
+.PHONY : src/tasks/cubic_st_speed/cubic_speed_profile_cost.s
+
+# target to generate assembly for a file
+src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.s
+.PHONY : src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.s
+
+src/tasks/cubic_st_speed/cubic_st_speed_optimizer.o: src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o
+.PHONY : src/tasks/cubic_st_speed/cubic_st_speed_optimizer.o
+
+# target to build an object file
+src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o
+.PHONY : src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o
+
+src/tasks/cubic_st_speed/cubic_st_speed_optimizer.i: src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.i
+.PHONY : src/tasks/cubic_st_speed/cubic_st_speed_optimizer.i
+
+# target to preprocess a source file
+src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.i
+.PHONY : src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.i
+
+src/tasks/cubic_st_speed/cubic_st_speed_optimizer.s: src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.s
+.PHONY : src/tasks/cubic_st_speed/cubic_st_speed_optimizer.s
+
+# target to generate assembly for a file
+src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.s
+.PHONY : src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.s
+
 src/tasks/dp_poly_path/dp_poly_path_optimizer.o: src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o
 .PHONY : src/tasks/dp_poly_path/dp_poly_path_optimizer.o
 
@@ -2270,6 +2318,78 @@ src/tasks/path_optimizer.s: src/tasks/path_optimizer.cpp.s
 src/tasks/path_optimizer.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.s
 .PHONY : src/tasks/path_optimizer.cpp.s
+
+src/tasks/poly_st_speed/poly_st_graph.o: src/tasks/poly_st_speed/poly_st_graph.cpp.o
+.PHONY : src/tasks/poly_st_speed/poly_st_graph.o
+
+# target to build an object file
+src/tasks/poly_st_speed/poly_st_graph.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o
+.PHONY : src/tasks/poly_st_speed/poly_st_graph.cpp.o
+
+src/tasks/poly_st_speed/poly_st_graph.i: src/tasks/poly_st_speed/poly_st_graph.cpp.i
+.PHONY : src/tasks/poly_st_speed/poly_st_graph.i
+
+# target to preprocess a source file
+src/tasks/poly_st_speed/poly_st_graph.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.i
+.PHONY : src/tasks/poly_st_speed/poly_st_graph.cpp.i
+
+src/tasks/poly_st_speed/poly_st_graph.s: src/tasks/poly_st_speed/poly_st_graph.cpp.s
+.PHONY : src/tasks/poly_st_speed/poly_st_graph.s
+
+# target to generate assembly for a file
+src/tasks/poly_st_speed/poly_st_graph.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.s
+.PHONY : src/tasks/poly_st_speed/poly_st_graph.cpp.s
+
+src/tasks/poly_st_speed/poly_st_speed_optimizer.o: src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o
+.PHONY : src/tasks/poly_st_speed/poly_st_speed_optimizer.o
+
+# target to build an object file
+src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o
+.PHONY : src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o
+
+src/tasks/poly_st_speed/poly_st_speed_optimizer.i: src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.i
+.PHONY : src/tasks/poly_st_speed/poly_st_speed_optimizer.i
+
+# target to preprocess a source file
+src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.i
+.PHONY : src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.i
+
+src/tasks/poly_st_speed/poly_st_speed_optimizer.s: src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.s
+.PHONY : src/tasks/poly_st_speed/poly_st_speed_optimizer.s
+
+# target to generate assembly for a file
+src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.s
+.PHONY : src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.s
+
+src/tasks/poly_st_speed/speed_profile_cost.o: src/tasks/poly_st_speed/speed_profile_cost.cpp.o
+.PHONY : src/tasks/poly_st_speed/speed_profile_cost.o
+
+# target to build an object file
+src/tasks/poly_st_speed/speed_profile_cost.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o
+.PHONY : src/tasks/poly_st_speed/speed_profile_cost.cpp.o
+
+src/tasks/poly_st_speed/speed_profile_cost.i: src/tasks/poly_st_speed/speed_profile_cost.cpp.i
+.PHONY : src/tasks/poly_st_speed/speed_profile_cost.i
+
+# target to preprocess a source file
+src/tasks/poly_st_speed/speed_profile_cost.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.i
+.PHONY : src/tasks/poly_st_speed/speed_profile_cost.cpp.i
+
+src/tasks/poly_st_speed/speed_profile_cost.s: src/tasks/poly_st_speed/speed_profile_cost.cpp.s
+.PHONY : src/tasks/poly_st_speed/speed_profile_cost.s
+
+# target to generate assembly for a file
+src/tasks/poly_st_speed/speed_profile_cost.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.s
+.PHONY : src/tasks/poly_st_speed/speed_profile_cost.cpp.s
 
 src/tasks/speed_decider/speed_decider.o: src/tasks/speed_decider/speed_decider.cpp.o
 .PHONY : src/tasks/speed_decider/speed_decider.o
@@ -2707,6 +2827,12 @@ help:
 	@echo "... src/speed/st_point.o"
 	@echo "... src/speed/st_point.i"
 	@echo "... src/speed/st_point.s"
+	@echo "... src/tasks/cubic_st_speed/cubic_speed_profile_cost.o"
+	@echo "... src/tasks/cubic_st_speed/cubic_speed_profile_cost.i"
+	@echo "... src/tasks/cubic_st_speed/cubic_speed_profile_cost.s"
+	@echo "... src/tasks/cubic_st_speed/cubic_st_speed_optimizer.o"
+	@echo "... src/tasks/cubic_st_speed/cubic_st_speed_optimizer.i"
+	@echo "... src/tasks/cubic_st_speed/cubic_st_speed_optimizer.s"
 	@echo "... src/tasks/dp_poly_path/dp_poly_path_optimizer.o"
 	@echo "... src/tasks/dp_poly_path/dp_poly_path_optimizer.i"
 	@echo "... src/tasks/dp_poly_path/dp_poly_path_optimizer.s"
@@ -2737,6 +2863,15 @@ help:
 	@echo "... src/tasks/path_optimizer.o"
 	@echo "... src/tasks/path_optimizer.i"
 	@echo "... src/tasks/path_optimizer.s"
+	@echo "... src/tasks/poly_st_speed/poly_st_graph.o"
+	@echo "... src/tasks/poly_st_speed/poly_st_graph.i"
+	@echo "... src/tasks/poly_st_speed/poly_st_graph.s"
+	@echo "... src/tasks/poly_st_speed/poly_st_speed_optimizer.o"
+	@echo "... src/tasks/poly_st_speed/poly_st_speed_optimizer.i"
+	@echo "... src/tasks/poly_st_speed/poly_st_speed_optimizer.s"
+	@echo "... src/tasks/poly_st_speed/speed_profile_cost.o"
+	@echo "... src/tasks/poly_st_speed/speed_profile_cost.i"
+	@echo "... src/tasks/poly_st_speed/speed_profile_cost.s"
 	@echo "... src/tasks/speed_decider/speed_decider.o"
 	@echo "... src/tasks/speed_decider/speed_decider.i"
 	@echo "... src/tasks/speed_decider/speed_decider.s"

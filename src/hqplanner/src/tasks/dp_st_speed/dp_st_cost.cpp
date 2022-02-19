@@ -24,8 +24,6 @@ DpStCost::DpStCost(const DpStSpeedConfig& config,
       obstacles_(obstacles),
       init_point_(init_point),
       unit_t_(config_.total_time / (config_.matrix_dimension_t - 1)) {
-  //  unit_t_(config_.total_time / config_.matrix_dimension_t
-  //  )???????????????????????/
   int index = 0;
   for (auto& obstacle : obstacles) {
     boundary_map_[obstacle->st_boundary().id()] = index++;

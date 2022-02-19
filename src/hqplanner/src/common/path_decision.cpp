@@ -19,12 +19,24 @@ PathObstacle *PathDecision::AddPathObstacle(const PathObstacle &path_obstacle) {
   auto obs = path_obstacles_.find(path_obstacle.Id());
   std::shared_ptr<PathObstacle> temp(new PathObstacle(path_obstacle));
   if (obs != path_obstacles_.end()) {
+    ROS_INFO("duplicate obstacle");
+    assert(0);
     path_obstacles_.erase(path_obstacle.Id());
     path_obstacles_.insert({path_obstacle.Id(), std::move(temp)});
-    // path_obstacles_.insert(std::make_pair(path_obstacle.Id(),
-    // path_obstacle));
+    //删除 path_obstacle_items_中重复元素，并重新添加
+    auto path_obstacle_ptr = path_obstacle_items_.begin();
+    for (; path_obstacle_ptr != path_obstacle_items_.end();
+         ++path_obstacle_ptr) {
+      if ((*path_obstacle_ptr)->Id() == path_obstacle.Id()) {
+        break;
+      }
+    }
+    path_obstacle_items_.erase(path_obstacle_ptr);
+    path_obstacle_items_.push_back(path_obstacles_[path_obstacle.Id()].get());
+
   } else {
     path_obstacles_.insert({path_obstacle.Id(), std::move(temp)});
+    path_obstacle_items_.push_back(path_obstacles_[path_obstacle.Id()].get());
   }
   return path_obstacles_.find(path_obstacle.Id())->second.get();
   // return path_obstacles_[path_obstacle.Id()].get();
@@ -134,12 +146,8 @@ bool PathDecision::MergeWithMainStop(const ObjectStop &obj_stop,
   return true;
 }
 
-const std::vector<const PathObstacle *> PathDecision::path_obstacle_items()
+const std::vector<const PathObstacle *> &PathDecision::path_obstacle_items()
     const {
-  std::vector<const PathObstacle *> path_obstacle_ptrs;
-  for (const auto &path_obs : path_obstacles_) {
-    path_obstacle_ptrs.push_back(path_obs.second.get());
-  }
-  return path_obstacle_ptrs;
+  return path_obstacle_items_;
 }
 }  // namespace hqplanner

@@ -12,10 +12,10 @@
 #include "hqplanner/for_proto/vehicle_state.h"
 #include "hqplanner/for_proto/vehicle_state_provider.h"
 #include "hqplanner/math/math_utils.h"
+#include "hqplanner/tasks/cubic_st_speed/cubic_st_speed_optimizer.h"
 #include "hqplanner/tasks/dp_poly_path/dp_poly_path_optimizer.h"
 #include "hqplanner/tasks/dp_st_speed/dp_st_speed_optimizer.h"
 #include "hqplanner/tasks/path_decider/path_decider.h"
-// #include "hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h"
 #include "hqplanner/tasks/speed_decider/speed_decider.h"
 #include "hqplanner/util/util.h"
 namespace hqplanner {
@@ -33,6 +33,7 @@ using hqplanner::math::Vec2d;
 using hqplanner::path::DiscretizedPath;
 using hqplanner::path::PathData;
 using hqplanner::speed::SpeedData;
+using hqplanner::tasks::CubicStSpeedOptimizer;
 using hqplanner::tasks::DpPolyPathOptimizer;
 using hqplanner::tasks::DpStSpeedOptimizer;
 using hqplanner::tasks::PathDecider;
@@ -63,6 +64,10 @@ bool EMPlanner::Init(const PlanningConfig& config) {
       }
       case TaskType::SPEED_DECIDER: {
         tasks_.emplace_back(new SpeedDecider());
+        break;
+      }
+      case TaskType::CUBIC_ST_SPEED_OPTIMIZER: {
+        tasks_.emplace_back(new CubicStSpeedOptimizer());
         break;
       }
       default: {

@@ -57,7 +57,9 @@ bool Planning::Init() {
   planning_tasks.emplace_back(TaskType::DP_POLY_PATH_OPTIMIZER);
   planning_tasks.emplace_back(TaskType::PATH_DECIDER);
   planning_tasks.emplace_back(TaskType::DP_ST_SPEED_OPTIMIZER);
-  planning_tasks.emplace_back(TaskType::SPEED_DECIDER);
+  planning_tasks.emplace_back(TaskType::CUBIC_ST_SPEED_OPTIMIZER);
+
+  // planning_tasks.emplace_back(TaskType::SPEED_DECIDER);
 
   ROS_INFO("tasks size:%d",
            static_cast<int>(config_.em_planner_config.task.size()));

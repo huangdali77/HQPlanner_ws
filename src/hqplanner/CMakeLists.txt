@@ -180,6 +180,8 @@ add_library(hqplanner
   src/tasks/path_optimizer.cpp
   src/tasks/speed_optimizer.cpp
   src/tasks/task.cpp
+  src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp
+  src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp
   src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp
   src/tasks/dp_poly_path/dp_road_graph.cpp
   src/tasks/dp_poly_path/trajectory_cost.cpp
@@ -189,6 +191,9 @@ add_library(hqplanner
   src/tasks/dp_st_speed/st_graph_point.cpp
   src/tasks/em/em_planner.cpp
   src/tasks/path_decider/path_decider.cpp
+  src/tasks/poly_st_speed/poly_st_graph.cpp
+  src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp
+  src/tasks/poly_st_speed/speed_profile_cost.cpp
   src/tasks/speed_decider/speed_decider.cpp
   src/tasks/st_graph/speed_limit_decider.cpp
   src/tasks/st_graph/st_boundary_mapper.cpp

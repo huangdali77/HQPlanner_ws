@@ -2,6 +2,7 @@
 #define HQPLANNER_FOR_PROTO_PLANNING_CONFIG_H_
 #include <vector>
 
+#include "hqplanner/for_proto/cubic_st_speed_config.h"
 #include "hqplanner/for_proto/dp_poly_path_config.h"
 #include "hqplanner/for_proto/dp_st_speed_config.h"
 #include "hqplanner/for_proto/poly_st_speed_config.h"
@@ -16,9 +17,10 @@ enum TaskType {
   PATH_DECIDER = 4,
   SPEED_DECIDER = 5,
   POLY_ST_SPEED_OPTIMIZER = 6,
-  NAVI_PATH_DECIDER = 7,
-  NAVI_SPEED_DECIDER = 8,
-  NAVI_OBSTACLE_DECIDER = 9,
+  CUBIC_ST_SPEED_OPTIMIZER = 7,
+  NAVI_PATH_DECIDER = 8,
+  NAVI_SPEED_DECIDER = 9,
+  NAVI_OBSTACLE_DECIDER = 10,
 };
 
 struct EMPlannerConfig {
@@ -26,6 +28,7 @@ struct EMPlannerConfig {
   DpPolyPathConfig dp_poly_path_config;
   DpStSpeedConfig dp_st_speed_config;
   PolyStSpeedConfig poly_st_speed_config;
+  CubicStSpeedConfig cubic_st_speed_config;
 };
 
 struct PlanningConfig {

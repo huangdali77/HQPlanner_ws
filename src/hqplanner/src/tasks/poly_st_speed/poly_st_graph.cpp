@@ -1,5 +1,7 @@
 #include "hqplanner/tasks/poly_st_speed/poly_st_graph.h"
 
+#include <ros/ros.h>
+
 #include <algorithm>
 
 #include "hqplanner/for_proto/pnc_point.h"

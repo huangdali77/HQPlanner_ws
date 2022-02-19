@@ -15,8 +15,8 @@ class CubicSplineClamped : public CubicSpline {
   Eigen::MatrixXd CalculateBMtrix(const std::vector<double>& h) override;
 
  private:
-  double dx0_;
-  double dxn_;
+  double dy0_;
+  double dyn_;
 };
 }  // namespace math
 }  // namespace hqplanner

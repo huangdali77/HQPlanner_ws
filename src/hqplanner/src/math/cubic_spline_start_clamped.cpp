@@ -7,7 +7,7 @@ using namespace Eigen;
 CubicSplineStartClamped::CubicSplineStartClamped(std::vector<double>& x,
                                                  std::vector<double>& y,
                                                  double dx0, double ddx0)
-    : dx0_(dx0), ddx0_(ddx0) {
+    : dy0_(dx0), ddy0_(ddx0) {
   spline_anchor_points_x_ = x;
   spline_anchor_points_y_ = y;
   anchor_points_num_ = spline_anchor_points_x_.size();
@@ -23,13 +23,13 @@ void CubicSplineStartClamped::CalculateSplineCoefs() {
 
   spline_coefs_c_.resize(anchor_points_num_);
   // m0
-  double m0 = 0.5 * ddx0_;
+  double m0 = 0.5 * ddy0_;
   spline_coefs_c_[0] = m0;
 
   // m1
   assert(h[0] != 0);
   double m1 = (3.0 * ((spline_coefs_a_[1] - spline_coefs_a_[0]) / h[0]) -
-               3.0 * dx0_ - 2.0 * h[0] * spline_coefs_c_[0]) /
+               3.0 * dy0_ - 2.0 * h[0] * spline_coefs_c_[0]) /
               h[0];
   spline_coefs_c_[1] = m1;
 

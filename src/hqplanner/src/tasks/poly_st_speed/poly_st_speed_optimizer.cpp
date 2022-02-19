@@ -1,6 +1,8 @@
 
 #include "hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h"
 
+#include <ros/ros.h>
+
 #include <algorithm>
 #include <string>
 #include <utility>

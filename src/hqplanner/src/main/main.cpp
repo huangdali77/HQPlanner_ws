@@ -247,6 +247,7 @@ int main(int argc, char **argv) {
            adc_state.linear_velocity);
   ros::Rate r(10);
   while (ros::ok()) {
+    ROS_INFO("=============================================================");
     ROS_INFO("time:%f", ros::Time::now().toSec());
     planning.RunOnce();
     ROS_INFO("after runonce");

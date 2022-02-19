@@ -1,7 +1,13 @@
 #include "hqplanner/math/cubic_spline.h"
 
+#include <ros/ros.h>
 namespace hqplanner {
 namespace math {
+namespace {
+
+constexpr double kEpsilon = 1e-6;
+}
+
 using namespace Eigen;
 
 CubicSpline::CubicSpline(std::vector<double>& x, std::vector<double>& y)
@@ -65,8 +71,14 @@ MatrixXd CubicSpline::CalculateBMtrix(const std::vector<double>& h) {
 }
 
 double CubicSpline::GetSplinePointValue(double t) const {
-  assert(t >= spline_anchor_points_x_.front() &&
-         t <= spline_anchor_points_x_.back());
+  static int i = 0;
+  ++i;
+  ROS_INFO("times:%d", i - 30550);
+  ROS_INFO("front:%f, back():%f t:%f", spline_anchor_points_x_.front(),
+           spline_anchor_points_x_.back(), t);
+
+  assert(t >= spline_anchor_points_x_.front() - kEpsilon &&
+         t <= spline_anchor_points_x_.back() + kEpsilon);
 
   auto index_it = std::upper_bound(spline_anchor_points_x_.begin(),
                                    spline_anchor_points_x_.end(), t);
@@ -81,8 +93,8 @@ double CubicSpline::GetSplinePointValue(double t) const {
 }
 
 double CubicSpline::GetSplinePointFirstDerivativeValue(double t) const {
-  assert(t >= spline_anchor_points_x_.front() &&
-         t <= spline_anchor_points_x_.back());
+  assert(t >= spline_anchor_points_x_.front() - kEpsilon &&
+         t <= spline_anchor_points_x_.back() + kEpsilon);
 
   auto index_it = std::upper_bound(spline_anchor_points_x_.begin(),
                                    spline_anchor_points_x_.end(), t);
@@ -98,8 +110,8 @@ double CubicSpline::GetSplinePointFirstDerivativeValue(double t) const {
 }
 
 double CubicSpline::GetSplinePointSecondDerivativeValue(double t) const {
-  assert(t >= spline_anchor_points_x_.front() &&
-         t <= spline_anchor_points_x_.back());
+  assert(t >= spline_anchor_points_x_.front() - kEpsilon &&
+         t <= spline_anchor_points_x_.back() + kEpsilon);
 
   auto index_it = std::upper_bound(spline_anchor_points_x_.begin(),
                                    spline_anchor_points_x_.end(), t);
@@ -114,8 +126,8 @@ double CubicSpline::GetSplinePointSecondDerivativeValue(double t) const {
 }
 
 double CubicSpline::GetSplinePointThirdDerivativeValue(double t) const {
-  assert(t >= spline_anchor_points_x_.front() &&
-         t <= spline_anchor_points_x_.back());
+  assert(t >= spline_anchor_points_x_.front() - kEpsilon &&
+         t <= spline_anchor_points_x_.back() + kEpsilon);
 
   auto index_it = std::upper_bound(spline_anchor_points_x_.begin(),
                                    spline_anchor_points_x_.end(), t);

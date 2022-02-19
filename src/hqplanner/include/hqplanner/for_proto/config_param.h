@@ -142,7 +142,7 @@ class ConfigParam {
   const bool FLAGS_enable_nudge_decision = true;
   const double FLAGS_nudge_distance_obstacle = 0.5;
   //最大规划车速
-  const double FLAGS_planning_upper_speed_limit = 16.66667;
+  const double FLAGS_planning_upper_speed_limit = 10.0;  // 16.66667;
   const bool FLAGS_enable_nudge_slowdown = true;
   const bool FLAGS_enable_side_vehicle_st_boundary = false;
   const double FLAGS_stop_line_stop_distance = 1.0;

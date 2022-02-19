@@ -414,9 +414,10 @@ hqplanner/CMakeFiles/hqplanner.dir/src/main/planning.cpp.o: \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/trajectory.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/reference_line/reference_line_provider.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/planning_config.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/cubic_st_speed_config.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_poly_path_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_st_speed_config.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/poly_st_speed_config.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/em/planner.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/publishable_trajectory.h \

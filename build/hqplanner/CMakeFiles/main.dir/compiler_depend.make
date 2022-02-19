@@ -1346,9 +1346,10 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/prediction_obstacles_provider.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/planning.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/planning_config.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/cubic_st_speed_config.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_poly_path_config.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_st_speed_config.h \
-  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/poly_st_speed_config.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/em/planner.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/trajectory/publishable_trajectory.h
@@ -1356,9 +1357,9 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/em/planner.h:
 
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h:
-
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/dp_poly_path_config.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/st_boundary_config.h:
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/main/manual_setting.h:
 
@@ -1389,6 +1390,8 @@ hqplanner/CMakeFiles/main.dir/src/main/main.cpp.o: /home/zx414/HQPlanner_ws/src/
 /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/for_proto/cubic_st_speed_config.h:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h:
 
