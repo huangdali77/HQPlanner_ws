@@ -64,10 +64,10 @@ double CubicSpeedProfileCost::CalculatePointCost(
     ROS_INFO("v =%f", v);
     return kInfCost;
   }
-  if (a > config_.max_accel || a < config_.min_decel) {
-    ROS_INFO("a =%f", a);
-    return kInfCost;
-  }
+  // if (a > config_.max_accel || a < config_.min_decel) {
+  //   ROS_INFO("a =%f", a);
+  //   return kInfCost;
+  // }
 
   double cost = 0.0;
   for (const auto *obstacle : obstacles_) {

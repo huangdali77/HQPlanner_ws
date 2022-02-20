@@ -398,4 +398,5 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cp
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/quartic_polynomial_curve1d.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/polynomial_curve1d.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/curve1d.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/quartic_polynomial_curve1d_pro.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/speed/speed_limit.h

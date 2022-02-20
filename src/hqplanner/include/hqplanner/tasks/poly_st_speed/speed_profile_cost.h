@@ -8,8 +8,8 @@
 #include "hqplanner/for_proto/pnc_point.h"
 #include "hqplanner/for_proto/poly_st_speed_config.h"
 #include "hqplanner/math/curve1d/quartic_polynomial_curve1d.h"
+#include "hqplanner/math/curve1d/quartic_polynomial_curve1d_pro.h"
 #include "hqplanner/speed/speed_limit.h"
-
 namespace hqplanner {
 namespace tasks {
 
@@ -21,12 +21,12 @@ class SpeedProfileCost {
       const hqplanner::speed::SpeedLimit &speed_limit,
       const hqplanner::forproto::TrajectoryPoint &init_point);
 
-  double Calculate(const hqplanner::math::QuarticPolynomialCurve1d &curve,
+  double Calculate(const hqplanner::math::QuarticPolynomialCurve1dPro &curve,
                    const double end_time, const double curr_min_cost) const;
 
  private:
   double CalculatePointCost(
-      const hqplanner::math::QuarticPolynomialCurve1d &curve,
+      const hqplanner::math::QuarticPolynomialCurve1dPro &curve,
       const double t) const;
 
   const hqplanner::forproto::PolyStSpeedConfig config_;

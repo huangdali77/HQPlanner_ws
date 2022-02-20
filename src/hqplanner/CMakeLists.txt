@@ -163,6 +163,7 @@ add_library(hqplanner
   src/math/vec2d.cpp
   src/math/curve1d/quartic_polynomial_curve1d.cpp
   src/math/curve1d/quintic_polynomial_curve1d.cpp
+  src/math/curve1d/quartic_polynomial_curve1d_pro.cpp
 
   src/path/discretized_path.cpp
   src/path/frenet_frame_path.cpp

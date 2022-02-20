@@ -433,10 +433,24 @@ hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.s"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zx414/HQPlanner_ws/src/hqplanner/src/math/curve1d/quintic_polynomial_curve1d.cpp -o CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.s
 
+hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
+hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp
+hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o"
+	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o -MF CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o.d -o CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp
+
+hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.i"
+	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zx414/HQPlanner_ws/src/hqplanner/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp > CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.i
+
+hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.s"
+	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zx414/HQPlanner_ws/src/hqplanner/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp -o CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.s
+
 hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/path/discretized_path.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o -MF CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o.d -o CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/path/discretized_path.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.i: cmake_force
@@ -450,7 +464,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/path/frenet_frame_path.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o -MF CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o.d -o CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/path/frenet_frame_path.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.i: cmake_force
@@ -464,7 +478,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/path/path_data.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o -MF CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o.d -o CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/path/path_data.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.i: cmake_force
@@ -478,7 +492,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/reference_line/reference_line.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o -MF CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o.d -o CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/reference_line/reference_line.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.i: cmake_force
@@ -492,7 +506,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line.cpp.s: cmak
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/reference_line/reference_line_info.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o -MF CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o.d -o CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/reference_line/reference_line_info.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.i: cmake_force
@@ -506,7 +520,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_info.cpp.s:
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/reference_line/reference_line_provider.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o -MF CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o.d -o CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/reference_line/reference_line_provider.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cpp.i: cmake_force
@@ -520,7 +534,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/reference_line/reference_line_provider.cp
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/speed_data.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o -MF CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o.d -o CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/speed_data.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.i: cmake_force
@@ -534,7 +548,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_data.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/speed_limit.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o -MF CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o.d -o CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/speed_limit.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.i: cmake_force
@@ -548,7 +562,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/speed/speed_limit.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/st_boundary.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o -MF CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o.d -o CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/st_boundary.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.i: cmake_force
@@ -562,7 +576,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_boundary.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/st_point.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o -MF CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o.d -o CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/speed/st_point.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.i: cmake_force
@@ -576,7 +590,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/speed/st_point.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/path_optimizer.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/path_optimizer.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.i: cmake_force
@@ -590,7 +604,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_optimizer.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/speed_optimizer.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/speed_optimizer.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.i: cmake_force
@@ -604,7 +618,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_optimizer.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/task.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/task.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/task.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.i: cmake_force
@@ -618,7 +632,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/task.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_cost.cpp.i: cmake_force
@@ -632,7 +646,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_speed_profile_
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optimizer.cpp.i: cmake_force
@@ -646,7 +660,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/cubic_st_speed/cubic_st_speed_optim
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer.cpp.i: cmake_force
@@ -660,7 +674,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_poly_path_optimizer
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_poly_path/dp_road_graph.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_poly_path/dp_road_graph.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.i: cmake_force
@@ -674,7 +688,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/dp_road_graph.cpp.s: c
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_poly_path/trajectory_cost.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_poly_path/trajectory_cost.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.i: cmake_force
@@ -688,7 +702,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_poly_path/trajectory_cost.cpp.s:
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/dp_st_cost.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/dp_st_cost.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.i: cmake_force
@@ -702,7 +716,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_cost.cpp.s: cmake
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/dp_st_graph.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/dp_st_graph.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.i: cmake_force
@@ -716,7 +730,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_graph.cpp.s: cmak
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.cpp.i: cmake_force
@@ -730,7 +744,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/dp_st_speed_optimizer.c
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/st_graph_point.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/dp_st_speed/st_graph_point.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.i: cmake_force
@@ -744,7 +758,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/dp_st_speed/st_graph_point.cpp.s: c
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/em/em_planner.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/em/em_planner.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.i: cmake_force
@@ -758,7 +772,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.s: cmake_force
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/path_decider/path_decider.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/path_decider/path_decider.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.i: cmake_force
@@ -772,7 +786,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/path_decider/path_decider.cpp.s: cm
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/poly_st_graph.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/poly_st_graph.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.i: cmake_force
@@ -786,7 +800,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_graph.cpp.s: 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimizer.cpp.i: cmake_force
@@ -800,7 +814,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/poly_st_speed_optimiz
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/speed_profile_cost.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/speed_profile_cost.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cpp.i: cmake_force
@@ -814,7 +828,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/poly_st_speed/speed_profile_cost.cp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/speed_decider/speed_decider.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/speed_decider/speed_decider.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.i: cmake_force
@@ -828,7 +842,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/speed_decider/speed_decider.cpp.s: 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/st_graph/speed_limit_decider.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/st_graph/speed_limit_decider.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.i: cmake_force
@@ -842,7 +856,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/speed_limit_decider.cpp.s:
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/st_graph/st_boundary_mapper.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/st_graph/st_boundary_mapper.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.i: cmake_force
@@ -856,7 +870,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_boundary_mapper.cpp.s: 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/st_graph/st_graph_data.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o -MF CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o.d -o CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/st_graph/st_graph_data.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.i: cmake_force
@@ -870,7 +884,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/st_graph/st_graph_data.cpp.s: cmake
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/trajectory/discretized_trajectory.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o -MF CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o.d -o CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/trajectory/discretized_trajectory.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.i: cmake_force
@@ -884,7 +898,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/discretized_trajectory.cpp.s: 
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/trajectory/publishable_trajectory.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o -MF CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o.d -o CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/trajectory/publishable_trajectory.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.i: cmake_force
@@ -898,7 +912,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/publishable_trajectory.cpp.s: 
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/trajectory/trajectory_stitcher.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o -MF CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o.d -o CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/trajectory/trajectory_stitcher.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.i: cmake_force
@@ -912,7 +926,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/trajectory/trajectory_stitcher.cpp.s: cma
 hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/flags.make
 hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o: /home/zx414/HQPlanner_ws/src/hqplanner/src/util/util.cpp
 hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o: hqplanner/CMakeFiles/hqplanner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o -MF CMakeFiles/hqplanner.dir/src/util/util.cpp.o.d -o CMakeFiles/hqplanner.dir/src/util/util.cpp.o -c /home/zx414/HQPlanner_ws/src/hqplanner/src/util/util.cpp
 
 hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.i: cmake_force
@@ -951,6 +965,7 @@ hqplanner_OBJECTS = \
 "CMakeFiles/hqplanner.dir/src/math/vec2d.cpp.o" \
 "CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.o" \
 "CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.o" \
+"CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o" \
 "CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o" \
 "CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o" \
 "CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o" \
@@ -1016,6 +1031,7 @@ hqplanner_EXTERNAL_OBJECTS =
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/math/vec2d.cpp.o
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.o
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.o
+/home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/path/discretized_path.cpp.o
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/path/frenet_frame_path.cpp.o
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/path/path_data.cpp.o
@@ -1053,7 +1069,7 @@ hqplanner_EXTERNAL_OBJECTS =
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/build.make
 /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so: hqplanner/CMakeFiles/hqplanner.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Linking CXX shared library /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zx414/HQPlanner_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX shared library /home/zx414/HQPlanner_ws/devel/lib/libhqplanner.so"
 	cd /home/zx414/HQPlanner_ws/build/hqplanner && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hqplanner.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

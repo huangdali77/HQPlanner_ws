@@ -1216,5 +1216,6 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o: \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/st_graph/speed_limit_decider.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/st_graph/st_boundary_mapper.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/path_decider/path_decider.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/speed_decider/speed_decider.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/util/util.h

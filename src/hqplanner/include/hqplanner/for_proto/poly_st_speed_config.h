@@ -12,6 +12,7 @@ struct PolyStSpeedConfig {
   double min_decel = -4.5;
   double speed_limit_buffer = 0.05;
   double speed_weight = 1e2;
+  double accelerate_weight = 1.0;
   double jerk_weight = 1.0;
   double obstacle_weight = 10.0;
   double unblocking_obstacle_cost = 1e3;

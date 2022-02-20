@@ -41,6 +41,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/hqplanner.dir/src/math/cubic_spline_start_clamped.cpp.o.d"
   "CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.o"
   "CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.o.d"
+  "CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o"
+  "CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o.d"
   "CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.o"
   "CMakeFiles/hqplanner.dir/src/math/curve1d/quintic_polynomial_curve1d.cpp.o.d"
   "CMakeFiles/hqplanner.dir/src/math/line_segment2d.cpp.o"

@@ -1599,6 +1599,30 @@ src/math/curve1d/quartic_polynomial_curve1d.cpp.s:
 	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d.cpp.s
 .PHONY : src/math/curve1d/quartic_polynomial_curve1d.cpp.s
 
+src/math/curve1d/quartic_polynomial_curve1d_pro.o: src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d_pro.o
+
+# target to build an object file
+src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.o
+
+src/math/curve1d/quartic_polynomial_curve1d_pro.i: src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.i
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d_pro.i
+
+# target to preprocess a source file
+src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.i:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.i
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.i
+
+src/math/curve1d/quartic_polynomial_curve1d_pro.s: src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.s
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d_pro.s
+
+# target to generate assembly for a file
+src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.s:
+	cd /home/zx414/HQPlanner_ws/build && $(MAKE) $(MAKESILENT) -f hqplanner/CMakeFiles/hqplanner.dir/build.make hqplanner/CMakeFiles/hqplanner.dir/src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.s
+.PHONY : src/math/curve1d/quartic_polynomial_curve1d_pro.cpp.s
+
 src/math/curve1d/quintic_polynomial_curve1d.o: src/math/curve1d/quintic_polynomial_curve1d.cpp.o
 .PHONY : src/math/curve1d/quintic_polynomial_curve1d.o
 
@@ -2773,6 +2797,9 @@ help:
 	@echo "... src/math/curve1d/quartic_polynomial_curve1d.o"
 	@echo "... src/math/curve1d/quartic_polynomial_curve1d.i"
 	@echo "... src/math/curve1d/quartic_polynomial_curve1d.s"
+	@echo "... src/math/curve1d/quartic_polynomial_curve1d_pro.o"
+	@echo "... src/math/curve1d/quartic_polynomial_curve1d_pro.i"
+	@echo "... src/math/curve1d/quartic_polynomial_curve1d_pro.s"
 	@echo "... src/math/curve1d/quintic_polynomial_curve1d.o"
 	@echo "... src/math/curve1d/quintic_polynomial_curve1d.i"
 	@echo "... src/math/curve1d/quintic_polynomial_curve1d.s"

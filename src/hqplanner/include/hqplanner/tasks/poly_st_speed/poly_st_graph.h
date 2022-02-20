@@ -11,12 +11,12 @@
 #include "hqplanner/for_proto/pnc_point.h"
 #include "hqplanner/for_proto/poly_st_speed_config.h"
 #include "hqplanner/math/curve1d/quartic_polynomial_curve1d.h"
+#include "hqplanner/math/curve1d/quartic_polynomial_curve1d_pro.h"
 #include "hqplanner/path/path_data.h"
 #include "hqplanner/reference_line/reference_line_info.h"
 #include "hqplanner/speed/speed_data.h"
 #include "hqplanner/speed/speed_limit.h"
 #include "hqplanner/trajectory/discretized_trajectory.h"
-
 namespace hqplanner {
 namespace tasks {
 
@@ -45,7 +45,7 @@ class PolyStGraph {
     speed::STPoint st_point;
     double speed = 0.0;
     double accel = 0.0;
-    hqplanner::math::QuarticPolynomialCurve1d speed_profile;
+    hqplanner::math::QuarticPolynomialCurve1dPro speed_profile;
   };
 
   bool GenerateMinCostSpeedProfile(

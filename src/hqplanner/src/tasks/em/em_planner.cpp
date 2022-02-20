@@ -16,6 +16,7 @@
 #include "hqplanner/tasks/dp_poly_path/dp_poly_path_optimizer.h"
 #include "hqplanner/tasks/dp_st_speed/dp_st_speed_optimizer.h"
 #include "hqplanner/tasks/path_decider/path_decider.h"
+#include "hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h"
 #include "hqplanner/tasks/speed_decider/speed_decider.h"
 #include "hqplanner/util/util.h"
 namespace hqplanner {
@@ -37,6 +38,7 @@ using hqplanner::tasks::CubicStSpeedOptimizer;
 using hqplanner::tasks::DpPolyPathOptimizer;
 using hqplanner::tasks::DpStSpeedOptimizer;
 using hqplanner::tasks::PathDecider;
+using hqplanner::tasks::PolyStSpeedOptimizer;
 using hqplanner::tasks::SpeedDecider;
 using hqplanner::trajectory::DiscretizedTrajectory;
 
@@ -70,6 +72,12 @@ bool EMPlanner::Init(const PlanningConfig& config) {
         tasks_.emplace_back(new CubicStSpeedOptimizer());
         break;
       }
+
+      case TaskType::POLY_ST_SPEED_OPTIMIZER: {
+        tasks_.emplace_back(new PolyStSpeedOptimizer());
+        break;
+      }
+
       default: {
         ROS_INFO("no exist task type");
         assert(0);

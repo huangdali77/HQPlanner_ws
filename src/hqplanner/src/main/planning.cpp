@@ -56,8 +56,9 @@ bool Planning::Init() {
   auto& planning_tasks = config_.em_planner_config.task;
   planning_tasks.emplace_back(TaskType::DP_POLY_PATH_OPTIMIZER);
   planning_tasks.emplace_back(TaskType::PATH_DECIDER);
-  planning_tasks.emplace_back(TaskType::DP_ST_SPEED_OPTIMIZER);
-  planning_tasks.emplace_back(TaskType::CUBIC_ST_SPEED_OPTIMIZER);
+  planning_tasks.emplace_back(TaskType::POLY_ST_SPEED_OPTIMIZER);
+  // planning_tasks.emplace_back(TaskType::DP_ST_SPEED_OPTIMIZER);
+  // planning_tasks.emplace_back(TaskType::CUBIC_ST_SPEED_OPTIMIZER);
 
   // planning_tasks.emplace_back(TaskType::SPEED_DECIDER);
 

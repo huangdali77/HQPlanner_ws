@@ -13,7 +13,7 @@ using hqplanner::PathObstacle;
 using hqplanner::forproto::ConfigParam;
 using hqplanner::forproto::PolyStSpeedConfig;
 using hqplanner::forproto::TrajectoryPoint;
-using hqplanner::math::QuarticPolynomialCurve1d;
+using hqplanner::math::QuarticPolynomialCurve1dPro;
 using hqplanner::speed::SpeedLimit;
 using hqplanner::speed::STPoint;
 
@@ -26,7 +26,7 @@ SpeedProfileCost::SpeedProfileCost(
       speed_limit_(speed_limit),
       init_point_(init_point) {}
 
-double SpeedProfileCost::Calculate(const QuarticPolynomialCurve1d &curve,
+double SpeedProfileCost::Calculate(const QuarticPolynomialCurve1dPro &curve,
                                    const double end_time,
                                    const double curr_min_cost) const {
   double cost = 0.0;
@@ -41,7 +41,7 @@ double SpeedProfileCost::Calculate(const QuarticPolynomialCurve1d &curve,
 }
 
 double SpeedProfileCost::CalculatePointCost(
-    const QuarticPolynomialCurve1d &curve, const double t) const {
+    const QuarticPolynomialCurve1dPro &curve, const double t) const {
   const double s = curve.Evaluate(0, t);
   const double v = curve.Evaluate(1, t);
   const double a = curve.Evaluate(2, t);
@@ -55,9 +55,9 @@ double SpeedProfileCost::CalculatePointCost(
   if (v < 0.0 || v > speed_limit * (1.0 + config_.speed_limit_buffer)) {
     return kInfCost;
   }
-  if (a > config_.preferred_accel || a < config_.preferred_decel) {
-    return kInfCost;
-  }
+  // if (a > config_.preferred_accel || a < config_.preferred_decel) {
+  //   return kInfCost;
+  // }
 
   double cost = 0.0;
   for (const auto *obstacle : obstacles_) {
@@ -98,6 +98,7 @@ double SpeedProfileCost::CalculatePointCost(
     }
   }
   cost += config_.speed_weight * std::pow((v - speed_limit), 2);
+  cost += config_.accelerate_weight * std::pow(a, 2);
   cost += config_.jerk_weight * std::pow(da, 2);
 
   return cost;

@@ -1169,4 +1169,7 @@ hqplanner/CMakeFiles/ref_line_pub.dir/src/reference_line_test.cpp.o: \
  /opt/ros/melodic/include/geometry_msgs/Vector3.h \
  /opt/ros/melodic/include/std_msgs/ColorRGBA.h \
  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline_clamped.h \
- /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline_start_clamped.h
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/cubic_spline_start_clamped.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/quartic_polynomial_curve1d_pro.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/polynomial_curve1d.h \
+ /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/math/curve1d/curve1d.h

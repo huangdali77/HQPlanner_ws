@@ -19,7 +19,7 @@ using hqplanner::PathObstacle;
 using hqplanner::ReferenceLineInfo;
 using hqplanner::forproto::PolyStSpeedConfig;
 using hqplanner::forproto::TrajectoryPoint;
-using hqplanner::math::QuarticPolynomialCurve1d;
+using hqplanner::math::QuarticPolynomialCurve1dPro;
 using hqplanner::speed::SpeedData;
 using hqplanner::speed::SpeedLimit;
 using hqplanner::speed::STPoint;
@@ -30,7 +30,11 @@ PolyStGraph::PolyStGraph(const PolyStSpeedConfig &config,
     : config_(config),
       reference_line_info_(reference_line_info),
       reference_line_(reference_line_info->reference_line()),
-      speed_limit_(speed_limit) {}
+      speed_limit_(speed_limit) {
+  planning_distance_ =
+      std::min(planning_distance_,
+               reference_line_info->path_data().discretized_path().Length());
+}
 
 bool PolyStGraph::FindStTunnel(
     const TrajectoryPoint &init_point,
@@ -88,7 +92,7 @@ bool PolyStGraph::GenerateMinCostSpeedProfile(
       for (double v = 0; v < speed_limit + kEpsilon;
            v += speed_limit / num_speed) {
         PolyStGraphNode node = {st_point, v, 0.0};
-        node.speed_profile = QuarticPolynomialCurve1d(
+        node.speed_profile = QuarticPolynomialCurve1dPro(
             0.0, start_node.speed, start_node.accel, node.st_point.s(),
             node.speed, node.st_point.t());
         const double c =
