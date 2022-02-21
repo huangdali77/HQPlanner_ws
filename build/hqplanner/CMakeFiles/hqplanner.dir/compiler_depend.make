@@ -29685,6 +29685,7 @@ hqplanner/CMakeFiles/hqplanner.dir/src/tasks/em/em_planner.cpp.o: /home/zx414/HQ
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/st_graph/speed_limit_decider.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/st_graph/st_boundary_mapper.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/path_decider/path_decider.h \
+  /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/speed_decider/speed_decider.h \
   /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/util/util.h
 
@@ -42490,8 +42491,6 @@ hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o: /home/zx414/HQPlanner_ws
 
 /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/speed_profile_cost.cpp:
 
-/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h:
-
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/poly_st_speed/poly_st_graph.h:
 
 /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/poly_st_speed/poly_st_graph.cpp:
@@ -42499,6 +42498,8 @@ hqplanner/CMakeFiles/hqplanner.dir/src/util/util.cpp.o: /home/zx414/HQPlanner_ws
 /home/zx414/HQPlanner_ws/src/hqplanner/src/tasks/path_decider/path_decider.cpp:
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/speed_decider/speed_decider.h:
+
+/home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/poly_st_speed/poly_st_speed_optimizer.h:
 
 /home/zx414/HQPlanner_ws/src/hqplanner/include/hqplanner/tasks/path_decider/path_decider.h:
 

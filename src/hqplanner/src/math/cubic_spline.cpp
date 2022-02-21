@@ -71,11 +71,11 @@ MatrixXd CubicSpline::CalculateBMtrix(const std::vector<double>& h) {
 }
 
 double CubicSpline::GetSplinePointValue(double t) const {
-  static int i = 0;
-  ++i;
-  ROS_INFO("times:%d", i - 30550);
-  ROS_INFO("front:%f, back():%f t:%f", spline_anchor_points_x_.front(),
-           spline_anchor_points_x_.back(), t);
+  // static int i = 0;
+  // ++i;
+  // ROS_INFO("times:%d", i - 30550);
+  // ROS_INFO("front:%f, back():%f t:%f", spline_anchor_points_x_.front(),
+  //          spline_anchor_points_x_.back(), t);
 
   assert(t >= spline_anchor_points_x_.front() - kEpsilon &&
          t <= spline_anchor_points_x_.back() + kEpsilon);

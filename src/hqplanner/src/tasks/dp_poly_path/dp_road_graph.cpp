@@ -264,36 +264,6 @@ bool DPRoadGraph::SamplePathWaypoints(
   float accumulated_s = init_sl_point_.s;
   float prev_s = accumulated_s;
 
-  // auto *status = util::GetPlanningStatus();
-  //   if (status == nullptr) {
-  //     AERROR << "Fail to  get planning status.";
-  //     return false;
-  //   }
-  //   if (status->planning_state().has_pull_over() &&
-  //       status->planning_state().pull_over().in_pull_over()) {
-  //     status->mutable_planning_state()->mutable_pull_over()->set_status(
-  //         PullOverStatus::IN_OPERATION);
-  //     const auto &start_point =
-  //         status->planning_state().pull_over().start_point();
-  //     SLPoint start_point_sl;
-  //     if (!reference_line_.XYToSL(start_point, &start_point_sl)) {
-  //       AERROR << "Fail to change xy to sl.";
-  //       return false;
-  //     }
-  //     if (init_sl_point_.s() > start_point_sl.s()) {
-  //       const auto &stop_point =
-  //           status->planning_state().pull_over().stop_point();
-  //       SLPoint stop_point_sl;
-  //       if (!reference_line_.XYToSL(stop_point, &stop_point_sl)) {
-  //         AERROR << "Fail to change xy to sl.";
-  //         return false;
-  //       }
-  //       std::vector<common::SLPoint> level_points(1, stop_point_sl);
-  //       points->emplace_back(level_points);
-  //       return true;
-  //     }
-  //   }
-
   for (std::size_t i = 0; accumulated_s < total_length; ++i) {
     accumulated_s += level_distance;
     if (accumulated_s + level_distance / 2.0 > total_length) {
@@ -311,7 +281,7 @@ bool DPRoadGraph::SamplePathWaypoints(
     double right_width = 0.0;
     reference_line_.GetLaneWidth(s, &left_width, &right_width);
 
-    constexpr float kBoundaryBuff = 0.20;
+    constexpr float kBoundaryBuff = 0.0;  // 0.20;
     const float eff_right_width = right_width - half_adc_width - kBoundaryBuff;
     const float eff_left_width = left_width - half_adc_width - kBoundaryBuff;
 
@@ -335,14 +305,16 @@ bool DPRoadGraph::SamplePathWaypoints(
       if (init_sl_point_.l > eff_left_width) {
         ROS_INFO("adc out road left boundary ");
         // 测试合适出现这种情况
-        assert(0);
+        // assert(0);
         sample_right_boundary =
             std::fmax(sample_right_boundary, init_sl_point_.l - sample_l_range);
       }
-      if (init_sl_point_.l < eff_right_width) {
+      if (init_sl_point_.l < -eff_right_width) {
         ROS_INFO("adc out road right boundary ");
+        ROS_INFO("init_sl_point_.l: %f eff_right_width: %f", init_sl_point_.l,
+                 eff_right_width);
         // 测试合适出现这种情况
-        assert(0);
+        // assert(0);
         sample_left_boundary =
             std::fmin(sample_left_boundary, init_sl_point_.l + sample_l_range);
       }

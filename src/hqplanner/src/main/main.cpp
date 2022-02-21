@@ -31,6 +31,7 @@ using hqplanner::ManualSetting;
 using hqplanner::Planning;
 using hqplanner::PotentialPredictionObstacle;
 using hqplanner::PredictionObstaclesProvider;
+using hqplanner::ReferenceLine;
 using hqplanner::forproto::AnchorPoint;
 using hqplanner::forproto::PerceptionObstacle;
 using hqplanner::forproto::VehicleConfig;
@@ -219,6 +220,10 @@ int main(int argc, char **argv) {
   manual_setting.SetAnchorPiont(anchor_point);
   anchor_points.emplace_back(std::move(anchor_point));
   AnchorPointsProvider::instance()->SetAnchorPoints(anchor_points);
+  // 在rviz中发布参考线信息
+  ReferenceLine ref_line(anchor_points.front());
+  visualization_msgs::Marker ref_line_points_pub =
+      manual_setting.GetReferenceLineMarker(ref_line);
 
   //   2、再初始化障碍物信息
   std::map<std::int32_t, PotentialPredictionObstacle>
@@ -226,7 +231,8 @@ int main(int argc, char **argv) {
   manual_setting.SetPotentialPredictionObstacles(
       potential_prediction_obstacles);
   PredictionObstaclesProvider::instance()->Init(potential_prediction_obstacles);
-
+  ROS_INFO("potential_prediction_obstacles size:%d",
+           static_cast<int>(potential_prediction_obstacles.size()));
   // 实例化规划对象
   Planning planning;
   //   初始化全局路由的anchor和planning config
@@ -295,8 +301,8 @@ int main(int argc, char **argv) {
     adc_marker.scale.z = veh_conf.vehicle_param.height;
 
     adc_marker.color.r = 0.0f;
-    adc_marker.color.g = 1.0f;
-    adc_marker.color.b = 0.0f;
+    adc_marker.color.g = 0.0f;
+    adc_marker.color.b = 1.0f;
     adc_marker.color.a = 1.0;
 
     adc_marker.lifetime = ros::Duration();  // marker 存在的时间
@@ -314,7 +320,8 @@ int main(int argc, char **argv) {
     for (auto &marker : obs_markers) {
       marker_pub.publish(marker);
     }
-
+    // 发布参考线
+    marker_pub.publish(ref_line_points_pub);
     ros::spinOnce();
     r.sleep();
   }

@@ -116,8 +116,8 @@ class ConfigParam {
   const double FLAGS_trajectory_time_max_interval = 0.1;
   const double FLAGS_trajectory_time_high_density_period = 1.0;
   // const std::size_t FLAGS_max_history_frame_num = 2;
-  const double FLAGS_lane_left_width = 3.0;
-  const double FLAGS_lane_right_width = 3.0;
+  const double FLAGS_lane_left_width = 4.0;
+  const double FLAGS_lane_right_width = 4.0;
   const double FLAGS_virtual_stop_wall_length = 0.1;
   const double FLAGS_virtual_stop_wall_height = 2.0;
   const double FLAGS_max_collision_distance = 0.1;

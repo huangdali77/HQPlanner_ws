@@ -142,7 +142,7 @@ void PredictionObstaclesProvider::UpdataNextCyclePredictionObstacles() {
           vehicle_state.y -
           publish_prediction_obstacle.second.perception_obstacle_.position.y);
       double dist = std::sqrt(dx * dx + dy * dy);
-      if (dist > 150) {
+      if (dist > 300) {
         clear_obs_id.push_back(obs_id);
       }
       continue;

@@ -10,4 +10,9 @@ std::int32_t GlobalNumberProvider::GetPerceptionObstacleId() {
   return perception_obstacle_id_;
 }
 
+int GlobalNumberProvider::GetMarkerId() {
+  ++marker_id_;
+  return marker_id_;
+}
+
 }  // namespace hqplanner
