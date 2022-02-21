@@ -55,16 +55,16 @@ void ManualSetting::SetDynamicPotentialPredictionObstacles(
   PerceptionObstacle perception_obstacle;
   perception_obstacle.id =
       GlobalNumberProvider::instance()->GetPerceptionObstacleId();
-  perception_obstacle.velocity.y = 12.0;
-  perception_obstacle.length = 4.0;
-  perception_obstacle.width = 2.0;
+  perception_obstacle.velocity.y = 18.0;
+  perception_obstacle.length = 2.0;
+  perception_obstacle.width = 4.0;
   perception_obstacle.height = 1.7;
   perception_obstacle.type = PerceptionObstacle::VEHICLE;
 
   // 障碍物的预测轨迹起始锚点
   AnchorPoint start_anchor;
   start_anchor.cartesian_x = 300.0;
-  start_anchor.cartesian_y = -40.0;
+  start_anchor.cartesian_y = -60.0;
   start_anchor.frenet_s = 0.0;
   auto ptt_pred_obs = CreatDynamicPotentialPredictionObstacle(
       perception_obstacle, start_anchor);
@@ -79,15 +79,15 @@ void ManualSetting::SetDynamicPotentialPredictionObstacles(
   perception_obstacle2.id =
       GlobalNumberProvider::instance()->GetPerceptionObstacleId();
   perception_obstacle2.velocity.y = 5.0;
-  perception_obstacle2.length = 4.0;
-  perception_obstacle2.width = 2.0;
+  perception_obstacle2.length = 2.0;
+  perception_obstacle2.width = 4.0;
   perception_obstacle2.height = 1.7;
   perception_obstacle2.type = PerceptionObstacle::VEHICLE;
 
   // 障碍物的预测轨迹起始锚点
   AnchorPoint start_anchor2;
   start_anchor2.cartesian_x = 300.0;
-  start_anchor2.cartesian_y = -50;
+  start_anchor2.cartesian_y = -70;
   start_anchor2.frenet_s = 0.0;
 
   auto ptt_pred_obs2 = CreatDynamicPotentialPredictionObstacle(
@@ -143,7 +143,7 @@ void ManualSetting::SetDynamicPotentialPredictionObstacles(
   anchor1.frenet_s = anchor_points.back().frenet_s + dist;
   anchor_points.emplace_back(std::move(anchor1));
 
-  while (anchor_points.back().frenet_s < 150) {
+  while (anchor_points.back().frenet_s < 100) {
     AnchorPoint anchor;
     anchor.cartesian_x =
         anchor_points.back().cartesian_x + std::sqrt(dx * dx + dy * dy);
@@ -154,7 +154,7 @@ void ManualSetting::SetDynamicPotentialPredictionObstacles(
 
   PotentialPredictionObstacle ptt_pred_obs3(perception_obstacle3,
                                             anchor_points);
-  ptt_pred_obs3.appear_when_adc_at_x_ = 400.0;
+  ptt_pred_obs3.appear_when_adc_at_x_ = 370.0;
   ptt_pred_obs3.appear_when_adc_at_y_ = 0.0;
   potential_prediction_obstacles.insert(
       std::make_pair(perception_obstacle3.id, std::move(ptt_pred_obs3)));
@@ -163,7 +163,7 @@ void ManualSetting::SetDynamicPotentialPredictionObstacles(
   PerceptionObstacle perception_obstacle4;
   perception_obstacle4.id =
       GlobalNumberProvider::instance()->GetPerceptionObstacleId();
-  perception_obstacle4.velocity.x = 15.0;
+  perception_obstacle4.velocity.x = 20.0;
   perception_obstacle4.length = 4.0;
   perception_obstacle4.width = 2.0;
   perception_obstacle4.height = 1.7;
@@ -171,13 +171,13 @@ void ManualSetting::SetDynamicPotentialPredictionObstacles(
 
   // 障碍物的预测轨迹起始锚点
   AnchorPoint start_anchor4;
-  start_anchor4.cartesian_x = 500.0;
-  start_anchor4.cartesian_y = 2.0;
+  start_anchor4.cartesian_x = 460.0;
+  start_anchor4.cartesian_y = 5.0;
   start_anchor4.frenet_s = 0.0;
 
   auto ptt_pred_obs4 = CreatDynamicPotentialPredictionObstacle(
       perception_obstacle4, start_anchor4);
-  ptt_pred_obs4.appear_when_adc_at_x_ = 550;
+  ptt_pred_obs4.appear_when_adc_at_x_ = 520;
   ptt_pred_obs4.appear_when_adc_at_y_ = 0.0;
   potential_prediction_obstacles.insert(
       std::make_pair(perception_obstacle4.id, std::move(ptt_pred_obs4)));
@@ -202,7 +202,7 @@ void ManualSetting::SetStaticPotentialPredictionObstacles(
 
   std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points1;
   null_anchor_points1.clear();
-  PotentialPredictionObstacle ptt_pred_obs1(std::move(perception_obstacle1),
+  PotentialPredictionObstacle ptt_pred_obs1(perception_obstacle1,
                                             std::move(null_anchor_points1));
   ptt_pred_obs1.appear_when_adc_at_x_ = 10;
   ptt_pred_obs1.appear_when_adc_at_y_ = 0;
@@ -221,14 +221,14 @@ void ManualSetting::SetStaticPotentialPredictionObstacles(
   perception_obstacle2.type = PerceptionObstacle::UNKNOWN_UNMOVABLE;
   //   perception_obstacle3.timestamp = ros::Time::now().toSec();
 
-  perception_obstacle2.position.x = 150;
+  perception_obstacle2.position.x = 140;
   perception_obstacle2.position.y = 1.0;
   perception_obstacle2.theta = 0.0;
 
   //
   std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points2;
   null_anchor_points2.clear();
-  PotentialPredictionObstacle ptt_pred_obs2(std::move(perception_obstacle2),
+  PotentialPredictionObstacle ptt_pred_obs2(perception_obstacle2,
                                             std::move(null_anchor_points2));
   ptt_pred_obs2.appear_when_adc_at_x_ = 10;
   ptt_pred_obs2.appear_when_adc_at_y_ = 0;
@@ -254,7 +254,7 @@ void ManualSetting::SetStaticPotentialPredictionObstacles(
   //
   std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points3;
   null_anchor_points3.clear();
-  PotentialPredictionObstacle ptt_pred_obs3(std::move(perception_obstacle3),
+  PotentialPredictionObstacle ptt_pred_obs3(perception_obstacle3,
                                             std::move(null_anchor_points3));
   ptt_pred_obs3.appear_when_adc_at_x_ = 10;
   ptt_pred_obs3.appear_when_adc_at_y_ = 0;
@@ -278,7 +278,7 @@ void ManualSetting::SetStaticPotentialPredictionObstacles(
   //
   std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points4;
   null_anchor_points4.clear();
-  PotentialPredictionObstacle ptt_pred_obs4(std::move(perception_obstacle4),
+  PotentialPredictionObstacle ptt_pred_obs4(perception_obstacle4,
                                             std::move(null_anchor_points4));
   ptt_pred_obs4.appear_when_adc_at_x_ = 10;
   ptt_pred_obs4.appear_when_adc_at_y_ = 0;
@@ -299,12 +299,12 @@ void ManualSetting::SetStaticPotentialPredictionObstacles(
   //   perception_obstacle3.timestamp = ros::Time::now().toSec();
 
   perception_obstacle5.position.x = 600;
-  perception_obstacle5.position.y = -1.0;
+  perception_obstacle5.position.y = 0.0;
   perception_obstacle5.theta = 0.0;
   //
   std::vector<hqplanner::forproto::AnchorPoint> null_anchor_points5;
   null_anchor_points5.clear();
-  PotentialPredictionObstacle ptt_pred_obs5(std::move(perception_obstacle5),
+  PotentialPredictionObstacle ptt_pred_obs5(perception_obstacle5,
                                             std::move(null_anchor_points5));
   ptt_pred_obs5.appear_when_adc_at_x_ = 500;
   ptt_pred_obs5.appear_when_adc_at_y_ = 0;
@@ -320,7 +320,7 @@ visualization_msgs::Marker ManualSetting::GetObstacleMarker(
   marker.header.frame_id = "obsframe";
   marker.header.stamp = ros::Time::now();
   marker.ns = "hqplanner";
-  marker.id = GlobalNumberProvider::instance()->GetMarkerId();
+  marker.id = perception_obstacle.id;
 
   marker.type = visualization_msgs::Marker::CUBE;
   marker.action = visualization_msgs::Marker::ADD;

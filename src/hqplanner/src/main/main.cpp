@@ -314,6 +314,7 @@ int main(int argc, char **argv) {
           path_obs->obstacle()->Perception();
       visualization_msgs::Marker obs_marker =
           manual_setting.GetObstacleMarker(perception_obstacle);
+      // marker_pub.publish(obs_marker);
       obs_markers.emplace_back(std::move(obs_marker));
     }
     marker_pub.publish(adc_marker);
