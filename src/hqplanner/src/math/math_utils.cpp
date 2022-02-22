@@ -5,6 +5,18 @@ namespace math {
 
 double Sqr(const double x) { return x * x; }
 
+void EulerToQuaternion(double e_x, double e_y, double e_z, double &q_x,
+                       double &q_y, double &q_z, double &q_w) {
+  q_x = std::sin(e_y / 2) * std::sin(e_z / 2) * std::cos(e_x / 2) +
+        std::cos(e_y / 2) * std::cos(e_z / 2) * std::sin(e_x / 2);
+  q_y = std::sin(e_y / 2) * std::cos(e_z / 2) * std::cos(e_x / 2) +
+        std::cos(e_y / 2) * std::sin(e_z / 2) * std::sin(e_x / 2);
+  q_z = std::cos(e_y / 2) * std::sin(e_z / 2) * std::cos(e_x / 2) +
+        std::sin(e_y / 2) * std::cos(e_z / 2) * std::sin(e_x / 2);
+  q_w = std::cos(e_y / 2) * std::cos(e_z / 2) * std::cos(e_x / 2) +
+        std::sin(e_y / 2) * std::sin(e_z / 2) * std::sin(e_x / 2);
+}
+
 double CrossProd(const Vec2d &start_point, const Vec2d &end_point_1,
                  const Vec2d &end_point_2) {
   return (end_point_1 - start_point).CrossProd(end_point_2 - start_point);

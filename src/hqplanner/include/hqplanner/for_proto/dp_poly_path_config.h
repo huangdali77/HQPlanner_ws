@@ -3,7 +3,7 @@
 namespace hqplanner {
 namespace forproto {
 struct DpPolyPathConfig {
-  int sample_points_num_each_level = 7;
+  int sample_points_num_each_level = 9;
   double step_length_max = 40.0;
   double step_length_min = 20.0;
   double lateral_sample_offset = 0.5;

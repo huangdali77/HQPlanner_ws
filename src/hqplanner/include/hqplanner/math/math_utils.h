@@ -13,6 +13,9 @@ namespace hqplanner {
 namespace math {
 double Sqr(const double x);
 
+void EulerToQuaternion(double e_x, double e_y, double e_z, double &q_x,
+                       double &q_y, double &q_z, double &q_w);
+
 /**
  * @brief Cross product between two 2-D vectors from the common start point,
  *        and end at two other points.

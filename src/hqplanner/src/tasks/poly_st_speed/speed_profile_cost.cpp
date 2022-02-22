@@ -11,12 +11,12 @@ constexpr double kEpsilon = 1e-6;
 
 using hqplanner::PathObstacle;
 using hqplanner::forproto::ConfigParam;
+using hqplanner::forproto::PerceptionObstacle;
 using hqplanner::forproto::PolyStSpeedConfig;
 using hqplanner::forproto::TrajectoryPoint;
 using hqplanner::math::QuarticPolynomialCurve1dPro;
 using hqplanner::speed::SpeedLimit;
 using hqplanner::speed::STPoint;
-
 SpeedProfileCost::SpeedProfileCost(
     const PolyStSpeedConfig &config,
     const std::vector<const PathObstacle *> &obstacles,
@@ -61,6 +61,11 @@ double SpeedProfileCost::CalculatePointCost(
 
   double cost = 0.0;
   for (const auto *obstacle : obstacles_) {
+    if (obstacle->obstacle()->Perception().type ==
+        PerceptionObstacle::Type::UNKNOWN_UNMOVABLE) {
+      continue;
+    }
+
     auto boundary = obstacle->st_boundary();
     const double kIgnoreDistance = 100.0;
     if (boundary.min_s() > kIgnoreDistance) {
